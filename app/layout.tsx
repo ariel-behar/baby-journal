@@ -22,7 +22,9 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<div className="lg:container px-[50px] mx-auto min-h-screen flex flex-col justify-between">
 					<Navbar />
-					{children}
+					<main>
+						{children}
+					</main>
 					<Footer />
 				</div>
 			</body>
