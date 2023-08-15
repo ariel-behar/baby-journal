@@ -21,6 +21,10 @@ function NavLinks() {
         }
     ]
 
+    // Temporary
+    const session = true;
+    const isAdmin = true;
+
     return (
         <>
             {links.map((link) => {
@@ -28,6 +32,16 @@ function NavLinks() {
                     <NavLink {...link} />
                 )
             })}
+
+            {session
+                ? (
+                    <>
+                        {isAdmin && <NavLink title='Admin' path='/admin' />}
+                        <button className='bg-light text-dark p-3'>Logout</button>
+                    </>
+                )
+                : <NavLink title='Login' path='/login' />
+            }
         </>
     )
 }
