@@ -20,7 +20,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<div className="container px-[50px] mx-auto min-h-screen flex flex-col justify-between">
+				<div className="lg:container px-[50px] mx-auto min-h-screen flex flex-col justify-between">
 					<Navbar />
 					{children}
 					<Footer />
