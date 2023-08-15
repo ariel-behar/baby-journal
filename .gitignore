@@ -2,6 +2,7 @@
 
 .vscode
 .next
+todo.txt
 
 # dependencies
 /node_modules
