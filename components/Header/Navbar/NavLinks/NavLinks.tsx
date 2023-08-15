@@ -1,6 +1,4 @@
-import Link from 'next/link'
-import uniqid from 'uniqid'
-import React from 'react'
+import NavLink from './NavLink'
 
 function NavLinks() {
 
@@ -22,14 +20,15 @@ function NavLinks() {
             path: '/blog'
         }
     ]
+
     return (
-        <div>
+        <>
             {links.map((link) => {
                 return (
-                    <Link key={uniqid()} href={link.path}>{link.title}</Link>
+                    <NavLink {...link} />
                 )
             })}
-        </div>
+        </>
     )
 }
 
