@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import NavLink from './NavLink'
 import uniqid from 'uniqid';
+import Image from 'next/image';
 
 const routes = [
     {
@@ -51,11 +52,11 @@ function NavLinks() {
             </div>
 
             {/* Mobile Menu */}
-            <button className='block md:hidden' onClick={() => setOpen((prev) => !prev)}>Menu</button>
+            <Image className='block md:hidden' src='/img/menu.png' alt='Menu' width={30} height={30} onClick={() => setOpen((prev) => !prev)} />
 
             {
                 open && (
-                    <div className='md:hidden flex flex-col items-center justify-center absolute top-[100px] right-0 w-1/2 h-[calc(100vh-100px)] bg-green-500  gap-3'>
+                    <div className='md:hidden flex flex-col items-center justify-center absolute top-[100px] right-0 w-1/2 h-[calc(100vh-100px)] bg-green-500 gap-3 z-10'>
                         {
                             routes.map((link) => {
                                 return (
