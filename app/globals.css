@@ -16,10 +16,10 @@
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
   }
-}
+} */
 
 body {
   background-color: var(--bg);
@@ -35,4 +35,10 @@ a {
   /* .text-balance { */
     /* text-wrap: balance; */
   /* } */
+}
+
+@layer components {
+  .form-input {
+    @apply p-[10px] rounded-md text-light bg-darkSoft border-none outline-none;
+  }
 }
