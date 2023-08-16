@@ -2,8 +2,8 @@ import Image from "next/image"
 
 function ContactPage() {
 	return (
-		<div className="flex gap-[100px]">
-			<div className="flex-1 relative h-[500px]">
+		<div className="flex flex-col md:flex-row gap-[100px]">
+			<div className="md:flex-1 relative h-[500px]">
 				<Image src="/img/contact.png" alt="Contact" fill className="object-contain" />
 			</div>
 
