@@ -1,7 +1,13 @@
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
 
-function PostCard() {
+import { Post } from "@/models/Post";
+
+interface Props extends Post {}
+
+function PostCard({
+	...post
+}: Props) {
 	return (
 		<div className="flex flex-col gap-5 mb-5">
 			<div className="flex">
@@ -12,11 +18,11 @@ function PostCard() {
 				<span className="text-xs rotate-[270deg] m-auto">01.01.2024</span>
 			</div>
 			<div>
-				<h1 className="text-2xl mb-5 w-11/12">Title</h1>
+				<h1 className="text-2xl mb-5 w-11/12">{post.title}</h1>
 
-				<p className="mb-5 font-light text-gray-400 w-11/12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tenetur, ad quibusdam laboriosam magnam mollitia eius? Explicabo similique corrupti natus incidunt neque libero sint, quibusdam ex velit corporis quae veritatis.</p>
+				<p className="mb-5 font-light text-gray-400 w-11/12">{post.body}</p>
 
-				<Link href="/blog/post" className="underline">READ MORE</Link>
+				<Link href={`/blog/post/${post.id}`} className="underline">READ MORE</Link>
 			</div>
 		</div>
 	)
