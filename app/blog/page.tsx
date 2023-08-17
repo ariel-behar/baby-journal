@@ -1,21 +1,30 @@
 import PostCard from "@/components/PostCard"
+import { Post } from "@/models/Post";
 
-function BlogPage() {
+const getData = async () => {
+	const res = await fetch('https://jsonplaceholder.typicode.com/posts', { next: {
+		revalidate: 600
+	}});
+
+	if(!res.ok) {
+		throw new Error('Something went wrong');
+	}
+
+	return res.json();
+}
+
+async function BlogPage() {
+	const posts: Post[] = await getData();
+
 	return (
 		<div className="flex flex-wrap">
-			<div className="w-full sm:w-1/2 md:w-1/3">
-				<PostCard />
-			</div>
-			<div className="w-full sm:w-1/2 md:w-1/3">
-				<PostCard />
-			</div>
-			<div className="w-full sm:w-1/2 md:w-1/3">
-				<PostCard />
-			</div>
-			<div className="w-full sm:w-1/2 md:w-1/3">
-				<PostCard />
-			</div>
-
+			{
+				posts.map((post) => (
+					<div className="w-full sm:w-1/2 md:w-1/3" key={post.id}>
+						<PostCard {...post} />
+					</div>
+				))
+			}
 		</div>
 	)
 }
