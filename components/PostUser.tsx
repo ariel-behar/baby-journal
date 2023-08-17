@@ -2,7 +2,7 @@ import { Post } from "@/models/Post"
 import { User } from "@/models/User";
 
 const getData = async (userId: User['id']) => {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+	const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, { cache: 'no-store'});
 
 	if(!res.ok) {
 		throw new Error('Something went wrong');

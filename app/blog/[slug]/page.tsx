@@ -1,11 +1,14 @@
-import PostUser from "@/components/PostUser";
-import { Post } from "@/models/Post";
+import { Suspense } from "react";
 import Image from "next/image"
+
+import { Post } from "@/models/Post";
+
+import PostUser from "@/components/PostUser";
 
 const getData = async (slug: string) => {
 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
 
-	if(!res.ok) {
+	if (!res.ok) {
 		throw new Error('Something went wrong');
 	}
 
@@ -18,7 +21,7 @@ interface Props {
 	}
 }
 
-async function SinglePostPage({params}: Props) {
+async function SinglePostPage({ params }: Props) {
 	const { slug } = params;
 
 	const post: Post = await getData(slug);
@@ -35,7 +38,9 @@ async function SinglePostPage({params}: Props) {
 				<div className="relative flex gap-[20px]">
 					<Image src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg" alt='User image' width={50} height={50} className="object-cover rounded-[50%] h-[50px] w-[50px]" />
 
-					<PostUser userId={post.userId} />
+					<Suspense fallback={<div>Loading...</div>}>
+						<PostUser userId={post.userId} />
+					</Suspense>
 
 					<div className="flex flex-col gap-[10px]">
 						<span className="text-gray-500 font-bold">Published </span>
