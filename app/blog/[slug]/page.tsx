@@ -5,15 +5,7 @@ import { Post } from "@/models/Post";
 
 import PostUser from "@/components/PostUser";
 
-const getData = async (slug: string) => {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
-
-	if (!res.ok) {
-		throw new Error('Something went wrong');
-	}
-
-	return res.json();
-}
+import { getPost } from "@/lib/getData";
 
 interface Props {
 	params: {
@@ -24,7 +16,7 @@ interface Props {
 async function SinglePostPage({ params }: Props) {
 	const { slug } = params;
 
-	const post: Post = await getData(slug);
+	const post = await getPost(Number(slug)) as Post;
 
 	return (
 		<div className="flex gap-[100px]">

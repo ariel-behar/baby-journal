@@ -1,22 +1,14 @@
 import { Post } from "@/models/Post"
 import { User } from "@/models/User";
 
-const getData = async (userId: User['id']) => {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, { cache: 'no-store'});
-
-	if(!res.ok) {
-		throw new Error('Something went wrong');
-	}
-
-	return res.json();
-}
+import { getUser } from "@/lib/getData";
 
 interface Props extends Omit<Post, 'title' | 'body' | 'id'> {}
 
 async function PostUser({
     userId
 }:Props) {
-    const user: User = await getData(userId);
+    const user = await getUser(Number(userId)) as User;
 
     return (
         <div className="flex flex-col gap-[10px]">

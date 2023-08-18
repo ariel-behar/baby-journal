@@ -22,7 +22,7 @@ function PostCard({
 
 				<p className="mb-5 font-light text-gray-400 w-11/12">{post.body}</p>
 
-				<Link href={`/blog/post/${post.id}`} className="underline">READ MORE</Link>
+				<Link href={`/blog/${post.id}`} className="underline">READ MORE</Link>
 			</div>
 		</div>
 	)

@@ -1,20 +1,9 @@
 import PostCard from "@/components/PostCard"
+import { getPosts } from "@/lib/getData";
 import { Post } from "@/models/Post";
 
-const getData = async () => {
-	const res = await fetch('https://jsonplaceholder.typicode.com/posts', { next: {
-		revalidate: 600
-	}});
-
-	if(!res.ok) {
-		throw new Error('Something went wrong');
-	}
-
-	return res.json();
-}
-
 async function BlogPage() {
-	const posts: Post[] = await getData();
+	const posts: Post[] = await getPosts();
 
 	return (
 		<div className="flex flex-wrap">
