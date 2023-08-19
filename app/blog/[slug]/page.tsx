@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import Image from "next/image"
 
-import { Post } from "@/models/Post";
+import { IPost } from "@/models/Post";
 
 import PostUser from "@/components/PostUser";
 
@@ -16,7 +16,7 @@ interface Props {
 async function SinglePostPage({ params }: Props) {
 	const { slug } = params;
 
-	const post = await getPost(Number(slug)) as Post;
+	const post = await getPost(Number(slug)) as IPost;
 
 	return (
 		<div className="flex gap-[100px]">

@@ -1,14 +1,14 @@
-import { Post } from "@/models/Post"
-import { User } from "@/models/User";
+import { IPost } from "@/models/Post"
+import { IUser } from "@/models/User";
 
 import { getUser } from "@/lib/getData";
 
-interface Props extends Omit<Post, 'title' | 'body' | 'id'> {}
+interface Props extends Omit<IPost, 'title' | 'body' | 'id'> {}
 
 async function PostUser({
     userId
 }:Props) {
-    const user = await getUser(Number(userId)) as User;
+    const user: IUser | undefined = await getUser(Number(userId));
 
     return (
         <div className="flex flex-col gap-[10px]">

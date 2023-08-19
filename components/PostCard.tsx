@@ -1,9 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
 
-import { Post } from "@/models/Post";
+import { IPost } from "@/models/Post";
 
-interface Props extends Post {}
+interface Props extends IPost {}
 
 function PostCard({
 	...post

@@ -1,7 +1,7 @@
 import { Identifiable, IdType } from "@/types/common-types";
 import mongoose from "mongoose";
 
-export interface Post extends Identifiable {
+export interface IPost extends Identifiable {
 	_id: IdType;
 	title: string;
 	description: string;
@@ -10,7 +10,7 @@ export interface Post extends Identifiable {
 	slug: string;
 }
 
-interface IPostMongooseSchema extends Omit<Post, '_id' | 'userId'> {
+interface IPostMongooseSchema extends Omit<IPost, '_id' | 'userId'> {
 	userId: mongoose.Schema.Types.ObjectId;
 }
 

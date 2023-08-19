@@ -1,7 +1,7 @@
 import { Identifiable, IdType } from "@/types/common-types";
 import mongoose from "mongoose";
 
-export interface User extends Identifiable {
+export interface IUser extends Identifiable {
     _id: IdType;
     username: string;
     email: string;
@@ -9,7 +9,7 @@ export interface User extends Identifiable {
     isAdmin: boolean;
 }
 
-interface IUserMongooseSchema extends Omit<User, '_id'> {
+interface IUserMongooseSchema extends Omit<IUser, '_id'> {
     password: string;
     repeatPassword: string;
 }

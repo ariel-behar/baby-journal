@@ -1,9 +1,9 @@
 import PostCard from "@/components/PostCard"
 import { getPosts } from "@/lib/getData";
-import { Post } from "@/models/Post";
+import { IPost } from "@/models/Post";
 
 async function BlogPage() {
-	const posts: Post[] = await getPosts();
+	const posts: IPost[] = await getPosts();
 
 	return (
 		<div className="flex flex-wrap">
