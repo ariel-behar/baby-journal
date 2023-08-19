@@ -1,7 +1,7 @@
 // Temporary data
 
 import { Post } from "@/models/Post";
-import { idType } from "@/types/common-types";
+import { IdType } from "@/types/common-types";
 
 const posts = [
     {
@@ -44,11 +44,11 @@ export const  getPosts = async () => {
     return posts;
 }
 
-export const getPost = async (postId: idType) => {
+export const getPost = async (postId: IdType) => {
     return posts.find(post => post.id === Number(postId));
 }
 
-export const getUser = async (userId: idType) => {
+export const getUser = async (userId: IdType) => {
     return users.find(user => user.id === Number(userId));
 }
 
