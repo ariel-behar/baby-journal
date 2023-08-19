@@ -7,7 +7,7 @@ export const getPost = async (postId: IdType) => {
     try {
         dbConnect();
 
-        const post:IPost | never[] = await Post.find({ _id: postId });
+        const post:IPost | null = await Post.findById(postId);
 
         return post;
     } catch(error) {
@@ -20,7 +20,7 @@ export const getPosts = async () => {
     try {
         dbConnect();
 
-        const posts:IPost[] | [] = await Post.find();
+        const posts:IPost[] = await Post.find().lean();
 
         return posts;
     } catch(error) {
@@ -33,7 +33,7 @@ export const getUser = async (userId: IdType) => {
     try {
         dbConnect();
 
-        const user:IUser | never[] = await User.find({ _id: userId });
+        const user:IUser | null = await User.findById(userId);
 
         return user;
     } catch(error) {
@@ -46,7 +46,7 @@ export const getUsers = async () => {
     try {
         dbConnect();
 
-        const users:IUser[] | [] = await User.find();
+        const users:IUser[] = await User.find().lean();
 
         return users;
     } catch(error) {
