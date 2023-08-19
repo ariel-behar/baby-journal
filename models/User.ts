@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 export interface IUser extends Identifiable {
     _id: IdType;
     username: string;
+    firstName: string;
+    lastName: string;
     email: string;
     img?: string;
     isAdmin: boolean;
@@ -19,6 +21,18 @@ const userSchema = new mongoose.Schema<IUserMongooseSchema>({
         type: String,
         required: true,
         unique: true,
+        minlength: 3,
+        maxlength: 20
+    },
+    firstName: {
+        type: String,
+        required: true,
+        minlength: 3,
+        maxlength: 20
+    },
+    lastName: {
+        type: String,
+        required: true,
         minlength: 3,
         maxlength: 20
     },
