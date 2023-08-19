@@ -1,5 +1,5 @@
-export type IdType = number | string;
+export type IdType = string;
 
 export interface Identifiable {
-    id: IdType;
+    _id: IdType;
 }
