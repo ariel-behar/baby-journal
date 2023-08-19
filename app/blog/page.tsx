@@ -9,7 +9,7 @@ async function BlogPage() {
 		<div className="flex flex-wrap">
 			{
 				posts.map((post) => (
-					<div className="w-full sm:w-1/2 md:w-1/3" key={post.id}>
+					<div className="w-full sm:w-1/2 md:w-1/3" key={post._id}>
 						<PostCard {...post} />
 					</div>
 				))

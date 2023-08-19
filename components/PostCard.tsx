@@ -12,7 +12,7 @@ function PostCard({
 		<div className="flex flex-col gap-5 mb-5">
 			<div className="flex">
 				<div className="w-[90%] h-[400px] relative">
-					<Image className="object-cover" src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg" alt='Post' fill />
+					<Image className="object-cover" src={post.img} alt='Post' fill />
 				</div>
 
 				<span className="text-xs rotate-[270deg] m-auto">01.01.2024</span>
@@ -20,9 +20,9 @@ function PostCard({
 			<div>
 				<h1 className="text-2xl mb-5 w-11/12">{post.title}</h1>
 
-				<p className="mb-5 font-light text-gray-400 w-11/12">{post.body}</p>
+				<p className="mb-5 font-light text-gray-400 w-11/12">{post.description}</p>
 
-				<Link href={`/blog/${post.id}`} className="underline">READ MORE</Link>
+				<Link href={`/blog/${post._id}`} className="underline">READ MORE</Link>
 			</div>
 		</div>
 	)
