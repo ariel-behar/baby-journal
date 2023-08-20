@@ -7,7 +7,7 @@ export interface IUser extends Identifiable {
     firstName: string;
     lastName: string;
     email: string;
-    img?: string;
+    avatarImg?: string;
     isAdmin: boolean;
 }
 
@@ -54,7 +54,7 @@ const userSchema = new mongoose.Schema<IUserMongooseSchema>({
         minlength: 6,
         maxlength: 20
     },
-    img: {
+    avatarImg: {
         type: String,
     },
     isAdmin: {
