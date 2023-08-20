@@ -9,12 +9,12 @@ import { getPost } from "@/lib/getData";
 
 interface Props {
 	params: {
-		slug: string
+		postId: string
 	}
 }
 
 async function SinglePostPage({ params }: Props) {
-	const { slug: postId } = params;
+	const { postId } = params;
 
 	const post: IPost | null = await getPost(postId);
 
