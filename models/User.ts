@@ -9,9 +9,11 @@ export interface IUser extends Identifiable {
     email: string;
     avatarImg?: string;
     isAdmin: boolean;
+    createdAt: string;
+	updatedAt: string;
 }
 
-interface IUserMongooseSchema extends Omit<IUser, '_id'> {
+interface IUserMongooseSchema extends Omit<IUser, '_id' | 'createdAt' | 'updatedAt'> {
     password: string;
     repeatPassword: string;
 }

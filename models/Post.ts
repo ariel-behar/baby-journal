@@ -7,10 +7,11 @@ export interface IPost extends Identifiable {
 	description: string;
 	img: string;
 	userId: IdType;
-	slug: string;
+	createdAt: string;
+	updatedAt: string;
 }
 
-interface IPostMongooseSchema extends Omit<IPost, '_id' | 'userId'> {
+interface IPostMongooseSchema extends Omit<IPost, '_id' | 'userId' | 'createdAt' | 'updatedAt'> {
 	userId: mongoose.Schema.Types.ObjectId;
 }
 
@@ -34,11 +35,6 @@ const postSchema = new mongoose.Schema<IPostMongooseSchema>({
 	userId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
-		required: true
-	},
-	slug: {
-		type: String,
-		unique: true,
 		required: true
 	}
 }, { timestamps: true });
