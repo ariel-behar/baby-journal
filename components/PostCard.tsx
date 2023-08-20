@@ -15,7 +15,7 @@ function PostCard({
 					<Image className="object-cover" src={post.img} alt='Post' fill />
 				</div>
 
-				<span className="text-xs rotate-[270deg] m-auto">01.01.2024</span>
+				<span className="text-xs rotate-[270deg] m-auto text-nowrap">{post.createdAt.toString().slice(4,16)}</span>
 			</div>
 			<div>
 				<h1 className="text-2xl mb-5 w-11/12">{post.title}</h1>

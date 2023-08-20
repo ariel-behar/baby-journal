@@ -17,6 +17,7 @@ async function SinglePostPage({ params }: Props) {
 	const { postId } = params;
 
 	const post: IPost | null = await getPost(postId);
+	console.log('post:', post)
 
 	return (
 		<div className="flex gap-[100px]">
@@ -41,7 +42,7 @@ async function SinglePostPage({ params }: Props) {
 					}
 					<div className="flex flex-col gap-[10px]">
 						<span className="text-gray-500 font-bold">Published</span>
-						<span className="font-medium">01.01.2024</span>
+						<span className="font-medium">{post?.createdAt.toString().slice(4,16)}</span>
 					</div>
 				</div>
 
