@@ -13,11 +13,21 @@ interface Props {
 	}
 }
 
+export const generateMetadata = async ({params}: Props) => {
+	const { postId} = params;
+
+	const post: IPost | null = await getPost(postId);
+
+	return {
+		title: post?.title,
+		description: post?.description
+	}
+}
+
 async function SinglePostPage({ params }: Props) {
 	const { postId } = params;
 
 	const post: IPost | null = await getPost(postId);
-	console.log('post:', post)
 
 	return (
 		<div className="flex gap-[100px]">
