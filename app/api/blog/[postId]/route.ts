@@ -24,3 +24,18 @@ export const GET = async (request: NextRequest, { params }: Params) => {
     }
 }
 
+export const DELETE = async (request: NextRequest, { params }: Params) => {
+    const { postId } = params;
+
+    try {
+        dbConnect()
+
+        await Post.findByIdAndDelete(postId)
+
+        return NextResponse.json({message: "Post deleted successfully!"})
+        
+    } catch (error) {
+        console.log(error);
+        return NextResponse.json({ error: "Failed to fetch post!"})
+    }
+}
