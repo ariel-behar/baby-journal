@@ -5,7 +5,16 @@ import { IPost } from "@/models/Post";
 
 import PostUser from "@/components/PostUser";
 
-import { getPost } from "@/lib/getData";
+// import { getPost } from "@/lib/getData";
+
+const getPost = async (postId: IPost['_id']) => {
+	const res = await fetch(`http://localhost:3000/api/blog/${postId}`);
+
+	if(!res.ok) {
+		throw new Error('Something went wrong');
+	}
+	return res.json();
+}
 
 interface Props {
 	params: {
