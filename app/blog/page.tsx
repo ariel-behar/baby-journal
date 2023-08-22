@@ -1,9 +1,18 @@
 import { Metadata } from "next";
 
-import { getPosts } from "@/lib/getData";
+// import { getPosts } from "@/lib/getData";
 import { IPost } from "@/models/Post";
 
 import PostCard from "@/components/PostCard"
+
+const getPosts = async () => {
+	const res = await fetch('http://localhost:3000/api/blog');
+
+	if(!res.ok) {
+		throw new Error('Something went wrong');
+	}
+	return res.json();
+}
 
 export const metadata: Metadata = {
 	title: "Blog",
