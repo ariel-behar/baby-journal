@@ -1,14 +1,6 @@
-import { auth, signIn } from "@/lib/auth";
+import { handleGithubLogin } from "@/lib/serverActions";
 
 async function LoginPage() {
-	const session = await auth();
-	console.log('session:', session)
-
-	const handleGithubLogin = async () => {
-		"use server"
-
-		await signIn("github");
-	}
 
 	return (
 		<div>

@@ -2,6 +2,7 @@
 import Post from "@/models/Post";
 import dbConnect from "./dbConnect";
 import { revalidatePath } from "next/cache";
+import { signIn } from "./auth";
 
 export const addPost = async (formData: FormData) => {
     // "use server"
@@ -37,4 +38,8 @@ export const deletePost = async (formData: FormData) => {
         console.log(error);
         return { error: "Something went wrong!"}
     }
+}
+
+export const handleGithubLogin = async () => {
+    await signIn("github");
 }
