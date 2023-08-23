@@ -4,6 +4,9 @@ import NavLink from './NavLink'
 import uniqid from 'uniqid';
 import Image from 'next/image';
 
+import { handleLogout } from '@/lib/serverActions';
+import { Session, User } from 'next-auth';
+
 const routes = [
     {
         title: 'Homepage',
@@ -23,12 +26,20 @@ const routes = [
     }
 ]
 
-function NavLinks() {
-    const [open, setOpen] = useState(false)
+export interface ICustomSession extends Session {
+    user?: User & {
+        isAdmin: boolean
+    }
+}
 
-    // Temporary
-    const session = true;
-    const isAdmin = true;
+interface Props {
+    session: Session | null
+}
+
+async function NavLinks({
+    session
+}: Props) {
+    const [open, setOpen] = useState(false)
 
     return (
         <nav>
@@ -40,11 +51,13 @@ function NavLinks() {
                     )
                 })}
 
-                {session
+                {session?.user
                     ? (
                         <>
-                            {isAdmin && <NavLink title='Admin' path='/admin' />}
-                            <button className='bg-light text-dark p-3'>Logout</button>
+                            {(session as ICustomSession).user?.isAdmin && <NavLink title='Admin' path='/admin' />}
+                            <form action={handleLogout}>
+                                <button className='bg-light text-dark p-3'>Logout</button>
+                            </form>
                         </>
                     )
                     : <NavLink title='Login' path='/login' />
