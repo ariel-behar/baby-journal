@@ -1,18 +1,25 @@
-import { handleGithubLogin, login } from "@/lib/serverActions";
+import LoginForm from "@/components/Forms/LoginForm";
+import { handleGithubLogin } from "@/lib/serverActions";
+import Link from "next/link";
 
 async function LoginPage() {
 
 	return (
-		<div>
-			<form action={handleGithubLogin}>
-				<button>Login with Github</button>
-			</form>
+		<div className="flex items-center justify-center">
+			<div className="w-[500px] bg-darkSoft p-12 flex flex-col text-center gap-7 rounded-md ">
+				<form action={handleGithubLogin}>
+					<button className="blue-button">Login with Github</button>
+				</form>
 
-			<form action={login}>
-				<input className="form-input" type="text" placeholder="Username" name="username" />
-				<input className="form-input" type="password" placeholder="password" name="password" />
-				<button className="blue-button">Login with Credentials</button>
-			</form>
+				<LoginForm />
+
+				<span>
+					Don't have an account?&nbsp;
+					<Link href="/register" className="font-bold">
+						Register here!
+					</Link>
+				</span>
+			</div>
 		</div>
 	)
 }
