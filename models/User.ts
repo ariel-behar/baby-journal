@@ -1,6 +1,6 @@
 import { Identifiable, IdType } from "@/types/common-types";
 import mongoose from "mongoose";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export interface IUser extends Identifiable {
     _id: IdType;
@@ -61,7 +61,7 @@ const userSchema = new mongoose.Schema<IUserMongooseSchema>({
 
 userSchema.pre<IUserMongooseSchema>('save', function (next) {
     const salt = bcrypt.genSaltSync(parseInt(process.env.BCRYPT_SALT_ROUNDS as string));
-    
+
     this.password = bcrypt.hashSync(this.password, salt);
 
     next();
