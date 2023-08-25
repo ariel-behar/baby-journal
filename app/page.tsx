@@ -18,7 +18,7 @@ export default function HomePage() {
 			</div>
 
 			<div className="md:flex-1 relative">
-				<Image src='/img/hero.gif' alt="Hero" fill />
+				<Image src='/img/hero.gif' alt="Hero" fill unoptimized />
 			</div>
 		</div>
 	);
