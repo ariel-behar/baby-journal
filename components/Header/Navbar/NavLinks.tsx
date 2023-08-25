@@ -36,7 +36,7 @@ interface Props {
     session: Session | null
 }
 
-async function NavLinks({
+function NavLinks({
     session
 }: Props) {
     const [open, setOpen] = useState(false)
