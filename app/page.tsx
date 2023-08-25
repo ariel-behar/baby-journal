@@ -8,7 +8,7 @@ export default function HomePage() {
 				<p className="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repud iandae nulla asperiores repellat placeat facilis.</p>
 
 				<div className="flex gap-5">
-					<button className="p-5 min-w-[120px] cursor-pointer border-none rounded-md bg-customBlue text-light">Learn More</button>
+					<button className="blue-button">Learn More</button>
 					<button className="p-5 min-w-[120px] cursor-pointer border-none rounded-md bg-light text-dark">Contact</button>
 				</div>
 
