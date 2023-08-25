@@ -67,3 +67,19 @@ export const register = async (formData: FormData) => {
         return { error: "Something went wrong!"}
     }
 }
+
+export const login = async (formData: FormData) => {
+    const { username, password } = Object.fromEntries(formData);
+
+
+    try {
+        dbConnect();
+       
+        await signIn("credentials", { username, password });
+
+        console.log('User registered successfully');
+    } catch (error) {
+        console.log(error);
+        return { error: "Something went wrong!"}
+    }
+}
