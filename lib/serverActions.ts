@@ -53,15 +53,22 @@ export const register = async (formData: FormData) => {
     const { username, firstName, lastName, email, password, repeatPassword } = Object.fromEntries(formData);
 
     if (password !== repeatPassword) {
-        return { error: "Passwords do not match!" }
+        return { error: "Passwords do not match!"}
     }
 
     try {
         dbConnect();
-        const newUser = await new User({ username, firstName, lastName, email, password });
 
-        await newUser.save();
-        console.log('User registered successfully');
+        const user = await User.findOne({username})
+
+        if (user) {
+            return { error: "User already exists!"}
+        } else {
+            const newUser = await new User({ username, firstName, lastName, email, password });
+
+            await newUser.save();
+            console.log('User registered successfully');
+        }
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!"}
@@ -70,7 +77,6 @@ export const register = async (formData: FormData) => {
 
 export const login = async (formData: FormData) => {
     const { username, password } = Object.fromEntries(formData);
-
 
     try {
         dbConnect();
