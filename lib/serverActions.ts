@@ -3,6 +3,7 @@ import Post from "@/models/Post";
 import dbConnect from "./dbConnect";
 import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
+import User from "@/models/User";
 
 export const addPost = async (formData: FormData) => {
     // "use server"
@@ -46,4 +47,23 @@ export const handleGithubLogin = async () => {
 
 export const handleLogout = async () => {
     await signOut();
+}
+
+export const register = async (formData: FormData) => {
+    const { username, firstName, lastName, email, password, repeatPassword } = Object.fromEntries(formData);
+
+    if (password !== repeatPassword) {
+        return { error: "Passwords do not match!" }
+    }
+
+    try {
+        dbConnect();
+        const newUser = await new User({ username, firstName, lastName, email, password });
+
+        await newUser.save();
+        console.log('User registered successfully');
+    } catch (error) {
+        console.log(error);
+        return { error: "Something went wrong!"}
+    }
 }
