@@ -4,6 +4,7 @@ import GitHub from "next-auth/providers/github"
 import Credentials from "next-auth/providers/credentials"
 import dbConnect from "./dbConnect";
 import User from "@/models/User";
+import { authConfig } from "./auth.config";
 
 const login = async (credentials: any) => {
 	try {
@@ -27,6 +28,7 @@ const login = async (credentials: any) => {
 };
 
 export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
+	...authConfig,
 	providers: [
 		GitHub({
 			clientId: process.env.GITHUB_ID as string,
@@ -46,7 +48,6 @@ export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
 	],
 	callbacks: {
 		async signIn({ user, account, profile }) {
-
 			if (account?.provider === "github") {
 				dbConnect();
 				
@@ -69,6 +70,6 @@ export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
 			}
 			return true;
 		},
-
-	}
-})
+		...authConfig.callbacks,
+	},
+});
