@@ -97,7 +97,7 @@ export const login = async (formData: FormData) => {
     }
 }
 
-export const addUser = async (formData: FormData) => {
+export const addUser = async (prevState: any, formData: FormData) => {
     // "use server"
 
     const { username, email, password, img } = Object.fromEntries(formData);
@@ -115,7 +115,7 @@ export const addUser = async (formData: FormData) => {
     }
 }
 
-export const deleteUser = async (formData: FormData) => {
+export const deleteUser = async (prevState: any, formData: FormData) => {
     // "use server"
 
     const { userId } = Object.fromEntries(formData);
@@ -123,6 +123,7 @@ export const deleteUser = async (formData: FormData) => {
     try {
         dbConnect();
 
+        await Post.deleteMany({ userId });
         await User.findByIdAndDelete(userId);
 
         console.log('User deleted successfully');
