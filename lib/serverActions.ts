@@ -33,7 +33,7 @@ export const deletePost = async (formData: FormData) => {
 
         await Post.findByIdAndDelete(postId);
 
-        console.log('Post delete successfully');
+        console.log('Post deleted successfully');
         revalidatePath('/blog');
     } catch (error) {
         console.log(error);
@@ -94,5 +94,23 @@ export const login = async (formData: FormData) => {
         }
 
         throw error;
+    }
+}
+
+export const deleteUser = async (formData: FormData) => {
+    // "use server"
+
+    const { userId } = Object.fromEntries(formData);
+
+    try {
+        dbConnect();
+
+        await User.findByIdAndDelete(userId);
+
+        console.log('User deleted successfully');
+        revalidatePath('/admin');
+    } catch (error) {
+        console.log(error);
+        return { error: "Something went wrong!" }
     }
 }
