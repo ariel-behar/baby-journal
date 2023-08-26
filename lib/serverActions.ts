@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
 import User from "@/models/User";
 
-export const addPost = async (formData: FormData) => {
+export const addPost = async (prevState: any, formData: FormData) => {
     // "use server"
 
     const { title, description, userId, img } = Object.fromEntries(formData);
@@ -17,6 +17,7 @@ export const addPost = async (formData: FormData) => {
         await newPost.save();
         console.log('Post added successfully');
         revalidatePath('/blog');
+        revalidatePath('/admin');
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
@@ -35,6 +36,7 @@ export const deletePost = async (formData: FormData) => {
 
         console.log('Post deleted successfully');
         revalidatePath('/blog');
+        revalidatePath('/admin');
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
