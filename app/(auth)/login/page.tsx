@@ -8,7 +8,7 @@ async function LoginPage() {
 		<div className="flex items-center justify-center">
 			<div className="w-[500px] bg-darkSoft p-12 flex flex-col text-center gap-7 rounded-md ">
 				<form action={handleGithubLogin}>
-					<button className="blue-button">Login with Github</button>
+					<button className="gray-button w-full mb-5">Login with Github</button>
 				</form>
 
 				<LoginForm />

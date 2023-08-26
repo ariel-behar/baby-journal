@@ -45,4 +45,8 @@ a {
   .blue-button {
 	@apply p-5 min-w-[120px] cursor-pointer border-none rounded-md bg-customBlue text-light;
   }
+
+  .gray-button {
+    @apply p-5 min-w-[120px] cursor-pointer border-none rounded-md bg-light text-dark
+  }
 }

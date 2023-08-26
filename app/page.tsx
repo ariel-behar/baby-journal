@@ -9,7 +9,7 @@ export default function HomePage() {
 
 				<div className="flex gap-5">
 					<button className="blue-button">Learn More</button>
-					<button className="p-5 min-w-[120px] cursor-pointer border-none rounded-md bg-light text-dark">Contact</button>
+					<button className="gray-button">Contact</button>
 				</div>
 
 				<div className="h-[25px] sm:h-[35px] md:h-[50px] w-full md:w-[500px] relative grayscale">
