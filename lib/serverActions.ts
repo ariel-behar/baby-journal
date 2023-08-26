@@ -97,6 +97,24 @@ export const login = async (formData: FormData) => {
     }
 }
 
+export const addUser = async (formData: FormData) => {
+    // "use server"
+
+    const { username, email, password, img } = Object.fromEntries(formData);
+
+    try {
+        dbConnect();
+        const newUser = new User({ username, email, password, img  });
+
+        await newUser.save();
+        console.log('Post added successfully');
+        revalidatePath('/admin');
+    } catch (error) {
+        console.log(error);
+        return { error: "Something went wrong!" }
+    }
+}
+
 export const deleteUser = async (formData: FormData) => {
     // "use server"
 
