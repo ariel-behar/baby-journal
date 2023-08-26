@@ -87,7 +87,12 @@ export const login = async (formData: FormData) => {
 
         console.log('User registered successfully');
     } catch (error) {
-        console.log(error);
-        return { error: "Something went wrong!" }
+        console.log('error', error);
+
+        if(error instanceof Error && error.message.includes('CredentialsSignin')) {
+            return { error: 'Invalid username or password!'}
+        }
+
+        throw error;
     }
 }
