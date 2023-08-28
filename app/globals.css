@@ -2,13 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	--dark: #0d0c22;
-	--darkSoft: #2d2b42;
-	--light: white;
-	--lightSoft: #e5e5e5;
-	--customBlue: #3673fd;
-}
+/* :root {
+ */
+/* } */
 
 * {
   margin: 0;
@@ -20,11 +16,6 @@
   :root {
   }
 } */
-
-body {
-  background-color: var(--dark);
-  color: var(--light);
-}
 
 a {
   text-decoration: none;
@@ -38,15 +29,7 @@ a {
 }
 
 @layer components {
-  .form-input {
-    @apply p-[10px] rounded-md text-light bg-dark border-none outline-none;
-  }
-
-  .blue-button {
-	@apply p-5 min-w-[120px] cursor-pointer border-none rounded-md bg-customBlue text-light;
-  }
-
-  .gray-button {
-    @apply p-5 min-w-[120px] cursor-pointer border-none rounded-md bg-light text-dark
-  }
+	.form-input {
+		@apply p-[10px] rounded-md text-secondary bg-dark-soft border-none outline-none;
+	}
 }
