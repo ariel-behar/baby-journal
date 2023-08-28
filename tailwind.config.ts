@@ -9,13 +9,34 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
-				dark: '#0d0c22',
-				darkSoft: '#2d2b42',
-				light: 'white',
-				lightSoft: '#e5e5e5',
-				customBlue: '#3673fd'
-			},
+				primary: {
+					DEFAULT: "#3673fd",
+					content: "#fff"
+				},
+				secondary: {
+					DEFAULT: "#fff",
+					content: "#0d0c22"
+				},
+				light: '#fff',
+				dark: {
+					DEFAULT: "#0d0c22",
+					soft: "#2d2b42"
+				},
+			}
 		},
+	},
+	daisyui: {
+		themes: [
+			{
+				mytheme: {
+					"primary": "#3673fd",
+					"primary-content": "#fff",
+					"secondary": "#fff",
+					"secondary-content": "#0d0c22",
+					"base-100": "#0d0c22"
+				},
+			},
+		],
 	},
 	plugins: [
 		require('daisyui')
