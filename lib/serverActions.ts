@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
 import User from "@/models/User";
 
-export const addPost = async (prevState: any, formData: FormData) => {
+export const addPost = async (formData: FormData) => {
     // "use server"
 
     const { title, description, userId, img } = Object.fromEntries(formData);
@@ -99,14 +99,14 @@ export const login = async (formData: FormData) => {
     }
 }
 
-export const addUser = async (prevState: any, formData: FormData) => {
+export const addUser = async (formData: FormData) => {
     // "use server"
 
-    const { username, email, password, img } = Object.fromEntries(formData);
+    const { username, firstName, lastName, email, password, img } = Object.fromEntries(formData);
 
     try {
         dbConnect();
-        const newUser = new User({ username, email, password, img  });
+        const newUser = new User({ username, firstName, lastName, email, password, img  });
 
         await newUser.save();
         console.log('Post added successfully');
@@ -117,7 +117,7 @@ export const addUser = async (prevState: any, formData: FormData) => {
     }
 }
 
-export const deleteUser = async (prevState: any, formData: FormData) => {
+export const deleteUser = async (formData: FormData) => {
     // "use server"
 
     const { userId } = Object.fromEntries(formData);
