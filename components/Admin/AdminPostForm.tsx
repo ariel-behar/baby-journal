@@ -12,7 +12,7 @@ async function AdminPostForm({
     
 
     return (
-        <div className="w-[500px] bg-darkSoft p-3 text-center rounded-md ">
+        <div className="w-[500px] bg-dark-soft p-3 text-center rounded-md ">
             <form action={addPost} className="flex flex-col gap-3">
                 <h1>Add new Post</h1>
                 <input className="form-input" type="text" placeholder="title" name="title" />

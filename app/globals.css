@@ -30,6 +30,6 @@ a {
 
 @layer components {
 	.form-input {
-		@apply p-[10px] rounded-md text-secondary bg-dark-soft border-none outline-none;
+		@apply p-[10px] rounded-md text-secondary bg-dark border-none outline-none;
 	}
 }
