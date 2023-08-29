@@ -33,7 +33,9 @@ const config: Config = {
 					"primary-content": "#fff",
 					"secondary": "#fff",
 					"secondary-content": "#0d0c22",
-					"base-100": "#0d0c22"
+					"base-100": "#0d0c22",
+					"error": "#b91c1c",
+					"error-content": "#fff",
 				},
 			},
 		],
