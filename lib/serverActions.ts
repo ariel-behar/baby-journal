@@ -52,9 +52,9 @@ export const handleLogout = async () => {
 }
 
 export const register = async (formData: FormData) => {
-    const { username, firstName, lastName, email, password, repeatPassword } = Object.fromEntries(formData);
+    const { username, firstName, lastName, email, password, confirmPassword } = Object.fromEntries(formData);
 
-    if (password !== repeatPassword) {
+    if (password !== confirmPassword) {
         return { error: "Passwords do not match!" }
     }
 
