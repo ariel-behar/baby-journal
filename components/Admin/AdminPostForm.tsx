@@ -19,7 +19,7 @@ async function AdminPostForm({
                 <input className="form-input" type="text" placeholder="description" name="description" />
                 <input type="hidden" className="form-input" placeholder="userId" name="userId" value={userId} />
                 <input className="form-input" type="text" placeholder="image" name="img" />
-                <button type="submit">Add Post</button>
+                <button className="btn btn-md btn-primary" type="submit">Add Post</button>
             </form>
         </div>
     )

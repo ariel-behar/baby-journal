@@ -19,7 +19,7 @@ async function AdminUsers() {
 
 					<form action={deleteUser}>
 						<input type="hidden" name="userId" value={JSON.parse(JSON.stringify(user._id))} />
-						<button className="py-[5px] px-[10px] bg-red-700 rounded-md border-none outline-none cursor-pointer">Delete</button>
+						<button className="btn btn-sm btn-error">Delete</button>
 					</form>
 				</div>
 			))}

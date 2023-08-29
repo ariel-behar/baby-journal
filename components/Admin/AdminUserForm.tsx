@@ -16,7 +16,7 @@ function AdminUserForm() {
                     <option value="true">Admin</option>
 
                 </select>
-                <button type="submit">Add User</button>
+                <button className="btn btn-md btn-primary" type="submit">Add User</button>
             </form>
         </div>
     )

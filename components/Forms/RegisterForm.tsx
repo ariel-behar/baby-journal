@@ -13,7 +13,7 @@ function RegisterForm() {
             <input className="form-input" type="password" placeholder="Password" name="password" />
             <input className="form-input" type="password" placeholder="Repeat Password" name="repeatPassword" />
 
-            <button className="blue-button">Register</button>
+            <button className="btn btn-lg btn-primary">Register</button>
         </form>
     )
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
 	return (
@@ -8,8 +9,13 @@ export default function HomePage() {
 				<p className="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repud iandae nulla asperiores repellat placeat facilis.</p>
 
 				<div className="flex gap-5">
-					<button className="blue-button">Learn More</button>
-					<button className="gray-button">Contact</button>
+					<Link href="/about">
+						<button className="btn btn-lg btn-primary">Learn More</button>
+					</Link>
+					
+					<Link href="/contact">
+						<button className="btn btn-lg btn-secondary">Contact</button>
+					</Link>
 				</div>
 
 				<div className="h-[25px] sm:h-[35px] md:h-[50px] w-full md:w-[500px] relative grayscale">

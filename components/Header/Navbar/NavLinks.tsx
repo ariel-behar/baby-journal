@@ -56,7 +56,7 @@ function NavLinks({
                         <>
                             {(session as ICustomSession).user?.isAdmin && <NavLink title='Admin' path='/admin' />}
                             <form action={handleLogout}>
-                                <button className='bg-light text-dark p-3'>Logout</button>
+                                <button className='btn btn-md btn-secondary rounded-none'>Logout</button>
                             </form>
                         </>
                     )

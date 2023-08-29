@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={`${inter.className} text-light`}>
 				<div className="lg:container px-3 sm:px-5 lg:px-[50px] mx-auto min-h-screen flex flex-col justify-between">
 					<Navbar />
 					<main>

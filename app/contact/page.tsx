@@ -20,7 +20,7 @@ function ContactPage() {
 					<input type="text" placeholder="Phone Number (Optional)" className="form-input" />
 					<textarea name="" id="" cols={30} rows={10} placeholder="Message" className="form-input"></textarea>
 
-					<button className="p-5 bg-customBlue text-light font-bold border-none rounded-md">Send</button>
+					<button className="btn btn-lg btn-primary">Send</button>
 				</form>
 			</div>
 		</div>

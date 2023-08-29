@@ -17,7 +17,7 @@ async function AdminPosts() {
 
 					<form action={deletePost}>
 						<input type="hidden" name="postId" value={JSON.parse(JSON.stringify(post._id))} />
-						<button className="py-[5px] px-[10px] bg-red-700 rounded-md border-none outline-none cursor-pointer">Delete</button>
+						<button className="btn btn-sm btn-error ">Delete</button>
 					</form>
 				</div>
 			))}
