@@ -8,7 +8,7 @@ export interface IUser extends Identifiable {
     firstName: string;
     lastName: string;
     email: string;
-    avatarImg?: string;
+    img?: string;
     isAdmin: boolean;
     createdAt: string;
     updatedAt: string;
@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema<IUserMongooseSchema>({
         type: String,
         required: true,
         unique: true,
-        minlength: [3, 'Username must be at least 3 characters long'],
+        minlength: [6, 'Username must be at least 6 characters long'],
         maxlength: [20, 'Username must be at most 20 characters long']
     },
     firstName: {
@@ -42,15 +42,15 @@ const userSchema = new mongoose.Schema<IUserMongooseSchema>({
         type: String,
         required: true,
         unique: true,
-        maxlength: [50, 'Email must be at most 50 characters long']
+        match: [/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, 'Email is not valid'],
     },
     password: {
         type: String,
         required: true,
-        minlength: [6, 'Password must be at least 6 characters long'],
-        maxlength: [20, 'Password must be at most 20 characters long']
+        match: [/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter and one number'],
+        minlength: [8, 'Password must be at least 8 characters long'],
     },
-    avatarImg: {
+    img: {
         type: String,
     },
     isAdmin: {
