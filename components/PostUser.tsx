@@ -14,7 +14,7 @@ async function PostUser({
 
     return (
         <div className="flex items-center gap-5">
-            <Image src={user?.avatarImg ? user?.avatarImg : "/img/noavatar.png"} alt='User image' width={50} height={50} className="object-cover rounded-[50%] h-[50px] w-[50px]" />
+            <Image src={user?.img ? user?.img : "/img/noavatar.png"} alt='User image' width={50} height={50} className="object-cover rounded-[50%] h-[50px] w-[50px]" />
 
             <div className="flex flex-col gap-[10px]">
                 <span className="text-gray-500 font-bold">Author</span>

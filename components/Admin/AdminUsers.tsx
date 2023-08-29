@@ -13,7 +13,7 @@ async function AdminUsers() {
 			{users.map((user) => (
 				<div key={user._id} className="my-5 flex items-center justify-between gap-5" >
 					<div className="flex items-center gap-5">
-						<Image src={user.avatarImg || "/img/noavatar.png"} alt="" width={50} height={50} />
+						<Image src={user.img || "/img/noavatar.png"} alt="" width={50} height={50} />
 						<span>{user.username}</span>
 					</div>
 

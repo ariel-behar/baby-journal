@@ -11,7 +11,7 @@ function RegisterForm() {
             <input className="form-input" type="text" placeholder="Last Name" name="lastName" />
             <input className="form-input" type="email" placeholder="Email" name="email" />
             <input className="form-input" type="password" placeholder="Password" name="password" />
-            <input className="form-input" type="password" placeholder="Repeat Password" name="repeatPassword" />
+            <input className="form-input" type="password" placeholder="Confirm Password" name="confirmPassword" />
 
             <button className="btn btn-lg btn-primary">Register</button>
         </form>

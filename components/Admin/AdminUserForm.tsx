@@ -10,7 +10,7 @@ function AdminUserForm() {
                 <input className="form-input" type="text" placeholder="lastName" name="lastName" />
                 <input className="form-input" type="text" placeholder="email" name="email" />
                 <input className="form-input" type="password" placeholder="password" name="password" />
-                <input className="form-input" type="text" placeholder="avatarImg" name="avatarImg" />
+                <input className="form-input" type="text" placeholder="img" name="img" />
                 <select className="form-input" name="isAdmin" id="">
                     <option value="false">User</option>
                     <option value="true">Admin</option>
