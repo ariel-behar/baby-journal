@@ -1,4 +1,5 @@
 import { IUser } from '@/models/User'
+import { emailRegex, passwordRegex } from '@/utils/regex';
 import * as yup from 'yup'
 
 interface UserYupSchemaShape extends Omit<IUser, "_id" | 'createdAt' | "updatedAt"> {
@@ -23,12 +24,12 @@ export const userSchemaShape = {
         .max(20, 'Username must be at most 20 characters long'),
     email: yup
         .string()
-        .email("Email is not valid")
+        .matches(emailRegex, 'Email is not valid')
         .required("Email is required"),
     password: yup
         .string()
         .required("Password is required")
-        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter and one number')
+        .matches(passwordRegex, 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter and one number')
         .min(8, 'Password must be at least 8 characters long'),
     confirmPassword: yup
         .string()

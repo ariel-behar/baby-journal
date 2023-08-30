@@ -1,6 +1,7 @@
 import { Identifiable, IdType } from "@/types/common-types";
 import mongoose from "mongoose";
 import bcrypt from 'bcryptjs';
+import { emailRegex, passwordRegex } from "@/utils/regex";
 
 export interface IUser extends Identifiable {
     _id: IdType;
@@ -42,12 +43,12 @@ const userSchema = new mongoose.Schema<IUserMongooseSchema>({
         type: String,
         required: true,
         unique: true,
-        match: [/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, 'Email is not valid'],
+        match: [emailRegex, 'Email is not valid'],
     },
     password: {
         type: String,
         required: true,
-        match: [/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter and one number'],
+        match: [passwordRegex, 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter and one number'],
         minlength: [8, 'Password must be at least 8 characters long'],
     },
     img: {
