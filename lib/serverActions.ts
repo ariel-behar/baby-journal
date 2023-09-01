@@ -4,6 +4,7 @@ import dbConnect from "./dbConnect";
 import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
 import User from "@/models/User";
+import { LoginFormData } from "@/components/Forms/LoginForm";
 
 export const addPost = async (formData: FormData) => {
     // "use server"
@@ -79,15 +80,15 @@ export const register = async (formData: FormData) => {
     }
 }
 
-export const login = async (formData: FormData) => {
-    const { username, password } = Object.fromEntries(formData);
+export const login = async (formData: LoginFormData) => {
+    const { username, password } = formData;
 
     try {
         dbConnect();
 
-        await signIn("credentials", { username, password });
+       await signIn("credentials", { username, password });
 
-        console.log('User registered successfully');
+        console.log('User signed in successfully');
     } catch (error) {
         console.log('error', error);
 
@@ -100,8 +101,6 @@ export const login = async (formData: FormData) => {
 }
 
 export const addUser = async (formData: FormData) => {
-    // "use server"
-
     const { username, firstName, lastName, email, password, img } = Object.fromEntries(formData);
 
     try {
@@ -118,8 +117,6 @@ export const addUser = async (formData: FormData) => {
 }
 
 export const deleteUser = async (formData: FormData) => {
-    // "use server"
-
     const { userId } = Object.fromEntries(formData);
 
     try {
