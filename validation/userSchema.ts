@@ -2,21 +2,36 @@ import { IUser } from '@/models/User'
 import { emailRegex, passwordRegex } from '@/utils/regex';
 import * as yup from 'yup'
 
-interface UserYupSchemaShape extends Omit<IUser, "_id" | 'createdAt' | "updatedAt"> {
+interface UserYupSchema extends Omit<IUser, "_id" | 'createdAt' | "updatedAt"> {
+    password: string;
     confirmPassword: string;
 }
 
-export const userSchemaShape = {
+interface UserLoginYupSchema {
+    username: string;
+    password: string;
+}
+
+const userLoginSchemaShape = {
+    username: yup
+        .string()
+        .required('Username is required'),
+    password: yup
+        .string()
+        .required('Password is required')
+}
+
+const userSchemaShape = {
     username: yup
         .string()
         .required('Username is required')
-        .min(6, 'Username must be at least 6 characters long')
-        .max(20, 'Username must be at most 20 characters long'),
+        .min(6, 'First Name must be at least 6 characters long')
+        .max(20, 'First Name must be at most 20 characters long'),
     firstName: yup
         .string()
         .required('First name is required')
-        .min(2, 'Username must be at least 2 characters long')
-        .max(20, 'Username must be at most 20 characters long'),
+        .min(2, 'Last Name must be at least 2 characters long')
+        .max(20, 'Last Name must be at most 20 characters long'),
     lastName: yup
         .string()
         .required('Last name is required')
@@ -42,6 +57,8 @@ export const userSchemaShape = {
         .required('isAdmin is required')
 }
 
-export const userSchema: yup.ObjectSchema<UserYupSchemaShape> = yup.object().shape(userSchemaShape);
+export const userLoginSchema: yup.ObjectSchema<UserLoginYupSchema> = yup.object().shape(userLoginSchemaShape);
+
+export const userSchema: yup.ObjectSchema<UserYupSchema> = yup.object().shape(userSchemaShape);
 
 export default userSchema
