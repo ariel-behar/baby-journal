@@ -3,13 +3,14 @@ import { FieldErrors, UseFormRegister } from "react-hook-form";
 import FormErrorTooltip from './FormErrorTooltip'
 import FormInputField from "./FormInputField";
 import { LoginFormData } from "../LoginForm";
+import { RegisterFormData } from "../RegisterForm";
 
 interface Props {
     type: HTMLFormElement['type'];
     placeholder: string;
-    name: keyof LoginFormData;
+    name: keyof LoginFormData | keyof RegisterFormData;
     className?: string;
-    register: UseFormRegister<LoginFormData>;
+    register: UseFormRegister<LoginFormData> | UseFormRegister<RegisterFormData>;
     errors: FieldErrors;
 }
 
