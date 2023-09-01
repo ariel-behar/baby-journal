@@ -60,7 +60,12 @@ function NavLinks({
                             </form>
                         </>
                     )
-                    : <NavLink title='Login' path='/login' />
+                    : (
+                        <>
+                            <NavLink title='Register' path='/register' />
+                            <NavLink title='Login' path='/login' />
+                        </>
+                    )
                 }
             </div>
 
