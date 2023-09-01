@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { BaseSyntheticEvent } from 'react';
 import { useForm } from 'react-hook-form';
 import FormInputFieldWithTooltip from './FormComponents/FormInputFieldWithTooltip';
+import FormSubmitButton from './FormComponents/FormSubmitButton';
 
 export interface LoginFormData {
     username: string;
@@ -40,7 +41,7 @@ function LoginForm() {
 
             <FormInputFieldWithTooltip register={register} errors={errors} name="password" placeholder='Password' type='password' className='form-input w-full' />
 
-            <button className="btn btn-lg btn-primary" disabled={!(isDirty && isValid)}>Login with Credentials</button>
+            <FormSubmitButton isDirty={isDirty} isValid={isValid}>Login</FormSubmitButton>
         </form>
     )
 }
