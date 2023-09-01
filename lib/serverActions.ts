@@ -52,7 +52,7 @@ export const handleLogout = async () => {
     await signOut();
 }
 
-export const register = async (formData: FormData) => {
+export const registerUser = async (formData: FormData) => {
     const { username, firstName, lastName, email, password, confirmPassword } = Object.fromEntries(formData);
 
     if (password !== confirmPassword) {
@@ -80,7 +80,7 @@ export const register = async (formData: FormData) => {
     }
 }
 
-export const login = async (formData: LoginFormData) => {
+export const loginUser = async (formData: LoginFormData) => {
     const { username, password } = formData;
 
     try {
