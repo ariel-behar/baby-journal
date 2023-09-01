@@ -1,5 +1,5 @@
 "use client"
-import { login } from '@/lib/serverActions';
+import { loginUser } from '@/lib/serverActions';
 import { userLoginSchema } from '@/validation/userSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { BaseSyntheticEvent } from 'react';
@@ -28,7 +28,7 @@ function LoginForm() {
         const { username, password } = formData;
 
         if (username && password) {
-            await login(formData);
+            await loginUser(formData);
         }
     }
 
