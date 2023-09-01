@@ -17,7 +17,7 @@ function FormInputField({
     className
 }: Props) {
     return (
-        <input {...register(name)} className={className} type={type} placeholder={placeholder} name={name} />
+        <input {...register(name)} className={`${className} form-input`} type={type} placeholder={placeholder} name={name} />
     )
 }
 

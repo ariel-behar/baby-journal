@@ -13,7 +13,7 @@ export interface LoginFormData {
 }
 
 function LoginForm() {
-    const { register, handleSubmit, reset, formState: { isDirty, isValid, errors } } = useForm<LoginFormData>({
+    const { register, handleSubmit, formState: { isDirty, isValid, errors } } = useForm<LoginFormData>({
         resolver: yupResolver(userLoginSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -22,24 +22,21 @@ function LoginForm() {
         },
     });
 
-    console.log(isDirty);
-
     const onFormSubmit = async (formData: LoginFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
         const { username, password } = formData;
 
         if (username && password) {
-            const response = await login(formData);
-            console.log('response:', response)
+            await login(formData);
         }
     }
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-7">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="username" placeholder='Username' type='text' className='form-input w-full' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="username" placeholder='Username' type='text' />
 
-            <FormInputFieldWithTooltip register={register} errors={errors} name="password" placeholder='Password' type='password' className='form-input w-full' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="password" placeholder='Password' type='password' />
 
             <FormSubmitButton isDirty={isDirty} isValid={isValid}>Login</FormSubmitButton>
         </form>

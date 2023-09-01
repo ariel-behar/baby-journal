@@ -23,7 +23,7 @@ function FormInputFieldWithTooltip({
 }: Props) {
     return (
         <FormErrorTooltip errors={errors} name={name}>
-            <FormInputField className={className} type={type} placeholder={placeholder} name={name} register={register} />
+            <FormInputField className={`${className} w-full`} type={type} placeholder={placeholder} name={name} register={register} />
         </FormErrorTooltip>
     )
 }
