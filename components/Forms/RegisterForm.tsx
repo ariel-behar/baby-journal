@@ -11,13 +11,13 @@ import userSchema from "@/validation/userSchema";
 import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip";
 import FormSubmitButton from "./FormComponents/FormSubmitButton";
 
-export interface RegisterFormData extends Omit<IUser, "_id" | "img" | 'createdAt' | "updatedAt" | "isAdmin"> {
+export interface IRegisterFormData extends Omit<IUser, "_id" | "img" | 'createdAt' | "updatedAt" | "isAdmin"> {
     password: string;
     confirmPassword: string;
 }
 
 function RegisterForm() {
-    const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<RegisterFormData>({
+    const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -30,7 +30,7 @@ function RegisterForm() {
         },
     });
 
-    const onFormSubmit = async (formData: RegisterFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
+    const onFormSubmit = async (formData: IRegisterFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
         const { username, firstName, lastName, email, password, confirmPassword } = formData;

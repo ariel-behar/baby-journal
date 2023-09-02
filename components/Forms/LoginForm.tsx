@@ -7,13 +7,13 @@ import { useForm } from 'react-hook-form';
 import FormInputFieldWithTooltip from './FormComponents/FormInputFieldWithTooltip';
 import FormSubmitButton from './FormComponents/FormSubmitButton';
 
-export interface LoginFormData {
+export interface ILoginFormData {
     username: string;
     password: string;
 }
 
 function LoginForm() {
-    const { register, handleSubmit, formState: { isDirty, isValid, errors } } = useForm<LoginFormData>({
+    const { register, handleSubmit, formState: { isDirty, isValid, errors } } = useForm<ILoginFormData>({
         resolver: yupResolver(userLoginSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -22,7 +22,7 @@ function LoginForm() {
         },
     });
 
-    const onFormSubmit = async (formData: LoginFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
+    const onFormSubmit = async (formData: ILoginFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
         const { username, password } = formData;
