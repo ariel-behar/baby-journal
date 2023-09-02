@@ -2,7 +2,7 @@ import { FieldErrors, UseFormRegister } from "react-hook-form";
 
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
-import { IPostFormData } from "@/components/Admin/AdminPostForm";
+import { IPostFormDataWithoutUserId } from "@/components/Admin/AdminPostForm";
 
 import FormErrorTooltip from './FormErrorTooltip'
 import FormInputField from "./FormInputField";
@@ -11,9 +11,9 @@ import FormInputField from "./FormInputField";
 interface Props {
     type: HTMLFormElement['type'];
     placeholder: string;
-    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
+    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormDataWithoutUserId;
     className?: string;
-    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData>;
+    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormDataWithoutUserId>;
     errors: FieldErrors;
 }
 
