@@ -2,7 +2,7 @@ import { IUser } from '@/models/User'
 import { emailRegex, passwordRegex } from '@/utils/regex';
 import * as yup from 'yup'
 
-interface UserYupSchema extends Omit<IUser, "_id" | 'createdAt' | "updatedAt"> {
+interface UserYupSchema extends Omit<IUser, "_id" | 'createdAt' | "updatedAt" | "isAdmin"> {
     password: string;
     confirmPassword: string;
 }
@@ -51,10 +51,11 @@ const userSchemaShape = {
         .required("Confirm Password is required")
         .oneOf([yup.ref("password")], "Password and Confirm Password must match"),
     img: yup
-        .string(),
+        .string()
+        .default('/img/noavatar.png'),
     isAdmin: yup
         .boolean()
-        .required('isAdmin is required')
+        .default(false)
 }
 
 export const userLoginSchema: yup.ObjectSchema<UserLoginYupSchema> = yup.object().shape(userLoginSchemaShape);
