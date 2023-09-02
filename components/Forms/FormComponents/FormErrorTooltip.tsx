@@ -2,10 +2,10 @@ import { FieldErrors } from "react-hook-form";
 
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
-import { IPostFormDataWithoutUserId } from "@/components/Admin/AdminPostForm";
+import { IPostFormData } from "@/components/Admin/AdminPostForm";
 
 interface Props {
-    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormDataWithoutUserId;
+    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
     errors: FieldErrors;
     children: React.ReactNode;
 }

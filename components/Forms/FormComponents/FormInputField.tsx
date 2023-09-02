@@ -1,13 +1,13 @@
 import { UseFormRegister } from "react-hook-form";
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
-import { IPostFormDataWithoutUserId } from "@/components/Admin/AdminPostForm";
+import { IPostFormData } from "@/components/Admin/AdminPostForm";
 
 interface Props {
     type?: HTMLFormElement['type'];
-    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormDataWithoutUserId;
+    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
     placeholder: string;
-    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormDataWithoutUserId>;
+    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData>;
     className?: string;
 }
 
@@ -19,7 +19,7 @@ function FormInputField({
     className
 }: Props) {
     return (
-        <input {...(register as UseFormRegister<ILoginFormData | IRegisterFormData | IPostFormDataWithoutUserId>)(name)} className={`${className} form-input`} type={type} placeholder={placeholder} name={name} />
+        <input {...(register as UseFormRegister<ILoginFormData | IRegisterFormData | IPostFormData>)(name)} className={`${className} form-input`} type={type} placeholder={placeholder} name={name} />
     )
 }
 
