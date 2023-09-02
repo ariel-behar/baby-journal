@@ -1,12 +1,13 @@
 import { UseFormRegister } from "react-hook-form";
-import { LoginFormData } from "../LoginForm";
-import { RegisterFormData } from "../RegisterForm";
+import { ILoginFormData } from "../LoginForm";
+import { IRegisterFormData } from "../RegisterForm";
+import { IPostFormData } from "@/components/Admin/AdminPostForm";
 
 interface Props {
     type?: HTMLFormElement['type'];
-    name: keyof LoginFormData | keyof RegisterFormData;
+    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
     placeholder: string;
-    register: UseFormRegister<LoginFormData> | UseFormRegister<RegisterFormData>;
+    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData>;
     className?: string;
 }
 
@@ -18,7 +19,7 @@ function FormInputField({
     className
 }: Props) {
     return (
-        <input {...(register as UseFormRegister<LoginFormData | RegisterFormData>)(name)} className={`${className} form-input`} type={type} placeholder={placeholder} name={name} />
+        <input {...(register as UseFormRegister<ILoginFormData | IRegisterFormData | IPostFormData>)(name)} className={`${className} form-input`} type={type} placeholder={placeholder} name={name} />
     )
 }
 
