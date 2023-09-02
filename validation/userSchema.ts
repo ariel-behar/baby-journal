@@ -2,12 +2,12 @@ import { IUser } from '@/models/User'
 import { emailRegex, passwordRegex } from '@/utils/regex';
 import * as yup from 'yup'
 
-interface UserYupSchema extends Omit<IUser, "_id" | 'createdAt' | "updatedAt" | "isAdmin"> {
+interface IUserYupSchema extends Omit<IUser, "_id" | 'createdAt' | "updatedAt" | "isAdmin"> {
     password: string;
     confirmPassword: string;
 }
 
-interface UserLoginYupSchema {
+interface IUserLoginYupSchema {
     username: string;
     password: string;
 }
@@ -58,8 +58,8 @@ const userSchemaShape = {
         .default(false)
 }
 
-export const userLoginSchema: yup.ObjectSchema<UserLoginYupSchema> = yup.object().shape(userLoginSchemaShape);
+export const userLoginSchema: yup.ObjectSchema<IUserLoginYupSchema> = yup.object().shape(userLoginSchemaShape);
 
-export const userSchema: yup.ObjectSchema<UserYupSchema> = yup.object().shape(userSchemaShape);
+export const userSchema: yup.ObjectSchema<IUserYupSchema> = yup.object().shape(userSchemaShape);
 
 export default userSchema
