@@ -48,7 +48,7 @@ const userSchema = new mongoose.Schema<IUserMongooseSchema>({
     password: {
         type: String,
         required: true,
-        match: [passwordRegex, 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter and one number'],
+        match: [passwordRegex, 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number and one special character'],
         minlength: [8, 'Password must be at least 8 characters long'],
     },
     img: {
