@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
 import User from "@/models/User";
 import { LoginFormData } from "@/components/Forms/LoginForm";
+import { RegisterFormData } from "@/components/Forms/RegisterForm";
 
 export const addPost = async (formData: FormData) => {
     // "use server"
@@ -52,8 +53,8 @@ export const handleLogout = async () => {
     await signOut();
 }
 
-export const registerUser = async (formData: FormData) => {
-    const { username, firstName, lastName, email, password, confirmPassword } = Object.fromEntries(formData);
+export const registerUser = async (formData: RegisterFormData) => {
+    const { username, firstName, lastName, email, password, confirmPassword } = formData;
 
     if (password !== confirmPassword) {
         return { error: "Passwords do not match!" }
@@ -72,7 +73,8 @@ export const registerUser = async (formData: FormData) => {
 
         await newUser.save();
         console.log('User registered successfully');
-        return { success: true }
+
+        return Response.json({ message: 'User registered successfully' })
 
     } catch (error) {
         console.log(error);
