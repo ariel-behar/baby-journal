@@ -4,13 +4,12 @@ import dbConnect from "./dbConnect";
 import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
 import User from "@/models/User";
-import { LoginFormData } from "@/components/Forms/LoginForm";
-import { RegisterFormData } from "@/components/Forms/RegisterForm";
+import { ILoginFormData } from "@/components/Forms/LoginForm";
+import { IRegisterFormData } from "@/components/Forms/RegisterForm";
+import { IPostFormData } from "@/components/Admin/AdminPostForm";
 
-export const addPost = async (formData: FormData) => {
-    // "use server"
-
-    const { title, description, userId, img } = Object.fromEntries(formData);
+export const addPost = async (formData: IPostFormData) => {
+    const { title, description, userId, img } = formData;
 
     try {
         dbConnect();
@@ -53,7 +52,7 @@ export const handleLogout = async () => {
     await signOut();
 }
 
-export const registerUser = async (formData: RegisterFormData) => {
+export const registerUser = async (formData: IRegisterFormData) => {
     const { username, firstName, lastName, email, password, confirmPassword } = formData;
 
     if (password !== confirmPassword) {
@@ -72,9 +71,10 @@ export const registerUser = async (formData: RegisterFormData) => {
         const newUser = await new User({ username, firstName, lastName, email, password });
 
         await newUser.save();
+        await signIn("credentials", { username, password });
         console.log('User registered successfully');
 
-        return Response.json({ message: 'User registered successfully' })
+        // return Response.json({ message: 'User registered successfully' })
 
     } catch (error) {
         console.log(error);
@@ -82,7 +82,7 @@ export const registerUser = async (formData: RegisterFormData) => {
     }
 }
 
-export const loginUser = async (formData: LoginFormData) => {
+export const loginUser = async (formData: ILoginFormData) => {
     const { username, password } = formData;
 
     try {
