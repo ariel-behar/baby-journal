@@ -1,6 +1,8 @@
-import { Identifiable, IdType } from "@/types/common-types";
-import mongoose from "mongoose";
 import bcrypt from 'bcryptjs';
+import mongoose from "mongoose";
+
+import { Identifiable, IdType } from "@/types/common-types";
+
 import { emailRegex, passwordRegex } from "@/utils/regex";
 
 export interface IUser extends Identifiable {
@@ -10,7 +12,7 @@ export interface IUser extends Identifiable {
     lastName: string;
     email: string;
     img?: string;
-    isAdmin: boolean;
+    isAdmin?: boolean;
     createdAt: string;
     updatedAt: string;
 }
