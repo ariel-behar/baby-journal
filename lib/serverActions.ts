@@ -102,15 +102,19 @@ export const loginUser = async (formData: ILoginFormData) => {
     }
 }
 
-export const addUser = async (formData: FormData) => {
-    const { username, firstName, lastName, email, password, img } = Object.fromEntries(formData);
+export const addUser = async (formData: IRegisterFormData) => {
+    const { username, firstName, lastName, email, password,confirmPassword, img, isAdmin } = formData;
 
     try {
         dbConnect();
-        const newUser = new User({ username, firstName, lastName, email, password, img  });
+        if (password !== confirmPassword) {
+            return { error: "Passwords do not match!" }
+        }
+
+        const newUser = new User({ username, firstName, lastName, email, password, img, isAdmin });
 
         await newUser.save();
-        console.log('Post added successfully');
+        console.log('User added successfully');
         revalidatePath('/admin');
     } catch (error) {
         console.log(error);
