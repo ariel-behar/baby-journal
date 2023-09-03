@@ -11,7 +11,7 @@ import userSchema from "@/validation/userSchema";
 import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip";
 import FormSubmitButton from "./FormComponents/FormSubmitButton";
 
-export interface IRegisterFormData extends Omit<IUser, "_id" | "img" | 'createdAt' | "updatedAt" | "isAdmin"> {
+export interface IRegisterFormData extends Omit<IUser, "_id" | 'createdAt' | "updatedAt"> {
     password: string;
     confirmPassword: string;
 }

@@ -2,7 +2,7 @@ import { IUser } from '@/models/User'
 import { emailRegex, passwordRegex } from '@/utils/regex';
 import * as yup from 'yup'
 
-interface IUserYupSchema extends Omit<IUser, "_id" | 'createdAt' | "updatedAt" | "isAdmin"> {
+interface IUserYupSchema extends Omit<IUser, "_id" | 'createdAt' | "updatedAt" > {
     password: string;
     confirmPassword: string;
 }
