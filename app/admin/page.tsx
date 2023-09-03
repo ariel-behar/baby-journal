@@ -3,7 +3,7 @@ import { Session } from "next-auth";
 
 import { auth } from "@/lib/auth";
 
-import AdminPostForm from "@/components/Admin/AdminPostForm"
+import AdminPostForm from "@/components/Forms/AdminPostForm"
 import AdminPosts from "@/components/Admin/AdminPosts"
 import AdminUserForm from "@/components/Admin/AdminUserForm"
 import AdminUsers from "@/components/Admin/AdminUsers"

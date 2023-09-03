@@ -7,8 +7,8 @@ import { addPost } from "@/lib/serverActions"
 import { IUser } from "@/models/User"
 import postSchema from "@/validation/postSchema"
 
-import FormInputFieldWithTooltip from "../Forms/FormComponents/FormInputFieldWithTooltip"
-import FormSubmitButton from "../Forms/FormComponents/FormSubmitButton"
+import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip"
+import FormSubmitButton from "./FormComponents/FormSubmitButton"
 
 export interface IPostFormData {
     title: string;

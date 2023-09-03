@@ -2,7 +2,7 @@ import { FieldErrors } from "react-hook-form";
 
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
-import { IPostFormData } from "@/components/Admin/AdminPostForm";
+import { IPostFormData } from "@/components/Forms/AdminPostForm";
 
 interface Props {
     name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;

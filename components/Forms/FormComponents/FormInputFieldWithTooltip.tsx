@@ -2,7 +2,7 @@ import { FieldErrors, UseFormRegister } from "react-hook-form";
 
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
-import { IPostFormData } from "@/components/Admin/AdminPostForm";
+import { IPostFormData } from "@/components/Forms/AdminPostForm";
 
 import FormErrorTooltip from './FormErrorTooltip'
 import FormInputField from "./FormInputField";

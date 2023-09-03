@@ -6,7 +6,7 @@ import { signIn, signOut } from "./auth";
 import User from "@/models/User";
 import { ILoginFormData } from "@/components/Forms/LoginForm";
 import { IRegisterFormData } from "@/components/Forms/RegisterForm";
-import { IPostFormData } from "@/components/Admin/AdminPostForm";
+import { IPostFormData } from "@/components/Forms/AdminPostForm";
 
 export const addPost = async (formData: IPostFormData) => {
     const { title, description, userId, img } = formData;
