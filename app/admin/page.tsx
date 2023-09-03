@@ -5,7 +5,7 @@ import { auth } from "@/lib/auth";
 
 import AdminPostForm from "@/components/Forms/AdminPostForm"
 import AdminPosts from "@/components/Admin/AdminPosts"
-import AdminUserForm from "@/components/Admin/AdminUserForm"
+import AdminUserForm from "@/components/Forms/AdminUserForm"
 import AdminUsers from "@/components/Admin/AdminUsers"
 
 async function AdminPage() {
@@ -21,7 +21,9 @@ async function AdminPage() {
 				</div>
 
 				<div>
-					<AdminPostForm userId={session?.user?.id as string} />
+					<Suspense fallback={<div>Loading...</div>}>
+						<AdminPostForm userId={session?.user?.id as string} />
+					</Suspense>
 				</div>
 			</div>
 
@@ -33,7 +35,9 @@ async function AdminPage() {
 				</div>
 
 				<div>
-					<AdminUserForm />
+					<Suspense fallback={<div>Loading...</div>}>
+						<AdminUserForm />
+					</Suspense>
 				</div>
 			</div>
 		</div>
