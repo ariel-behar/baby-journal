@@ -21,7 +21,7 @@ interface Props {
     userId: IUser['_id']
 }
 
-function AdminPostForm({
+function AddNewPostForm({
     userId
 }:Props) {
     const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IPostFormData>({
@@ -66,4 +66,4 @@ function AdminPostForm({
     )
 }
 
-export default AdminPostForm
+export default AddNewPostForm

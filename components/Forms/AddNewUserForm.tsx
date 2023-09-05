@@ -10,7 +10,7 @@ import { IRegisterFormData } from "./RegisterForm";
 import FormSubmitButton from "./FormComponents/FormSubmitButton";
 import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip";
 
-function AdminUserForm() {
+function AddNewUserForm() {
     const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
@@ -65,4 +65,4 @@ function AdminUserForm() {
     )
 }
 
-export default AdminUserForm
+export default AddNewUserForm
