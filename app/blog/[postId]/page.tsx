@@ -3,7 +3,7 @@ import Image from "next/image"
 
 import { IPost } from "@/models/Post";
 
-import PostUser from "@/components/PostUser";
+import PostUser from "@/components/BlogPostUser";
 
 // import { getPost } from "@/lib/getData";
 

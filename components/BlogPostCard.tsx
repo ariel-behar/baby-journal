@@ -7,7 +7,7 @@ import { IPost } from "@/models/Post";
 
 interface Props extends IPost { }
 
-function PostCard({
+function BlogPostCard({
 	...post
 }: Props) {
 
@@ -37,4 +37,4 @@ function PostCard({
 	)
 }
 
-export default PostCard
+export default BlogPostCard

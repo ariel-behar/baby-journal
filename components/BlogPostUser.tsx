@@ -7,7 +7,7 @@ import { getUser } from "@/lib/getData";
 
 interface Props extends Partial<IPost> { }
 
-async function PostUser({
+async function BlogPostUser({
     userId
 }: Props) {
     const user: IUser | null = await getUser(userId as string);
@@ -24,4 +24,4 @@ async function PostUser({
     )
 }
 
-export default PostUser
+export default BlogPostUser

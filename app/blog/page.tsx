@@ -2,12 +2,11 @@ import uniqid from "uniqid";
 
 import { Metadata } from "next";
 
-// import { getPosts } from "@/lib/getData";
 import { IPost } from "@/models/Post";
-
-import PostCard from "@/components/PostCard"
-
 import { getPosts } from "@/lib/getData";
+
+import PostCard from "@/components/BlogPostCard"
+
 
 export const metadata: Metadata = {
 	title: "Blog",
