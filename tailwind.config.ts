@@ -22,6 +22,7 @@ const config: Config = {
 					DEFAULT: "#0d0c22",
 					soft: "#2d2b42"
 				},
+				muted: "#6b7280"
 			}
 		},
 	},
