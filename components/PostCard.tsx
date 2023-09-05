@@ -1,28 +1,37 @@
 import Link from "next/link"
+import { format } from "date-fns";
+
 import Image from "next/image"
 
 import { IPost } from "@/models/Post";
 
-interface Props extends IPost {}
+interface Props extends IPost { }
 
 function PostCard({
 	...post
 }: Props) {
+
 	return (
-		<div className="flex flex-col gap-5 mb-5">
-			<div className="flex">
-				<div className="w-[90%] h-[400px] relative">
-					<Image className="object-cover" src={post.img} alt='Post' fill />
+		<div className="card w-full bg-dark-soft text-primary-content shadow-xl">
+			<figure className="w-full h-[300px] relative">
+				<Image className="object-cover" src={post.img} alt='Post' fill />
+			</figure>
+
+			<div className="card-body">
+				<div className="flex flex-row justify-between items-center">
+					<h4 className="card-title text-">
+						{post.title}
+					</h4>
+					<span className="text-sm text-muted flex-g">
+						{format(new Date(post.createdAt), "dd MMM yyyy")}
+					</span>
 				</div>
 
-				<span className="text-xs rotate-[270deg] m-auto text-nowrap">{post.createdAt.toString().slice(4,16)}</span>
-			</div>
-			<div>
-				<h1 className="text-2xl mb-5 w-11/12">{post.title}</h1>
+				<p className="text-ellipsis whitespace-nowrap overflow-hidden">{post.description}</p>
 
-				<p className="mb-5 font-light text-gray-400 w-11/12">{post.description}</p>
-
-				<Link href={`/blog/${post._id}`} className="underline">READ MORE</Link>
+				<div className="card-actions justify-end mt-2">
+					<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm">READ MORE</Link>
+				</div>
 			</div>
 		</div>
 	)
