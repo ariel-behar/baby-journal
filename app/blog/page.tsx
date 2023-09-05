@@ -1,3 +1,5 @@
+import uniqid from "uniqid";
+
 import { Metadata } from "next";
 
 // import { getPosts } from "@/lib/getData";
@@ -5,14 +7,7 @@ import { IPost } from "@/models/Post";
 
 import PostCard from "@/components/PostCard"
 
-const getPosts = async () => {
-	const res = await fetch('http://localhost:3000/api/blog');
-
-	if(!res.ok) {
-		throw new Error('Something went wrong');
-	}
-	return res.json();
-}
+import { getPosts } from "@/lib/getData";
 
 export const metadata: Metadata = {
 	title: "Blog",
@@ -23,12 +18,10 @@ async function BlogPage() {
 	const posts: IPost[] = await getPosts();
 
 	return (
-		<div className="flex flex-wrap">
+		<div className="py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 gap-y-5 lg:gap-5">
 			{
 				posts.map((post) => (
-					<div className="w-full sm:w-1/2 md:w-1/3" key={post._id}>
-						<PostCard {...post} />
-					</div>
+					<PostCard {...post} key={uniqid()} />
 				))
 			}
 		</div>
