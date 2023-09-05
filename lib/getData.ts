@@ -2,10 +2,11 @@ import Post, { IPost } from "@/models/Post";
 import { IdType } from "@/types/common-types";
 import dbConnect from "./dbConnect";
 import User, { IUser } from "@/models/User";
-// import { unstable_noStore as noStore } from "next/cache";
+import { unstable_noStore as noStore } from "next/cache";
 
 export const getPost = async (postId: IdType) => {
-    // noStore();
+    noStore();
+    
     try {
         dbConnect();
 
@@ -19,6 +20,8 @@ export const getPost = async (postId: IdType) => {
 }
 
 export const getPosts = async () => {
+    noStore();
+
     try {
         dbConnect();
 
