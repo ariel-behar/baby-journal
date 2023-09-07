@@ -1,12 +1,12 @@
 "use server"
-import Post from "@/models/Post";
+import Post, { IPost } from "@/models/Post";
 import dbConnect from "./dbConnect";
 import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
 import User from "@/models/User";
 import { ILoginFormData } from "@/components/Forms/LoginForm";
 import { IRegisterFormData } from "@/components/Forms/RegisterForm";
-import { IPostFormData } from "@/components/Forms/AdminPostForm";
+import { IPostFormData } from "@/components/Forms/AddNewPostForm";
 
 export const addPost = async (formData: IPostFormData) => {
     const { title, description, userId, img } = formData;
@@ -25,10 +25,12 @@ export const addPost = async (formData: IPostFormData) => {
     }
 }
 
-export const deletePost = async (formData: FormData) => {
+export const deletePost = async (formData: FormData | IPost['_id']) => {
     // "use server"
 
-    const { postId } = Object.fromEntries(formData);
+    const postId = typeof formData === 'string' 
+        ? formData 
+        : Object.fromEntries(formData).postId;
 
     try {
         dbConnect();
