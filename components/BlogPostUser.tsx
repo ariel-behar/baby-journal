@@ -18,7 +18,7 @@ async function BlogPostUser({
 
             <div className="flex flex-col gap-[10px]">
                 <span className="text-gray-500 font-bold">Author</span>
-                <span className="font-medium">{user?.username}</span>
+                <span className="font-medium">{user?.firstName} {user?.lastName}</span>
             </div>
         </div>
     )
