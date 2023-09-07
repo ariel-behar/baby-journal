@@ -31,7 +31,7 @@ async function BlogPost({
             <div className="flex-[2] flex flex-col gap-[50px]">
                 <h1 className="text-[64px]">{post.title}</h1>
 
-                <div className="flex flex-row justify-between items-center">
+                <div className="flex flex-row justify-between items-start">
                     <div className="relative flex gap-[20px]">
                         {post && (
                             <Suspense fallback={<div>Loading...</div>}>
