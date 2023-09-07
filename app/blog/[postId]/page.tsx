@@ -1,20 +1,12 @@
 import { Suspense } from "react";
 import Image from "next/image"
+import { format } from "date-fns/format";
 
 import { IPost } from "@/models/Post";
 
 import PostUser from "@/components/BlogPostUser";
 
-// import { getPost } from "@/lib/getData";
-
-const getPost = async (postId: IPost['_id']) => {
-	const res = await fetch(`http://localhost:3000/api/blog/${postId}`);
-
-	if(!res.ok) {
-		throw new Error('Something went wrong');
-	}
-	return res.json();
-}
+import { getPost } from "@/lib/getData";
 
 interface Props {
 	params: {
@@ -22,8 +14,8 @@ interface Props {
 	}
 }
 
-export const generateMetadata = async ({params}: Props) => {
-	const { postId} = params;
+export const generateMetadata = async ({ params }: Props) => {
+	const { postId } = params;
 
 	const post: IPost | null = await getPost(postId);
 
@@ -55,13 +47,17 @@ async function SinglePostPage({ params }: Props) {
 					{
 						post && (
 							<Suspense fallback={<div>Loading...</div>}>
-								<PostUser userId={post.userId} />
+								<PostUser userId={post?.userId} />
 							</Suspense>
 						)
 					}
 					<div className="flex flex-col gap-[10px]">
-						<span className="text-gray-500 font-bold">Published</span>
-						<span className="font-medium">{post?.createdAt.toString().slice(4,16)}</span>
+						<span className="text-gray-500 font-bold">
+							Published
+						</span>
+						<span className="font-medium">
+							{format(new Date(post?.createdAt as string), "dd MMM yyyy")}
+						</span>
 					</div>
 				</div>
 
