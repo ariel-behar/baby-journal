@@ -1,7 +1,7 @@
 import { IPost } from "@/models/Post";
 
 import { getPost } from "@/lib/getData";
-import BlogPost from "@/components/BlogPost";
+import BlogPost from "@/components/Blog/BlogPost";
 
 interface Props {
 	params: {

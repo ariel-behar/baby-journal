@@ -4,7 +4,7 @@ import { Suspense } from "react"
 
 import { IPost } from "@/models/Post"
 
-import PostUser from "@/components/BlogPostUser"
+import PostUser from "@/components/Blog/BlogPostUser"
 import { auth } from "@/lib/auth"
 import { Session } from "next-auth"
 

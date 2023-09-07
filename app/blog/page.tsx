@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { IPost } from "@/models/Post";
 import { getPosts } from "@/lib/getData";
 
-import PostCard from "@/components/BlogPostCard"
+import PostCard from "@/components/Blog/BlogPostCard"
 
 
 export const metadata: Metadata = {
