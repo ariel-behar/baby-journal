@@ -1,12 +1,7 @@
-import { Suspense } from "react";
-import Image from "next/image"
-import { format } from "date-fns/format";
-
 import { IPost } from "@/models/Post";
 
-import PostUser from "@/components/BlogPostUser";
-
 import { getPost } from "@/lib/getData";
+import BlogPost from "@/components/BlogPost";
 
 interface Props {
 	params: {
@@ -25,50 +20,18 @@ export const generateMetadata = async ({ params }: Props) => {
 	}
 }
 
-async function SinglePostPage({ params }: Props) {
+async function SingleBlogPostPage({ params }: Props) {
 	const { postId } = params;
 
 	const post: IPost | null = await getPost(postId);
 
 	return (
-		<div className="flex gap-[100px]">
-			{
-				post && (
-					<div className="hidden md:block flex-1 relative h-[calc(100vh-200px)]">
-						<Image src={post.img} alt='Post' fill className="object-cover" />
-					</div>
-				)
-			}
-
-			<div className="flex-[2] flex flex-col gap-[50px]">
-				<h1 className="text-[64px]">{post?.title}</h1>
-
-				<div className="relative flex gap-[20px]">
-					{
-						post && (
-							<Suspense fallback={<div>Loading...</div>}>
-								<PostUser userId={post?.userId} />
-							</Suspense>
-						)
-					}
-					<div className="flex flex-col gap-[10px]">
-						<span className="text-gray-500 font-bold">
-							Published
-						</span>
-						<span className="font-medium">
-							{format(new Date(post?.createdAt as string), "dd MMM yyyy")}
-						</span>
-					</div>
-				</div>
-
-				<div>
-					<p className="text-xl">
-						{post?.description}
-					</p>
-				</div>
-			</div>
-		</div>
+		<>
+			{post && (
+				<BlogPost post={post} />
+			)}
+		</>
 	)
 }
 
-export default SinglePostPage
+export default SingleBlogPostPage
