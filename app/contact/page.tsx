@@ -14,7 +14,7 @@ function ContactPage() {
 			</div>
 
 			<div className="flex-1">
-				<form action="" className="flex flex-col gap-5">
+				<form action="" className="flex flex-col gap-5 bg-dark-soft p-3 text-center rounded-md">
 					<input type="text" placeholder="Name and Surname" className="form-input" />
 					<input type="email" placeholder="Email Address" className="form-input" />
 					<input type="text" placeholder="Phone Number (Optional)" className="form-input" />
