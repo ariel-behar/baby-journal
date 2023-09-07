@@ -20,7 +20,7 @@ async function BlogPost({
     const session: Session | null = await auth()
 
     return (
-        <div className="flex gap-[100px] py-5">
+        <div className="flex gap-[100px]">
 
             {post && (
                 <div className="hidden md:block flex-1 relative h-[calc(100vh-200px)]">
