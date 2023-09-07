@@ -3,10 +3,10 @@ import { Session } from "next-auth";
 
 import { auth } from "@/lib/auth";
 
-import AdminPostForm from "@/components/Forms/AdminPostForm"
 import AdminPosts from "@/components/Admin/AdminPosts"
-import AdminUserForm from "@/components/Forms/AdminUserForm"
 import AdminUsers from "@/components/Admin/AdminUsers"
+import AddNewPostForm from "@/components/Forms/AddNewPostForm";
+import AddNewUserForm from "@/components/Forms/AddNewUserForm";
 
 async function AdminPage() {
 	const session: Session | null = await auth();
@@ -22,7 +22,7 @@ async function AdminPage() {
 
 				<div>
 					<Suspense fallback={<div>Loading...</div>}>
-						<AdminPostForm userId={session?.user?.id as string} />
+						<AddNewPostForm userId={session?.user?.id as string} />
 					</Suspense>
 				</div>
 			</div>
@@ -36,7 +36,7 @@ async function AdminPage() {
 
 				<div>
 					<Suspense fallback={<div>Loading...</div>}>
-						<AdminUserForm />
+						<AddNewUserForm />
 					</Suspense>
 				</div>
 			</div>
