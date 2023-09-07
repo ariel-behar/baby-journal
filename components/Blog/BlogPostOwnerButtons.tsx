@@ -1,6 +1,7 @@
 "use client"
 import { deletePost } from "@/lib/serverActions"
 import { IPost } from "@/models/Post"
+import UserConfirmationModal from "../Modal/UserConfirmationModal"
 
 interface Props {
     post: IPost
@@ -10,9 +11,7 @@ function BlogPostOwnerButtons({
     post
 }: Props) {
 
-    const deletePostHandler = () => {
-        const userConfirmation = window.confirm('Are you sure you want to delete this post?');
-
+    const deletePostHandler = (userConfirmation: boolean) => {
         if (userConfirmation) {
             deletePost(post._id);
         }
@@ -20,11 +19,13 @@ function BlogPostOwnerButtons({
 
     return (
         <div className="flex gap-3">
+            <UserConfirmationModal post={post} deletePostHandler={deletePostHandler} />
+
             <button className="btn btn-sm btn-primary">Edit</button>
 
-            <form action={deletePostHandler}>
-                <button className="btn btn-sm btn-error">Delete</button>
-            </form>
+            {/* <form action={deletePostHandler}> */}
+            <button className="btn btn-sm btn-error btn-outline" onClick={() => (document.getElementById('confirm-modal') as HTMLDialogElement).showModal()}>Delete</button>
+            {/* </form> */}
         </div>
     )
 }
