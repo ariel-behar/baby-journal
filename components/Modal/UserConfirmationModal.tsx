@@ -1,4 +1,5 @@
 import { IPost } from "@/models/Post"
+import IconTrash from "../Icons/IconTrash"
 
 interface Props {
     post: IPost
@@ -21,13 +22,15 @@ function UserConfirmationModal({
                 </p>
 
                 <div className="modal-action">
-                    <form method="dialog" className="flex justify-center w-full gap-10">
+                    <form method="dialog" className="flex justify-center w-full gap-1 sm:gap-10">
                         {/* if there is a button in form, it will close the modal */}
-                        <button className="btn btn-sm btn-error btn-outline" onClick={() => deletePostHandler(true)}>Yes</button>
-                        <button className="btn btn-sm btn-primary px-7" onClick={() => deletePostHandler(false)}>No</button>
+                        <button className="btn btn-sm btn-error btn-outline" onClick={() => deletePostHandler(true)}>
+                            Delete Post <IconTrash size={5} />
+                        </button>
+                        <button className="btn btn-sm btn-primary sm:px-7" onClick={() => deletePostHandler(false)}>Cancel</button>
                     </form>
                 </div>
-                
+
             </div>
         </dialog>
     )
