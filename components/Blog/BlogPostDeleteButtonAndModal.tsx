@@ -24,7 +24,7 @@ function BlogPostDeleteButtonAndModal({
             <button
                 className="btn btn-sm btn-error btn-outline border-none"
                 onClick={() => (document.getElementById('confirm-modal') as HTMLDialogElement).showModal()}>
-                <IconTrash size={5} />
+                <IconTrash sizeClassName="size-5" />
             </button>
         </>
     )
