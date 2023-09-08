@@ -12,7 +12,7 @@ function BlogPostOwnerButtons({
     return (
         <div className="flex">
             <button className="btn btn-sm btn-primary btn-outline border-none">
-                <IconPencil />
+                <IconPencil size={5}/>
             </button>
 
             <BlogPostDeleteButtonAndModal post={post} />
