@@ -1,20 +1,21 @@
 "use client"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { useModalContext } from "@/context/modalContext"
 
 import IconTrash from "../Icons/IconTrash"
 
 function UserConfirmationModal() {
     const { showModal, post, showModalHandler, deletePostHandler } = useModalContext()
+    const modalRef = useRef<HTMLDialogElement | null>(null)
 
     useEffect(() => {
         if(showModal) {
-            (document.getElementById('confirm-modal') as HTMLDialogElement).showModal()
+            modalRef.current?.showModal()
         }
     },[showModal])
 
     return (
-        <dialog id="confirm-modal" className="modal" onClose={() => showModalHandler(false, null)}>
+        <dialog ref={modalRef} className="modal" onClose={() => showModalHandler(false, null)}>
             <div className="modal-box bg-secondary text-secondary-content">
 
                 <p className="py-4">
