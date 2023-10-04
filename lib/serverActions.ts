@@ -3,7 +3,7 @@ import Post, { IPost } from "@/models/Post";
 import dbConnect from "./dbConnect";
 import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
-import User from "@/models/User";
+import User, { IUser } from "@/models/User";
 import { ILoginFormData } from "@/components/Forms/LoginForm";
 import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IPostFormData } from "@/components/Forms/AddNewPostForm";
@@ -28,8 +28,8 @@ export const addPost = async (formData: IPostFormData) => {
 export const deletePost = async (formData: FormData | IPost['_id']) => {
     // "use server"
 
-    const postId = typeof formData === 'string' 
-        ? formData 
+    const postId = typeof formData === 'string'
+        ? formData
         : Object.fromEntries(formData).postId;
 
     try {
@@ -69,7 +69,7 @@ export const registerUser = async (formData: IRegisterFormData) => {
         if (user) {
             return { error: "User already exists!" }
         }
-        
+
         const newUser = await new User({ username, firstName, lastName, email, password });
 
         await newUser.save();
@@ -90,14 +90,14 @@ export const loginUser = async (formData: ILoginFormData) => {
     try {
         dbConnect();
 
-       await signIn("credentials", { username, password });
+        await signIn("credentials", { username, password });
 
         console.log('User signed in successfully');
     } catch (error) {
         console.log('error', error);
 
-        if(error instanceof Error && error.message.includes('CredentialsSignin')) {
-            return { error: 'Invalid username or password!'}
+        if (error instanceof Error && error.message.includes('CredentialsSignin')) {
+            return { error: 'Invalid username or password!' }
         }
 
         throw error;
@@ -105,7 +105,7 @@ export const loginUser = async (formData: ILoginFormData) => {
 }
 
 export const addUser = async (formData: IRegisterFormData) => {
-    const { username, firstName, lastName, email, password,confirmPassword, img, isAdmin } = formData;
+    const { username, firstName, lastName, email, password, confirmPassword, img, isAdmin } = formData;
 
     try {
         dbConnect();
@@ -124,8 +124,10 @@ export const addUser = async (formData: IRegisterFormData) => {
     }
 }
 
-export const deleteUser = async (formData: FormData) => {
-    const { userId } = Object.fromEntries(formData);
+export const deleteUser = async (formData: FormData | IUser['_id']) => {
+    const userId = typeof formData === 'string'
+        ? formData
+        : Object.fromEntries(formData)._id;
 
     try {
         dbConnect();
