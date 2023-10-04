@@ -1,18 +1,27 @@
 "use client";
-import { deletePost } from "@/lib/serverActions";
+import { deletePost, deleteUser } from "@/lib/serverActions";
 import { IPost } from "@/models/Post";
+import { IUser } from "@/models/User";
 import { createContext, useContext, useState } from "react";
 
-interface IModalContext {
+export interface ICurrentEntity {
+    entity: IPost | IUser | null
+    entityType: 'post' | 'user' | null
+}
+
+export interface IModalContext {
     showModal: boolean,
-    post: IPost | null,
-    showModalHandler: (showModal: boolean, post: IPost | null ) => void
+    currentEntity: ICurrentEntity,
+    showModalHandler: (showModal: boolean, entity: IModalContext['currentEntity']['entity'], entityType: IModalContext['currentEntity']['entityType'] ) => void
     deletePostHandler: (confirm: boolean) => void
 }
 
 export const ModalContext = createContext<IModalContext>({
     showModal: false,
-    post: null,
+    currentEntity: {
+        entity: null,
+        entityType: null
+    },
     showModalHandler: () => {},
     deletePostHandler: () => {}
 });
@@ -23,23 +32,35 @@ interface Props {
 
 export const ModalContextProvider = ({ children }:Props) => {
     const [showModal, setShowModal] = useState<IModalContext['showModal']>(false);
-    const [post, setPost] = useState<IModalContext['post']>(null);
+    const [currentEntity, setCurrentEntity] = useState<ICurrentEntity>({
+        entity: null,
+        entityType: null
+    });
 
-	const showModalHandler = (showModal: boolean, post: IPost | null ) => {
-        setPost(post);
+	const showModalHandler = (showModal: boolean, entity: IModalContext['currentEntity']['entity'], entityType: IModalContext['currentEntity']['entityType']  ) => {
+        setCurrentEntity(prev => {
+            return {
+                entity: entity,
+                entityType: entityType
+            }
+        });
         setShowModal(showModal);
 	}
 
     const deletePostHandler = (userConfirmation: boolean) => {
         if (userConfirmation) {
-            if(post) {
-                deletePost(post._id);
+            if(currentEntity.entity) {
+                if(currentEntity.entityType === 'post') {
+                    deletePost(currentEntity.entity._id);
+                } else if (currentEntity.entityType === 'user') {
+                    deleteUser(currentEntity.entity._id);
+                }
             }
         }
     }
 
     return (
-        <ModalContext.Provider value={{showModal, post, showModalHandler, deletePostHandler}}>
+        <ModalContext.Provider value={{showModal, currentEntity, showModalHandler, deletePostHandler}}>
             {children}
         </ModalContext.Provider>
     )
