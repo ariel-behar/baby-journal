@@ -4,53 +4,74 @@ import { IPost } from "@/models/Post";
 import { IUser } from "@/models/User";
 import { createContext, useContext, useState } from "react";
 
+export interface IModalSettings {
+    showModal: boolean
+    modalType: 'delete' | 'edit' | null
+}
+
 export interface ICurrentEntity {
     entity: IPost | IUser | null
     entityType: 'post' | 'user' | null
 }
 
 export interface IModalContext {
-    showModal: boolean,
+    modalSettings: IModalSettings,
     currentEntity: ICurrentEntity,
-    showModalHandler: (showModal: boolean, entity: IModalContext['currentEntity']['entity'], entityType: IModalContext['currentEntity']['entityType'] ) => void
+    showModalHandler: (showModal: IModalContext['modalSettings']['showModal'], modalType: IModalContext['modalSettings']['modalType'] , entity: IModalContext['currentEntity']['entity'], entityType: IModalContext['currentEntity']['entityType']) => void
     deletePostHandler: (confirm: boolean) => void
 }
 
 export const ModalContext = createContext<IModalContext>({
-    showModal: false,
+    modalSettings: {
+        showModal: false,
+        modalType: null
+    },
     currentEntity: {
         entity: null,
         entityType: null
     },
-    showModalHandler: () => {},
-    deletePostHandler: () => {}
+    showModalHandler: () => { },
+    deletePostHandler: () => { }
 });
 
 interface Props {
     children: React.ReactNode
 }
 
-export const ModalContextProvider = ({ children }:Props) => {
-    const [showModal, setShowModal] = useState<IModalContext['showModal']>(false);
+export const ModalContextProvider = ({ children }: Props) => {
+    const [modalSettings, setModalSettings] = useState<IModalContext['modalSettings']>({
+        showModal: false,
+        modalType: null
+    });
     const [currentEntity, setCurrentEntity] = useState<ICurrentEntity>({
         entity: null,
         entityType: null
     });
 
-	const showModalHandler = (showModal: boolean, entity: IModalContext['currentEntity']['entity'], entityType: IModalContext['currentEntity']['entityType']  ) => {
+    const showModalHandler = (
+        showModal: boolean,
+        modalType: IModalContext['modalSettings']['modalType'],
+        entity: IModalContext['currentEntity']['entity'],
+        entityType: IModalContext['currentEntity']['entityType']
+    ) => {
         setCurrentEntity(prev => {
             return {
                 entity: entity,
                 entityType: entityType
             }
         });
-        setShowModal(showModal);
-	}
+        setModalSettings(prev => {
+            return {
+                showModal: showModal,
+                modalType: modalType
+            }
+        });
+    }
 
     const deletePostHandler = (userConfirmation: boolean) => {
         if (userConfirmation) {
-            if(currentEntity.entity) {
-                if(currentEntity.entityType === 'post') {
+            if (currentEntity.entity) {
+                if (currentEntity.entityType === 'post') {
                     deletePost(currentEntity.entity._id);
                 } else if (currentEntity.entityType === 'user') {
                     deleteUser(currentEntity.entity._id);
@@ -60,7 +81,7 @@ export const ModalContextProvider = ({ children }:Props) => {
     }
 
     return (
-        <ModalContext.Provider value={{showModal, currentEntity, showModalHandler, deletePostHandler}}>
+        <ModalContext.Provider value={{ modalSettings, currentEntity, showModalHandler, deletePostHandler }}>
             {children}
         </ModalContext.Provider>
     )
