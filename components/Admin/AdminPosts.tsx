@@ -1,12 +1,11 @@
 import { getPosts } from "@/lib/getData"
-import { deletePost } from "@/lib/serverActions";
 import Image from "next/image";
-import IconTrash from "../Icons/IconTrash";
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
 import { ICustomSession } from "../Header/Navbar/NavLinks";
 import IconPencil from "../Icons/IconPencil";
 import Link from "next/link";
+import DeleteConfirmationModalButton from "../DeleteConfirmationModalButton";
 
 async function AdminPosts() {
 	const posts = await getPosts();
@@ -29,18 +28,9 @@ async function AdminPosts() {
 								<IconPencil sizeClassName="size-5" />
 							</button>
 
-
-							<button className="btn btn-sm btn-error btn-outline border-none">
-								<IconTrash sizeClassName="size-5" />
-							</button>
-
+							<DeleteConfirmationModalButton entity={post} entityType='post'/>
 						</div>
 					)}
-
-					{/* 
-					<form action={deletePost}>
-						<input type="hidden" name="postId" value={JSON.parse(JSON.stringify(post._id))} />
-					</form> */}
 				</div>
 			))}
 
