@@ -1,12 +1,14 @@
-import LoginForm from "@/components/Forms/LoginForm";
 import Link from "next/link";
+
+import FormStylesWrapper from "@/components/Forms/FormComponents/FormStylesWrapper";
+import LoginForm from "@/components/Forms/LoginForm";
 
 async function LoginPage() {
 
 	return (
 		<div className="flex items-center justify-center">
-			<div className="w-[500px] bg-dark-soft p-12 flex flex-col text-center gap-7 rounded-md ">
-				<h3 className="text-3xl uppercase">Login</h3>
+			<FormStylesWrapper title="Login" classes="p-12 flex flex-col gap-7">
+				
 				<LoginForm />
 
 				<span>
@@ -15,7 +17,7 @@ async function LoginPage() {
 						Register here!
 					</Link>
 				</span>
-			</div>
+			</FormStylesWrapper>
 		</div>
 	)
 }

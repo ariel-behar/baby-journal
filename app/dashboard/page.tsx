@@ -2,7 +2,9 @@ import DashboardPosts from "@/components/Dashboard/DashboardPosts"
 
 function DashboardPage() {
 	return (
-		<DashboardPosts />
+		<div >
+			<DashboardPosts />
+		</div>
 	)
 }
 

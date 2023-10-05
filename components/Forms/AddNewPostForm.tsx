@@ -23,7 +23,7 @@ interface Props {
 
 function AddNewPostForm({
     userId
-}:Props) {
+}: Props) {
     const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IPostFormData>({
         resolver: yupResolver(postSchema),
         mode: 'onBlur',
@@ -34,7 +34,7 @@ function AddNewPostForm({
             userId
         },
     });
-    
+
     const onFormSubmit = async (formData: IPostFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
@@ -42,8 +42,8 @@ function AddNewPostForm({
 
         if (title && description && img && userId) {
             try {
-               const response = await addPost({title, description, img, userId});    
-               console.log('response:', response)
+                const response = await addPost({ title, description, img, userId });
+                console.log('response:', response)
 
             } catch (error) {
                 console.log(error);
@@ -52,17 +52,14 @@ function AddNewPostForm({
     }
 
     return (
-        <div className="w-[500px] bg-dark-soft p-3 text-center rounded-md ">
-            <h3 className="text-xl uppercase mb-3">Add new Post</h3>
-            <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
-                <FormInputFieldWithTooltip register={register} errors={errors} name="title" placeholder='Title' type='text' />
-                <FormInputFieldWithTooltip register={register} errors={errors} name="description" placeholder='Description' type='text' />
-                <FormInputFieldWithTooltip register={register} errors={errors} name="img" placeholder='Image' type='text' />
-                <input type="hidden" {...register('userId')} value={userId} name="userId" />
+        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
+            <FormInputFieldWithTooltip register={register} errors={errors} name="title" placeholder='Title' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="description" placeholder='Description' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="img" placeholder='Image' type='text' />
+            <input type="hidden" {...register('userId')} value={userId} name="userId" />
 
-                <FormSubmitButton isDirty={isDirty} isValid={isValid}>Add Post</FormSubmitButton>
-            </form>
-        </div>
+            <FormSubmitButton isDirty={isDirty} isValid={isValid}>Add Post</FormSubmitButton>
+        </form>
     )
 }
 

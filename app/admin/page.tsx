@@ -7,6 +7,7 @@ import AdminPosts from "@/components/Admin/AdminPosts"
 import AdminUsers from "@/components/Admin/AdminUsers"
 import AddNewPostForm from "@/components/Forms/AddNewPostForm";
 import AddNewUserForm from "@/components/Forms/AddNewUserForm";
+import FormStylesWrapper from "@/components/Forms/FormComponents/FormStylesWrapper";
 
 async function AdminPage() {
 	const session: Session | null = await auth();
@@ -22,8 +23,11 @@ async function AdminPage() {
 
 				<div>
 					<Suspense fallback={<div>Loading...</div>}>
-						<AddNewPostForm userId={session?.user?.id as string} />
+						<FormStylesWrapper title="Add New Post">
+							<AddNewPostForm userId={session?.user?.id as string} />
+						</FormStylesWrapper>
 					</Suspense>
+
 				</div>
 			</div>
 
@@ -36,7 +40,9 @@ async function AdminPage() {
 
 				<div>
 					<Suspense fallback={<div>Loading...</div>}>
-						<AddNewUserForm />
+						<FormStylesWrapper title="Add New User">
+							<AddNewUserForm />
+						</FormStylesWrapper>
 					</Suspense>
 				</div>
 			</div>
