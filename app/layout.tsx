@@ -5,7 +5,9 @@ import "./globals.css";
 import Navbar from "@/components/Header/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Providers from "@/components/Providers";
-import UserConfirmationModal from "@/components/Modal/UserConfirmationModal";
+import Modals from "@/components/Modal/Modals";
+import { auth } from "@/lib/auth";
+import { Session } from "next-auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,13 +20,15 @@ export const metadata: Metadata = {
 	description: "Home page description",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 	modal
 }: Readonly<{
 	children: React.ReactNode;
 	modal: React.ReactNode;
 }>) {
+	const session:Session | null = await auth()
+
 	return (
 		<html lang="en">
 			<Providers>
@@ -38,7 +42,7 @@ export default function RootLayout({
 
 					<Footer />
 
-					<UserConfirmationModal />
+					<Modals session={session} />
 				</body>
 			</Providers>
 		</html>
