@@ -11,10 +11,14 @@ async function Navbar() {
 
 	return (
 		<header>
-			<nav className="h-[100px] flex flex-row justify-between items-center px-3 lg:px-0 ">
+			<nav className="h-[100px] flex flex-row justify-between items-center px-3 sm:px-5 lg:px-[50px] lg:container mx-auto border-b-[1px] border-gray-800">
 				<Link href="/" className="text-3xl font-bold">Logo</Link>
 
 				<MainNavLinks />
+
+				{
+					<span className="text-secondary h-full">{session?.user?.email}</span>
+				}
 				
 				<UserNavLinks session={session} />
 			</nav>

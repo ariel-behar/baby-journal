@@ -23,10 +23,13 @@ function UserNavLinks({
                 {session?.user
                     ? (
                         <>
+                            {/* Dashboard */}
                             <NavLink title='Dashboard' path='/dashboard' />
 
+                            {/* Admin */}
                             {(session as ICustomSession).user?.isAdmin && <NavLink title='Admin' path='/admin' />}
-                            
+
+                            {/* Logout */}
                             <form action={handleLogout}>
                                 <button className='btn btn-md btn-secondary rounded-none'>Logout</button>
                             </form>
@@ -34,7 +37,10 @@ function UserNavLinks({
                     )
                     : (
                         <>
+                            {/* Register */}
                             <NavLink title='Register' path='/register' />
+
+                            {/* Login */}
                             <NavLink title='Login' path='/login' />
                         </>
                     )
