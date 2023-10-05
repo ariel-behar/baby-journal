@@ -7,7 +7,7 @@ import { IPost } from "@/models/Post"
 import { IUser } from "@/models/User"
 
 function UserConfirmationModal() {
-    const { showModal, currentEntity, showModalHandler, deletePostHandler } = useModalContext()
+    const { modalSettings: {showModal}, currentEntity, showModalHandler, deletePostHandler } = useModalContext()
     const modalRef = useRef<HTMLDialogElement | null>(null)
 
     useEffect(() => {
@@ -17,7 +17,7 @@ function UserConfirmationModal() {
     }, [showModal])
 
     return (
-        <dialog ref={modalRef} className="modal" onClose={() => showModalHandler(false, null, null)}>
+        <dialog ref={modalRef} className="modal" onClose={() => showModalHandler(false, null, null, null)}>
             <div className="modal-box bg-secondary text-secondary-content">
 
                 <p className="py-4">
