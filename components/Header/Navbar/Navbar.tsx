@@ -1,17 +1,23 @@
 import Link from "next/link"
-import NavLinks from "./NavLinks"
+import UserNavLinks from "./UserNavLinks"
 import { auth } from "@/lib/auth";
 
 import { Session } from "next-auth";
+import MainNavLinks from "./MainNavLinks";
 
 
 async function Navbar() {
-    const session: Session | null = await auth();
+	const session: Session | null = await auth();
 
 	return (
-		<header className="h-[100px] flex flex-row justify-between items-center px-3 lg:px-0">
-			<Link href="/" className="text-3xl font-bold">Logo</Link>
-			<NavLinks session={session}/>
+		<header>
+			<nav className="h-[100px] flex flex-row justify-between items-center px-3 lg:px-0 ">
+				<Link href="/" className="text-3xl font-bold">Logo</Link>
+
+				<MainNavLinks />
+				
+				<UserNavLinks session={session} />
+			</nav>
 		</header>
 	)
 }
