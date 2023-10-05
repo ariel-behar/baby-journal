@@ -3,7 +3,7 @@ import Image from "next/image"
 import { IPost } from "@/models/Post"
 import { IUser } from "@/models/User";
 
-import { getUser } from "@/lib/getData";
+import { getUser } from "@/lib/getUserData";
 
 interface Props extends Partial<IPost> { }
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { getUsers } from "@/lib/getData";
+import { getUsers } from "@/lib/getUserData";
 import { deleteUser } from "@/lib/serverActions";
 import DeleteConfirmationModalButton from "../DeleteConfirmationModalButton";
 

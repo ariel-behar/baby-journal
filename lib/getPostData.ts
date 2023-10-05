@@ -1,7 +1,6 @@
 import Post, { IPost } from "@/models/Post";
 import { IdType } from "@/types/common-types";
 import dbConnect from "./dbConnect";
-import User, { IUser } from "@/models/User";
 import { unstable_noStore as noStore } from "next/cache";
 
 export const getPost = async (postId: IdType) => {
@@ -34,28 +33,3 @@ export const getPosts = async () => {
     }
 }
 
-export const getUser = async (userId: IdType) => {
-    try {
-        dbConnect();
-
-        const user:IUser | null = await User.findById(userId);
-
-        return user;
-    } catch(error) {
-        console.error(error);
-        throw new Error('Failed to fetch user data!');
-    }
-}
-
-export const getUsers = async () => {
-    try {
-        dbConnect();
-
-        const users:IUser[] = await User.find().lean();
-
-        return users;
-    } catch(error) {
-        console.error(error);
-        throw new Error('Failed to fetch users!');
-    }
-}

@@ -1,6 +1,6 @@
 import { IPost } from "@/models/Post";
 
-import { getPost } from "@/lib/getData";
+import { getPost } from "@/lib/getPostData";
 import BlogPost from "@/components/Blog/BlogPost";
 
 interface Props {

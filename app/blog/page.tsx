@@ -3,7 +3,7 @@ import uniqid from "uniqid";
 import { Metadata } from "next";
 
 import { IPost } from "@/models/Post";
-import { getPosts } from "@/lib/getData";
+import { getPosts } from "@/lib/getPostData";
 
 import PostCard from "@/components/Blog/BlogPostCard"
 

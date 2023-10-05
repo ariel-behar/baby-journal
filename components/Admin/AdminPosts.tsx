@@ -1,4 +1,4 @@
-import { getPosts } from "@/lib/getData"
+import { getPosts } from "@/lib/getPostData"
 import Image from "next/image";
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
