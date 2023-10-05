@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { ICustomSession } from '../Header/Navbar/UserNavLinks'
 import DeleteConfirmationModalButton from '../DeleteConfirmationModalButton'
 import { IPost } from '@/models/Post'
-import IconPencil from '../Icons/IconPencil'
 import { Session } from 'next-auth'
+import EditModalButton from '../EditModalButton'
 
 interface Props {
     post: IPost
@@ -14,7 +14,7 @@ interface Props {
 function DashboardPost({
     post,
     session
-}:Props) {
+}: Props) {
     return (
         <div className="my-5 flex items-center justify-between gap-5">
             <Link href={`/blog/${post._id}`} className="flex items-center gap-5 hover:underline">
@@ -24,9 +24,8 @@ function DashboardPost({
 
             {(session?.user?.id == post.userId || (session as ICustomSession).user?.isAdmin) && (
                 <div>
-                    <button className="btn btn-sm btn-primary btn-outline border-none">
-                        <IconPencil sizeClassName="size-5" />
-                    </button>
+
+                    <EditModalButton entity={post} entityType='post' />
 
                     <DeleteConfirmationModalButton entity={post} entityType='post' />
                 </div>
