@@ -1,5 +1,5 @@
 import { IPost } from "@/models/Post"
-import BlogPostDeleteButtonAndModal from "./BlogPostDeleteButtonAndModal"
+import DeleteConfirmationModalButton from "../DeleteConfirmationModalButton"
 import IconPencil from "../Icons/IconPencil"
 
 interface Props {
@@ -15,7 +15,7 @@ function BlogPostOwnerButtons({
                 <IconPencil sizeClassName="size-5"/>
             </button>
 
-            <BlogPostDeleteButtonAndModal post={post} />
+            <DeleteConfirmationModalButton entity={post} entityType='post' />
         </div>
     )
 }
