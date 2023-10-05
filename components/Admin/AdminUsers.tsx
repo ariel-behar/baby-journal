@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { getUsers } from "@/lib/getUserData";
-import { deleteUser } from "@/lib/serverActions";
+
 import DeleteConfirmationModalButton from "../DeleteConfirmationModalButton";
 
 async function AdminUsers() {
@@ -17,11 +17,7 @@ async function AdminUsers() {
 						<span>{user.username}</span>
 					</div>
 
-					<form action={deleteUser}>
-						<input type="hidden" name="userId" value={JSON.parse(JSON.stringify(user._id))} />
-
-						<DeleteConfirmationModalButton entity={user} entityType='user' />
-					</form>
+					<DeleteConfirmationModalButton entity={user} entityType='user' />
 				</div>
 			))}
 
