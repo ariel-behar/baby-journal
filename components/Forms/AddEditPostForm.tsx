@@ -9,6 +9,7 @@ import postSchema from "@/validation/postSchema"
 
 import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip"
 import FormSubmitButton from "./FormComponents/FormSubmitButton"
+import { IPost } from "@/models/Post"
 
 export interface IPostFormData {
     title: string;
@@ -19,20 +20,26 @@ export interface IPostFormData {
 
 interface Props {
     userId: IUser['_id']
+    formType: 'add' | 'edit'
+    post?: IPost
 }
 
-function AddNewPostForm({
-    userId
+function AddEditPostForm({
+    userId,
+    formType,
+    post
 }: Props) {
+    const defaultValues = {
+        title: (formType === 'edit' && post?.title) || '',
+        description: (formType === 'edit' && post?.description) || '',
+        img: (formType === 'edit' && post?.img) || '',
+        userId: userId
+    }
+
     const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IPostFormData>({
         resolver: yupResolver(postSchema),
         mode: 'onBlur',
-        defaultValues: {
-            title: '',
-            description: '',
-            img: '',
-            userId
-        },
+        defaultValues
     });
 
     const onFormSubmit = async (formData: IPostFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
@@ -53,14 +60,14 @@ function AddNewPostForm({
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="title" placeholder='Title' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="description" placeholder='Description' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="img" placeholder='Image' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="title" label='Title' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="description" label='Description' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="img" label='Image' type='text' />
             <input type="hidden" {...register('userId')} value={userId} name="userId" />
 
-            <FormSubmitButton isDirty={isDirty} isValid={isValid}>Add Post</FormSubmitButton>
+            <FormSubmitButton isDirty={isDirty} isValid={isValid}>{formType === 'edit' ? 'Edit' : 'Add'} Post</FormSubmitButton>
         </form>
     )
 }
 
-export default AddNewPostForm
+export default AddEditPostForm
