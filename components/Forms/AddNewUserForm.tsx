@@ -45,13 +45,13 @@ function AddNewUserForm() {
     return (
 
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="username" placeholder='Username' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" placeholder='First Name' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" placeholder='Last Name' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="email" placeholder='Email' type='email' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="password" placeholder='Password' type='password' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" placeholder='Confirm Password' type='password' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="img" placeholder='Image' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="username" label='Username' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label='First Name' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label='Last Name' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label='Email' type='email' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="password" label='Password' type='password' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label='Confirm Password' type='password' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="img" label='Image' type='text' />
 
             <select {...register('isAdmin')} className="form-input" name="isAdmin" id="">
                 <option value="false">User</option>

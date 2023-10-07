@@ -48,12 +48,12 @@ function RegisterForm() {
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-7">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="username" placeholder="Username" type="text" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" placeholder="First Name" type="text" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" placeholder="Last Name" type="text" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="email" placeholder="Email" type="email" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="password" placeholder="Password" type="password" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" placeholder="Confirm Password" type="password" />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="username" label="Username" type="text" />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label="First Name" type="text" />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label="Last Name" type="text" />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label="Email" type="email" />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="password" label="Password" type="password" />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label="Confirm Password" type="password" />
 
             <FormSubmitButton isDirty={isDirty} isValid={isValid}>Register</FormSubmitButton>
         </form>

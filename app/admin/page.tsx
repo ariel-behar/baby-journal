@@ -5,7 +5,7 @@ import { auth } from "@/lib/auth";
 
 import AdminPosts from "@/components/Admin/AdminPosts"
 import AdminUsers from "@/components/Admin/AdminUsers"
-import AddNewPostForm from "@/components/Forms/AddNewPostForm";
+import AddEditPostForm from "@/components/Forms/AddEditPostForm";
 import AddNewUserForm from "@/components/Forms/AddNewUserForm";
 import FormStylesWrapper from "@/components/Forms/FormComponents/FormStylesWrapper";
 
@@ -24,7 +24,7 @@ async function AdminPage() {
 				<div>
 					<Suspense fallback={<div>Loading...</div>}>
 						<FormStylesWrapper title="Add New Post">
-							<AddNewPostForm userId={session?.user?.id as string} />
+							<AddEditPostForm userId={session?.user?.id as string} formType="add" />
 						</FormStylesWrapper>
 					</Suspense>
 

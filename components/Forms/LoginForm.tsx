@@ -34,9 +34,9 @@ function LoginForm() {
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-7">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="username" placeholder='Username' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="username" label='Username' type='text' />
 
-            <FormInputFieldWithTooltip register={register} errors={errors} name="password" placeholder='Password' type='password' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="password" label='Password' type='password' />
 
             <FormSubmitButton isDirty={isDirty} isValid={isValid}>Login</FormSubmitButton>
         </form>

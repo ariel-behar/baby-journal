@@ -1,11 +1,9 @@
 "use client"
 import { useModalContext } from "@/context/modalContext"
-import { IPost } from "@/models/Post"
-import { IUser } from "@/models/User"
 import { useEffect, useRef } from "react"
-import AddNewPostForm from "../Forms/AddNewPostForm"
-import { auth } from "@/lib/auth"
+import AddEditPostForm from "../Forms/AddEditPostForm"
 import { Session } from "next-auth"
+import { IPost } from "@/models/Post"
 
 interface Props {
     session: Session | null
@@ -14,7 +12,7 @@ interface Props {
 function PostEditModal({
     session
 }: Props) {
-    const { modalSettings: { showModal }, currentEntity, showModalHandler, deletePostHandler } = useModalContext()
+    const { modalSettings: { showModal }, currentEntity: {entity}, showModalHandler } = useModalContext()
     const modalRef = useRef<HTMLDialogElement | null>(null)
 
     useEffect(() => {
@@ -51,7 +49,7 @@ function PostEditModal({
                     </form>
                 </div> */}
 
-                <AddNewPostForm userId={session?.user?.id as string} />
+                <AddEditPostForm userId={session?.user?.id as string} formType="edit" post={entity as IPost}  />
             </div>
         </dialog>
     )
