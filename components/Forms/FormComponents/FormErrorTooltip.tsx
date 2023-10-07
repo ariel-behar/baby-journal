@@ -2,7 +2,7 @@ import { FieldErrors } from "react-hook-form";
 
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
-import { IPostFormData } from "@/components/Forms/AdminPostForm";
+import { IPostFormData } from "../AddEditPostForm";
 
 interface Props {
     name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
@@ -17,7 +17,7 @@ function FormErrorTooltip({
 
 }:Props) {
     return (
-        <div className={`tooltip tooltip-top md:tooltip-left ${errors[name] && 'tooltip-open'} tooltip-error`} data-tip={errors[name] && errors[name]?.message}>
+        <div className={`tooltip tooltip-top ${errors[name] && 'tooltip-open'} tooltip-error`} data-tip={errors[name] && errors[name]?.message}>
             {children}
         </div>
     )

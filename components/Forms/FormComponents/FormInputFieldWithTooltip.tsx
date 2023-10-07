@@ -2,15 +2,16 @@ import { FieldErrors, UseFormRegister } from "react-hook-form";
 
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
-import { IPostFormData } from "@/components/Forms/AdminPostForm";
 
 import FormErrorTooltip from './FormErrorTooltip'
 import FormInputField from "./FormInputField";
+import { IPostFormData } from "../AddEditPostForm";
+import FormInputLabel from "./FormInputLabel";
 
 
 interface Props {
     type: HTMLFormElement['type'];
-    placeholder: string;
+    label: string;
     name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
     className?: string;
     register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData>;
@@ -19,16 +20,18 @@ interface Props {
 
 function FormInputFieldWithTooltip({
     type = 'text',
-    placeholder,
+    label,
     name,
     className,
     register,
     errors
 }: Props) {
     return (
-        <FormErrorTooltip errors={errors} name={name}>
-            <FormInputField className={`${className} w-full`} type={type} placeholder={placeholder} name={name} register={register} />
-        </FormErrorTooltip>
+        <FormInputLabel label={label} name={name}>
+            <FormErrorTooltip errors={errors} name={name}>
+                <FormInputField className={`${className} w-full`} type={type} name={name} register={register} />
+            </FormErrorTooltip>
+        </FormInputLabel>
     )
 }
 
