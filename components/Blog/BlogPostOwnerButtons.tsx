@@ -1,6 +1,6 @@
 import { IPost } from "@/models/Post"
 import DeleteConfirmationModalButton from "../DeleteConfirmationModalButton"
-import IconPencil from "../Icons/IconPencil"
+import EditModalButton from "../EditModalButton"
 
 interface Props {
     post: IPost
@@ -11,9 +11,7 @@ function BlogPostOwnerButtons({
 }: Props) {
     return (
         <div className="flex">
-            <button className="btn btn-sm btn-primary btn-outline border-none">
-                <IconPencil sizeClassName="size-5"/>
-            </button>
+            <EditModalButton entity={post} entityType='post' />
 
             <DeleteConfirmationModalButton entity={post} entityType='post' />
         </div>
