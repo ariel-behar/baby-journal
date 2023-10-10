@@ -1,13 +1,8 @@
 import NavLink from './NavLink'
 
 import { handleLogout } from '@/lib/serverActions';
-import { Session, User } from 'next-auth';
-
-export interface ICustomSession extends Session {
-    user?: User & {
-        isAdmin: boolean
-    }
-}
+import { ICustomSession } from '@/types/types';
+import { Session } from 'next-auth';
 
 interface Props {
     session: Session | null

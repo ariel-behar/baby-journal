@@ -2,12 +2,14 @@ import Link from "next/link"
 import UserNavLinks from "./UserNavLinks"
 import { auth } from "@/lib/auth";
 
+import { ICustomSession } from "@/types/types";
 import { Session } from "next-auth";
-import MainNavLinks from "./MainNavLinks";
 
+import MainNavLinks from "./MainNavLinks";
 
 async function Navbar() {
 	const session: Session | null = await auth();
+	const user = (session as ICustomSession)?.user
 
 	return (
 		<header>
@@ -16,10 +18,11 @@ async function Navbar() {
 
 				<MainNavLinks />
 
-				{
-					<span className="text-secondary h-full">{session?.user?.email}</span>
-				}
-				
+				<p className="text-secondary">
+					Hello,&nbsp;
+					<span className="font-bold">{user?.firstName} {user?.lastName}</span>
+				</p>
+
 				<UserNavLinks session={session} />
 			</nav>
 		</header>

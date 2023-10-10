@@ -4,8 +4,8 @@ import { Session } from 'next-auth'
 import { format } from 'date-fns/format'
 
 import { IPost } from '@/models/Post'
+import { ICustomSession } from '@/types/types'
 
-import { ICustomSession } from '../Header/Navbar/UserNavLinks'
 import DeleteConfirmationModalButton from '../DeleteConfirmationModalButton'
 import EditModalButton from '../EditModalButton'
 
@@ -18,7 +18,7 @@ function DashboardPost({
     post,
     session
 }: Props) {
-    console.log('session:', session)
+
     return (
         <div className="my-5 flex items-center justify-between gap-5">
             <div className="flex items-center gap-5 group h-full">
