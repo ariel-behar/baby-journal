@@ -1,9 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Session } from 'next-auth'
+import { format } from 'date-fns/format'
+
+import { IPost } from '@/models/Post'
+
 import { ICustomSession } from '../Header/Navbar/UserNavLinks'
 import DeleteConfirmationModalButton from '../DeleteConfirmationModalButton'
-import { IPost } from '@/models/Post'
-import { Session } from 'next-auth'
 import EditModalButton from '../EditModalButton'
 
 interface Props {
@@ -15,16 +18,25 @@ function DashboardPost({
     post,
     session
 }: Props) {
+    console.log('session:', session)
     return (
         <div className="my-5 flex items-center justify-between gap-5">
-            <Link href={`/blog/${post._id}`} className="flex items-center gap-5 hover:underline">
-                <Image src={post.img || "/img/noavatar.png"} alt="" width={50} height={50} />
-                <span className="hover:underline">{post.title}</span>
-            </Link>
+            <div className="flex items-center gap-5 group h-full">
+                <Link href={`/blog/${post._id}`} className="group-hover:underline">
+                    <Image src={post.img || "/img/noavatar.png"} alt="" width={50} height={50} />
+                </Link>
 
-            {(session?.user?.id == post.userId || (session as ICustomSession).user?.isAdmin) && (
+                <div className='flex flex-col h-full flex-grow'>
+                    <Link href={`/blog/${post._id}`} className="flex items-center gap-5 group-hover:underline">
+                        <p className="hover:underline">{post.title}</p>
+                    </Link>
+
+                    <span className='text-muted text-sm'>{format(new Date(post.createdAt), "dd MMM yyyy")}</span>
+                </div>
+            </div>
+
+            {(session?.user?.id == post.userId || (session as ICustomSession)?.user?.isAdmin) && (
                 <div>
-
                     <EditModalButton entity={post} entityType='post' />
 
                     <DeleteConfirmationModalButton entity={post} entityType='post' />
