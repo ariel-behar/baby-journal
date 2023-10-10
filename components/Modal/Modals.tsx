@@ -3,7 +3,7 @@ import { Session } from "next-auth"
 import { useModalContext } from "@/context/modalContext"
 
 import UserConfirmationModal from "./UserConfirmationModal"
-import PostEditModal from "./PostEditModal"
+import AddEditPostModal from "./AddEditPostModal"
 
 interface Props {
     session: Session | null
@@ -27,8 +27,8 @@ function Modals({
                         }
 
                         {
-                            modalType === 'edit' && (
-                                <PostEditModal session={session} />
+                            (modalType === 'edit' || modalType === 'add') && (
+                                <AddEditPostModal session={session} />
                             )
                         }
                     </>
