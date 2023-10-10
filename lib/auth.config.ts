@@ -7,6 +7,9 @@ export const authConfig = {
         async jwt({ token, user }: any) {
             if (user) {
                 token.id = user.id;
+                token.username = user.username;
+                token.firstName = user.firstName;
+                token.lastName = user.lastName;
                 token.isAdmin = user.isAdmin;
             }
             return token;
@@ -14,6 +17,9 @@ export const authConfig = {
         async session({ session, token }: any) {
             if (token) {
                 session.user.id = token.id;
+                session.user.username = token.username;
+                session.user.firstName = token.firstName;
+                session.user.lastName = token.lastName;
                 session.user.isAdmin = token.isAdmin;
             }
             return session;
