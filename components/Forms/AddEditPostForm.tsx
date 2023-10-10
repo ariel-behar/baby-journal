@@ -53,10 +53,14 @@ function AddEditPostForm({
                     const response = await addPost({ title, description, img, userId });
                     console.log('response:', response)
 
+                    modalRef?.current?.close();
+
                 } catch (error) {
                     console.log(error);
                 }
-            } else {
+            }
+
+            if (formType === 'edit') {
                 try {
                     const response = await editPost(post?._id as string, { title, description, img, userId });
                     console.log('response:', response)
@@ -79,8 +83,8 @@ function AddEditPostForm({
                 <input type="hidden" {...register('userId')} value={userId} name="userId" />
 
                 <div className="w-full flex justify-around mt-2">
-                    {formType === 'edit' && (
-                        <button type="button" className="btn btn-error btn-lg" onClick={() => modalRef?.current?.close()}>Cancel</button>
+                    {(formType === 'edit' || formType === 'add') && (
+                        <button type="button" className="btn btn-error btn-sm btn-min-width" onClick={() => modalRef?.current?.close()}>Cancel</button>
                     )}
 
                     <FormSubmitButton isDirty={isDirty} isValid={isValid}>{formType === 'edit' ? 'Edit' : 'Add'} Post</FormSubmitButton>
