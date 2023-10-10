@@ -6,7 +6,7 @@ import { createContext, useContext, useState } from "react";
 
 export interface IModalSettings {
     showModal: boolean
-    modalType: 'delete' | 'edit' | null
+    modalType: 'delete' | 'add' | 'edit' | null
 }
 
 export interface ICurrentEntity {
@@ -24,7 +24,7 @@ export interface IModalContext {
 export const ModalContext = createContext<IModalContext>({
     modalSettings: {
         showModal: false,
-        modalType: null
+        modalType: null,
     },
     currentEntity: {
         entity: null,
