@@ -12,7 +12,7 @@ function FormSubmitButton({
 }: Props) {
     return (
         <button
-            className="btn btn-lg btn-primary disabled:bg-primary disabled:opacity-30 disabled:text-primary-content"
+            className="btn btn-sm btn-primary btn-min-width disabled:bg-primary disabled:opacity-30 disabled:text-primary-content"
             disabled={!(isDirty && isValid)}
             type='submit'
         >
