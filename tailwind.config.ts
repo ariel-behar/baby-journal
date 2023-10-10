@@ -25,6 +25,12 @@ const config: Config = {
 				muted: "#6b7280"
 			}
 		},
+		dropShadow: {
+			glow: [
+				"0 0px 1px rgba(255,255, 255, 0.25)",
+				"0 0px 20px rgba(255, 255,255, 0.3)"
+			]
+		}
 	},
 	daisyui: {
 		themes: [
