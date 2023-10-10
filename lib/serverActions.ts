@@ -6,7 +6,7 @@ import { signIn, signOut } from "./auth";
 import User, { IUser } from "@/models/User";
 import { ILoginFormData } from "@/components/Forms/LoginForm";
 import { IRegisterFormData } from "@/components/Forms/RegisterForm";
-import { IPostFormData } from "@/components/Forms/AddNewPostForm";
+import { IPostFormData } from "@/components/Forms/AddEditPostForm";
 
 export const addPost = async (formData: IPostFormData) => {
     const { title, description, userId, img } = formData;
@@ -18,6 +18,25 @@ export const addPost = async (formData: IPostFormData) => {
         await newPost.save();
         console.log('Post added successfully');
         revalidatePath('/blog');
+        revalidatePath('/dashboard');
+        revalidatePath('/admin');
+    } catch (error) {
+        console.log(error);
+        return { error: "Something went wrong!" }
+    }
+}
+
+export const editPost = async ( postId: IPost['_id'], formData: IPostFormData) => {
+    const { title, description, userId, img } = formData;
+
+    try {
+        dbConnect();
+
+        await Post.findByIdAndUpdate(postId, { title, description, img, userId });
+        console.log('Post edited successfully');
+
+        revalidatePath('/blog');
+        revalidatePath('/dashboard');
         revalidatePath('/admin');
     } catch (error) {
         console.log(error);
@@ -44,10 +63,6 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
         console.log(error);
         return { error: "Something went wrong!" }
     }
-}
-
-export const handleGithubLogin = async () => {
-    await signIn("github");
 }
 
 export const handleLogout = async () => {
