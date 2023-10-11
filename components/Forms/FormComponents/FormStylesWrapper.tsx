@@ -11,7 +11,7 @@ function FormStylesWrapper({
     children
 }: Props) { 
     return (
-        <div className={`w-[500px] bg-dark-soft p-3 text-center rounded-md ${classes}`}>
+        <div className={`bg-dark-soft p-3 text-center rounded-md ${classes}`}>
             <h3 className="text-xl uppercase mb-3">{title}</h3>
             {children}
         </div>

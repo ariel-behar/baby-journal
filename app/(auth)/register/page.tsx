@@ -6,7 +6,7 @@ import FormStylesWrapper from "@/components/Forms/FormComponents/FormStylesWrapp
 function RegisterPage() {
 	return (
 		<div className="flex items-center justify-center">
-			<FormStylesWrapper title="Register" classes="p-12 flex flex-col gap-7">
+			<FormStylesWrapper title="Register" classes="p-12 flex flex-col gap-7 w-[500px]">
 				<RegisterForm />
 				<span>
 					Already an existing user?&nbsp;
