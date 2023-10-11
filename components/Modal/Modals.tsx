@@ -4,6 +4,7 @@ import { useModalContext } from "@/context/modalContext"
 
 import UserConfirmationModal from "./UserConfirmationModal"
 import AddEditPostModal from "./AddEditPostModal"
+import AddUserModal from "./AddUserModal"
 
 interface Props {
     session: Session | null
@@ -12,8 +13,8 @@ interface Props {
 function Modals({
     session
 }: Props) {
-    const { modalSettings: { showModal, modalType } } = useModalContext()
-    
+    const { modalSettings: { showModal, modalType }, currentEntity: { entityType } } = useModalContext()
+
 
     return (
         <>
@@ -27,8 +28,14 @@ function Modals({
                         }
 
                         {
-                            (modalType === 'edit' || modalType === 'add') && (
+                            (modalType === 'edit' || modalType === 'add' && entityType === 'post') && (
                                 <AddEditPostModal session={session} />
+                            )
+                        }
+
+                        {
+                            ( modalType === 'add' && entityType === 'user') && (
+                                <AddUserModal />
                             )
                         }
                     </>
