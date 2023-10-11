@@ -16,7 +16,7 @@ function AddUserModal() {
 
 	return (
 		<ModalWrapper modalRef={modalRef}>
-			<FormStylesWrapper title="Add New User">
+			<FormStylesWrapper title="Add New User" className="w-full">
 				<AddNewUserForm modalRef={modalRef} />
 			</FormStylesWrapper>
 		</ModalWrapper>
