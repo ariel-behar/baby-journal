@@ -10,7 +10,13 @@ import { IRegisterFormData } from "./RegisterForm";
 import FormSubmitButton from "./FormComponents/FormSubmitButton";
 import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip";
 
-function AddNewUserForm() {
+interface Props {
+    modalRef: React.RefObject<HTMLDialogElement>
+}
+
+function AddNewUserForm({
+    modalRef
+}: Props) {
     const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
@@ -36,6 +42,8 @@ function AddNewUserForm() {
                 const response = await addUser({ username, firstName, lastName, email, password, confirmPassword, img, isAdmin });
                 console.log('response:', response)
 
+                modalRef.current?.close();
+
             } catch (error) {
                 console.log(error);
             }
@@ -58,7 +66,11 @@ function AddNewUserForm() {
                 <option value="true">Admin</option>
             </select>
 
-            <FormSubmitButton isDirty={isDirty} isValid={isValid}>Add User</FormSubmitButton>
+            <div className="w-full flex justify-around mt-2">
+                <button type="button" className="btn btn-error btn-sm btn-min-width" onClick={() => modalRef?.current?.close()}>Cancel</button>
+                <FormSubmitButton isDirty={isDirty} isValid={isValid}>Add User</FormSubmitButton>
+
+            </div>
         </form>
     )
 }
