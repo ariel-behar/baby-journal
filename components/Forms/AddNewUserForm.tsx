@@ -9,6 +9,7 @@ import { addUser } from "@/lib/serverActions"
 import { IRegisterFormData } from "./RegisterForm";
 import FormSubmitButton from "./FormComponents/FormSubmitButton";
 import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip";
+import CancelButton from "../Buttons/CancelButton";
 
 interface Props {
     modalRef: React.RefObject<HTMLDialogElement>
@@ -67,9 +68,9 @@ function AddNewUserForm({
             </select>
 
             <div className="w-full flex justify-around mt-2">
-                <button type="button" className="btn btn-error btn-sm btn-min-width" onClick={() => modalRef?.current?.close()}>Cancel</button>
-                <FormSubmitButton isDirty={isDirty} isValid={isValid}>Add User</FormSubmitButton>
+                <CancelButton onClick={() => modalRef?.current?.close()} />
 
+                <FormSubmitButton isDirty={isDirty} isValid={isValid}>Add User</FormSubmitButton>
             </div>
         </form>
     )

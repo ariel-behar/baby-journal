@@ -10,6 +10,7 @@ import postSchema from "@/validation/postSchema"
 import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip"
 import FormSubmitButton from "./FormComponents/FormSubmitButton"
 import { IPost } from "@/models/Post"
+import CancelButton from "../Buttons/CancelButton"
 
 export interface IPostFormData {
     title: string;
@@ -84,7 +85,7 @@ function AddEditPostForm({
 
                 <div className="w-full flex justify-around mt-2">
                     {(formType === 'edit' || formType === 'add') && (
-                        <button type="button" className="btn btn-error btn-sm btn-min-width" onClick={() => modalRef?.current?.close()}>Cancel</button>
+                        <CancelButton onClick={() => modalRef?.current?.close()} />
                     )}
 
                     <FormSubmitButton isDirty={isDirty} isValid={isValid}>{formType === 'edit' ? 'Edit' : 'Add'} Post</FormSubmitButton>

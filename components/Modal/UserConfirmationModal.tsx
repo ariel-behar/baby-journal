@@ -6,6 +6,7 @@ import { IPost } from "@/models/Post"
 import { IUser } from "@/models/User"
 import DeleteButton from "../Buttons/DeleteButton"
 import ModalWrapper from "./ModalWrapper"
+import CancelButton from "../Buttons/CancelButton"
 
 function UserConfirmationModal() {
     const { modalSettings: { showModal }, currentEntity } = useModalContext()
@@ -37,7 +38,7 @@ function UserConfirmationModal() {
                     {/* if there is a button in form, it will close the modal */}
                     <DeleteButton />
 
-                    <button className="btn btn-sm btn-primary btn-min-width">Cancel</button>
+                    <CancelButton />
                 </form>
             </div>
         </ModalWrapper>
