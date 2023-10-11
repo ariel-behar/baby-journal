@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { getUsers } from "@/lib/getUserData";
 
-import DeleteConfirmationModalButton from "../DeleteConfirmationModalButton";
+import DeleteConfirmationModalButton from "../Buttons/DeleteConfirmationModalButton";
 
 async function AdminUsers() {
 	const users = await getUsers();

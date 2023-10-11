@@ -1,7 +1,7 @@
 "use client"
 import { useModalContext } from '@/context/modalContext'
 
-import IconTrash from './Icons/IconTrash'
+import IconTrash from '../Icons/IconTrash'
 
 function DeleteButton() {
     const { deletePostHandler } = useModalContext()

@@ -1,7 +1,7 @@
 "use client"
 import { IModalContext, useModalContext } from '@/context/modalContext'
 
-import IconPencil from './Icons/IconPencil'
+import IconPencil from '../Icons/IconPencil'
 
 interface Props {
     entity: IModalContext['currentEntity']['entity']

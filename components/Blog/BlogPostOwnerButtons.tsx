@@ -1,6 +1,6 @@
 import { IPost } from "@/models/Post"
-import DeleteConfirmationModalButton from "../DeleteConfirmationModalButton"
-import EditModalButton from "../EditModalButton"
+import DeleteConfirmationModalButton from "../Buttons/DeleteConfirmationModalButton"
+import EditModalButton from "../Buttons/EditModalButton"
 
 interface Props {
     post: IPost

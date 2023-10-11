@@ -1,6 +1,6 @@
 import { ICustomSession } from "@/types/types";
 import { Session } from "next-auth"
-import AddPostModalButton from "../AddPostModalButton";
+import AddPostModalButton from "../Buttons/AddPostModalButton";
 
 interface Props {
     session: Session | null

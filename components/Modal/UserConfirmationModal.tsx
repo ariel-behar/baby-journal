@@ -4,7 +4,7 @@ import { useModalContext } from "@/context/modalContext"
 
 import { IPost } from "@/models/Post"
 import { IUser } from "@/models/User"
-import DeleteButton from "../DeleteButton"
+import DeleteButton from "../Buttons/DeleteButton"
 
 function UserConfirmationModal() {
     const { modalSettings: {showModal}, currentEntity, showModalHandler } = useModalContext()

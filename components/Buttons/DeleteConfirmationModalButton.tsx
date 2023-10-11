@@ -1,5 +1,5 @@
 "use client"
-import IconTrash from "./Icons/IconTrash";
+import IconTrash from "../Icons/IconTrash";
 import { IModalContext, useModalContext } from "@/context/modalContext";
 
 interface Props {

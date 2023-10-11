@@ -6,8 +6,8 @@ import { format } from 'date-fns/format'
 import { IPost } from '@/models/Post'
 import { ICustomSession } from '@/types/types'
 
-import DeleteConfirmationModalButton from '../DeleteConfirmationModalButton'
-import EditModalButton from '../EditModalButton'
+import DeleteConfirmationModalButton from '../Buttons/DeleteConfirmationModalButton'
+import EditModalButton from '../Buttons/EditModalButton'
 
 interface Props {
     post: IPost
