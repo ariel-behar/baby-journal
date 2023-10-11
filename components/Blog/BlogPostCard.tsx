@@ -30,7 +30,7 @@ function BlogPostCard({
 				<p className="text-ellipsis whitespace-nowrap overflow-hidden">{post.description}</p>
 
 				<div className="card-actions justify-end mt-2">
-					<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm">READ MORE</Link>
+					<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm btn-min-width">READ MORE</Link>
 				</div>
 			</div>
 		</div>
