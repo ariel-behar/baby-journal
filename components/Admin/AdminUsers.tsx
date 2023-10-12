@@ -9,7 +9,7 @@ async function AdminUsers() {
 
 	return (
 		<div className="container">
-			<h3>Users</h3>
+			
 			{users.map((user) => (
 				<div key={user._id} className="my-5 flex items-center justify-between gap-5" >
 					<div className="flex items-center gap-5">
