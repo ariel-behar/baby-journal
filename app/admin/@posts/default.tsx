@@ -1,11 +1,19 @@
-import AdminPosts from "@/components/Admin/AdminPosts"
 import { Suspense } from "react"
+
+import AdminPosts from "@/components/Admin/AdminPosts"
+import AddPostModalButton from "@/components/Buttons/AddPostModalButton"
 
 function DefaultAdminPostsPage() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <AdminPosts />
-        </Suspense>
+        <>
+            <div className="flex justify-between">
+                <h3>Posts</h3>
+                <AddPostModalButton />
+            </div>
+            <Suspense fallback={<div>Loading...</div>}>
+                <AdminPosts />
+            </Suspense>
+        </>
     )
 }
 

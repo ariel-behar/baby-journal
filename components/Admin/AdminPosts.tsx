@@ -10,8 +10,6 @@ async function AdminPosts() {
 
 	return (
 		<div className="container">
-			<h3>Posts</h3>
-
 			{posts.map((post) => (
 				<DashboardPost key={uniqid()} post={post} session={session} />
 			))}
