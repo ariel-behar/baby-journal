@@ -8,6 +8,8 @@ import AdminUsers from "@/components/Admin/AdminUsers"
 import AddEditPostForm from "@/components/Forms/AddEditPostForm";
 import AddNewUserForm from "@/components/Forms/AddNewUserForm";
 import FormStylesWrapper from "@/components/Forms/FormComponents/FormStylesWrapper";
+import AddPostModalButton from "@/components/Buttons/AddPostModalButton";
+import AddUserModalButton from "@/components/Buttons/AddUserModalButton";
 
 async function AdminPage() {
 	const session: Session | null = await auth();
@@ -16,34 +18,8 @@ async function AdminPage() {
 		<div className="container">
 			<div className="grid grid-cols-2 gap-5">
 				<div>
-					<Suspense fallback={<div>Loading...</div>}>
-						<AdminPosts />
-					</Suspense>
-				</div>
-
-				<div>
-					<Suspense fallback={<div>Loading...</div>}>
-						<FormStylesWrapper title="Add New Post">
-							<AddEditPostForm userId={session?.user?.id as string} formType="add" />
-						</FormStylesWrapper>
-					</Suspense>
-
-				</div>
-			</div>
-
-			<div className="grid grid-cols-2 gap-5">
-				<div>
-					<Suspense fallback={<div>Loading...</div>}>
-						<AdminUsers />
-					</Suspense>
-				</div>
-
-				<div>
-					<Suspense fallback={<div>Loading...</div>}>
-						<FormStylesWrapper title="Add New User">
-							<AddNewUserForm />
-						</FormStylesWrapper>
-					</Suspense>
+					<AddPostModalButton />
+					<AddUserModalButton />
 				</div>
 			</div>
 		</div>
