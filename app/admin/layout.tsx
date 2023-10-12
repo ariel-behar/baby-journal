@@ -1,8 +1,11 @@
+import AdminTabs from "@/components/Admin/AdminTabs"
 
-type Props =  Readonly<{
-    children: React.ReactNode,
-    posts: React.ReactNode,
-    users: React.ReactNode,
+import { ReactNode } from "react"
+
+type Props = Readonly<{
+    children: ReactNode,
+    posts: ReactNode,
+    users: ReactNode,
 }>
 
 function AdminLayout({
@@ -12,8 +15,8 @@ function AdminLayout({
 }: Props) {
     return (
         <div>
-            {posts}
-            {users}
+            <AdminTabs posts={posts} users={users} />
+
             {children}
         </div>
     )
