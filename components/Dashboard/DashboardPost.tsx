@@ -4,13 +4,16 @@ import { Session } from 'next-auth'
 import { format } from 'date-fns/format'
 
 import { IPost } from '@/models/Post'
+import { IUser } from '@/models/User'
 import { ICustomSession } from '@/types/types'
 
 import DeleteConfirmationModalButton from '../Buttons/DeleteConfirmationModalButton'
 import EditModalButton from '../Buttons/EditModalButton'
 
 interface Props {
-    post: IPost
+    post: IPost & {
+        userId: IUser
+    },
     session: Session | null
 }
 
@@ -20,29 +23,59 @@ function DashboardPost({
 }: Props) {
 
     return (
-        <div className="my-5 flex items-center justify-between gap-5">
-            <div className="flex items-center gap-5 group h-full">
-                <Link href={`/blog/${post._id}`} className="group-hover:underline">
-                    <Image src={post.img || "/img/noavatar.png"} alt="" width={50} height={50} />
-                </Link>
+        <tr>
+            <td>
+                <label>
+                    <input type="checkbox" className="checkbox" />
+                </label>
+            </td>
+            {/* Image */}
+            <td>
+                <div className="flex items-center gap-3">
+                    <div className="avatar">
+                        <div className="mask mask-squircle w-15 h-15">
+                            <Link href={`/blog/${post._id}`} className="group-hover:underline">
+                                <Image src={post.img || "/img/noavatar.png"} alt="" width={50} height={50} />
+                            </Link>
+                        </div>
+                    </div>
 
-                <div className='flex flex-col h-full flex-grow'>
+                </div>
+            </td>
+            {/* Title */}
+            <td>
+                <div>
                     <Link href={`/blog/${post._id}`} className="flex items-center gap-5 group-hover:underline">
                         <p className="hover:underline">{post.title}</p>
                     </Link>
 
-                    <span className='text-muted text-sm'>{format(new Date(post.createdAt), "dd MMM yyyy")}</span>
-                </div>
-            </div>
 
-            {(session?.user?.id == post.userId || (session as ICustomSession)?.user?.isAdmin) && (
-                <div>
-                    <EditModalButton entity={post} entityType='post' />
-
-                    <DeleteConfirmationModalButton entity={post} entityType='post' />
                 </div>
-            )}
-        </div>
+            </td>
+            {/* Description */}
+            <td>
+                {post.description}
+            </td>
+                
+                {/* Author */}
+            <td>
+                {post.userId.firstName} {post.userId.lastName}
+            </td>
+            {/* Created At */}
+            <td>
+                <span className='text-muted text-sm'>{format(new Date(post.createdAt), "dd MMM yyyy (HH:mm:ss)")}</span>
+            </td>
+            {/* Actions */}
+            <td>
+                {(session?.user?.id == post.userId || (session as ICustomSession)?.user?.isAdmin) && (
+                    <div>
+                        <EditModalButton entity={post} entityType='post' />
+
+                        <DeleteConfirmationModalButton entity={post} entityType='post' />
+                    </div>
+                )}
+            </td>
+        </tr>
     )
 }
 
