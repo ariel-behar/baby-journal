@@ -1,10 +1,13 @@
-import { auth } from "@/lib/auth"
-import { getPosts } from "@/lib/getPostData"
-import { Session } from "next-auth"
 import uniqid from "uniqid"
+import { auth } from "@/lib/auth"
+import { Session } from "next-auth"
+
+import { getPosts } from "@/lib/getPostData"
+
 import { IPost } from "@/models/Post"
-import DashboardPost from "./DashboardPost"
 import { IUser } from "@/models/User"
+
+import DashboardPost from "./DashboardPost"
 import AddPostModalButton from "../Buttons/AddPostModalButton"
 import DashboardTableWrapper from "./DashboardTableWrapper"
 
