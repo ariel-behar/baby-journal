@@ -19,18 +19,30 @@ export const getPost = async (postId: IdType) => {
     }
 }
 
-export const getPosts = async (userId?: IUser['_id']) => {
+export const getPosts = async (populateUser: boolean, userId?: IUser['_id']) => {
     noStore();
 
     try {
         dbConnect();
 
-        let posts: IPost[];
+        let posts: (IPost & { userId: IUser })[] | IPost[];
 
         if (userId) {
-           posts = await Post.find({userId}).lean();
+            if (populateUser) {
+                posts = await Post.find({ userId }).populate("userId").lean();
+            } else {
+                posts = await Post.find({ userId }).lean();
+            }
+
+            console.log('posts:', posts)
         } else {
-            posts = await Post.find().lean();
+            if (populateUser) {
+                posts = await Post.find().populate("userId").lean();
+            } else {
+                posts = await Post.find().lean();
+            }
+            
+            console.log('posts:', posts)
         }
 
         return posts;
