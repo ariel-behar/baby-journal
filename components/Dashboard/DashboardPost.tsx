@@ -14,21 +14,19 @@ interface Props {
     post: IPost & {
         userId: IUser
     },
+    index: number,
     session: Session | null
 }
 
 function DashboardPost({
     post,
+    index,
     session
 }: Props) {
 
     return (
-        <tr>
-            <td>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
-            </td>
+        <tr className={`${index % 2 === 0 ? 'bg-gray-900/30' : ''}`}>
+
             {/* Image */}
             <td>
                 <div className="flex items-center gap-3">
