@@ -4,20 +4,30 @@ import { Session } from "next-auth"
 import uniqid from "uniqid"
 import { IPost } from "@/models/Post"
 import DashboardPost from "./DashboardPost"
+import { IUser } from "@/models/User"
+import AddPostModalButton from "../Buttons/AddPostModalButton"
+import DashboardTableWrapper from "./DashboardTableWrapper"
 
 async function DashboardPosts() {
-    const session: Session | null = await auth()
-    const posts: IPost[] = await getPosts(session?.user?.id as string)
+	const session: Session | null = await auth()
+	const posts = await getPosts(true, session?.user?.id as string) as (IPost & { userId: IUser })[]
 
-    return (
+	return (
 		<div className="container">
-			<h3>Posts</h3>
+			<div className="flex justify-between">
+				<h3>Posts</h3>
+				<AddPostModalButton />
+			</div>
 
-			{posts.map((post) => (
-				<DashboardPost key={uniqid()} post={post} session={session} />
-			))}
+			<div className="overflow-x-auto">
+				<DashboardTableWrapper>
+					{posts.map((post) => (
+						<DashboardPost key={uniqid()} post={post} session={session} />
+					))}
+				</DashboardTableWrapper>
+			</div>
 		</div>
-    )
+	)
 }
 
 export default DashboardPosts
