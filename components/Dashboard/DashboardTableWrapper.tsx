@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import DashboardTableHead from "./DashboardTableHead"
 
 interface Props {
     children: ReactNode
@@ -6,29 +7,20 @@ interface Props {
 
 function DashboardTableWrapper({
     children
-}:Props) {
+}: Props) {
     return (
-        <table className="table">
-            {/* head */}
-            <thead>
-                <tr>
-                    <th>
-                        <label>
-                            <input type="checkbox" className="checkbox" />
-                        </label>
-                    </th>
-                    <th></th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Author</th>
-                    <th>Created At</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {children}
-            </tbody>
-        </table>
+        <div className="overflow-x-auto h-[calc(100vh-250px)]">
+            <table className="table table-sm table-pin-rows">
+                
+                {/* head */}
+                <DashboardTableHead tableHeadings={["", "Title", "Description", "Author", "Created At", ""]} />
+
+                {/* body */}
+                <tbody>
+                    {children}
+                </tbody>
+            </table>
+        </div>
     )
 }
 

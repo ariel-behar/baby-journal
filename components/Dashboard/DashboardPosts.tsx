@@ -19,13 +19,11 @@ async function DashboardPosts() {
 				<AddPostModalButton />
 			</div>
 
-			<div className="overflow-x-auto">
-				<DashboardTableWrapper>
-					{posts.map((post) => (
-						<DashboardPost key={uniqid()} post={post} session={session} />
-					))}
-				</DashboardTableWrapper>
-			</div>
+			<DashboardTableWrapper>
+				{posts.map((post, index) => (
+					<DashboardPost key={uniqid()} post={post} session={session} index={index} />
+				))}
+			</DashboardTableWrapper>
 		</div>
 	)
 }
