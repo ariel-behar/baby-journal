@@ -12,10 +12,22 @@
   box-sizing: border-box;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-  }
-} */
+::-webkit-scrollbar {
+	width: 0.7em;
+}
+
+::-webkit-scrollbar-track {
+	background: #0d0c22;
+}
+ 
+::-webkit-scrollbar-thumb {
+	background: #3673fd ;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #2356cb;
+}
 
 a {
   text-decoration: none;
