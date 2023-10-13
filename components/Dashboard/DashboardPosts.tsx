@@ -8,7 +8,6 @@ import { IPost } from "@/models/Post"
 import { IUser } from "@/models/User"
 
 import DashboardPost from "./DashboardPost"
-import AddPostModalButton from "../Buttons/AddPostModalButton"
 import DashboardTableWrapper from "./DashboardTableWrapper"
 
 async function DashboardPosts() {
@@ -16,18 +15,13 @@ async function DashboardPosts() {
 	const posts = await getPosts(true, session?.user?.id as string) as (IPost & { userId: IUser })[]
 
 	return (
-		<div className="container">
-			<div className="flex justify-between">
-				<h3>Posts</h3>
-				<AddPostModalButton />
-			</div>
-
+		<>
 			<DashboardTableWrapper>
 				{posts.map((post, index) => (
 					<DashboardPost key={uniqid()} post={post} session={session} index={index} />
 				))}
 			</DashboardTableWrapper>
-		</div>
+		</>
 	)
 }
 
