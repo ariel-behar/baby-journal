@@ -4,7 +4,7 @@ interface Props {
     tableHeadings: string[]
 }
 
-function DashboardTableHead({
+function TableHead({
     tableHeadings
 }: Props) {
     return (
@@ -20,4 +20,4 @@ function DashboardTableHead({
     )
 }
 
-export default DashboardTableHead
+export default TableHead

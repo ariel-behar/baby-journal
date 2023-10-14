@@ -15,12 +15,11 @@ interface Props {
     session: Session | null
 }
 
-function DashboardPost({
+function TableDataPost({
     post,
     index,
     session
 }: Props) {
-console.log('post', post);
     return (
         <tr className={`${index % 2 === 0 ? 'bg-gray-900/30' : ''}`}>
 
@@ -76,4 +75,4 @@ console.log('post', post);
     )
 }
 
-export default DashboardPost
+export default TableDataPost

@@ -1,11 +1,11 @@
 import { ReactNode } from "react"
-import DashboardTableHead from "./DashboardTableHead"
+import TableHead from "./TableHead"
 
 interface Props {
     children: ReactNode
 }
 
-function DashboardTableWrapper({
+function TableWrapper({
     children
 }: Props) {
     return (
@@ -13,7 +13,7 @@ function DashboardTableWrapper({
             <table className="table table-sm table-pin-rows">
                 
                 {/* head */}
-                <DashboardTableHead tableHeadings={["", "Title", "Description", "Author", "Created At", ""]} />
+                <TableHead tableHeadings={["", "Title", "Description", "Author", "Created At", ""]} />
 
                 {/* body */}
                 <tbody>
@@ -24,4 +24,4 @@ function DashboardTableWrapper({
     )
 }
 
-export default DashboardTableWrapper
+export default TableWrapper

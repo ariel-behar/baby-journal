@@ -6,8 +6,8 @@ import { getPosts } from "@/lib/getPostData"
 
 import { IPostPopulated } from "@/models/Post";
 
-import DashboardPost from "../Dashboard/DashboardPost";
-import DashboardTableWrapper from "../Dashboard/DashboardTableWrapper";
+import TableDataPost from "../Table/TableDataPost";
+import TableWrapper from "../Table/TableWrapper";
 
 async function AdminPosts() {
 	const posts = await getPosts(true) as IPostPopulated[];
@@ -15,13 +15,13 @@ async function AdminPosts() {
 
 	return (
 		<>
-			<DashboardTableWrapper>
+			<TableWrapper>
 				{
 					posts.map((post, index) => (
-						<DashboardPost key={uniqid()} post={post} session={session} index={index} />
+						<TableDataPost key={uniqid()} post={post} session={session} index={index} />
 					))
 				}
-			</DashboardTableWrapper>
+			</TableWrapper>
 		</>
 	)
 }
