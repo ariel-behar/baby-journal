@@ -1,5 +1,6 @@
 import { Identifiable, IdType } from "@/types/common-types";
 import mongoose from "mongoose";
+import { IUser } from "./User";
 
 export interface IPost extends Identifiable {
 	_id: IdType;
@@ -9,6 +10,10 @@ export interface IPost extends Identifiable {
 	userId: IdType;
 	createdAt: string;
 	updatedAt: string;
+}
+
+export interface IPostPopulated extends Omit<IPost, 'userId'> {
+	userId: IUser;
 }
 
 interface IPostMongooseSchema extends Omit<IPost, '_id' | 'userId' | 'createdAt' | 'updatedAt'> {
