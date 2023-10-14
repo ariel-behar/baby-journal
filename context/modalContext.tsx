@@ -1,6 +1,6 @@
 "use client";
 import { deletePost, deleteUser } from "@/lib/serverActions";
-import { IPost } from "@/models/Post";
+import { IPost, IPostPopulated } from "@/models/Post";
 import { IUser } from "@/models/User";
 import { createContext, useContext, useState } from "react";
 
@@ -10,7 +10,7 @@ export interface IModalSettings {
 }
 
 export interface ICurrentEntity {
-    entity: IPost | IUser | null
+    entity: IPost | IPostPopulated | IUser | null
     entityType: 'post' | 'user' | null
 }
 

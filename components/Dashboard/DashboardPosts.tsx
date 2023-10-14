@@ -4,15 +4,14 @@ import { Session } from "next-auth"
 
 import { getPosts } from "@/lib/getPostData"
 
-import { IPost } from "@/models/Post"
-import { IUser } from "@/models/User"
+import { IPostPopulated } from "@/models/Post"
 
 import DashboardPost from "./DashboardPost"
 import DashboardTableWrapper from "./DashboardTableWrapper"
 
 async function DashboardPosts() {
 	const session: Session | null = await auth()
-	const posts = await getPosts(true, session?.user?.id as string) as (IPost & { userId: IUser })[]
+	const posts = await getPosts(true, session?.user?.id as string) as IPostPopulated[]
 
 	return (
 		<>

@@ -1,4 +1,4 @@
-import Post, { IPost } from "@/models/Post";
+import Post, { IPost, IPostPopulated } from "@/models/Post";
 import { IdType } from "@/types/common-types";
 import dbConnect from "./dbConnect";
 import { unstable_noStore as noStore } from "next/cache";
@@ -25,7 +25,7 @@ export const getPosts = async (populateUser: boolean, userId?: IUser['_id']) => 
     try {
         dbConnect();
 
-        let posts: (IPost & { userId: IUser })[] | IPost[];
+        let posts: IPostPopulated[] | IPost[];
 
         if (userId) {
             if (populateUser) {
