@@ -1,19 +1,28 @@
-import { getPosts } from "@/lib/getPostData"
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
-import DashboardPost from "../Dashboard/DashboardPost";
 import uniqid from "uniqid";
 
+import { getPosts } from "@/lib/getPostData"
+
+import { IPostPopulated } from "@/models/Post";
+
+import DashboardPost from "../Dashboard/DashboardPost";
+import DashboardTableWrapper from "../Dashboard/DashboardTableWrapper";
+
 async function AdminPosts() {
-	const posts = await getPosts();
+	const posts = await getPosts(true) as IPostPopulated[];
 	const session: Session | null = await auth()
 
 	return (
-		<div className="container">
-			{posts.map((post) => (
-				<DashboardPost key={uniqid()} post={post} session={session} />
-			))}
-		</div>
+		<>
+			<DashboardTableWrapper>
+				{
+					posts.map((post, index) => (
+						<DashboardPost key={uniqid()} post={post} session={session} index={index} />
+					))
+				}
+			</DashboardTableWrapper>
+		</>
 	)
 }
 

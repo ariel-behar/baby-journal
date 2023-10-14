@@ -10,6 +10,7 @@ function DefaultAdminPostsPage() {
                 <h3>Posts</h3>
                 <AddPostModalButton />
             </div>
+
             <Suspense fallback={<div>Loading...</div>}>
                 <AdminPosts />
             </Suspense>
