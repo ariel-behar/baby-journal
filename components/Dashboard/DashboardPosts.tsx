@@ -8,6 +8,7 @@ import { IPostPopulated } from "@/models/Post"
 
 import TableDataPost from "../Table/TableDataPost"
 import TableWrapper from "../Table/TableWrapper"
+import TableRow from "../Table/TableRow"
 
 async function DashboardPosts() {
 	const session: Session | null = await auth()
@@ -17,7 +18,9 @@ async function DashboardPosts() {
 		<>
 			<TableWrapper>
 				{posts.map((post, index) => (
-					<TableDataPost key={uniqid()} post={post} session={session} index={index} />
+					<TableRow index={index} key={uniqid()}>
+						<TableDataPost  post={post} session={session} />
+					</TableRow>
 				))}
 			</TableWrapper>
 		</>

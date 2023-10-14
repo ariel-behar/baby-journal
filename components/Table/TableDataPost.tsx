@@ -11,18 +11,15 @@ import EditModalButton from '../Buttons/EditModalButton'
 
 interface Props {
     post: IPostPopulated,
-    index: number,
     session: Session | null
 }
 
 function TableDataPost({
     post,
-    index,
     session
 }: Props) {
     return (
-        <tr className={`${index % 2 === 0 ? 'bg-gray-900/30' : ''}`}>
-
+        <>
             {/* Image */}
             <td>
                 <div className="flex items-center gap-3">
@@ -50,8 +47,8 @@ function TableDataPost({
             <td>
                 {post.description}
             </td>
-                
-                {/* Author */}
+
+            {/* Author */}
             <td>
                 {post.userId.firstName} {post.userId.lastName}
             </td>
@@ -71,7 +68,7 @@ function TableDataPost({
                     </div>
                 )}
             </td>
-        </tr>
+        </>
     )
 }
 
