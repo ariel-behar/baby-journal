@@ -16,7 +16,7 @@ async function AdminPosts() {
 
 	return (
 		<>
-			<TableWrapper tableHeadings={["", "Title", "Description", "Created At", "Author", "Username", "User Email", ""]}>
+			<TableWrapper tableHeadings={["", "Title", "Description", "Created At", "Author", "Username", "User Email", "Post ID", ""]}>
 				{
 					posts.map((post, index) => (
 						<TableRow index={index} key={uniqid()}>

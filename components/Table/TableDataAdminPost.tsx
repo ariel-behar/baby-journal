@@ -14,6 +14,8 @@ function TableDataAdminPost({
 }: Props) {
     return (
         <TableDataPost post={post} session={session}>
+
+
             {/* Username */}
             <td>
                 {post.userId.username}
@@ -22,6 +24,10 @@ function TableDataAdminPost({
             {/* Email */}
             <td>
                 {post.userId.email}
+            </td>
+            {/* Post ID */}
+            <td>
+                {post._id}
             </td>
 
         </TableDataPost>
