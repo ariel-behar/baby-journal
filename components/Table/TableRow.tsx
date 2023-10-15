@@ -10,7 +10,7 @@ function TableRow({
     index
 }: Props) {
     return (
-        <tr className={`${index % 2 === 0 ? 'bg-gray-900/30' : ''}`}>
+        <tr className={`${index % 2 === 0 ? 'bg-gray-900/70' : ''}`}>
             {children}
         </tr>
     )
