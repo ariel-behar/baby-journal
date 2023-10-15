@@ -1,27 +1,23 @@
-import Image from "next/image";
 
 import { getUsers } from "@/lib/getUserData";
 
-import DeleteConfirmationModalButton from "../Buttons/DeleteConfirmationModalButton";
+import TableWrapper from "../Table/TableWrapper";
+import TableRow from "../Table/TableRow";
+import TableDataUser from "../Table/TableDataUser";
 
 async function AdminUsers() {
 	const users = await getUsers();
 
 	return (
-		<div className="container">
-			
-			{users.map((user) => (
-				<div key={user._id} className="my-5 flex items-center justify-between gap-5" >
-					<div className="flex items-center gap-5">
-						<Image src={user.img || "/img/noavatar.png"} alt="" width={50} height={50} />
-						<span>{user.username}</span>
-					</div>
-
-					<DeleteConfirmationModalButton entity={user} entityType='user' />
-				</div>
-			))}
-
-		</div>
+		<>
+			<TableWrapper tableHeadings={["", "User Name", "Username", "Email", "User ID", ""]}>
+				{users.map((user, index) => (
+					<TableRow key={user._id} index={index}>
+						<TableDataUser user={user} />
+					</TableRow>
+				))}
+			</TableWrapper>
+		</>
 	)
 }
 
