@@ -16,7 +16,7 @@ async function DashboardPosts() {
 
 	return (
 		<>
-			<TableWrapper>
+			<TableWrapper tableHeadings={["", "Title", "Description", "Created At", "Author", ""]}>
 				{posts.map((post, index) => (
 					<TableRow index={index} key={uniqid()}>
 						<TableDataPost  post={post} session={session} />
