@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Session } from 'next-auth'
@@ -12,11 +13,13 @@ import EditModalButton from '../Buttons/EditModalButton'
 interface Props {
     post: IPostPopulated,
     session: Session | null
+    children?: ReactNode
 }
 
 function TableDataPost({
     post,
-    session
+    session,
+    children
 }: Props) {
     return (
         <>
@@ -47,16 +50,19 @@ function TableDataPost({
             <td>
                 {post.description}
             </td>
+            
+            {/* Created At */}
+            <td>
+                <span className='text-muted text-sm'>{format(new Date(post.createdAt), "dd MMM yyyy (HH:mm:ss)")}</span>
+            </td>
 
             {/* Author */}
             <td>
                 {post.userId.firstName} {post.userId.lastName}
             </td>
 
-            {/* Created At */}
-            <td>
-                <span className='text-muted text-sm'>{format(new Date(post.createdAt), "dd MMM yyyy (HH:mm:ss)")}</span>
-            </td>
+            {children}
+
 
             {/* Actions */}
             <td>

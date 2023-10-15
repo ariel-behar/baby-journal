@@ -6,9 +6,9 @@ import { getPosts } from "@/lib/getPostData"
 
 import { IPostPopulated } from "@/models/Post";
 
-import TableDataPost from "../Table/TableDataPost";
 import TableWrapper from "../Table/TableWrapper";
 import TableRow from "../Table/TableRow";
+import TableDataAdminPost from "../Table/TableDataAdminPost";
 
 async function AdminPosts() {
 	const posts = await getPosts(true) as IPostPopulated[];
@@ -16,11 +16,11 @@ async function AdminPosts() {
 
 	return (
 		<>
-			<TableWrapper>
+			<TableWrapper tableHeadings={["", "Title", "Description", "Created At", "Author", "Username", "User Email", ""]}>
 				{
 					posts.map((post, index) => (
 						<TableRow index={index} key={uniqid()}>
-							<TableDataPost post={post} session={session} />
+							<TableDataAdminPost post={post} session={session} />
 						</TableRow>
 					))
 				}

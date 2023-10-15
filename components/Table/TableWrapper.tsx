@@ -2,10 +2,12 @@ import { ReactNode } from "react"
 import TableHead from "./TableHead"
 
 interface Props {
+    tableHeadings: string[],
     children: ReactNode
 }
 
 function TableWrapper({
+    tableHeadings,
     children
 }: Props) {
     return (
@@ -13,7 +15,7 @@ function TableWrapper({
             <table className="table table-sm table-pin-rows">
                 
                 {/* head */}
-                <TableHead tableHeadings={["", "Title", "Description", "Author", "Created At", ""]} />
+                <TableHead tableHeadings={tableHeadings} />
 
                 {/* body */}
                 <tbody>
