@@ -16,12 +16,22 @@ async function DashboardPosts() {
 
 	return (
 		<>
-			<TableWrapper tableHeadings={["", "Title", "Description", "Created At", "Author", ""]}>
-				{posts.map((post, index) => (
-					<TableRow index={index} key={uniqid()}>
-						<TableDataPost  post={post} session={session} />
-					</TableRow>
-				))}
+			<TableWrapper tableHeadings={["", "Title", "Description", "Created At", "Author", ""]} tableClasses={posts.length > 0 ? "" : 'h-full'}>
+				{posts.length > 0
+					? posts.map((post, index) => (
+						<TableRow index={index} key={uniqid()}>
+							<TableDataPost post={post} session={session} />
+						</TableRow>
+					)) : (
+						<TableRow index={0}>
+							<td className="text-center h-full" colSpan={10}>
+								<p className="text-2xl">
+									You have not created any posts yet...
+								</p>
+							</td>
+						</TableRow>
+					)
+				}
 			</TableWrapper>
 		</>
 	)
