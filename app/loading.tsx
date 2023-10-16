@@ -1,7 +1,9 @@
 
 function RootLoading() {
   return (
-    <div>Loading...</div>
+    <div className="flex justify-center">
+      <span className="loading loading-lg loading-spinner text-secondary"></span>
+    </div>
   )
 }
 
