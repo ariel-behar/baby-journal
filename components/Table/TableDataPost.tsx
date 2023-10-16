@@ -47,7 +47,7 @@ function TableDataPost({
             </td>
 
             {/* Description */}
-            <td>
+            <td className='max-w-[250px]'>
                 {post.description}
             </td>
             
