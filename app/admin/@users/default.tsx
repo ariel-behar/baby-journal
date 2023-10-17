@@ -6,10 +6,10 @@ import AddUserModalButton from "@/components/Buttons/AddUserModalButton"
 function DefaultAdminUsersPage() {
     return (
         <>
-            <div className="flex justify-between">
-                <h3>Users</h3>
+            <div className="flex justify-end mb-3">
                 <AddUserModalButton />
             </div>
+            
             <Suspense fallback={<div>Loading...</div>}>
                 <AdminUsers />
             </Suspense>
