@@ -6,8 +6,8 @@ async function DashboardPage() {
 	return (
 		<>
 			<section>
-				<div className="flex justify-between">
-					<h3>Posts</h3>
+				<div className="flex justify-between mt-5 mb-3">
+					<h3 className="text-xl uppercase text-center">Posts</h3>
 					<AddPostModalButton />
 				</div>
 				
