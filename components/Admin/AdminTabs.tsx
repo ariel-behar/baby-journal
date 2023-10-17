@@ -12,19 +12,26 @@ function AdminTabs({
 }: Props) {
     const [activeTab, setActiveTab] = useState(0)
 
-    return (
-        <div role="tablist" className="tabs">
-            <a role="tab" className={`tab ${activeTab === 0 ? 'tab-active' : ''}`} onClick={() => setActiveTab(0)}>
+    return (<>
+        <div className="flex justify-center items-center py-5">
+            <button
+                className={`flex-grow btn btn-primary rounded-none uppercase ${activeTab === 0 ? 'text-xl' : 'btn-ghost border-b-gray-800'}`}
+                onClick={() => setActiveTab(0)} >
                 Posts
-            </a>
-            <div className="tab-content">{posts}</div>
-
-            <a role="tab" className={`tab ${activeTab === 1 ? 'tab-active' : ''}`} onClick={() => setActiveTab(1)}>
+            </button>
+            <button
+                className={`flex-grow btn btn-primary rounded-none uppercase ${activeTab === 1 ? 'text-xl' : 'btn-ghost border-b-gray-800'}`}
+                onClick={() => setActiveTab(1)}
+            >
                 Users
-            </a>
-            <div className="tab-content">{users}</div>
+            </button >
+        </div >
 
+        <div>
+            {activeTab === 0 && posts}
+            {activeTab === 1 && users}
         </div>
+    </>
     )
 }
 
