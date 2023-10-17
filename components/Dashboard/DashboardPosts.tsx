@@ -16,7 +16,7 @@ async function DashboardPosts() {
 
 	return (
 		<>
-			<TableWrapper tableHeadings={["", "Title", "Description", "Created At", "Author", ""]} tableClasses={posts.length > 0 ? "" : 'h-full'}>
+			<TableWrapper tableWrapperClasses="h-[calc(100vh-280px)]" tableHeadings={["", "Title", "Description", "Created At", "Author", ""]} tableClasses={posts.length > 0 ? "" : 'h-full'}>
 				{posts.length > 0
 					? posts.map((post, index) => (
 						<TableRow index={index} key={uniqid()}>

@@ -10,7 +10,7 @@ async function AdminUsers() {
 
 	return (
 		<>
-			<TableWrapper tableHeadings={["", "User Name", "Username", "Email", "User ID", ""]}>
+			<TableWrapper tableWrapperClasses="h-[calc(100vh-350px)]" tableHeadings={["", "User Name", "Username", "Email", "User ID", ""]}>
 				{users.map((user, index) => (
 					<TableRow key={user._id} index={index}>
 						<TableDataUser user={user} />
