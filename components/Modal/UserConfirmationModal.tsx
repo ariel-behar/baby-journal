@@ -38,7 +38,7 @@ function UserConfirmationModal() {
                     {/* if there is a button in form, it will close the modal */}
                     <DeleteButton />
 
-                    <CancelButton className="btn-primary"/>
+                    <CancelButton className="btn-primary" onClick={() => modalRef.current?.close()}/>
                 </form>
             </div>
         </ModalWrapper>
