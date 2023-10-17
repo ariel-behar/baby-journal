@@ -14,11 +14,11 @@ function AdminLayout({
     users
 }: Props) {
     return (
-        <div>
+        <>
             <AdminTabs posts={posts} users={users} />
 
             {children}
-        </div>
+        </>
     )
 }
 
