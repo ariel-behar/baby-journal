@@ -11,6 +11,8 @@ import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithToolti
 import FormSubmitButton from "./FormComponents/FormSubmitButton"
 import { IPost } from "@/models/Post"
 import CancelButton from "../Buttons/CancelButton"
+import IconPencil from "../Icons/IconPencil"
+import IconPlus from "../Icons/IconPlus"
 
 export interface IPostFormData {
     title: string;
@@ -88,7 +90,19 @@ function AddEditPostForm({
                         <CancelButton onClick={() => modalRef?.current?.close()} />
                     )}
 
-                    <FormSubmitButton isDirty={isDirty} isValid={isValid}>{formType === 'edit' ? 'Edit' : 'Add'} Post</FormSubmitButton>
+                    <FormSubmitButton isDirty={isDirty} isValid={isValid}>
+                        {formType === 'edit'
+                            ? 'Edit'
+                            : 'Add'
+                        }
+                        &nbsp;
+                        Post
+
+                        {formType === 'edit'
+                            ? <IconPencil sizeClassName="size-5" />
+                            : <IconPlus sizeClassName="size-5" />
+                        }
+                    </FormSubmitButton>
                 </div>
             </form>
 
