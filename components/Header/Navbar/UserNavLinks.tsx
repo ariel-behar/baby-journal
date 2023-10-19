@@ -1,4 +1,4 @@
-import LoggedInButton from './LoggedInButton';
+import LoggedInButton from '../../Buttons/LoggedInButton';
 import LoggedInButtonDropdownLinks from './LoggedInButtonDropdownLinks';
 import NavLink from './NavLink'
 
