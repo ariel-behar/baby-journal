@@ -11,7 +11,7 @@ function MainNavLinks() {
     const [open, setOpen] = useState(false)
     return (
         <div>
-            <div className="hidden md:block ">
+            <div className="hidden md:block">
                 {routes.map((link) => {
                     return (
                         <NavLink key={uniqid()} {...link} />
