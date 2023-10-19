@@ -9,7 +9,7 @@ import MainNavLinks from "./MainNavLinks";
 
 async function Navbar() {
 	const session: Session | null = await auth();
-	const user = (session as ICustomSession)?.user
+	const user: ICustomSession["user"] = (session as ICustomSession)?.user
 
 	return (
 		<header>
@@ -18,12 +18,8 @@ async function Navbar() {
 
 				<MainNavLinks />
 
-				<p className="text-secondary">
-					Hello,&nbsp;
-					<span className="font-bold">{user?.firstName} {user?.lastName}</span>
-				</p>
+				<UserNavLinks user={user} />
 
-				<UserNavLinks session={session} />
 			</nav>
 		</header>
 	)
