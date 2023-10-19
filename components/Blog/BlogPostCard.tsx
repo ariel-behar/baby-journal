@@ -16,7 +16,7 @@ function BlogPostCard({
 		<div className="card w-full bg-dark-soft text-primary-content shadow-xl">
 			<Link href={`/blog/${post._id}`}>
 				<figure className="w-full h-[300px] relative">
-					<Image className="object-cover transform hover:scale-105 transition-all" src={post.img} alt='Post' fill />
+					<Image className="object-cover transform hover:scale-105 duration-700" src={post.img} alt='Post' fill />
 				</figure>
 			</Link>
 
