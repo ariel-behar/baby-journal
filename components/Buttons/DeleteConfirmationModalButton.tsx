@@ -18,7 +18,7 @@ function DeleteConfirmationModalButton({
             className="btn btn-sm btn-error btn-outline border-none"
             onClick={() => showModalHandler(true, 'delete', entity, entityType)}
         >
-            <IconTrash sizeClassName="size-5" />
+            <IconTrash />
         </button>
     )
 }

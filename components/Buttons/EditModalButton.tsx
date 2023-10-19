@@ -19,7 +19,7 @@ function EditModalButton({
             className="btn btn-sm btn-primary btn-outline border-none"
             onClick={() => showModalHandler(true, 'edit', entity, entityType)}
         >
-            <IconPencil sizeClassName="size-5" />
+            <IconPencil />
         </button>
     )
 }

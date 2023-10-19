@@ -37,7 +37,7 @@ function BlogPostCard({
 				<div className="card-actions justify-end mt-2">
 					<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
 						Read More
-						<IconChevronRight sizeClassName="size-5" />
+						<IconChevronRight />
 					</Link>
 				</div>
 			</div>

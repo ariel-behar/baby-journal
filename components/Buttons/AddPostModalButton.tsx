@@ -10,7 +10,7 @@ function AddPostModalButton() {
             className="btn btn-sm btn-primary btn-min-width"
             onClick={() => showModalHandler(true, 'add', null, 'post')}
         >
-            Add New Post <IconPlus sizeClassName="size-5" />
+            Add New Post <IconPlus />
         </button>
     )
 }

@@ -8,7 +8,7 @@ function DeleteButton() {
     
     return (
         <button className="btn btn-sm btn-error btn-min-width" onClick={() => deletePostHandler(true)}>
-            Delete <IconTrash sizeClassName="size-5" />
+            Delete <IconTrash />
         </button>
     )
 }

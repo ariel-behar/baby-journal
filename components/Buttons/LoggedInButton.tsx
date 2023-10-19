@@ -25,7 +25,7 @@ function LoggedInButton({
                     {user && (user?.firstName[0] + user?.lastName[0])}
                 </span>
 
-                <IconUser sizeClassName="size-5" />
+                <IconUser />
             </div>
 
             <ul tabIndex={0} className="dropdown-content z-20 menu p-5 gap-y-3 shadow bg-base-100 rounded-box border border-gray-800">

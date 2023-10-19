@@ -99,8 +99,8 @@ function AddEditPostForm({
                         Post
 
                         {formType === 'edit'
-                            ? <IconPencil sizeClassName="size-5" />
-                            : <IconPlus sizeClassName="size-5" />
+                            ? <IconPencil />
+                            : <IconPlus />
                         }
                     </FormSubmitButton>
                 </div>

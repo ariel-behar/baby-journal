@@ -11,7 +11,7 @@ function CancelButton({
 }: Props) {
 	return (
 		<button type="button" className={`btn ${className} btn-sm btn-min-width`} onClick={onClick}>
-			Cancel <IconClose sizeClassName="size-5" />
+			Cancel <IconClose />
 		</button>
 	)
 }

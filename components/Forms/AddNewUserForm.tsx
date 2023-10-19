@@ -73,7 +73,7 @@ function AddNewUserForm({
 
                 <FormSubmitButton isDirty={isDirty} isValid={isValid}>
                     Add User
-                    <IconPlus sizeClassName="size-5" />
+                    <IconPlus />
                 </FormSubmitButton>
             </div>
         </form>
