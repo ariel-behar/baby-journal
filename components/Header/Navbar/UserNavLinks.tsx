@@ -1,4 +1,5 @@
 import LoggedInButton from './LoggedInButton';
+import LoggedInButtonDropdownLinks from './LoggedInButtonDropdownLinks';
 import NavLink from './NavLink'
 
 import { ICustomSession } from '@/types/types';
@@ -15,7 +16,9 @@ function UserNavLinks({
             {/* Desktop Menu */}
             <div className='hidden md:flex items-center'>
                 {user
-                    ? <LoggedInButton user={user} />
+                    ? <LoggedInButton user={user}>
+                        <LoggedInButtonDropdownLinks user={user} />
+                    </LoggedInButton>
                     : (
                         <>
                             {/* Register */}

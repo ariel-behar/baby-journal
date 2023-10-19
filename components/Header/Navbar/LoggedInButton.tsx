@@ -1,15 +1,17 @@
-import IconUser from "@/components/Icons/IconUser"
+import { ReactNode } from "react"
+
 import { ICustomSession } from "@/types/types"
-import NavLink from "./NavLink"
-import { handleLogout } from "@/lib/serverActions"
-import IconLogOut from "@/components/Icons/IconLogOut"
+
+import IconUser from "@/components/Icons/IconUser"
 
 interface Props {
     user: ICustomSession["user"]
+    children: ReactNode
 }
 
 function LoggedInButton({
-    user
+    user,
+    children
 }: Props) {
 
     return (
@@ -27,22 +29,7 @@ function LoggedInButton({
             </div>
 
             <ul tabIndex={0} className="dropdown-content z-20 menu p-5 gap-y-3 shadow bg-base-100 rounded-box border border-gray-800">
-                <>
-                    {/* Dashboard */}
-                    <NavLink title='Dashboard' path='/dashboard' />
-
-                    {/* Admin */}
-                    {user?.isAdmin && (
-                        <NavLink title='Admin' path='/admin' />
-                    )}
-
-                    {/* Logout */}
-                    <form className="mx-auto" action={handleLogout}>
-                        <button className="btn btn-sm px-0 flex justify-between text-white">Logout <IconLogOut /></button>
-                    </form>
-
-
-                </>
+               {children}
             </ul>
         </div>
     )
