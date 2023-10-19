@@ -1,35 +1,21 @@
+import LoggedInButton from './LoggedInButton';
 import NavLink from './NavLink'
 
-import { handleLogout } from '@/lib/serverActions';
 import { ICustomSession } from '@/types/types';
-import { Session } from 'next-auth';
 
 interface Props {
-    session: Session | null
+    user: ICustomSession["user"]
 }
 
 function UserNavLinks({
-    session
+    user
 }: Props) {
     return (
         <>
             {/* Desktop Menu */}
             <div className='hidden md:flex items-center'>
-                {session?.user
-                    ? (
-                        <>
-                            {/* Dashboard */}
-                            <NavLink title='Dashboard' path='/dashboard' />
-
-                            {/* Admin */}
-                            {(session as ICustomSession).user?.isAdmin && <NavLink title='Admin' path='/admin' />}
-
-                            {/* Logout */}
-                            <form action={handleLogout}>
-                                <button className='btn btn-md btn-secondary rounded-none'>Logout</button>
-                            </form>
-                        </>
-                    )
+                {user
+                    ? <LoggedInButton user={user} />
                     : (
                         <>
                             {/* Register */}
@@ -38,8 +24,7 @@ function UserNavLinks({
                             {/* Login */}
                             <NavLink title='Login' path='/login' />
                         </>
-                    )
-                }
+                    )}
             </div>
         </>
     )
