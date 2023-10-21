@@ -8,7 +8,8 @@ import { auth } from "@/lib/auth"
 import { Session } from "next-auth"
 import BlogPostOwnerButtons from "./BlogPostOwnerButtons"
 import BlogPostPublished from "./BlogPostPublished"
-
+import LikeButton from "../Buttons/LikeButton"
+import { ICustomSession } from "@/types/types"
 
 interface Props {
     post: IPost
@@ -18,6 +19,7 @@ async function BlogPost({
     post
 }: Props) {
     const session: Session | null = await auth()
+    const user: ICustomSession['user'] = (session as ICustomSession)?.user;
 
     return (
         <div className="flex gap-[100px]">
@@ -42,9 +44,10 @@ async function BlogPost({
                         <BlogPostPublished createdAt={post.createdAt} />
                     </div>
 
-                    {session?.user?.id == post.userId && (
-                        <BlogPostOwnerButtons post={post} />
-                    )}
+                    {user?.id == post.userId
+                        ? <BlogPostOwnerButtons post={post} />
+                        : <LikeButton post={post} user={user as ICustomSession['user']} />
+                    }
                 </div>
 
                 <div>
