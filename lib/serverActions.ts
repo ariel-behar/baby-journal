@@ -90,6 +90,29 @@ export const likePost = async (formData: FormData) => {
     }
 }
 
+export const unlikePost = async (formData: FormData) => {
+    const { userId, postId } = Object.fromEntries(formData);
+
+    try {
+        dbConnect();
+
+        const post = await Post.findById(postId);
+
+        if (!post) {
+            return { error: "Post not found!" }
+        }
+
+        post.likes = post.likes.filter((like: IUser['_id']) => like != userId);
+        await post.save();
+
+        console.log('Post unliked successfully');
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${postId}`);
+    } catch (error) {
+        console.log(error);
+        return { error: "Something went wrong!" }
+    }
+}
 
 // Auth/User actions
 export const handleLogout = async () => {
