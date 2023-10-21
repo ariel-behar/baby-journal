@@ -8,6 +8,7 @@ import { ILoginFormData } from "@/components/Forms/LoginForm";
 import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
 
+// Post actions
 export const addPost = async (formData: IPostFormData) => {
     const { title, description, userId, img } = formData;
 
@@ -26,7 +27,7 @@ export const addPost = async (formData: IPostFormData) => {
     }
 }
 
-export const editPost = async ( postId: IPost['_id'], formData: IPostFormData) => {
+export const editPost = async (postId: IPost['_id'], formData: IPostFormData) => {
     const { title, description, userId, img } = formData;
 
     try {
@@ -65,6 +66,32 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
     }
 }
 
+export const likePost = async (formData: FormData) => {
+    const {userId, postId} = Object.fromEntries(formData)
+
+    try {
+        dbConnect();
+
+        const post = await Post.findById(postId);
+
+        if (!post) {
+            return { error: "Post not found!" }
+        }
+
+        post.likes.push(userId);
+        await post.save();
+
+        console.log('Post liked successfully');
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${postId}`);
+    } catch (error) {
+        console.log(error);
+        return { error: "Something went wrong!" }
+    }
+}
+
+
+// Auth/User actions
 export const handleLogout = async () => {
     await signOut();
 }
