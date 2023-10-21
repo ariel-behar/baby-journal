@@ -1,7 +1,7 @@
 import { IPost } from '@/models/Post';
 import * as yup from 'yup';
 
-interface IPostYupSchema extends Omit<IPost, "_id" | 'createdAt' | "updatedAt"> {}
+interface IPostYupSchema extends Omit<IPost, "_id" | 'createdAt' | "updatedAt" | "likes"> {}
 
 const postSchemaShape = {
     title: yup

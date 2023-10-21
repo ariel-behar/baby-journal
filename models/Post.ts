@@ -7,6 +7,7 @@ export interface IPost extends Identifiable {
 	title: string;
 	description: string;
 	img: string;
+	likes: IUser['_id'][];
 	userId: IdType;
 	createdAt: string;
 	updatedAt: string;
@@ -37,6 +38,10 @@ const postSchema = new mongoose.Schema<IPostMongooseSchema>({
 		type: String,
 		required: [true, 'Image is required']
 	},
+	likes: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'User'
+	}],
 	userId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
