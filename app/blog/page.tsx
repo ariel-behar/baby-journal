@@ -22,13 +22,23 @@ async function BlogPage() {
 	const user: ICustomSession['user'] | undefined = (session as ICustomSession)?.user;
 
 	return (
-		<div className="py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 gap-y-5 lg:gap-5">
+		<>
 			{
-				posts.map((post) => (
-					<BlogPostCard user={user} post={post} key={uniqid()}  />
-				))
+				posts.length > 0
+					? <div className="py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 gap-y-5 lg:gap-5">
+
+						{
+							posts.map((post) => (
+								<BlogPostCard user={user} post={post} key={uniqid()} />
+							))
+						}
+
+					</div >
+					: <p className="text-2xl text-center">
+						No posts have been created yet...
+					</p>
 			}
-		</div>
+		</>
 	)
 }
 
