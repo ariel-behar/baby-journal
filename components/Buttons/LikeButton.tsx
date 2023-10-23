@@ -1,12 +1,14 @@
-import { likePost, unlikePost } from '@/lib/serverActions'
-import IconHeartOutline from '../Icons/IconHeartOutline'
-import { IPost } from '@/models/Post'
+import { IPost, IPostPopulated } from '@/models/Post'
 import { ICustomSession } from '@/types/types'
+
+import { likePost, unlikePost } from '@/lib/serverActions'
+
+import IconHeartOutline from '../Icons/IconHeartOutline'
 import IconHeartSolid from '../Icons/IconHeartSolid'
 
 interface Props {
     user: ICustomSession['user']
-    post: IPost
+    post: IPost | IPostPopulated
 }
 
 function LikeButton({
