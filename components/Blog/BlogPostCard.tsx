@@ -1,15 +1,21 @@
+import Image from "next/image"
 import Link from "next/link"
 import { format } from "date-fns";
 
-import Image from "next/image"
+import { ICustomSession } from "@/types/types";
+import { IPostPopulated } from "@/models/Post";
 
-import { IPost } from "@/models/Post";
 import IconChevronRight from "../Icons/IconChevronRight";
+import LikeButton from "../Buttons/LikeButton";
 
-interface Props extends IPost { }
+interface Props {
+	post: IPostPopulated,
+	user: ICustomSession['user'] | undefined
+}
 
 function BlogPostCard({
-	...post
+	post,
+	user
 }: Props) {
 
 	return (
@@ -21,20 +27,25 @@ function BlogPostCard({
 			</Link>
 
 			<div className="card-body">
-				<div className="flex flex-row justify-between items-center">
-					<h4 className="card-title text-">
-						<Link href={`/blog/${post._id}`}>
-							{post.title}
-						</Link>
-					</h4>
-					<span className="text-sm text-muted flex-g">
+				<div className="flex flex-row justify-between items-start">
+					<div>
+						<h4 className="card-title ">
+							<Link href={`/blog/${post._id}`}>
+								{post.title}
+							</Link>
+						</h4>
+						<span className="text-sm text-muted">
+							by {post.userId.firstName} {post.userId.lastName}
+						</span>
+					</div>
+					<span className="text-sm text-muted">
 						{format(new Date(post.createdAt), "dd MMM yyyy")}
 					</span>
 				</div>
 
-				<p className="text-ellipsis whitespace-nowrap overflow-hidden">{post.description}</p>
+				<div className={`card-actions ${(user && user.id != post.userId._id) ? 'justify-between' : 'justify-end'}  mt-2`}>
+					{(user && user.id != post.userId._id) && <LikeButton post={post} user={user} />}
 
-				<div className="card-actions justify-end mt-2">
 					<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
 						Read More
 						<IconChevronRight />
