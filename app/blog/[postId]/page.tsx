@@ -26,11 +26,11 @@ async function SingleBlogPostPage({ params }: Props) {
 	const post: IPost | null = await getPost(postId);
 
 	return (
-		<>
+		<div className="flex-grow">
 			{post && (
 				<BlogPost post={post} />
 			)}
-		</>
+		</div>
 	)
 }
 
