@@ -9,12 +9,10 @@ export const metadata: Metadata = {
 function AboutPage() {
 	return (
 		<div className="flex flex-col md:flex-row gap-[100px]">
-			<div className="flex-1 flex flex-col gap-[50px] text-center md:text-left">
-				<h3 className="text-customBlue">About Agency</h3>
-
+			<section className="flex-1 flex flex-col gap-[50px] text-center md:text-left justify-center">
 				<h2 className="text-[54px] font-bold leading-tight">We create digital ideas that are bigger, bolder, braver and better</h2>
 
-				<p className="text-xl "> We create digital ideas that are bigger, bolder, braver, and better. We believe in good ideas, flexibility, and precision. Our team is the best consulting and finance solutions provider. We offer a wide range of web and software development services.</p>
+				<p className="text-xl">We create digital ideas that are bigger, bolder, braver, and better. We believe in good ideas, flexibility, and precision. Our team is the best consulting and finance solutions provider. We offer a wide range of web and software development services.</p>
 
 				<div className="gap-[50px] md:gap-0 flex flex-col md:flex-row items-center justify-between">
 					<div className="flex flex-col gap-2">
@@ -30,7 +28,7 @@ function AboutPage() {
 						<p>Year of experience</p>
 					</div>
 				</div>
-			</div>
+			</section>
 
 			<div className="flex-1 relative">
 				<Image
