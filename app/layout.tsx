@@ -36,10 +36,8 @@ export default async function RootLayout({
 
 					<Navbar />
 
-					<main className="flex-grow lg:container mx-auto px-3 sm:px-5 lg:px-[50px] flex flex-col justify-center items-center">
-						<div className="w-full">
-							{children}
-						</div>
+					<main className="flex-grow lg:container mx-auto px-3 sm:px-5 py-5 lg:px-[50px] flex items-stretch">
+						{children}
 					</main>
 
 					<Footer />
