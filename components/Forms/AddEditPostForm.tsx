@@ -18,18 +18,18 @@ export interface IPostFormData {
     title: string;
     description: string;
     img: string;
-    userId: IUser['_id'];
+    user: IUser['_id'];
 }
 
 interface Props {
-    userId: IUser['_id']
+    user: IUser['_id']
     formType: 'add' | 'edit'
     post?: IPost,
     modalRef?: React.RefObject<HTMLDialogElement>
 }
 
 function AddEditPostForm({
-    userId,
+    user,
     formType,
     post,
     modalRef
@@ -41,19 +41,19 @@ function AddEditPostForm({
             title: (formType === 'edit' && post?.title) || '',
             description: (formType === 'edit' && post?.description) || '',
             img: (formType === 'edit' && post?.img) || '',
-            userId: userId
+            user: user
         }
     });
 
     const onFormSubmit = async (formData: IPostFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
-        const { title, description, img, userId } = formData;
+        const { title, description, img, user } = formData;
 
-        if (title && description && img && userId) {
+        if (title && description && img && user) {
             if (formType === 'add') {
                 try {
-                    const response = await addPost({ title, description, img, userId });
+                    const response = await addPost({ title, description, img, user });
                     console.log('response:', response)
 
                     modalRef?.current?.close();
@@ -65,7 +65,7 @@ function AddEditPostForm({
 
             if (formType === 'edit') {
                 try {
-                    const response = await editPost(post?._id as string, { title, description, img, userId });
+                    const response = await editPost(post?._id as string, { title, description, img, user });
                     console.log('response:', response)
 
                     modalRef?.current?.close();
@@ -83,7 +83,7 @@ function AddEditPostForm({
                 <FormInputFieldWithTooltip register={register} errors={errors} name="title" label='Title' type='text' />
                 <FormInputFieldWithTooltip register={register} errors={errors} name="description" label='Description' type='text' />
                 <FormInputFieldWithTooltip register={register} errors={errors} name="img" label='Image' type='text' />
-                <input type="hidden" {...register('userId')} value={userId} name="userId" />
+                <input type="hidden" {...register('user')} value={user} name="user" />
 
                 <div className="w-full flex justify-around mt-2">
                     {(formType === 'edit' || formType === 'add') && (

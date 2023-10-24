@@ -5,12 +5,14 @@ import { IUser } from "@/models/User";
 
 import { getUser } from "@/lib/getUserData";
 
-interface Props extends Partial<IPost> { }
+interface Props {
+    postUserId: IPost['user']
+ }
 
 async function BlogPostUser({
-    userId
+    postUserId
 }: Props) {
-    const user: IUser | null = await getUser(userId as string);
+    const user: IUser | null = await getUser(postUserId as string);
 
     return (
         <div className="flex items-center gap-5">

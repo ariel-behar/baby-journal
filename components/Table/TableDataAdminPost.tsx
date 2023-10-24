@@ -18,12 +18,12 @@ function TableDataAdminPost({
 
             {/* Username */}
             <td>
-                {post.userId.username}
+                {post.user.username}
             </td>
 
             {/* Email */}
             <td>
-                {post.userId.email}
+                {post.user.email}
             </td>
             {/* Post ID */}
             <td>

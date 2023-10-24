@@ -20,6 +20,7 @@ async function BlogPost({
 }: Props) {
     const session: Session | null = await auth()
     const user: ICustomSession['user'] = (session as ICustomSession)?.user;
+    const postUserId = post.user;
 
     return (
         <div className="flex gap-[100px]">
@@ -37,14 +38,14 @@ async function BlogPost({
                     <div className="relative flex gap-[20px]">
                         {post && (
                             <Suspense fallback={<div>Loading...</div>}>
-                                <PostUser userId={post.userId} />
+                                <PostUser postUserId={postUserId} />
                             </Suspense>
                         )}
 
                         <BlogPostPublished createdAt={post.createdAt} />
                     </div>
 
-                    {user?.id == post.userId
+                    {user?.id == postUserId
                         ? <BlogPostOwnerButtons post={post} />
                         : <LikeButton post={post} user={user as ICustomSession['user']} />
                     }

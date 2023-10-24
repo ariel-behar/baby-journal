@@ -20,7 +20,7 @@ function LikeButton({
     return (
         <>
             <form action={stringifiedUserLikeIds.includes(user?.id as string) ? unlikePost : likePost}>
-                <input type="hidden" name="userId" value={user?.id} />
+                <input type="hidden" name="user" value={user?.id} />
                 <input type="hidden" name="postId" value={post._id} />
                 <button className='transform hover:scale-110 duration-200'>
                     {

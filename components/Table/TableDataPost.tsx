@@ -58,7 +58,7 @@ function TableDataPost({
 
             {/* Author */}
             <td>
-                {post.userId.firstName} {post.userId.lastName}
+                {post.user.firstName} {post.user.lastName}
             </td>
 
             {children}
@@ -66,7 +66,7 @@ function TableDataPost({
 
             {/* Actions */}
             <td>
-                {(session?.user?.id == post.userId._id || (session as ICustomSession)?.user?.isAdmin) && (
+                {(session?.user?.id == post.user._id || (session as ICustomSession)?.user?.isAdmin) && (
                     <div>
                         <EditModalButton entity={post} entityType='post' />
 

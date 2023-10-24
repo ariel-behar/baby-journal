@@ -28,7 +28,7 @@ function AddEditPostModal({
             <div className="modal-action mt-0">
                 <FormStylesWrapper title={`${modalType === 'add' ? 'Add' : 'Edit'} Post`} className="w-full">
                     <AddEditPostForm
-                        userId={session?.user?.id as string}
+                        user={session?.user?.id as string}
                         formType={modalType as "edit" || 'add'}
                         post={entity as IPost}
                         modalRef={modalRef}

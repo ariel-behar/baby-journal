@@ -35,7 +35,7 @@ function BlogPostCard({
 							</Link>
 						</h4>
 						<span className="text-sm text-muted">
-							by {post.userId.firstName} {post.userId.lastName}
+							by {post.user.firstName} {post.user.lastName}
 						</span>
 					</div>
 					<span className="text-sm text-muted">
@@ -43,8 +43,8 @@ function BlogPostCard({
 					</span>
 				</div>
 
-				<div className={`card-actions ${(user && user.id != post.userId._id) ? 'justify-between' : 'justify-end'}  mt-2`}>
-					{(user && user.id != post.userId._id) && <LikeButton post={post} user={user} />}
+				<div className={`card-actions ${(user && user.id != post.user._id) ? 'justify-between' : 'justify-end'}  mt-2`}>
+					{(user && user.id != post.user._id) && <LikeButton post={post} user={user} />}
 
 					<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
 						Read More
