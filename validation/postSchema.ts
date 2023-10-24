@@ -14,7 +14,7 @@ const postSchemaShape = {
         .required('Description is required')
         .min(3, 'Description must be at least 3 characters long')
         .max(200, 'Description must be at most 200 characters long'),
-    userId: yup
+    user: yup
         .string()
         .required('User ID is required'),
     img: yup
