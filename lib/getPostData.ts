@@ -29,20 +29,18 @@ export const getPosts = async (populateUser: boolean, userId?: IUser['_id']) => 
 
         if (userId) {
             if (populateUser) {
-                posts = await Post.find({ userId }).populate("userId").lean();
+                posts = await Post.find({ user: userId }).populate("user").lean();
             } else {
-                posts = await Post.find({ userId }).lean();
+                posts = await Post.find({ user: userId }).lean();
             }
 
-            console.log('posts:', posts)
         } else {
             if (populateUser) {
-                posts = await Post.find().populate("userId").lean();
+                posts = await Post.find().populate("user").lean();
             } else {
                 posts = await Post.find().lean();
             }
-            
-            console.log('posts:', posts)
+
         }
 
         return posts;
