@@ -8,17 +8,17 @@ export interface IPost extends Identifiable {
 	description: string;
 	img: string;
 	likes: IUser['_id'][];
-	userId: IdType;
+	user: IdType;
 	createdAt: string;
 	updatedAt: string;
 }
 
-export interface IPostPopulated extends Omit<IPost, 'userId'> {
-	userId: IUser;
+export interface IPostPopulated extends Omit<IPost, 'user'> {
+	user: IUser;
 }
 
-interface IPostMongooseSchema extends Omit<IPost, '_id' | 'userId' | 'createdAt' | 'updatedAt'> {
-	userId: mongoose.Schema.Types.ObjectId;
+interface IPostMongooseSchema extends Omit<IPost, '_id' | 'user' | 'createdAt' | 'updatedAt'> {
+	user: mongoose.Schema.Types.ObjectId;
 }
 
 const postSchema = new mongoose.Schema<IPostMongooseSchema>({
@@ -42,7 +42,7 @@ const postSchema = new mongoose.Schema<IPostMongooseSchema>({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User'
 	}],
-	userId: {
+	user: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
 		required: [true, 'User ID is required']
