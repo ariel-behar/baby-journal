@@ -10,11 +10,11 @@ import { IPostFormData } from "@/components/Forms/AddEditPostForm";
 
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
-    const { title, description, userId, img } = formData;
+    const { title, description, user, img } = formData;
 
     try {
         dbConnect();
-        const newPost = new Post({ title, description, img, userId });
+        const newPost = new Post({ title, description, img, user });
 
         await newPost.save();
         console.log('Post added successfully');
@@ -28,12 +28,12 @@ export const addPost = async (formData: IPostFormData) => {
 }
 
 export const editPost = async (postId: IPost['_id'], formData: IPostFormData) => {
-    const { title, description, userId, img } = formData;
+    const { title, description, user, img } = formData;
 
     try {
         dbConnect();
 
-        await Post.findByIdAndUpdate(postId, { title, description, img, userId });
+        await Post.findByIdAndUpdate(postId, { title, description, img, user });
         console.log('Post edited successfully');
 
         revalidatePath('/blog');
@@ -67,7 +67,7 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
 }
 
 export const likePost = async (formData: FormData) => {
-    const {userId, postId} = Object.fromEntries(formData)
+    const {user, postId} = Object.fromEntries(formData)
 
     try {
         dbConnect();
@@ -78,7 +78,7 @@ export const likePost = async (formData: FormData) => {
             return { error: "Post not found!" }
         }
 
-        post.likes.push(userId);
+        post.likes.push(user);
         await post.save();
 
         console.log('Post liked successfully');
@@ -91,7 +91,7 @@ export const likePost = async (formData: FormData) => {
 }
 
 export const unlikePost = async (formData: FormData) => {
-    const { userId, postId } = Object.fromEntries(formData);
+    const { user, postId } = Object.fromEntries(formData);
 
     try {
         dbConnect();
@@ -102,7 +102,7 @@ export const unlikePost = async (formData: FormData) => {
             return { error: "Post not found!" }
         }
 
-        post.likes = post.likes.filter((like: IUser['_id']) => like != userId);
+        post.likes = post.likes.filter((like: IUser['_id']) => like != user);
         await post.save();
 
         console.log('Post unliked successfully');
@@ -197,7 +197,7 @@ export const deleteUser = async (formData: FormData | IUser['_id']) => {
     try {
         dbConnect();
 
-        await Post.deleteMany({ userId });
+        await Post.deleteMany({ user: userId });
         await User.findByIdAndDelete(userId);
 
         console.log('User deleted successfully');
