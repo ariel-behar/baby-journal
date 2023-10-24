@@ -14,11 +14,11 @@ function AdminLayout({
     users
 }: Props) {
     return (
-        <>
+        <div className="flex-grow flex flex-col">
             <AdminTabs posts={posts} users={users} />
 
             {children}
-        </>
+        </div>
     )
 }
 
