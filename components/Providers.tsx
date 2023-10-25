@@ -1,4 +1,5 @@
 import { ModalContextProvider } from '@/context/modalContext'
+import { SessionProvider } from 'next-auth/react'
 
 interface Props {
     children: React.ReactNode
@@ -8,9 +9,11 @@ function Providers({
     children
 }: Props) {
     return (
-        <ModalContextProvider>
-            {children}
-        </ModalContextProvider>
+        <SessionProvider>
+            <ModalContextProvider>
+                {children}
+            </ModalContextProvider>
+        </SessionProvider>
     )
 }
 
