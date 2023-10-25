@@ -18,7 +18,7 @@ export interface IModalContext {
     modalSettings: IModalSettings,
     currentEntity: ICurrentEntity,
     showModalHandler: (showModal: IModalContext['modalSettings']['showModal'], modalType: IModalContext['modalSettings']['modalType'] , entity: IModalContext['currentEntity']['entity'], entityType: IModalContext['currentEntity']['entityType']) => void
-    deletePostHandler: (confirm: boolean) => void
+    deletePostHandler: (confirm: boolean, currentUserId: IUser['_id']) => void
 }
 
 export const ModalContext = createContext<IModalContext>({
@@ -68,13 +68,13 @@ export const ModalContextProvider = ({ children }: Props) => {
         });
     }
 
-    const deletePostHandler = (userConfirmation: boolean) => {
+    const deletePostHandler = (userConfirmation: boolean, currentUserId: IUser['_id']) => {
         if (userConfirmation) {
             if (currentEntity.entity) {
                 if (currentEntity.entityType === 'post') {
                     deletePost(currentEntity.entity._id);
                 } else if (currentEntity.entityType === 'user') {
-                    deleteUser(currentEntity.entity._id);
+                    deleteUser(currentEntity.entity._id, currentUserId);
                 }
             }
         }
