@@ -38,7 +38,7 @@ function LoginForm() {
 
             <FormInputFieldWithTooltip register={register} errors={errors} name="password" label='Password' type='password' />
 
-            <FormSubmitButton isDirty={isDirty} isValid={isValid}>Login</FormSubmitButton>
+            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid}>Login</FormSubmitButton>
         </form>
     )
 }

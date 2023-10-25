@@ -71,7 +71,7 @@ function AddNewUserForm({
             <div className="w-full flex justify-around mt-2">
                 <CancelButton onClick={() => modalRef?.current?.close()} />
 
-                <FormSubmitButton isDirty={isDirty} isValid={isValid}>
+                <FormSubmitButton className="btn-sm" isDirty={isDirty} isValid={isValid}>
                     Add User
                     <IconPlus />
                 </FormSubmitButton>

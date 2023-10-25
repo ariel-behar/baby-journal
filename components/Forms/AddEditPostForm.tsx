@@ -90,7 +90,7 @@ function AddEditPostForm({
                         <CancelButton onClick={() => modalRef?.current?.close()} />
                     )}
 
-                    <FormSubmitButton isDirty={isDirty} isValid={isValid}>
+                    <FormSubmitButton className="btn-sm" isDirty={isDirty} isValid={isValid}>
                         {formType === 'edit'
                             ? 'Edit'
                             : 'Add'

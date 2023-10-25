@@ -55,7 +55,7 @@ function RegisterForm() {
             <FormInputFieldWithTooltip register={register} errors={errors} name="password" label="Password" type="password" />
             <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label="Confirm Password" type="password" />
 
-            <FormSubmitButton isDirty={isDirty} isValid={isValid}>Register</FormSubmitButton>
+            <FormSubmitButton className="btn-lg" isDirty={isDirty} isValid={isValid}>Register</FormSubmitButton>
         </form>
     )
 }
