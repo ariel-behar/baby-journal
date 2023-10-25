@@ -189,7 +189,7 @@ export const addUser = async (formData: IRegisterFormData) => {
     }
 }
 
-export const deleteUser = async (formData: FormData | IUser['_id']) => {
+export const deleteUser = async (formData: FormData | IUser['_id'], currentUserId: IUser['_id']) => {
     const userId = typeof formData === 'string'
         ? formData
         : Object.fromEntries(formData)._id;
@@ -199,6 +199,10 @@ export const deleteUser = async (formData: FormData | IUser['_id']) => {
 
         await Post.deleteMany({ user: userId });
         await User.findByIdAndDelete(userId);
+
+        if(userId === currentUserId) {
+            await signOut();
+        }
 
         console.log('User deleted successfully');
         revalidatePath('/admin');
