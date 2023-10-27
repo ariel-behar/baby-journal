@@ -37,8 +37,8 @@ function RegisterForm() {
 
         if (username && firstName && lastName && email && password && confirmPassword) {
             try {
-               const response = await registerUser(formData);    
-               console.log('response:', response)
+                const response = await registerUser(formData);
+                console.log('response:', response)
 
             } catch (error) {
                 console.log(error);
@@ -47,13 +47,20 @@ function RegisterForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-7">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-5">
             <FormInputFieldWithTooltip register={register} errors={errors} name="username" label="Username" type="text" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label="First Name" type="text" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label="Last Name" type="text" />
+
+            <div className="flex gap-x-2">
+                <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label="First Name" type="text" />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label="Last Name" type="text" />
+            </div>
+            
             <FormInputFieldWithTooltip register={register} errors={errors} name="email" label="Email" type="email" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="password" label="Password" type="password" />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label="Confirm Password" type="password" />
+
+            <div className="flex gap-x-2">
+                <FormInputFieldWithTooltip register={register} errors={errors} name="password" label="Password" type="password" />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label="Confirm Password" type="password" />
+            </div>
 
             <FormSubmitButton className="btn-lg" isDirty={isDirty} isValid={isValid}>Register</FormSubmitButton>
         </form>
