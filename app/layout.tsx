@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from "@/components/Header/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -8,7 +9,7 @@ import Providers from "@/components/Providers";
 import Modals from "@/components/Modal/Modals";
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
-import Toast from "@/components/Toast/Toast";
+import Notification from "@/components/Notification/Notification";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,7 +43,7 @@ export default async function RootLayout({
 
 					<Footer />
 
-					<Toast />
+					<Notification />
 
 					<Modals session={session} />
 				</body>
