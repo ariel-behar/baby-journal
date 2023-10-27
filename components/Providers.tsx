@@ -1,5 +1,5 @@
 import { ModalContextProvider } from '@/context/modalContext'
-import { ToastContextProvider } from '@/context/toastContext'
+import { NotificationContextProvider } from '@/context/notificationContext'
 import { SessionProvider } from 'next-auth/react'
 
 interface Props {
@@ -11,11 +11,11 @@ function Providers({
 }: Props) {
     return (
         <SessionProvider>
-            <ToastContextProvider >
+            <NotificationContextProvider>
                 <ModalContextProvider>
                     {children}
                 </ModalContextProvider>
-            </ToastContextProvider>
+            </NotificationContextProvider>
         </SessionProvider>
     )
 }
