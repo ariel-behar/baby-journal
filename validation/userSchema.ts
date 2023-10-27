@@ -25,18 +25,18 @@ const userSchemaShape = {
     username: yup
         .string()
         .required('Username is required')
-        .min(6, 'First Name must be at least 6 characters long')
-        .max(20, 'First Name must be at most 20 characters long'),
+        .min(6, 'Username must be at least 6 characters long')
+        .max(20, 'Username must be at most 20 characters long'),
     firstName: yup
         .string()
         .required('First name is required')
-        .min(2, 'Last Name must be at least 2 characters long')
-        .max(20, 'Last Name must be at most 20 characters long'),
+        .min(2, 'First name must be at least 2 characters long')
+        .max(20, 'First name must be at most 20 characters long'),
     lastName: yup
         .string()
         .required('Last name is required')
-        .min(2, 'Username must be at least 2 characters long')
-        .max(20, 'Username must be at most 20 characters long'),
+        .min(2, 'Last name must be at least 2 characters long')
+        .max(20, 'Last name must be at most 20 characters long'),
     email: yup
         .string()
         .matches(emailRegex, 'Email is not valid')
