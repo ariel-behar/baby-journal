@@ -6,12 +6,12 @@ import LoginForm from "@/components/Forms/LoginForm";
 async function LoginPage() {
 
 	return (
-		<div className="flex items-center justify-center">
-			<FormStylesWrapper title="Login" className="p-12 flex flex-col gap-7 w-[500px]">
+		<div className="flex-grow flex items-center justify-center">
+			<FormStylesWrapper title="Login" className="p-12 flex flex-col w-[500px]">
 				
 				<LoginForm />
 
-				<span>
+				<span className="my-3">
 					Don't have an account?&nbsp;
 					<Link href="/register" className="font-bold">
 						Register here!
