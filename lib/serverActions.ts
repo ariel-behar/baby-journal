@@ -66,8 +66,7 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
     }
 }
 
-export const likePost = async (formData: FormData) => {
-    const {user, postId} = Object.fromEntries(formData)
+export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
 
     try {
         dbConnect();
@@ -78,20 +77,20 @@ export const likePost = async (formData: FormData) => {
             return { error: "Post not found!" }
         }
 
-        post.likes.push(user);
+        post.likes.push(userId);
         await post.save();
 
-        console.log('Post liked successfully');
         revalidatePath('/blog');
         revalidatePath(`/blog/${postId}`);
+
+        return { ok: true, message: 'Post has been liked!'}
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
     }
 }
 
-export const unlikePost = async (formData: FormData) => {
-    const { user, postId } = Object.fromEntries(formData);
+export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id'] ) => {
 
     try {
         dbConnect();
@@ -102,12 +101,13 @@ export const unlikePost = async (formData: FormData) => {
             return { error: "Post not found!" }
         }
 
-        post.likes = post.likes.filter((like: IUser['_id']) => like != user);
+        post.likes = post.likes.filter((like: IUser['_id']) => like != userId);
         await post.save();
 
-        console.log('Post unliked successfully');
         revalidatePath('/blog');
         revalidatePath(`/blog/${postId}`);
+
+        return { ok: true, message: 'Post has been unliked!'}
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
