@@ -8,6 +8,7 @@ import Providers from "@/components/Providers";
 import Modals from "@/components/Modal/Modals";
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
+import Toast from "@/components/Toast/Toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,6 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
 	children,
-	modal
 }: Readonly<{
 	children: React.ReactNode;
 	modal: React.ReactNode;
@@ -41,6 +41,8 @@ export default async function RootLayout({
 					</main>
 
 					<Footer />
+
+					<Toast />
 
 					<Modals session={session} />
 				</body>
