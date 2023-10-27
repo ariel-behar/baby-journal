@@ -5,10 +5,10 @@ import FormStylesWrapper from "@/components/Forms/FormComponents/FormStylesWrapp
 
 function RegisterPage() {
 	return (
-		<div className="flex items-center justify-center">
-			<FormStylesWrapper title="Register" className="p-12 flex flex-col gap-7 w-[500px]">
+		<div className="flex-grow flex items-center justify-center">
+			<FormStylesWrapper title="Register" className="p-12 flex flex-col w-[500px]">
 				<RegisterForm />
-				<span>
+				<span className="my-3">
 					Already an existing user?&nbsp;
 					<Link href="/login" className="font-bold">
 						Login here!
