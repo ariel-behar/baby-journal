@@ -1,7 +1,8 @@
 "use client"
-import { useToastContext } from '@/context/toastContext'
 import { IPost, IPostPopulated } from '@/models/Post'
 import { ICustomSession } from '@/types/types'
+
+import { useNotificationContext } from '@/context/notificationContext'
 
 import { likePost, unlikePost } from '@/lib/serverActions'
 
@@ -18,21 +19,21 @@ function LikeButton({
     post
 }: Props) {
     const stringifiedUserLikeIds = post.likes.map(like => like.toString());
-    const { showToast } = useToastContext();
+    const { displayNotification } = useNotificationContext()
 
     const formHandler = () => {
         if (stringifiedUserLikeIds.includes(user?.id as string)) {
             unlikePost(user?.id as string, post._id)
                 .then(res => {
                     if (res.ok) {
-                        showToast(res.message, 'error')
+                        displayNotification(res.message, 'error')
                     }
                 })
         } else {
             likePost(user?.id as string, post._id)
                 .then(res => {
                     if (res.ok) {
-                        showToast(res.message, 'success')
+                        displayNotification(res.message, 'success')
                     }
                 })
         }
