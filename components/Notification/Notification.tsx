@@ -18,7 +18,7 @@ function Notification() {
 
     return (
         <ToastContainer
-            position="bottom-left"
+            position="bottom-center"
             autoClose={1500}
             limit={5}
             hideProgressBar
