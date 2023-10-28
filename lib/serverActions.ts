@@ -63,6 +63,8 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
         console.log('Post deleted successfully');
         revalidatePath('/blog');
         revalidatePath('/admin');
+
+        return { ok: true, message: 'Post has been deleted!' }
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
@@ -207,8 +209,9 @@ export const deleteUser = async (formData: FormData | IUser['_id'], currentUserI
             await signOut();
         }
 
-        console.log('User deleted successfully');
         revalidatePath('/admin');
+
+        return { ok: true, message: 'User has been deleted!' }
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
