@@ -13,6 +13,7 @@ import { IPost } from "@/models/Post"
 import CancelButton from "../Buttons/CancelButton"
 import IconPencil from "../Icons/IconPencil"
 import IconPlus from "../Icons/IconPlus"
+import { useNotificationContext } from "@/context/notificationContext"
 
 export interface IPostFormData {
     title: string;
@@ -34,6 +35,7 @@ function AddEditPostForm({
     post,
     modalRef
 }: Props) {
+    const { displayNotification } = useNotificationContext();
     const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IPostFormData>({
         resolver: yupResolver(postSchema),
         mode: 'onBlur',
@@ -53,11 +55,13 @@ function AddEditPostForm({
         if (title && description && img && user) {
             if (formType === 'add') {
                 try {
-                    const response = await addPost({ title, description, img, user });
-                    console.log('response:', response)
-
-                    modalRef?.current?.close();
-
+                    addPost({ title, description, img, user })
+                        .then(res => {
+                            if (res.ok) {
+                                modalRef?.current?.close();
+                                displayNotification(res.message, 'info')
+                            }
+                        })
                 } catch (error) {
                     console.log(error);
                 }
@@ -65,10 +69,13 @@ function AddEditPostForm({
 
             if (formType === 'edit') {
                 try {
-                    const response = await editPost(post?._id as string, { title, description, img, user });
-                    console.log('response:', response)
-
-                    modalRef?.current?.close();
+                    editPost(post?._id as string, { title, description, img, user })
+                        .then(res => {
+                            if (res.ok) {
+                                modalRef?.current?.close();
+                                displayNotification(res.message, 'info')
+                            }
+                        })
                 } catch (error) {
                     console.log(error);
                 }
