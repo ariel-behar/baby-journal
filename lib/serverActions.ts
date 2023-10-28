@@ -21,8 +21,9 @@ export const addPost = async (formData: IPostFormData) => {
         revalidatePath('/blog');
         revalidatePath('/dashboard');
         revalidatePath('/admin');
+
+        return { ok: true, message: 'Post has been created!' }
     } catch (error) {
-        console.log(error);
         return { error: "Something went wrong!" }
     }
 }
@@ -39,6 +40,8 @@ export const editPost = async (postId: IPost['_id'], formData: IPostFormData) =>
         revalidatePath('/blog');
         revalidatePath('/dashboard');
         revalidatePath('/admin');
+
+        return { ok: true, message: 'Post has been modified!' }
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
