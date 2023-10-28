@@ -26,14 +26,18 @@ function LikeButton({
             unlikePost(user?.id as string, post._id)
                 .then(res => {
                     if (res.ok) {
-                        displayNotification(res.message, 'error')
+                        displayNotification(res.message, 'error', {
+                            icon: <IconHeartOutline sizeClassName='size-6' />
+                        })
                     }
                 })
         } else {
             likePost(user?.id as string, post._id)
                 .then(res => {
                     if (res.ok) {
-                        displayNotification(res.message, 'success')
+                        displayNotification(res.message, 'success', {
+                            icon: <IconHeartSolid fillColor='#D32F2F' sizeClassName='size-6' />
+                        })
                     }
                 })
         }
