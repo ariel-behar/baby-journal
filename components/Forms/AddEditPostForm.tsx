@@ -47,38 +47,32 @@ function AddEditPostForm({
         }
     });
 
-    const onFormSubmit = async (formData: IPostFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
+    const onFormSubmit = (formData: IPostFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
         const { title, description, img, user } = formData;
 
         if (title && description && img && user) {
             if (formType === 'add') {
-                try {
-                    addPost({ title, description, img, user })
-                        .then(res => {
-                            if (res.ok) {
-                                modalRef?.current?.close();
-                                displayNotification(res.message, 'info')
-                            }
-                        })
-                } catch (error) {
-                    console.log(error);
-                }
+                addPost({ title, description, img, user })
+                    .then(res => {
+                        if (res.ok) {
+                            modalRef?.current?.close();
+                            displayNotification(res.message, 'info')
+                        }
+                    })
+                    .catch(err => console.log(err))
             }
 
             if (formType === 'edit') {
-                try {
-                    editPost(post?._id as string, { title, description, img, user })
-                        .then(res => {
-                            if (res.ok) {
-                                modalRef?.current?.close();
-                                displayNotification(res.message, 'info')
-                            }
-                        })
-                } catch (error) {
-                    console.log(error);
-                }
+                editPost(post?._id as string, { title, description, img, user })
+                    .then(res => {
+                        if (res.ok) {
+                            modalRef?.current?.close();
+                            displayNotification(res.message, 'info')
+                        }
+                    })
+                    .catch(err => console.log(err))
             }
 
         }
