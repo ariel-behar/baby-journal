@@ -186,8 +186,9 @@ export const addUser = async (formData: IRegisterFormData) => {
         const newUser = new User({ username, firstName, lastName, email, password, img, isAdmin });
 
         await newUser.save();
-        console.log('User added successfully');
         revalidatePath('/admin');
+
+        return { ok: true, message: 'User has been created!' }
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
