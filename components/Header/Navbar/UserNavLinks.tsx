@@ -14,7 +14,7 @@ function UserNavLinks({
     return (
         <>
             {/* Desktop Menu */}
-            <div className='hidden md:flex items-center'>
+            <div className='hidden lg:flex items-center'>
                 {user
                     ? <LoggedInButton user={user}>
                         <LoggedInButtonDropdownLinks user={user} />
