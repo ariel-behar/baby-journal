@@ -13,18 +13,14 @@ function DeleteButton() {
     const currentUserId = session.data?.user?.id
 
     const onDeleteButtonClick = () => {
-        try {
-            const deleteResponse = deletePostHandler(true, currentUserId as string)
+        const deleteResponse = deletePostHandler(true, currentUserId as string)
 
-            if (deleteResponse) {
-                deleteResponse.then(res => {
-                    if (res.ok) {
-                        displayNotification(res.message, 'info')
-                    }
-                })
-            }
-        } catch (error) {
-            console.log(error);
+        if (deleteResponse) {
+            deleteResponse.then(res => {
+                if (res.ok) {
+                    displayNotification(res.message, 'info')
+                }
+            })
         }
     }
 
