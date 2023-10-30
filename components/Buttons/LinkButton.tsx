@@ -2,17 +2,19 @@ import Link from 'next/link'
 
 interface Props {
     href: string
+    className?: string
     children: React.ReactNode
 }
 
 function LinkButton({
     href,
+    className = 'btn-sm btn-primary',
     children
 }: Props) {
     return (
         <Link href={href}>
             <button
-                className="btn btn-sm btn-primary btn-min-width"
+                className={`btn ${className} btn-min-width`}
             >
                 {children}
             </button>
