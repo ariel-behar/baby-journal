@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { BaseSyntheticEvent } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+import { useNotificationContext } from "@/context/notificationContext";
+
 import userSchema from "@/validation/userSchema";
 import { addUser } from "@/lib/serverActions"
 
@@ -19,6 +21,7 @@ interface Props {
 function AddNewUserForm({
     modalRef
 }: Props) {
+    const { displayNotification } = useNotificationContext();
     const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
@@ -40,15 +43,14 @@ function AddNewUserForm({
         const { username, firstName, lastName, email, password, confirmPassword, img, isAdmin } = formData;
 
         if (username && firstName && lastName && email && password && confirmPassword) {
-            try {
-                const response = await addUser({ username, firstName, lastName, email, password, confirmPassword, img, isAdmin });
-                console.log('response:', response)
-
-                modalRef.current?.close();
-
-            } catch (error) {
-                console.log(error);
-            }
+            addUser({ username, firstName, lastName, email, password, confirmPassword, img, isAdmin })
+                .then(res => {
+                    if (res.ok) {
+                        modalRef.current?.close();
+                        displayNotification(res.message, 'info')
+                    }
+                })
+                .catch(err => console.log(err))
         }
     }
 
