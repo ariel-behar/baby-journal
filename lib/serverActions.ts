@@ -144,9 +144,8 @@ export const registerUser = async (formData: IRegisterFormData) => {
 
         await newUser.save();
         await signIn("credentials", { username, password });
-        console.log('User registered successfully');
-
-        // return Response.json({ message: 'User registered successfully' })
+        
+        return { ok: true, message: 'User has been registered!' }
 
     } catch (error) {
         console.log(error);
@@ -162,7 +161,7 @@ export const loginUser = async (formData: ILoginFormData) => {
 
         await signIn("credentials", { username, password });
 
-        console.log('User signed in successfully');
+        return { ok: true, message: 'User has successfully logged in!' }
     } catch (error) {
         console.log('error', error);
 
