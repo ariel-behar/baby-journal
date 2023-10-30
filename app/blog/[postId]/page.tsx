@@ -1,7 +1,10 @@
 import { IPost } from "@/models/Post";
 
 import { getPost } from "@/lib/getPostData";
+
 import BlogPost from "@/components/Blog/BlogPost";
+import LinkButton from "@/components/Buttons/LinkButton";
+import IconChevronLeft from "@/components/Icons/IconChevronLeft";
 
 interface Props {
 	params: {
@@ -27,6 +30,13 @@ async function SingleBlogPostPage({ params }: Props) {
 
 	return (
 		<div className="flex-grow">
+			<div className="flex justify-end mb-2">
+				<LinkButton href="/blog">
+					<IconChevronLeft />
+					Back to Blog
+				</LinkButton>
+			</div>
+
 			{post && (
 				<BlogPost post={post} />
 			)}
