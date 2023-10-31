@@ -47,7 +47,15 @@ async function BlogPost({
 
                     {user?.id == postUserId
                         ? <BlogPostOwnerButtons post={post} />
-                        : <LikeButton post={post} user={user as ICustomSession['user']} />
+                        : user?.isAdmin
+                            ? (
+                                <div className="flex gap-[15px]">
+
+                                    <LikeButton post={post} user={user as ICustomSession['user']} />
+                                    <BlogPostOwnerButtons post={post} />
+                                </div>
+                            )
+                            : <LikeButton post={post} user={user as ICustomSession['user']} />
                     }
                 </div>
 
