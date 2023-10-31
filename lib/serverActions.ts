@@ -1,12 +1,17 @@
 "use server"
-import Post, { IPost } from "@/models/Post";
-import dbConnect from "./dbConnect";
 import { revalidatePath } from "next/cache";
 import { signIn, signOut } from "./auth";
+
+import dbConnect from "./dbConnect";
+
+import Post, { IPost } from "@/models/Post";
 import User, { IUser } from "@/models/User";
+
 import { ILoginFormData } from "@/components/Forms/LoginForm";
 import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
+import { redirect } from "next/navigation";
+import { isRedirectError } from "next/dist/client/components/redirect";
 
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
@@ -88,14 +93,14 @@ export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
         revalidatePath('/blog');
         revalidatePath(`/blog/${postId}`);
 
-        return { ok: true, message: 'Post has been liked!'}
+        return { ok: true, message: 'Post has been liked!' }
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
     }
 }
 
-export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id'] ) => {
+export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
 
     try {
         dbConnect();
@@ -112,7 +117,7 @@ export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id'] ) =>
         revalidatePath('/blog');
         revalidatePath(`/blog/${postId}`);
 
-        return { ok: true, message: 'Post has been unliked!'}
+        return { ok: true, message: 'Post has been unliked!' }
     } catch (error) {
         console.log(error);
         return { error: "Something went wrong!" }
@@ -128,7 +133,7 @@ export const registerUser = async (formData: IRegisterFormData) => {
     const { username, firstName, lastName, email, password, confirmPassword } = formData;
 
     if (password !== confirmPassword) {
-        return { error: "Passwords do not match!" }
+        throw new Error("Passwords do not match!")
     }
 
     try {
@@ -137,20 +142,22 @@ export const registerUser = async (formData: IRegisterFormData) => {
         const user = await User.findOne({ username })
 
         if (user) {
-            return { error: "User already exists!" }
+            throw new Error("Username already exists!")
         }
 
-        const newUser = await new User({ username, firstName, lastName, email, password });
+        await new User({ username, firstName, lastName, email, password }).save();
+        await signIn("credentials", { username, password, redirect: false });
 
-        await newUser.save();
-        await signIn("credentials", { username, password });
-        
-        return { ok: true, message: 'User has been registered!' }
+        redirect('/')
+        // return { ok: true, message: 'User has been registered!' }
 
     } catch (error) {
-        console.log(error);
-        return { error: "Something went wrong!" }
-    }
+        if(isRedirectError(error)) {
+            redirect('/');
+        }
+        // console.log(error);
+        throw error
+    } 
 }
 
 export const loginUser = async (formData: ILoginFormData) => {
@@ -205,7 +212,7 @@ export const deleteUser = async (formData: FormData | IUser['_id'], currentUserI
         await Post.deleteMany({ user: userId });
         await User.findByIdAndDelete(userId);
 
-        if(userId === currentUserId) {
+        if (userId === currentUserId) {
             await signOut();
         }
 
