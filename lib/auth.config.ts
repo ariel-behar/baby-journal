@@ -30,6 +30,7 @@ export const authConfig = {
             const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin");
             const isOnDashboardPage = request.nextUrl?.pathname.startsWith("/dashboard");
             const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
+            const isOnRegisterPage = request.nextUrl?.pathname.startsWith("/register");
 
             // ONLY ADMIN CAN ACCESS ADMIN PANEL
             if(isOnAdminPanel && !user?.isAdmin) {
@@ -41,8 +42,8 @@ export const authConfig = {
                 return false;
             }
 
-            // ONLY UNAUTHENTICATED CAN ACCESS LOGIN PAGE
-            if(isOnLoginPage && user) {
+            // ONLY UNAUTHENTICATED CAN ACCESS LOGIN & REGISTER PAGES
+            if((isOnLoginPage && user) || (isOnRegisterPage && user)) {
                 return Response.redirect(new URL("/", request.nextUrl));
             }
 
