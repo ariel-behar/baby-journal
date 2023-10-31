@@ -70,6 +70,14 @@ userSchema.pre<IUserMongooseSchema>('save', function (next) {
     next();
 });
 
+userSchema.post<IUserMongooseSchema>('save', function (error: any, doc: any, next: any) {
+    if (error.code === 11000) {
+        next(new Error('Email is already taken'));
+    } else {
+        next(error);
+    }
+});
+
 const User = mongoose.models?.User || mongoose.model<IUserMongooseSchema>('User', userSchema);
 
 export default User;
