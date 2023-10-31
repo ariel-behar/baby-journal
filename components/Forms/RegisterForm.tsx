@@ -1,7 +1,10 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { BaseSyntheticEvent } from "react";
+
 import { yupResolver } from "@hookform/resolvers/yup";
+
+import { useNotificationContext } from "@/context/notificationContext";
 
 import { registerUser } from "@/lib/serverActions"
 
@@ -17,6 +20,7 @@ export interface IRegisterFormData extends Omit<IUser, "_id" | 'createdAt' | "up
 }
 
 function RegisterForm() {
+    const { displayNotification } = useNotificationContext();
     const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
@@ -30,19 +34,19 @@ function RegisterForm() {
         },
     });
 
-    const onFormSubmit = async (formData: IRegisterFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
+    const onFormSubmit = (formData: IRegisterFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
         const { username, firstName, lastName, email, password, confirmPassword } = formData;
 
         if (username && firstName && lastName && email && password && confirmPassword) {
-            try {
-                const response = await registerUser(formData);
-                console.log('response:', response)
+            registerUser(formData)
+                .then(res => {
+                    // console.log(res);
+                }).catch(error => {
+                    displayNotification(error.message, 'error')
+                })
 
-            } catch (error) {
-                console.log(error);
-            }
         }
     }
 
@@ -54,7 +58,7 @@ function RegisterForm() {
                 <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label="First Name" type="text" />
                 <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label="Last Name" type="text" />
             </div>
-            
+
             <FormInputFieldWithTooltip register={register} errors={errors} name="email" label="Email" type="email" />
 
             <div className="flex gap-x-2">
