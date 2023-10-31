@@ -28,7 +28,7 @@ export const authConfig = {
         authorized({ auth, request }: any) {
             const user = auth?.user;
             const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin");
-            // const isOnBlogPage = request.nextUrl?.pathname.startsWith("/blog");
+            const isOnDashboardPage = request.nextUrl?.pathname.startsWith("/dashboard");
             const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
 
             // ONLY ADMIN CAN ACCESS ADMIN PANEL
@@ -36,10 +36,10 @@ export const authConfig = {
                 return false;
             }
 
-            // ONLY AUTHENTICATED USERS CAN ACCESS BLOG PAGE
-            // if(isOnBlogPage && !user) {
-            //     return false;
-            // }
+            // ONLY AUTHENTICATED USERS CAN ACCESS DASHBOARD PAGE
+            if(isOnDashboardPage && !user) {
+                return false;
+            }
 
             // ONLY UNAUTHENTICATED CAN ACCESS LOGIN PAGE
             if(isOnLoginPage && user) {
