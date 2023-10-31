@@ -2,9 +2,9 @@ import { IPost } from "@/models/Post";
 
 import { getPost } from "@/lib/getPostData";
 
-import BlogPost from "@/components/Blog/BlogPost";
 import LinkButton from "@/components/Buttons/LinkButton";
 import IconChevronLeft from "@/components/Icons/IconChevronLeft";
+import BlogPost from "@/components/Blog/BlogPost";
 
 interface Props {
 	params: {

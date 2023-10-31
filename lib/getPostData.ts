@@ -3,6 +3,8 @@ import { IdType } from "@/types/common-types";
 import dbConnect from "./dbConnect";
 import { unstable_noStore as noStore } from "next/cache";
 import { IUser } from "@/models/User";
+import mongoose from "mongoose";
+import { redirect } from "next/navigation";
 
 export const getPost = async (postId: IdType) => {
     noStore();
@@ -10,12 +12,16 @@ export const getPost = async (postId: IdType) => {
     try {
         dbConnect();
 
-        const post: IPost | null = await Post.findById(postId);
+        if (mongoose.Types.ObjectId.isValid(postId)) {
+            const post: IPost | null = await Post.findById(postId);
 
-        return post;
+            return post;
+        } else {
+            redirect('/blog');
+        }
+
     } catch (error) {
-        console.error(error);
-        throw new Error('Failed to fetch post!');
+        throw error
     }
 }
 
