@@ -22,9 +22,8 @@ const dbConnect = async () => {
             throw new Error('MongoDB connection failed');
         }
 
-    } catch (error: any) {
-        console.log(error);
-        throw new Error(error)
+    } catch (error) {
+        throw error;
     }
 }
 
