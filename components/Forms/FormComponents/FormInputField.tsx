@@ -18,7 +18,7 @@ function FormInputField({
 }: Props) {
     return (
         <>
-            <input {...(register as UseFormRegister<ILoginFormData | IRegisterFormData | IPostFormData>)(name)} className={`${className} form-input input input-bordered w-full`} type={type} name={name} id={name} />
+            <input {...(register as UseFormRegister<ILoginFormData | IRegisterFormData | IPostFormData>)(name)} className={`${className} form-input input input-bordered w-full`} type={type} name={name} id={name} autoComplete="on"/>
         </>
     )
 }
