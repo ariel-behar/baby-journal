@@ -35,7 +35,7 @@ function LoginForm() {
         if (username && password) {
             await loginUser(formData)
                 .then(res => {
-                    displayNotification('Successfully logged in!', 'success')
+                    displayNotification('Successfully logged in!', 'info')
                 }).catch(error => {
                     displayNotification(error.message, 'error')
                 })

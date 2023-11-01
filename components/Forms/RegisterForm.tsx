@@ -42,7 +42,7 @@ function RegisterForm() {
         if (username && firstName && lastName && email && password && confirmPassword) {
             registerUser(formData)
                 .then(res => {
-                    // console.log(res);
+                    displayNotification('User has been registered!', 'info')
                 }).catch(error => {
                     displayNotification(error.message, 'error')
                 })
