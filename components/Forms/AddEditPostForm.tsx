@@ -61,7 +61,9 @@ function AddEditPostForm({
                             displayNotification(res.message, 'info')
                         }
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => {
+                        displayNotification(err.message, 'error')
+                    })
             }
 
             if (formType === 'edit') {
@@ -72,7 +74,9 @@ function AddEditPostForm({
                             displayNotification(res.message, 'info')
                         }
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => {
+                        displayNotification(err.message, 'error')
+                    })
             }
 
         }
