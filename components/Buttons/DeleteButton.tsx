@@ -25,9 +25,11 @@ function DeleteButton() {
                     if (redirectToBlog) {
                         router.push('/blog')
                     }
-                    
+
                     displayNotification(res.message, 'info')
                 }
+            }).catch(err => {
+                displayNotification(err.message, 'error')
             })
         }
     }
