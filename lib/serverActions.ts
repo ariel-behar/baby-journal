@@ -12,6 +12,7 @@ import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
 import { redirect } from "next/navigation";
 import { isRedirectError } from "next/dist/client/components/redirect";
+import { InvalidLoginError } from "@/models/Error";
 
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
@@ -170,13 +171,11 @@ export const loginUser = async (formData: ILoginFormData) => {
 
         return { ok: true, message: 'User has successfully logged in!' }
     } catch (error) {
-        console.log('error', error);
-
-        if (error instanceof Error && error.message.includes('CredentialsSignin')) {
-            return { error: 'Invalid username or password!' }
+        if(isRedirectError(error)) {
+            redirect('/')
+        } else {
+            throw new InvalidLoginError();
         }
-
-        throw error;
     }
 }
 

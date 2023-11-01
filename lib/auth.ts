@@ -4,25 +4,25 @@ import Credentials from "next-auth/providers/credentials"
 import dbConnect from "./dbConnect";
 import User from "@/models/User";
 import { authConfig } from "./auth.config";
+import { InvalidLoginError } from "@/models/Error";
 
 const login = async (credentials: any) => {
 	try {
 		dbConnect();
 		const user = await User.findOne({ username: credentials.username });
 
-		if (!user) throw new Error("Wrong credentials!");
+		if (!user) throw new InvalidLoginError();
 
 		const isPasswordCorrect = await bcrypt.compare(
 			credentials.password,
 			user.password
 		);
 
-		if (!isPasswordCorrect) throw new Error("Wrong credentials!");
+		if (!isPasswordCorrect) throw new InvalidLoginError();
 
 		return user;
-	} catch (err) {
-		console.log(err);
-		throw new Error("Failed to login!");
+	} catch (error) {
+		throw error;
 	}
 };
 
@@ -34,7 +34,7 @@ export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
 				try {
 					const user = await login(credentials);
 					return user;
-				} catch (err) {
+				} catch (error) {
 					return null;
 				}
 			},
