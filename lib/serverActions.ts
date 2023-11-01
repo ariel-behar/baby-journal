@@ -20,9 +20,11 @@ export const addPost = async (formData: IPostFormData) => {
 
     try {
         dbConnect();
+
         const newPost = new Post({ title, description, img, user });
 
         await newPost.save();
+
         console.log('Post added successfully');
         revalidatePath('/blog');
         revalidatePath('/dashboard');
@@ -30,7 +32,7 @@ export const addPost = async (formData: IPostFormData) => {
 
         return { ok: true, message: 'Post has been created!' }
     } catch (error) {
-        return { error: "Something went wrong!" }
+        throw error;
     }
 }
 
@@ -49,8 +51,7 @@ export const editPost = async (postId: IPost['_id'], formData: IPostFormData) =>
 
         return { ok: true, message: 'Post has been modified!' }
     } catch (error) {
-        console.log(error);
-        return { error: "Something went wrong!" }
+        throw error;
     }
 }
 
@@ -72,8 +73,7 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
 
         return { ok: true, message: 'Post has been deleted!' }
     } catch (error) {
-        console.log(error);
-        return { error: "Something went wrong!" }
+        throw error;
     }
 }
 
@@ -85,7 +85,7 @@ export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
         const post = await Post.findById(postId);
 
         if (!post) {
-            return { error: "Post not found!" }
+            throw new Error("Post not found!")
         }
 
         post.likes.push(userId);
@@ -96,8 +96,7 @@ export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
 
         return { ok: true, message: 'Post has been liked!' }
     } catch (error) {
-        console.log(error);
-        return { error: "Something went wrong!" }
+        throw error;
     }
 }
 
@@ -109,7 +108,7 @@ export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id']) => 
         const post = await Post.findById(postId);
 
         if (!post) {
-            return { error: "Post not found!" }
+            throw new Error("Post not found!")
         }
 
         post.likes = post.likes.filter((like: IUser['_id']) => like != userId);
@@ -120,8 +119,7 @@ export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id']) => 
 
         return { ok: true, message: 'Post has been unliked!' }
     } catch (error) {
-        console.log(error);
-        return { error: "Something went wrong!" }
+        throw error;
     }
 }
 
@@ -156,7 +154,6 @@ export const registerUser = async (formData: IRegisterFormData) => {
         if(isRedirectError(error)) {
             redirect('/');
         }
-        // console.log(error);
         throw error
     } 
 }
@@ -185,7 +182,7 @@ export const addUser = async (formData: IRegisterFormData) => {
     try {
         dbConnect();
         if (password !== confirmPassword) {
-            return { error: "Passwords do not match!" }
+            throw new Error("Passwords do not match!")
         }
 
         const newUser = new User({ username, firstName, lastName, email, password, img, isAdmin });
@@ -195,8 +192,7 @@ export const addUser = async (formData: IRegisterFormData) => {
 
         return { ok: true, message: 'User has been created!' }
     } catch (error) {
-        console.log(error);
-        return { error: "Something went wrong!" }
+        throw error;
     }
 }
 
@@ -219,7 +215,6 @@ export const deleteUser = async (formData: FormData | IUser['_id'], currentUserI
 
         return { ok: true, message: 'User has been deleted!' }
     } catch (error) {
-        console.log(error);
-        return { error: "Something went wrong!" }
+        throw error;
     }
 }
