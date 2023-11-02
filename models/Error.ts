@@ -1,6 +1,6 @@
 import { CredentialsSignin } from "next-auth";
 
-export class InvalidLoginError extends CredentialsSignin {
+export class InvalidLoginCredentialsError extends CredentialsSignin {
     message = "Invalid login credentials!";
 }
 

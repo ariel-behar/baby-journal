@@ -12,7 +12,7 @@ import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
 import { redirect } from "next/navigation";
 import { isRedirectError } from "next/dist/client/components/redirect";
-import { InvalidDataError, InvalidLoginError, NotFoundError } from "@/models/Error";
+import { InvalidDataError, InvalidLoginCredentialsError, NotFoundError } from "@/models/Error";
 
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
@@ -173,7 +173,7 @@ export const loginUser = async (formData: ILoginFormData) => {
         if(isRedirectError(error)) {
             redirect('/')
         } else {
-            throw new InvalidLoginError();
+            throw new InvalidLoginCredentialsError();
         }
     }
 }
