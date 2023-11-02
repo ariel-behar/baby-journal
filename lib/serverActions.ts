@@ -65,7 +65,9 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
     try {
         dbConnect();
 
-        await Post.findByIdAndDelete(postId);
+        const post = await Post.findByIdAndDelete(postId);
+        
+        if(!post) throw new NotFoundError("Post not found!");
 
         console.log('Post deleted successfully');
         revalidatePath('/blog');
