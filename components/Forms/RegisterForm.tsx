@@ -25,7 +25,6 @@ function RegisterForm() {
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
         defaultValues: {
-            username: '',
             firstName: '',
             lastName: '',
             email: '',
@@ -37,9 +36,9 @@ function RegisterForm() {
     const onFormSubmit = (formData: IRegisterFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
-        const { username, firstName, lastName, email, password, confirmPassword } = formData;
+        const { firstName, lastName, email, password, confirmPassword } = formData;
 
-        if (username && firstName && lastName && email && password && confirmPassword) {
+        if (firstName && lastName && email && password && confirmPassword) {
             registerUser(formData)
                 .then(res => {
                     displayNotification('User has been registered!', 'info')
@@ -52,8 +51,6 @@ function RegisterForm() {
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-5">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="username" label="Username" type="text" />
-
             <div className="flex gap-x-2">
                 <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label="First Name" type="text" />
                 <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label="Last Name" type="text" />

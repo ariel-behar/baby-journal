@@ -12,7 +12,7 @@ import FormInputFieldWithTooltip from './FormComponents/FormInputFieldWithToolti
 import FormSubmitButton from './FormComponents/FormSubmitButton';
 
 export interface ILoginFormData {
-    username: string;
+    email: string;
     password: string;
 }
 
@@ -22,7 +22,7 @@ function LoginForm() {
         resolver: yupResolver(userLoginSchema),
         mode: 'onBlur',
         defaultValues: {
-            username: '',
+            email: '',
             password: '',
         },
     });
@@ -30,9 +30,9 @@ function LoginForm() {
     const onFormSubmit = async (formData: ILoginFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
-        const { username, password } = formData;
+        const { email, password } = formData;
 
-        if (username && password) {
+        if (email && password) {
             await loginUser(formData)
                 .then(res => {
                     displayNotification('Successfully logged in!', 'info')
@@ -44,7 +44,7 @@ function LoginForm() {
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-7">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="username" label='Username' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label='Email' type='text' />
 
             <FormInputFieldWithTooltip register={register} errors={errors} name="password" label='Password' type='password' />
 

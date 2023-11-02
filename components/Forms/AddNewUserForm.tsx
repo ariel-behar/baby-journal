@@ -26,7 +26,6 @@ function AddNewUserForm({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
         defaultValues: {
-            username: '',
             firstName: '',
             lastName: '',
             email: '',
@@ -40,10 +39,10 @@ function AddNewUserForm({
     const onFormSubmit = async (formData: IRegisterFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
 
-        const { username, firstName, lastName, email, password, confirmPassword, img, isAdmin } = formData;
+        const { firstName, lastName, email, password, confirmPassword, img, isAdmin } = formData;
 
-        if (username && firstName && lastName && email && password && confirmPassword) {
-            addUser({ username, firstName, lastName, email, password, confirmPassword, img, isAdmin })
+        if (firstName && lastName && email && password && confirmPassword) {
+            addUser({ firstName, lastName, email, password, confirmPassword, img, isAdmin })
                 .then(res => {
                     if (res.ok) {
                         modalRef.current?.close();
@@ -57,7 +56,6 @@ function AddNewUserForm({
     return (
 
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="username" label='Username' type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label='First Name' type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label='Last Name' type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="email" label='Email' type='email' />
