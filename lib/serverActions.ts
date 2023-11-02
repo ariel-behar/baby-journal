@@ -129,7 +129,7 @@ export const handleLogout = async () => {
 }
 
 export const registerUser = async (formData: IRegisterFormData) => {
-    const { username, firstName, lastName, email, password, confirmPassword } = formData;
+    const { firstName, lastName, email, password, confirmPassword } = formData;
 
     if (password !== confirmPassword) {
         throw new Error("Passwords do not match!")
@@ -138,14 +138,15 @@ export const registerUser = async (formData: IRegisterFormData) => {
     try {
         dbConnect();
 
-        const user = await User.findOne({ username })
+        const user = await User.findOne({ email })
 
         if (user) {
-            throw new Error("Username already exists!")
+            throw new Error("User already exists!")
         }
 
-        await new User({ username, firstName, lastName, email, password }).save();
-        await signIn("credentials", { username, password, redirect: false });
+        await new User({ firstName, lastName, email, password }).save();
+
+        await signIn("credentials", { email, password, redirect: false });
 
         redirect('/')
         // return { ok: true, message: 'User has been registered!' }
@@ -159,12 +160,12 @@ export const registerUser = async (formData: IRegisterFormData) => {
 }
 
 export const loginUser = async (formData: ILoginFormData) => {
-    const { username, password } = formData;
+    const { email, password } = formData;
 
     try {
         dbConnect();
 
-        await signIn("credentials", { username, password });
+        await signIn("credentials", { email, password });
 
         return { ok: true, message: 'User has successfully logged in!' }
     } catch (error) {
@@ -177,7 +178,7 @@ export const loginUser = async (formData: ILoginFormData) => {
 }
 
 export const addUser = async (formData: IRegisterFormData) => {
-    const { username, firstName, lastName, email, password, confirmPassword, img, isAdmin } = formData;
+    const { firstName, lastName, email, password, confirmPassword, img, isAdmin } = formData;
 
     try {
         dbConnect();
@@ -185,7 +186,7 @@ export const addUser = async (formData: IRegisterFormData) => {
             throw new Error("Passwords do not match!")
         }
 
-        const newUser = new User({ username, firstName, lastName, email, password, img, isAdmin });
+        const newUser = new User({ firstName, lastName, email, password, img, isAdmin });
 
         await newUser.save();
         revalidatePath('/admin');
