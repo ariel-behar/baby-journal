@@ -12,7 +12,7 @@ import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
 import { redirect } from "next/navigation";
 import { isRedirectError } from "next/dist/client/components/redirect";
-import { InvalidLoginError, NotFoundError } from "@/models/Error";
+import { InvalidDataError, InvalidLoginError, NotFoundError } from "@/models/Error";
 
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
@@ -132,7 +132,8 @@ export const registerUser = async (formData: IRegisterFormData) => {
     const { firstName, lastName, email, password, confirmPassword } = formData;
 
     if (password !== confirmPassword) {
-        throw new Error("Passwords do not match!")
+        
+        throw new InvalidDataError("Passwords do not match!")
     }
 
     try {
@@ -183,7 +184,7 @@ export const addUser = async (formData: IRegisterFormData) => {
     try {
         dbConnect();
         if (password !== confirmPassword) {
-            throw new Error("Passwords do not match!")
+            throw new InvalidDataError("Passwords do not match!")
         }
 
         const newUser = new User({ firstName, lastName, email, password, img, isAdmin });
