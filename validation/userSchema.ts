@@ -8,25 +8,20 @@ interface IUserYupSchema extends Omit<IUser, "_id" | 'createdAt' | "updatedAt" >
 }
 
 interface IUserLoginYupSchema {
-    username: string;
+    email: string;
     password: string;
 }
 
 const userLoginSchemaShape = {
-    username: yup
+    email: yup
         .string()
-        .required('Username is required'),
+        .required('Email is required'),
     password: yup
         .string()
         .required('Password is required')
 }
 
 const userSchemaShape = {
-    username: yup
-        .string()
-        .required('Username is required')
-        .min(6, 'Username must be at least 6 characters long')
-        .max(20, 'Username must be at most 20 characters long'),
     firstName: yup
         .string()
         .required('First name is required')

@@ -7,7 +7,6 @@ import { emailRegex, passwordRegex } from "@/utils/regex";
 
 export interface IUser extends Identifiable {
     _id: IdType;
-    username: string;
     firstName: string;
     lastName: string;
     email: string;
@@ -22,13 +21,6 @@ interface IUserMongooseSchema extends Omit<IUser, '_id' | 'createdAt' | 'updated
 }
 
 const userSchema = new mongoose.Schema<IUserMongooseSchema>({
-    username: {
-        type: String,
-        required: true,
-        unique: true,
-        minlength: [6, 'Username must be at least 6 characters long'],
-        maxlength: [20, 'Username must be at most 20 characters long']
-    },
     firstName: {
         type: String,
         required: true,
