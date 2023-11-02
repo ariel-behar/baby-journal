@@ -27,7 +27,8 @@ function UserConfirmationModal() {
                     {
                         currentEntity.entityType === 'post'
                             ? (currentEntity.entity as IPost)?.title
-                            : (currentEntity.entity as IUser)?.username}
+                            : `${(currentEntity.entity as IUser)?.firstName} ${(currentEntity.entity as IUser)?.lastName}`
+                            }
                     "
                 </span>
                 &nbsp;?
