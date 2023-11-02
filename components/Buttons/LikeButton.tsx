@@ -31,6 +31,9 @@ function LikeButton({
                         })
                     }
                 })
+                .catch(error => {
+                    displayNotification(error.message, 'error')
+                })
         } else {
             likePost(user?.id as string, post._id)
                 .then(res => {
@@ -39,6 +42,9 @@ function LikeButton({
                             icon: <IconHeartSolid fillColor='#D32F2F' sizeClassName='size-6' />
                         })
                     }
+                })
+                .catch(error => {
+                    displayNotification(error.message, 'error')
                 })
         }
     }
