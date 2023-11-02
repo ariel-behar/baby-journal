@@ -2,6 +2,7 @@ import dbConnect from "./dbConnect";
 import { IdType } from "@/types/common-types";
 import User, { IUser } from "@/models/User";
 import { unstable_noStore as noStore } from "next/cache";
+import { NotFoundError } from "@/models/Error";
 
 export const getUser = async (userId: IdType) => {
     noStore();
@@ -11,10 +12,13 @@ export const getUser = async (userId: IdType) => {
 
         const user:IUser | null = await User.findById(userId);
 
+        if(!user) {
+            throw new NotFoundError('Failed to fetch user data!');
+        }
+
         return user;
     } catch(error) {
-        console.error(error);
-        throw new Error('Failed to fetch user data!');
+       throw error;
     }
 }
 
@@ -26,9 +30,12 @@ export const getUsers = async () => {
 
         const users:IUser[] = await User.find().lean();
 
+        if(!users) {
+            throw new NotFoundError('Failed to fetch users!');
+        }
+
         return users;
     } catch(error) {
-        console.error(error);
-        throw new Error('Failed to fetch users!');
+        throw error;
     }
 }
