@@ -4,7 +4,7 @@ export interface ICustomSession extends Session {
     user?: User & {
         firstName: string
         lastName: string
-        username: string
+        email: string
         isAdmin: boolean
     }
 }
