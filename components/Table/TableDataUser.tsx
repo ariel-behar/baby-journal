@@ -30,12 +30,6 @@ function TableDataUser({
                 {user.firstName} {user.lastName}
             </td>
 
-
-            {/* Username */}
-            <td>
-                {user.username}
-            </td>
-
             {/* Email */}
             <td>
                 {user.email}
@@ -44,6 +38,11 @@ function TableDataUser({
             {/* User ID */}
             <td>
                 {user._id}
+            </td>
+
+            {/* Role */}
+            <td>
+                {user.isAdmin ? 'Admin' : 'User'}
             </td>
 
             <td>

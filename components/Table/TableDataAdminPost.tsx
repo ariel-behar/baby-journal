@@ -15,12 +15,6 @@ function TableDataAdminPost({
     return (
         <TableDataPost post={post} session={session}>
 
-
-            {/* Username */}
-            <td>
-                {post.user.username}
-            </td>
-
             {/* Email */}
             <td>
                 {post.user.email}
