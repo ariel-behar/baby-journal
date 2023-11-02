@@ -12,7 +12,7 @@ import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
 import { redirect } from "next/navigation";
 import { isRedirectError } from "next/dist/client/components/redirect";
-import { InvalidLoginError } from "@/models/Error";
+import { InvalidLoginError, NotFoundError } from "@/models/Error";
 
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
@@ -85,7 +85,7 @@ export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
         const post = await Post.findById(postId);
 
         if (!post) {
-            throw new Error("Post not found!")
+            throw new NotFoundError("Post not found!")
         }
 
         post.likes.push(userId);
@@ -108,7 +108,7 @@ export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id']) => 
         const post = await Post.findById(postId);
 
         if (!post) {
-            throw new Error("Post not found!")
+            throw new NotFoundError("Post not found!")
         }
 
         post.likes = post.likes.filter((like: IUser['_id']) => like != userId);
