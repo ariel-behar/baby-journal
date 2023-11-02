@@ -9,7 +9,7 @@ import { InvalidLoginError } from "@/models/Error";
 const login = async (credentials: any) => {
 	try {
 		dbConnect();
-		const user = await User.findOne({ username: credentials.username });
+		const user = await User.findOne({ email: credentials.email });
 
 		if (!user) throw new InvalidLoginError();
 
