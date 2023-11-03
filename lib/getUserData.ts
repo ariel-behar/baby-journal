@@ -7,13 +7,19 @@ import User, { IUser } from "@/models/User";
 
 import { NotFoundError } from "@/models/Error";
 
-export const getUser = async (userId: IdType) => {
+export const getUser = async (userId: IdType, selectFields?: string[]) => {
     noStore();
     
     try {
         dbConnect();
+        let user:IUser | Partial<IUser> | null;
 
-        const user:IUser | null = await User.findById(userId);
+        if(selectFields) {
+            user = await User.findById(userId).select(selectFields.join(' ')) as Partial<IUser> | null;
+        } else {
+            user = await User.findById(userId) as IUser | null;
+        }
+        
 
         if(!user) {
             throw new NotFoundError('Failed to fetch user data!');
