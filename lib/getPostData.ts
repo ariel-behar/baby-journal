@@ -1,11 +1,14 @@
-import Post, { IPost, IPostPopulated } from "@/models/Post";
-import { IdType } from "@/types/common-types";
-import dbConnect from "./dbConnect";
 import { unstable_noStore as noStore } from "next/cache";
-import { IUser } from "@/models/User";
 import mongoose from "mongoose";
 import { redirect } from "next/navigation";
 import { isRedirectError } from "next/dist/client/components/redirect";
+
+import dbConnect from "./dbConnect";
+
+import { IdType } from "@/types/common-types";
+
+import { IUser } from "@/models/User";
+import Post, { IPost, IPostPopulated } from "@/models/Post";
 import { NotFoundError } from "@/models/Error";
 
 export const getPost = async (postId: IdType) => {
@@ -21,7 +24,7 @@ export const getPost = async (postId: IdType) => {
                 throw new NotFoundError('Post not found!')
             }
 
-            return post;
+            return JSON.parse(JSON.stringify(post));
         } else {
             redirect('/blog');
         }
@@ -61,7 +64,7 @@ export const getPosts = async (populateUser: boolean, userId?: IUser['_id']) => 
             throw new NotFoundError('Failed to fetch posts!')
         }
 
-        return posts;
+        return JSON.parse(JSON.stringify(posts));
     } catch (error) {
         throw error;
     }
