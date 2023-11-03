@@ -14,6 +14,9 @@ function LoggedInButtonDropdownLinks({
     return (
         <>
             {/* Dashboard */}
+            <NavLink title='Profile' path='/profile' />
+
+            {/* Dashboard */}
             <NavLink title='Dashboard' path='/dashboard' />
 
             {/* Admin */}
