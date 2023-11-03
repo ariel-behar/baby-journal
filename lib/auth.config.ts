@@ -29,6 +29,7 @@ export const authConfig = {
             const user = auth?.user;
             const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin");
             const isOnDashboardPage = request.nextUrl?.pathname.startsWith("/dashboard");
+            const isOnProfilePage = request.nextUrl?.pathname.startsWith("/profile");
             const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
             const isOnRegisterPage = request.nextUrl?.pathname.startsWith("/register");
 
@@ -37,8 +38,8 @@ export const authConfig = {
                 return false;
             }
 
-            // ONLY AUTHENTICATED USERS CAN ACCESS DASHBOARD PAGE
-            if(isOnDashboardPage && !user) {
+            // ONLY AUTHENTICATED USERS CAN ACCESS THE DASHBOARD & PROFILE PAGES
+            if(isOnDashboardPage && !user || isOnProfilePage && !user) {
                 return false;
             }
 
