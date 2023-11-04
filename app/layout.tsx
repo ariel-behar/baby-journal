@@ -3,13 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 
-import Navbar from "@/components/Header/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Providers from "@/components/Providers";
 import Modals from "@/components/Modal/Modals";
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
 import Notification from "@/components/Notification/Notification";
+import Header from "@/components/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,7 +35,7 @@ export default async function RootLayout({
 			<Providers>
 				<body className={`${inter.className} text-light min-h-screen flex flex-col justify-between`}>
 
-					<Navbar />
+					<Header />
 
 					<main className="flex-grow lg:container mx-auto px-3 sm:px-5 py-5 lg:px-[50px] flex items-stretch">
 						{children}

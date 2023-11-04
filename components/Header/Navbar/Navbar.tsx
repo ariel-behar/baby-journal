@@ -12,16 +12,14 @@ async function Navbar() {
 	const user: ICustomSession["user"] = (session as ICustomSession)?.user
 
 	return (
-		<header>
-			<nav className="h-[100px] flex flex-row justify-between items-center px-3 sm:px-5 lg:px-[50px] lg:container mx-auto border-b-[1px] border-gray-800">
-				<Link href="/" className="text-3xl font-bold">Logo</Link>
+		<nav className="h-[100px] flex flex-row justify-between items-center px-3 sm:px-5 lg:px-[50px] lg:container mx-auto border-b-[1px] border-gray-800">
+			<Link href="/" className="text-3xl font-bold">Logo</Link>
 
-				<MainNavLinks />
+			<MainNavLinks />
 
-				<UserNavLinks user={user} />
+			<UserNavLinks user={user} />
 
-			</nav>
-		</header>
+		</nav>
 	)
 }
 
