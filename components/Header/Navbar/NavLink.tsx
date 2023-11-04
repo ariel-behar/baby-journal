@@ -8,11 +8,13 @@ import { usePathname } from "next/navigation"
 interface Props {
     title: string
     path: string
+    toggleMenu?: () => void
 }
 
 function NavLink({
     title,
-    path
+    path,
+    toggleMenu
 }: Props) {
     const pathname = usePathname()
 
@@ -25,6 +27,7 @@ function NavLink({
                 `}
             key={uniqid()}
             href={path}
+            onClick={toggleMenu}
         >
             {title}
         </Link>
