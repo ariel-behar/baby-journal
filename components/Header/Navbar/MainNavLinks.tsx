@@ -1,11 +1,12 @@
 "use client"
 import { useState } from 'react';
 import uniqid from "uniqid"
-import Image from 'next/image';
 
 import NavLink from "./NavLink"
 
 import { routes } from "@/data/routes"
+
+import IconMenu from '@/components/Icons/IconMenu';
 
 function MainNavLinks() {
     const [open, setOpen] = useState(false)
@@ -18,9 +19,12 @@ function MainNavLinks() {
                     )
                 })}
             </div>
-            
+
             {/* Mobile Menu */}
-            <Image className='block lg:hidden' src='/img/menu.png' alt='Menu' width={30} height={30} onClick={() => setOpen((prev) => !prev)} />
+            <span className='block lg:hidden' onClick={() => setOpen((prev) => !prev)}>
+                <IconMenu sizeClassName='size-10' />
+            </span>
+
 
             {
                 open && (
