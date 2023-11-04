@@ -8,7 +8,7 @@ interface Props {
     routes: IRoute[]
 }
 
-function DesktopNavigationMenu({
+function DesktopMainNavigationMenu({
     routes
 }: Props) {
     return (
@@ -24,4 +24,4 @@ function DesktopNavigationMenu({
     )
 }
 
-export default DesktopNavigationMenu
+export default DesktopMainNavigationMenu

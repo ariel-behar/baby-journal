@@ -11,7 +11,7 @@ interface Props {
     routes: IRoute[]
 }
 
-function MobileNavigationMenu({
+function MobileMainNavigationMenu({
     routes
 }: Props) {
     const [open, setOpen] = useState(false)
@@ -40,4 +40,4 @@ function MobileNavigationMenu({
     )
 }
 
-export default MobileNavigationMenu
+export default MobileMainNavigationMenu
