@@ -8,13 +8,12 @@ interface Props {
     user: ICustomSession["user"]
 }
 
-function UserNavLinks({
+function UserNavigationMenu({
     user
 }: Props) {
     return (
         <>
-            {/* Desktop Menu */}
-            <div className='hidden lg:flex items-center'>
+            <div className='flex items-center'>
                 {user
                     ? <LoggedInButton user={user}>
                         <LoggedInButtonDropdownLinks user={user} />
@@ -33,4 +32,4 @@ function UserNavLinks({
     )
 }
 
-export default UserNavLinks
+export default UserNavigationMenu
