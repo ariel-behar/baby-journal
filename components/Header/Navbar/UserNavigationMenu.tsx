@@ -3,6 +3,8 @@ import LoggedInButtonDropdownLinks from './LoggedInButtonDropdownLinks';
 import NavLink from './NavLink'
 
 import { ICustomSession } from '@/types/types';
+import { routesAuth } from '@/data/routes';
+import uniqid from 'uniqid';
 
 interface Props {
     user: ICustomSession["user"]
@@ -18,15 +20,8 @@ function UserNavigationMenu({
                     ? <LoggedInButton user={user}>
                         <LoggedInButtonDropdownLinks user={user} />
                     </LoggedInButton>
-                    : (
-                        <>
-                            {/* Register */}
-                            <NavLink title='Register' path='/register' />
-
-                            {/* Login */}
-                            <NavLink title='Login' path='/login' />
-                        </>
-                    )}
+                    : routesAuth.map((route) => <NavLink key={uniqid()} path={route.path} title={route.title} />)
+                }
             </div>
         </>
     )
