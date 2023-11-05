@@ -8,7 +8,7 @@ import { Session } from "next-auth";
 import DesktopMainNavigationMenu from "./DesktopMainNavigationMenu";
 import MobileMainNavigationMenu from "./MobileMainNavigationMenu";
 
-import { routes } from "@/data/routes"
+import { routesMain } from "@/data/routes"
 
 async function Navbar() {
 	const session: Session | null = await auth();
@@ -21,9 +21,9 @@ async function Navbar() {
 			<div className="flex gap-5 items-center">
 				{/* Main Menu */}
 				<div className='order-2 lg:order-1 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2'>
-					<DesktopMainNavigationMenu routes={routes} />
+					<DesktopMainNavigationMenu routes={routesMain} />
 
-					<MobileMainNavigationMenu routes={routes} />
+					<MobileMainNavigationMenu routes={routesMain} />
 				</div>
 
 				{/* User Menu */}

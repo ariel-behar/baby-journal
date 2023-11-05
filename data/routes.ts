@@ -1,8 +1,26 @@
-export const routes = [
+export const routesMain = [
     {
-        title: 'Homepage',
+        title: 'Home',
         path: '/'
     },
+    {
+        title: 'Blog',
+        path: '/blog'
+    }
+]
+
+export const routesAuth = [
+    {
+        title: 'Login',
+        path: '/login'
+    },
+    {
+        title: 'Register',
+        path: '/register'
+    }
+]
+
+export const routesFooter = [
     {
         title: 'About',
         path: '/about'
@@ -11,8 +29,4 @@ export const routes = [
         title: 'Contact',
         path: '/contact'
     },
-    {
-        title: 'Blog',
-        path: '/blog'
-    }
 ]
