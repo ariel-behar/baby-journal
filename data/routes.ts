@@ -20,6 +20,21 @@ export const routesAuth = [
     }
 ]
 
+export const routesLoggedInUser = [
+    {
+        title: 'Profile',
+        path: '/profile'
+    },
+    {
+        title: 'Dashboard',
+        path: '/dashboard'
+    },
+    {
+        title: 'Admin',
+        path: '/admin'
+    }
+]
+
 export const routesFooter = [
     {
         title: 'About',
