@@ -31,8 +31,8 @@ const postSchema = new mongoose.Schema<IPostMongooseSchema>({
 	description: {
 		type: String,
 		required: true,
-		minlength: [3, 'Title must be at least 3 characters long'],
-		maxlength: [200, 'Title must be at most 200 characters long']
+		minlength: [50, 'Description must be at least 50 characters long'],
+		maxlength: [1000, 'Description must be at most 1000 characters long']
 	},
 	img: {
 		type: String,
