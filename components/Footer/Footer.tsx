@@ -1,4 +1,8 @@
+
 import Image from "next/image"
+import FooterMenu from "./FooterMenu"
+
+
 
 function Footer() {
 	return (
@@ -12,6 +16,10 @@ function Footer() {
 					</a>
 				</span>
 				<Image src="/img/logo/arielbehar-logo.png" width={20} height={20} alt="Ariel Behar Logo" />
+			</div>
+
+			<div>
+				<FooterMenu />
 			</div>
 
 			<div className="text-center">
