@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import { Session } from "next-auth";
 import { Inter } from "next/font/google";
+import { getMessages } from "next-intl/server";
+
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
+
+import { auth } from "@/lib/auth";
 
 import Footer from "@/components/Footer/Footer";
 import Providers from "@/components/Providers";
 import Modals from "@/components/Modal/Modals";
-import { auth } from "@/lib/auth";
-import { Session } from "next-auth";
 import Notification from "@/components/Notification/Notification";
 import Header from "@/components/Header/Header";
 
@@ -22,17 +25,23 @@ export const metadata: Metadata = {
 	description: "Home page description",
 };
 
+interface Props {
+	children: React.ReactNode;
+	params: {
+		locale: string;
+	};
+}
+
 export default async function RootLayout({
 	children,
-}: Readonly<{
-	children: React.ReactNode;
-	modal: React.ReactNode;
-}>) {
+	params: { locale }
+}: Readonly<Props>) {
 	const session: Session | null = await auth()
+	const messages = await getMessages()
 
 	return (
-		<html lang="en">
-			<Providers>
+		<html lang={locale}>
+			<Providers messages={messages}>
 				<body className={`${inter.className} text-light min-h-screen flex flex-col justify-between`}>
 
 					<Header />
