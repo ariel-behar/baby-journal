@@ -20,7 +20,7 @@ function LanguageSelector() {
     }
 
     return (
-        <select defaultValue='en' onChange={handleChange} value={currentLocale} disabled={isPending}>
+        <select onChange={handleChange} value={currentLocale} disabled={isPending}>
             {
                 localesWithLabels.map(locale => (
                     <option key={uniqid()} value={locale.locale}>{locale.label}</option>
