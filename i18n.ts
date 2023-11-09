@@ -2,10 +2,12 @@ import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
 
 // Can be imported from a shared config
-export const locales = ['en', 'es'];
+export const locales = ['en', 'es', 'bg'];
+
 export const localesWithLabels = [
   { locale: 'en', label: 'English' },
-  { locale: 'es', label: 'Español' },
+  { locale: 'es', label: 'Spanish' },
+  { locale: 'bg', label: 'Bulgarian' },
 ];
 
 export default getRequestConfig(async ({ locale }) => {
