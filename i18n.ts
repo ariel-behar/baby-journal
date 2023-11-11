@@ -6,8 +6,8 @@ export const locales = ['en', 'es', 'bg'];
 
 export const localesWithLabels = [
   { locale: 'en', label: 'English' },
-  { locale: 'es', label: 'Spanish' },
-  { locale: 'bg', label: 'Bulgarian' },
+  { locale: 'es', label: 'Español' },
+  { locale: 'bg', label: 'Български' },
 ];
 
 export const defaultLocale = 'en';
