@@ -1,5 +1,9 @@
 {
-    "Index": {
-        "title": "Hola mundo!"
-    }
+  "HomePage": {
+    "header": "El diario del bebé de mamá"
+  },
+  "Common": {
+    "learn_more": "Aprende más",
+    "contact": "Contacto"
+  }
 }

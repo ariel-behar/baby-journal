@@ -1,5 +1,9 @@
 {
-    "Index": {
-        "title": "Hello world!"
-    }
+  "HomePage": {
+    "header": "Mommy's Baby's Diary"
+  },
+  "Common": {
+    "learn_more": "Learn More",
+    "contact": "Contact"
+  }
 }
