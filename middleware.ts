@@ -1,23 +1,39 @@
-// import NextAuth from "next-auth"
-// import { authConfig } from "./lib/auth.config"
+import type { NextRequest } from "next/server"
+import { intlMiddleware } from './middlewares/i18nMiddleware';
+import authMiddleware from './middlewares/authMiddleware';
+import { testPathNameRegex } from './utils/testPathNameRegex';
 
-// export default NextAuth(authConfig).auth
+export const publicPages = [
+	"/",
+	"/about",
+	"/contact",
+	"/blog",
+	"/blog/:postId",
+]
 
-// export const config = {
-//     matcher: ["/((?!api|static|.*\\..*|_next).*)"],
-// }
+export const authPages = [
+	"/login", 
+	"/register", 
+	"/forgot-password"
+]
 
-import createMiddleware from 'next-intl/middleware';
- 
-export default createMiddleware({
-  // A list of all locales that are supported
-  locales: ['en', 'es'],
- 
-  // Used when no locale matches
-  defaultLocale: 'en',
-});
- 
+const middleware = (req: NextRequest) => {
+	const isPublicPage = testPathNameRegex(publicPages, req.nextUrl.pathname)
+	const isAuthPage = testPathNameRegex(authPages, req.nextUrl.pathname)
+
+	if (isAuthPage) {
+		return (authMiddleware as any)(req)
+	}
+
+	if (isPublicPage) {
+		return intlMiddleware(req)
+	} else {
+		return (authMiddleware as any)(req)
+	}
+}
+
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(es|en)/:path*']
-};
+	matcher: ["/((?!api|static|.*\\..*|_next).*)"]
+}
+
+export default middleware;
