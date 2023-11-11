@@ -10,6 +10,8 @@ export const localesWithLabels = [
   { locale: 'bg', label: 'Bulgarian' },
 ];
 
+export const defaultLocale = 'en';
+
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as string)) notFound();
