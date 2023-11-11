@@ -6,6 +6,8 @@ import uniqid from "uniqid";
 import { useRouter } from "@/lib/i18nNavigation";
 import { localesWithLabels } from "@/i18n";
 
+
+
 function LanguageSelector() {
     const [isPending, startTransition] = useTransition()
     const currentLocale = useLocale()
@@ -20,10 +22,12 @@ function LanguageSelector() {
     }
 
     return (
-        <select onChange={handleChange} value={currentLocale} disabled={isPending}>
+        <select className="select select-bordered select-xs max-w-xs" onChange={handleChange} value={currentLocale} disabled={isPending}>
             {
                 localesWithLabels.map(locale => (
-                    <option key={uniqid()} value={locale.locale}>{locale.label}</option>
+                    <option key={uniqid()} value={locale.locale} className={`fi fi-en ${locale.locale}`}>
+                        {locale.label}
+                    </option>
                 ))
             }
         </select>
