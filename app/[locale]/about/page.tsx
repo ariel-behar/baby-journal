@@ -32,7 +32,7 @@ function AboutPage() {
 
 			<div className="flex-1 relative">
 				<Image
-					src="/img/about.png"
+					src="/img/baby-upside-down.png"
 					alt="About Image"
 					fill
 					className="object-contain"
