@@ -5,7 +5,7 @@ import { useNotificationContext } from '@/context/notificationContext'
 import { useModalContext } from '@/context/modalContext'
 
 import IconTrash from '../Icons/IconTrash'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter } from '@/lib/i18nNavigation'
 
 function DeleteButton() {
     const router = useRouter();
