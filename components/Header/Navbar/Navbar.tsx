@@ -1,4 +1,3 @@
-import Link from "next/link"
 import UserNavigationMenu from "./UserNavigationMenu"
 import { auth } from "@/lib/auth";
 
@@ -9,6 +8,7 @@ import DesktopMainNavigationMenu from "./DesktopMainNavigationMenu";
 import MobileMainNavigationMenu from "./MobileMainNavigationMenu";
 
 import { routesMain } from "@/data/routes"
+import { Link } from "@/lib/i18nNavigation";
 
 async function Navbar() {
 	const session: Session | null = await auth();

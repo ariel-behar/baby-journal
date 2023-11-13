@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
+import { Link } from "@/lib/i18nNavigation";
 import { format } from "date-fns";
 
 import { ICustomSession } from "@/types/types";

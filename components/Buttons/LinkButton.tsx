@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from "@/lib/i18nNavigation"
 
 interface Props {
     href: string

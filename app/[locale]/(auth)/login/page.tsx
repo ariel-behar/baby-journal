@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/lib/i18nNavigation";
 
 import FormStylesWrapper from "@/components/Forms/FormComponents/FormStylesWrapper";
 import LoginForm from "@/components/Forms/LoginForm";
