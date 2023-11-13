@@ -16,7 +16,11 @@ async function Navbar() {
 
 	return (
 		<nav className="h-[100px] flex flex-row justify-between items-center px-3 sm:px-5 lg:px-[50px] lg:container mx-auto border-b-[1px] border-gray-800">
-			<Link href="/" className="text-3xl font-bold">Logo</Link>
+			<div className="h-full w-[110px] hover:w-[305px] transition-all duration-200 relative overflow-hidden py-1">
+				<Link href="/" className="text-3xl font-bold h-full w-full">
+					<img src="/img/baby-crawling-home.png" alt="Logo" className="w-full h-full object-cover" style={{ objectPosition: 0 }} />
+				</Link>
+			</div>
 
 			<div className="flex gap-5 items-center">
 				{/* Main Menu */}
