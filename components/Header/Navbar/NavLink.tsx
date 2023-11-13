@@ -1,9 +1,7 @@
 "use client"
 import uniqid from "uniqid"
 
-import Link from "next/link"
-
-import { usePathname } from "next/navigation"
+import { Link, usePathname } from "@/lib/i18nNavigation"
 
 interface Props {
     title: string
