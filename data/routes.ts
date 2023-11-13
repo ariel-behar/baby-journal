@@ -1,9 +1,5 @@
 export const routesMain = [
     {
-        title: 'Home',
-        path: '/'
-    },
-    {
         title: 'Blog',
         path: '/blog'
     }
