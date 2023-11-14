@@ -1,32 +1,41 @@
-import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import LinkButton from "@/components/Buttons/LinkButton";
 
 export default function HomePage() {
+	const t = useTranslations()
+
 	return (
-		<div className="flex-grow flex flex-col md:flex-row gap-[100px] text-center md:text-left items-center">
-			<section className="flex flex-col gap-[50px] items-center md:items-start">
-				<h1 className="text-6xl md:text-8xl">Creative Thoughts Agency</h1>
-				<p className="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repud iandae nulla asperiores repellat placeat facilis.</p>
+		<div className="flex-grow flex flex-col text-center items-center justify-center ">
+			<section className="flex flex-col gap-[50px] items-center ">
+				<div className="flex flex-col gap-y-5">
 
-				<div className="flex gap-5">
-					<LinkButton href="/about" className="btn-lg btn-primary">
-						Learn More
-					</LinkButton>
-
-					<LinkButton href="/contact" className="btn-lg btn-secondary">
-						Contact
-					</LinkButton>
+					<h1 className="text-6xl md:text-8xl">{t('HomePage.title')}</h1>
+					<h3 className="text-xl md:text-2xl">{t('HomePage.subtitle')}</h3>
 				</div>
 
-				<div className="h-[25px] sm:h-[35px] md:h-[50px] w-full md:w-[500px] relative grayscale">
-					<Image src='/img/brands.png' alt="Brands" fill />
+				<p className="text-xl">{t("HomePage.description")}</p>
+
+				<div className="w-full flex flex-row justify-between items-center px-40">
+					<div className="flex justify-center">
+						<img src='/img/crawling-baby-transparent.gif' alt="Hero" className="w-1/3" />
+					</div>
+
+					<div className="flex gap-x-10">
+						<LinkButton href="/about" className="btn-lg btn-primary">
+							{t('Common.learn_more')}
+						</LinkButton>
+
+						<LinkButton href="/login" className="btn-lg btn-secondary">
+							{t('Common.login')}
+						</LinkButton>
+					</div>
+
+
 				</div>
 			</section>
 
-			<div className="h-full w-full relative">
-				<Image src='/img/hero.gif' alt="Hero" fill unoptimized />
-			</div>
+
 		</div>
 	);
 }
