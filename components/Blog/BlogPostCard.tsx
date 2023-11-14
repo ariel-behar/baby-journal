@@ -7,6 +7,7 @@ import { IPostPopulated } from "@/models/Post";
 
 import IconChevronRight from "../Icons/IconChevronRight";
 import LikeButton from "../Buttons/LikeButton";
+import LikeCounter from "./LikeCounter";
 
 interface Props {
 	post: IPostPopulated,
@@ -43,8 +44,12 @@ function BlogPostCard({
 					</span>
 				</div>
 
-				<div className={`card-actions ${(user && user.id != post.user._id) ? 'justify-between' : 'justify-end'}  mt-2`}>
-					{(user && user.id != post.user._id) && <LikeButton post={post} user={user} />}
+				<div className={`card-actions justify-between items-center mt-2`}>
+					<div className="flex flex-row items-center gap-2">
+						{(user && user.id != post.user._id) && <LikeButton post={post} user={user} />}
+
+						<LikeCounter likes={post.likes} />
+					</div>
 
 					<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
 						Read More
