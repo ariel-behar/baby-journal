@@ -6,7 +6,7 @@ import AddUserModalButton from "@/components/Buttons/AddUserModalButton"
 function AdminUsersPage() {
     return (
         <>
-            <div className="flex justify-end mb-3">
+            <div className="flex justify-end my-3">
                 <AddUserModalButton />
             </div>
             

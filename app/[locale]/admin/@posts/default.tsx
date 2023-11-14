@@ -6,7 +6,7 @@ import AddPostModalButton from "@/components/Buttons/AddPostModalButton"
 function DefaultAdminPostsPage() {
     return (
         <>
-            <div className="flex justify-end mb-3">
+            <div className="flex justify-end my-3">
                 <AddPostModalButton />
             </div>
 
