@@ -13,7 +13,7 @@ function AdminTabs({
     const [activeTab, setActiveTab] = useState(0)
 
     return (<>
-        <div className="flex justify-center items-center py-5">
+        <div className="flex justify-center items-center">
             <button
                 className={`flex-grow btn btn-primary rounded-none uppercase ${activeTab === 0 ? 'text-xl' : 'btn-ghost border-b-gray-800'}`}
                 onClick={() => setActiveTab(0)} >
