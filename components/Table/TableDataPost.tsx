@@ -40,14 +40,14 @@ function TableDataPost({
             {/* Title */}
             <td>
                 <div>
-                    <Link href={`/blog/${post._id}`} className="flex items-center gap-5 group-hover:underline">
+                    <Link href={`/blog/${post._id}`} className="flex items-center gap-5 group-hover:underline text-primary">
                         <p className="hover:underline">{post.title}</p>
                     </Link>
                 </div>
             </td>
 
             {/* Description */}
-            <td className='max-w-[250px]'>
+            <td className='max-w-[200px] text-ellipsis whitespace-nowrap overflow-hidden'>
                 {post.description}
             </td>
             
