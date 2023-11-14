@@ -1,5 +1,5 @@
+import { Link } from "@/lib/i18nNavigation"
 import Image from "next/image"
-import Link from "next/link"
 
 function NotFound() {
     return (
