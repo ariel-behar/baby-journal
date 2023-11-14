@@ -10,6 +10,7 @@ import BlogPostOwnerButtons from "./BlogPostOwnerButtons"
 import BlogPostPublished from "./BlogPostPublished"
 import LikeButton from "../Buttons/LikeButton"
 import { ICustomSession } from "@/types/types"
+import LikeCounter from "./LikeCounter"
 
 interface Props {
     post: IPost
@@ -32,9 +33,19 @@ async function BlogPost({
             )}
 
             <div className="flex-[2] flex flex-col gap-[50px]">
-                <h1 className="text-[64px]">{post.title}</h1>
+                <div>
 
-                <div className="flex flex-row justify-between items-start">
+                    <h1 className="text-[64px] mb-0">{post.title}</h1>
+
+
+                </div>
+
+                <div className="flex flex-row justify-between items-center">
+                    <div className="flex flex-row items-center justify-end gap-2">
+                        {!(user?.id == postUserId) && <LikeButton post={post} user={user as ICustomSession['user']} />}
+                        <LikeCounter likes={post.likes} />
+                    </div>
+
                     <div className="relative flex gap-[20px]">
                         {post && (
                             <Suspense fallback={<div>Loading...</div>}>
@@ -47,15 +58,7 @@ async function BlogPost({
 
                     {user?.id == postUserId
                         ? <BlogPostOwnerButtons post={post} />
-                        : user?.isAdmin
-                            ? (
-                                <div className="flex gap-[15px]">
-
-                                    <LikeButton post={post} user={user as ICustomSession['user']} />
-                                    <BlogPostOwnerButtons post={post} />
-                                </div>
-                            )
-                            : <LikeButton post={post} user={user as ICustomSession['user']} />
+                        : user?.isAdmin && <BlogPostOwnerButtons post={post} />
                     }
                 </div>
 
