@@ -24,9 +24,13 @@ async function BlogPage() {
 
 	return (
 		<div className="flex-grow flex flex-col">
-			<div className="flex justify-end">
-				<AddPostModalButton />
-			</div>
+			{
+				user && (
+					<div className="flex justify-end">
+						<AddPostModalButton />
+					</div>
+				)
+			}
 
 			{
 				posts.length > 0
