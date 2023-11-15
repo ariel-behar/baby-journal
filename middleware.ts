@@ -13,8 +13,7 @@ export const publicPages = [
 
 export const authPages = [
 	"/login", 
-	"/register", 
-	"/forgot-password"
+	"/register"
 ]
 
 const middleware = (req: NextRequest) => {
