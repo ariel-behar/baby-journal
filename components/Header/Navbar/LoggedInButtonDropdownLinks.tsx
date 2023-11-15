@@ -8,11 +8,13 @@ import LogOutButton from "@/components/Buttons/LogOutButton"
 import { routesLoggedInUser } from "@/data/routes"
 
 interface Props {
-    user: ICustomSession["user"]
+    user: ICustomSession["user"],
+    toggleMenu?: () => void
 }
 
 function LoggedInButtonDropdownLinks({
-    user
+    user,
+    toggleMenu
 }: Props) {
     return (
         <>
@@ -21,7 +23,7 @@ function LoggedInButtonDropdownLinks({
                     if (route.path === '/admin' && !user?.isAdmin) {
                         return null
                     } else {
-                        return <NavLink key={uniqid()} path={route.path} title={route.title} />
+                        return <NavLink key={uniqid()} path={route.path} title={route.title} toggleMenu={toggleMenu} />
                     }
                 })
             }
