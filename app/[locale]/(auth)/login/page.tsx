@@ -7,7 +7,7 @@ async function LoginPage() {
 
 	return (
 		<div className="flex-grow flex items-center justify-center">
-			<FormStylesWrapper title="Login" className="p-12 flex flex-col w-[500px]">
+			<FormStylesWrapper title="Login" className="p-3 md:p-12 flex flex-col w-full md:w-[500px]">
 				
 				<LoginForm />
 
