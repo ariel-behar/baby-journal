@@ -7,7 +7,7 @@ import { Session } from "next-auth";
 import DesktopMainNavigationMenu from "./DesktopMainNavigationMenu";
 import MobileMainNavigationMenu from "./MobileMainNavigationMenu";
 
-import { routesMain } from "@/data/routes"
+import { routesFooter, routesMain } from "@/data/routes"
 import { Link } from "@/lib/i18nNavigation";
 
 async function Navbar() {
@@ -28,7 +28,7 @@ async function Navbar() {
 				<div className='order-2 lg:order-1 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2'>
 					<DesktopMainNavigationMenu routes={routesMain} />
 
-					<MobileMainNavigationMenu routes={routesMain} />
+					<MobileMainNavigationMenu routesMain={routesMain} routesFooter={routesFooter} user={user} />
 				</div>
 
 				{/* User Menu */}
