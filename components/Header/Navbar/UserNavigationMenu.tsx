@@ -8,16 +8,18 @@ import uniqid from 'uniqid';
 
 interface Props {
     user: ICustomSession["user"]
+    dropdownClass?: "dropdown-start" | "dropdown-end"
 }
 
 function UserNavigationMenu({
-    user
+    user,
+    dropdownClass
 }: Props) {
     return (
         <>
             <div className='flex items-center'>
                 {user
-                    ? <LoggedInButton user={user}>
+                    ? <LoggedInButton user={user} dropdownClass={dropdownClass}>
                         <LoggedInButtonDropdownLinks user={user} />
                     </LoggedInButton>
                     : routesAuth.map((route) => <NavLink key={uniqid()} path={route.path} title={route.title} />)

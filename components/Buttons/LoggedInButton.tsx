@@ -5,17 +5,19 @@ import { ICustomSession } from "@/types/types"
 import IconUser from "@/components/Icons/IconUser"
 
 interface Props {
+    dropdownClass?: "dropdown-start" | "dropdown-end"
     user: ICustomSession["user"]
     children: ReactNode
 }
 
 function LoggedInButton({
+    dropdownClass = "dropdown-end",
     user,
     children
 }: Props) {
 
     return (
-        <div className="dropdown dropdown-end">
+        <div className={`dropdown ${dropdownClass}`}>
             <div
                 tabIndex={0}
                 role="button"
