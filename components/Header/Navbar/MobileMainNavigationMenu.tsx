@@ -2,18 +2,26 @@
 import { useState } from 'react';
 import uniqid from "uniqid"
 
-import { IRoute } from '@/types/types';
+import { ICustomSession, IRoute } from '@/types/types';
 
 import NavLink from "./NavLink"
 import IconMenu from '@/components/Icons/IconMenu';
 import IconClose from '@/components/Icons/IconClose';
+import LanguageSelector from '@/components/LanguageSelector';
+import UserNavigationMenu from './UserNavigationMenu';
 
 interface Props {
-    routes: IRoute[]
+    routesMain: IRoute[],
+    routesAuth?: IRoute[],
+    routesFooter?: IRoute[],
+    user: ICustomSession["user"]
 }
 
 function MobileMainNavigationMenu({
-    routes
+    routesMain,
+    routesAuth,
+    routesFooter,
+    user
 }: Props) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -31,26 +39,48 @@ function MobileMainNavigationMenu({
 
             <div className={`${isMenuOpen ? 'visible' : 'invisible'} absolute top-0 right-0 h-screen w-screen`}>
                 {/* Backdrop */}
-                <div className={`${isMenuOpen ? 'backdrop-brightness-[30%]' : 'backdrop-brightness-[100%]'} absolute z-10 top-0 left-0 h-screen w-screen transition-all duration-1000`} onClick={toggleMenu}>
+                <div className={`${isMenuOpen ? 'bg-opacity-[95%] backdrop-blur-sm' : 'bg-opacity-10'} bg-dark  absolute z-10 top-0 left-0 h-screen w-screen transition-all duration-1000`} onClick={toggleMenu}>
                 </div>
 
                 {/* Menu */}
-                <div className={`${isMenuOpen ? 'w-3/4' : 'w-0'} lg:hidden absolute top-0 right-0  h-screen bg-green-500 gap-3 z-10 transition-all duration-1000 overflow-hidden `}>
+                <div className={`${isMenuOpen ? 'w-full delay-500' : 'w-0'} lg:hidden absolute top-0 right-0  h-screen gap-3 z-10 transition-all duration-700 overflow-hidden `}>
 
-                    {/* Close Menu */}
-                    <span className={`${isMenuOpen ? 'opacity-100' : 'opacity-0'} absolute top-3 right-3 transition-all duration-1000`} onClick={toggleMenu}>
-                        <IconClose sizeClassName='size-9'  />
-                    </span>
+                    <div className={`${isMenuOpen ? 'opacity-100 duration-1000' : 'opacity-0 duration-700'} relative h-screen transition-all  flex flex-col justify-between`}>
 
-                    {/* Links */}
-                    <div className={`${isMenuOpen ? 'opacity-100' : 'opacity-0'} h-screen flex flex-col items-center justify-center transition-all duration-1000 `}>
-                        {
-                            routes.map((link) => {
-                                return (
-                                    <NavLink key={uniqid()} {...link} toggleMenu={toggleMenu} />
-                                )
-                            })
-                        }
+                        <div className='flex flex-row justify-between p-4'>
+                            {/* User Menu */}
+                            <UserNavigationMenu user={user} dropdownClass='dropdown-start' toggleMenu={toggleMenu} />
+
+                            {/* Close Menu */}
+                            <span onClick={toggleMenu}>
+                                <IconClose sizeClassName='size-9' />
+                            </span>
+                        </div>
+
+                        {/* Links */}
+                        <div className="h-full flex flex-col items-center justify-center gap-y-3">
+
+                            {
+                                routesMain.map((route) => {
+                                    return (
+                                        <NavLink key={uniqid()} {...route} toggleMenu={toggleMenu} />
+                                    )
+                                })
+                            }
+
+                            {
+                                routesFooter && routesFooter.map((route) => {
+                                    return (
+                                        <NavLink key={uniqid()} {...route} toggleMenu={toggleMenu} />
+                                    )
+                                })
+                            }
+                        </div>
+
+                        {/* Language Selector */}
+                        <div className='flex flex-row justify-center p-4'>
+                            <LanguageSelector />
+                        </div>
                     </div>
                 </div>
 
