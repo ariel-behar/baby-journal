@@ -4,9 +4,10 @@ import { getUsers } from "@/lib/getUserData";
 import TableWrapper from "../Table/TableWrapper";
 import TableRow from "../Table/TableRow";
 import TableDataUser from "../Table/TableDataUser";
+import { IUser } from "@/models/User";
 
 async function AdminUsers() {
-	const users = await getUsers();
+	const users: IUser[] = await getUsers();
 
 	return (
 		<>
