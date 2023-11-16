@@ -27,7 +27,7 @@ function BlogPostCard({
 				</figure>
 			</Link>
 
-			<div className="card-body">
+			<div className="card-body p-4 sm:p-8">
 				<div className="flex flex-row justify-between items-start">
 					<div>
 						<h4 className="card-title ">
@@ -44,17 +44,19 @@ function BlogPostCard({
 					</span>
 				</div>
 
-				<div className={`card-actions justify-between items-center mt-2`}>
+				<div className="card-actions justify-between items-center mt-2">
 					<div className="flex flex-row items-center gap-2">
 						{(user && user.id != post.user._id) && <LikeButton post={post} user={user} />}
 
 						<LikeCounter likes={post.likes} />
 					</div>
 
-					<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
-						Read More
-						<IconChevronRight />
-					</Link>
+					<div className="flex flex-row justify-end w-full">
+						<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
+							Read More
+							<IconChevronRight />
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>

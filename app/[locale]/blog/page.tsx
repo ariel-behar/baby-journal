@@ -34,7 +34,7 @@ async function BlogPage() {
 
 			{
 				posts.length > 0
-					? <div className="py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 gap-y-5 lg:gap-5">
+					? <div className="py-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 gap-y-5 lg:gap-5">
 
 						{
 							posts.map((post) => (
