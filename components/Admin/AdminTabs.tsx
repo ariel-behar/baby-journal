@@ -15,12 +15,12 @@ function AdminTabs({
     return (<>
         <div className="flex justify-center items-center">
             <button
-                className={`flex-grow btn btn-primary rounded-none uppercase ${activeTab === 0 ? 'text-xl' : 'btn-ghost border-b-gray-800'}`}
+                className={`flex-grow btn btn-primary btn-sm md:btn-lg rounded-none uppercase ${activeTab === 0 ? 'text-lg md:text-xl' : 'btn-ghost border-b-gray-800'}`}
                 onClick={() => setActiveTab(0)} >
                 Posts
             </button>
             <button
-                className={`flex-grow btn btn-primary rounded-none uppercase ${activeTab === 1 ? 'text-xl' : 'btn-ghost border-b-gray-800'}`}
+                className={`flex-grow btn btn-primary btn-sm md:btn-lg rounded-none uppercase ${activeTab === 1 ? 'text-lg md:text-xl' : 'btn-ghost border-b-gray-800'}`}
                 onClick={() => setActiveTab(1)}
             >
                 Users
