@@ -7,7 +7,7 @@ export default function HomePage() {
 
 	return (
 		<div
-			className="flex-grow flex flex-col text-center items-center lg:items-start justify-center bg-no-repeat bg-contain bg-right-bottom"
+			className="flex-grow px-3 sm:px-5 flex flex-col text-center items-center lg:items-start justify-center bg-no-repeat bg-contain bg-right-bottom"
 			style={{ backgroundImage: 'url("/img/mother-holding-baby.png"' }}
 		>
 			<section className="flex flex-col gap-y-8 md:gap-[50px] items-center w-full lg:w-3/5" >

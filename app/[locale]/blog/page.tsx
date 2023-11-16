@@ -23,7 +23,7 @@ async function BlogPage() {
 	const user: ICustomSession['user'] | undefined = (session as ICustomSession)?.user;
 
 	return (
-		<div className="flex-grow flex flex-col lg:h-[calc(100vh-250px)] overflow-y-scroll px-3">
+		<div className="flex-grow flex flex-col lg:h-[calc(100vh-250px)] lg:overflow-y-scroll px-3 sm:px-5">
 			{
 				user && (
 					<div className="flex justify-end">

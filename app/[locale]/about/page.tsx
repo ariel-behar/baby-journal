@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 function AboutPage() {
 	return (
-		<div className="flex flex-col md:flex-row gap-[100px]">
+		<div className="flex flex-col md:flex-row gap-[100px] px-3 sm:px-5">
 			<section className="flex-1 flex flex-col gap-[50px] text-center md:text-left justify-center">
 				<h2 className="text-[54px] font-bold leading-tight">We create digital ideas that are bigger, bolder, braver and better</h2>
 

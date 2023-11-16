@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 function ContactPage() {
 	return (
-		<div className="flex flex-col md:flex-row gap-[100px] w-full justify-center items-center">
+		<div className="flex flex-col md:flex-row gap-[100px] w-full justify-center items-center px-3 sm:px-5">
 			<div className="relative w-1/2 h-[90%] flex flex-row items-center">
 				<Image
 					src="/img/baby-open-arms.png"
