@@ -3,9 +3,10 @@ import { FieldErrors } from "react-hook-form";
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
 import { IPostFormData } from "../AddEditPostForm";
+import { IContactFormData } from "../ContactForm";
 
 interface Props {
-    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
+    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData | keyof IContactFormData;
     errors: FieldErrors;
     children: React.ReactNode;
 }

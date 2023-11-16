@@ -2,19 +2,20 @@ import { FieldErrors, UseFormRegister } from "react-hook-form";
 
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
+import { IPostFormData } from "../AddEditPostForm";
+import { IContactFormData } from "../ContactForm";
 
 import FormErrorTooltip from './FormErrorTooltip'
 import FormInputField from "./FormInputField";
-import { IPostFormData } from "../AddEditPostForm";
 import FormInputLabel from "./FormInputLabel";
 
 
 interface Props {
     type: HTMLFormElement['type'];
     label: string;
-    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
+    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData | keyof IContactFormData;
     className?: string;
-    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData>;
+    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData> | UseFormRegister<IContactFormData>;
     errors: FieldErrors;
 }
 

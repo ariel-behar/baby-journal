@@ -1,9 +1,10 @@
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
 import { IPostFormData } from "../AddEditPostForm";
+import { IContactFormData } from "../ContactForm";
 
 interface Props {
-    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
+    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData | keyof IContactFormData;
     label: string;
     classes?: string;
     children: React.ReactNode;

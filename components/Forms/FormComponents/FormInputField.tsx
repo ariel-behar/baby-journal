@@ -1,12 +1,14 @@
 import { UseFormRegister } from "react-hook-form";
+
 import { ILoginFormData } from "../LoginForm";
 import { IRegisterFormData } from "../RegisterForm";
 import { IPostFormData } from "../AddEditPostForm";
+import { IContactFormData } from "../ContactForm";
 
 interface Props {
     type?: HTMLFormElement['type'];
-    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData;
-    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData>;
+    name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData | keyof IContactFormData;
+    register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData> | UseFormRegister<IContactFormData>;
     className?: string;
 }
 
@@ -18,7 +20,7 @@ function FormInputField({
 }: Props) {
     return (
         <>
-            <input {...(register as UseFormRegister<ILoginFormData | IRegisterFormData | IPostFormData>)(name)} className={`${className} form-input input input-bordered w-full`} type={type} name={name} id={name} autoComplete="on"/>
+            <input {...(register as UseFormRegister<ILoginFormData | IRegisterFormData | IPostFormData | IContactFormData>)(name)} className={`${className} form-input input input-bordered w-full`} type={type} name={name} id={name} autoComplete="on"/>
         </>
     )
 }
