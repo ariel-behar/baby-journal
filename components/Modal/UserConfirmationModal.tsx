@@ -35,7 +35,7 @@ function UserConfirmationModal() {
             </p>
 
             <div className="modal-action mt-0">
-                <form method="dialog" className="flex justify-center w-full gap-1 sm:gap-10">
+                <form method="dialog" className="flex justify-around w-full gap-1 sm:gap-10">
                     {/* if there is a button in form, it will close the modal */}
                     <DeleteButton />
 
