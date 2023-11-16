@@ -16,7 +16,7 @@ function TableWrapper({
 }: Props) {
     return (
         <div className={`overflow-x-auto ${tableWrapperClasses}`}>
-            <table className={`table table-sm table-pin-rows ${tableClasses}`}>
+            <table className={`table table-xs md:table-sm table-pin-rows ${tableClasses}`}>
                 
                 {/* head */}
                 <TableHead tableHeadings={tableHeadings} />
