@@ -27,9 +27,9 @@ function TableDataPost({
             <td>
                 <div className="flex items-center gap-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-15 h-15">
+                        <div className="mask mask-squircle w-[50px] h-[50px]">
                             <Link href={`/blog/${post._id}`} className="group-hover:underline">
-                                <Image src={post.img || "/img/noavatar.png"} alt="" width={50} height={50} />
+                                <Image src={post.img || "/img/noavatar.png"} alt="Avatar" width={50} height={50} />
                             </Link>
                         </div>
                     </div>
