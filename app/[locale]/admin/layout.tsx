@@ -14,7 +14,7 @@ function AdminLayout({
     users
 }: Props) {
     return (
-        <div className="flex-grow flex flex-col">
+        <div className="flex-grow flex flex-col w-screen">
             <AdminTabs posts={posts} users={users} />
 
             {children}
