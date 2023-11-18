@@ -49,7 +49,7 @@ function ContactForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-5 bg-dark-soft p-3 text-center rounded-md w-full">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-2 sm:gap-5 bg-dark-soft p-3 text-center rounded-md w-full">
             <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label='First Name' type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label='Last Name' type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="email" label='Email' type='email' />
