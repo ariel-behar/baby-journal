@@ -18,7 +18,7 @@ export interface ILoginFormData {
 
 function LoginForm() {
     const { displayNotification } = useNotificationContext();
-    const { register, handleSubmit, formState: { isDirty, isValid, errors } } = useForm<ILoginFormData>({
+    const { register, handleSubmit, formState: { isDirty, isValid,isSubmitting, errors } } = useForm<ILoginFormData>({
         resolver: yupResolver(userLoginSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -48,7 +48,7 @@ function LoginForm() {
 
             <FormInputFieldWithTooltip register={register} errors={errors} name="password" label='Password' type='password' />
 
-            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid}>Login</FormSubmitButton>
+            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>Login</FormSubmitButton>
         </form>
     )
 }
