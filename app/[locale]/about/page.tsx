@@ -8,29 +8,15 @@ export const metadata: Metadata = {
 
 function AboutPage() {
 	return (
-		<div className="flex flex-col md:flex-row gap-[100px] px-3 sm:px-5">
-			<section className="flex-1 flex flex-col gap-[50px] text-center md:text-left justify-center">
-				<h2 className="text-[54px] font-bold leading-tight">We create digital ideas that are bigger, bolder, braver and better</h2>
+		<section className="flex flex-col xl:flex-row items-center gap-5 md:gap-10 xl:gap-[100px] px-3 sm:px-5">
 
-				<p className="text-xl">We create digital ideas that are bigger, bolder, braver, and better. We believe in good ideas, flexibility, and precision. Our team is the best consulting and finance solutions provider. We offer a wide range of web and software development services.</p>
+			<div className="w-full xl:w-1/2 flex flex-col gap-[50px] text-center md:text-left justify-center">
+				<h3 className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">About Baby Journal: Cherish Every Moment of Your Baby's Journey</h3>
 
-				<div className="gap-[50px] md:gap-0 flex flex-col md:flex-row items-center justify-between">
-					<div className="flex flex-col gap-2">
-						<h3 className="text-customBlue text-2xl font-bold">10 K+</h3>
-						<p>Year of experience</p>
-					</div>
-					<div>
-						<h3 className="text-customBlue text-2xl font-bold">10 K+</h3>
-						<p>Year of experience</p>
-					</div>
-					<div>
-						<h3 className="text-customBlue text-2xl font-bold">10 K+</h3>
-						<p>Year of experience</p>
-					</div>
-				</div>
-			</section>
+				<p className="text-xl text-justify">Baby Journal is the ultimate web app designed for mothers to document their baby's activities, milestones, and precious moments. Seamlessly record daily events, share tips, and track your baby's growth and development. With intuitive features, you can add photos, write descriptions and like other mothers' baby achievements. Baby Journal keeps your memories safe and organized, making it easy to reflect on your motherhood journey and share insights with other moms. Join our community and start creating a beautiful, personalized diary for your baby today!</p>
+			</div>
 
-			<div className="flex-1 relative">
+			<div className="relative w-full xl:w-1/2 h-[200px] md:h-[300px] xl:h-[500px] ">
 				<Image
 					src="/img/baby-upside-down.png"
 					alt="About Image"
@@ -38,7 +24,7 @@ function AboutPage() {
 					className="object-contain"
 				/>
 			</div>
-		</div>
+		</section>
 	)
 }
 
