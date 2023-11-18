@@ -21,7 +21,7 @@ export interface IContactFormData {
 
 function ContactForm() {
     const { displayNotification } = useNotificationContext();
-    const { register, handleSubmit, formState: { isDirty, isValid, errors } } = useForm<IContactFormData>({
+    const { register, handleSubmit, formState: { isDirty, isValid, isSubmitting, errors }, reset } = useForm<IContactFormData>({
         resolver: yupResolver(contactFormSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -41,6 +41,7 @@ function ContactForm() {
             await sendContactMessage(formData)
                 .then(res => {
                     displayNotification(res.message, 'info')
+                    reset()
                 }).catch(error => {
                     displayNotification(error.message, 'error')
                 })
@@ -55,7 +56,7 @@ function ContactForm() {
 
             <FormTextAreaWithTooltip register={register} errors={errors} name="message" label='Message' />
 
-            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid}>
+            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>
                 Send
             </FormSubmitButton>
         </form>
