@@ -1,18 +1,24 @@
 "use server"
 import { revalidatePath } from "next/cache";
+import nodemailer from 'nodemailer'
 import { signIn, signOut } from "./auth";
+import { redirect } from "next/navigation";
+import { isRedirectError } from "next/dist/client/components/redirect";
+import { ObjectSchema } from "yup";
 
 import dbConnect from "./dbConnect";
 
 import Post, { IPost } from "@/models/Post";
 import User, { IUser } from "@/models/User";
+import { InvalidDataError, InvalidLoginCredentialsError, NotFoundError } from "@/models/Error";
+
+import contactFormSchema from "@/validation/contactFormSchema";
 
 import { ILoginFormData } from "@/components/Forms/LoginForm";
 import { IRegisterFormData } from "@/components/Forms/RegisterForm";
+import { IContactFormData } from "@/components/Forms/ContactForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
-import { redirect } from "next/navigation";
-import { isRedirectError } from "next/dist/client/components/redirect";
-import { InvalidDataError, InvalidLoginCredentialsError, NotFoundError } from "@/models/Error";
+
 
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
@@ -66,8 +72,8 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
         dbConnect();
 
         const post = await Post.findByIdAndDelete(postId);
-        
-        if(!post) throw new NotFoundError("Post not found!");
+
+        if (!post) throw new NotFoundError("Post not found!");
 
         console.log('Post deleted successfully');
         revalidatePath('/blog');
@@ -134,7 +140,7 @@ export const registerUser = async (formData: IRegisterFormData) => {
     const { firstName, lastName, email, password, confirmPassword } = formData;
 
     if (password !== confirmPassword) {
-        
+
         throw new InvalidDataError("Passwords do not match!")
     }
 
@@ -155,11 +161,11 @@ export const registerUser = async (formData: IRegisterFormData) => {
         // return { ok: true, message: 'User has been registered!' }
 
     } catch (error) {
-        if(isRedirectError(error)) {
+        if (isRedirectError(error)) {
             redirect('/');
         }
         throw error
-    } 
+    }
 }
 
 export const loginUser = async (formData: ILoginFormData) => {
@@ -172,7 +178,7 @@ export const loginUser = async (formData: ILoginFormData) => {
 
         return { ok: true, message: 'User has successfully logged in!' }
     } catch (error) {
-        if(isRedirectError(error)) {
+        if (isRedirectError(error)) {
             redirect('/')
         } else {
             throw new InvalidLoginCredentialsError();
@@ -222,3 +228,71 @@ export const deleteUser = async (formData: FormData | IUser['_id'], currentUserI
         throw error;
     }
 }
+
+// Contact actions
+export const sendContactMessage = async (formData: IContactFormData) => {
+
+    const body: IContactFormData = formData;
+
+    try {
+            await (contactFormSchema as ObjectSchema<IContactFormData>).camelCase().validate(body, {
+                abortEarly: false,
+                strict: true
+            });
+
+            const { firstName, lastName, email, message } = body;
+
+            const transporter = nodemailer.createTransport({
+                service: 'hotmail',
+                host: process.env.EMAIL_HOST,
+                port: 587,
+                secure: false,
+                auth: {
+                    user: process.env.EMAIL_FROM,
+                    pass: process.env.EMAIL_FROM_PASSWORD,
+                },
+                from: process.env.EMAIL_FROM,
+                tls: {
+                    rejectUnauthorized: false,
+                },
+            });
+
+            const output = `
+                <h2>You have a new contact form submission on Baby Journal!</h2>
+                <h3>Submission Details</h3>
+                <ul>
+                    <li><b>Name:</b> ${firstName} ${lastName}</li>
+                    <li><b>Email address:</b> ${email}</li>
+                    <li><b>Message:</b> ${message}</li>
+                </ul>`;
+
+
+            const options = {
+                from: `Baby Journal <${process.env.EMAIL_FROM}>`,
+                to: process.env.EMAIL_TO,
+                subject: 'Baby Journal contact form submission',
+                text: 'Baby Journal contact form submission',
+                html: output,
+            }
+
+            transporter.verify(function (error, success) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log("Server is ready to take our messages");
+                }
+            });
+
+            const info = await transporter.sendMail(options);
+
+            if (info) {
+                console.log(`Message sent successfully: %s ${info.messageId}`);
+                return { ok: true, message: `Message sent successfully!` };
+            } else {
+                throw new Error('An error occurred while attempting to process your message.');
+            }
+        } catch (error) {
+            console.log('error:', error)
+            throw error;
+        }
+    }
