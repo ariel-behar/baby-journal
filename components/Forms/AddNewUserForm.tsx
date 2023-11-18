@@ -22,7 +22,7 @@ function AddNewUserForm({
     modalRef
 }: Props) {
     const { displayNotification } = useNotificationContext();
-    const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IRegisterFormData>({
+    const { register, handleSubmit, formState: { errors, isValid, isDirty, isSubmitting } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -71,7 +71,7 @@ function AddNewUserForm({
             <div className="w-full flex justify-around mt-2">
                 <CancelButton onClick={() => modalRef?.current?.close()} />
 
-                <FormSubmitButton className="btn-sm" isDirty={isDirty} isValid={isValid}>
+                <FormSubmitButton className="btn-sm" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>
                     Add User
                     <IconPlus />
                 </FormSubmitButton>
