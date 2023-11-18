@@ -1,6 +1,6 @@
+import Image from "next/image"
 import ContactForm from "@/components/Forms/ContactForm";
 import { Metadata } from "next";
-import Image from "next/image"
 
 export const metadata: Metadata = {
 	title: "Contact",
@@ -9,19 +9,33 @@ export const metadata: Metadata = {
 
 function ContactPage() {
 	return (
-		<div className="flex flex-col md:flex-row lg:gap-[100px] w-full justify-center items-center px-3 sm:px-5">
-			<div className="relative w-1/2 h-[300px] lg:h-[90%] flex flex-row items-center">
-				<Image
-					src="/img/baby-open-arms.png"
-					alt="Contact"
-					fill
-					className="object-contain"
-				/>
+		<div className="flex flex-col sm:flex-row gap-3 lg:gap-[100px] w-full justify-center items-center px-3 sm:px-5 pb-5 pb-sm-0">
+
+			<div className="w-full sm:w-1/2">
+				<div className="flex flex-col gap-7">
+					<h3 className="text-3xl lg:text-4xl xl:text-6xl text-center">Get in Touch with Us!</h3>
+
+					<p>We'd love to hear from you. Whether you have questions, feedback, or just want to share your baby's milestones, we're here to help. Fill out the form below, and we'll get back to you as soon as possible.</p>
+				</div>
+
+				<div className="flex flex-row items-center sm:flex-col sm:mt-7">
+					<p>Thank you for being a part of our baby journal community!</p>
+					
+					<div className="relative w-full h-[150px] sm:h-[300px] flex flex-row items-center">
+						<Image
+							src="/img/baby-open-arms.png"
+							alt="Contact"
+							fill
+							className="object-contain"
+						/>
+					</div>
+				</div>
+
 			</div>
 
-			<div className="h-full flex items-center flex-1">
+			<div className="h-full w-full flex items-center flex-1">
 				<ContactForm />
-				
+
 			</div>
 		</div>
 	)
