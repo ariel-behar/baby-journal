@@ -21,7 +21,7 @@ export interface IRegisterFormData extends Omit<IUser, "_id" | 'createdAt' | "up
 
 function RegisterForm() {
     const { displayNotification } = useNotificationContext();
-    const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IRegisterFormData>({
+    const { register, handleSubmit, formState: { errors, isValid, isSubmitting, isDirty } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -63,7 +63,7 @@ function RegisterForm() {
                 <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label="Confirm Password" type="password" />
             </div>
 
-            <FormSubmitButton className="btn-lg" isDirty={isDirty} isValid={isValid}>Register</FormSubmitButton>
+            <FormSubmitButton className="btn-lg" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>Register</FormSubmitButton>
         </form>
     )
 }
