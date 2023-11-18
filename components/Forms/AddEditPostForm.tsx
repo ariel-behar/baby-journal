@@ -36,7 +36,7 @@ function AddEditPostForm({
     modalRef
 }: Props) {
     const { displayNotification } = useNotificationContext();
-    const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm<IPostFormData>({
+    const { register, handleSubmit, formState: { errors, isValid, isDirty, isSubmitting } } = useForm<IPostFormData>({
         resolver: yupResolver(postSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -95,7 +95,7 @@ function AddEditPostForm({
                         <CancelButton onClick={() => modalRef?.current?.close()} />
                     )}
 
-                    <FormSubmitButton className="btn-sm" isDirty={isDirty} isValid={isValid}>
+                    <FormSubmitButton className="btn-sm" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>
                         {formType === 'edit'
                             ? 'Edit'
                             : 'Add'
