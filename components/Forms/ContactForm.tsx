@@ -3,7 +3,7 @@ import { BaseSyntheticEvent } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { contactSchema } from '@/validation/contactSchema';
+import contactFormSchema from '@/validation/contactFormSchema';
 
 import { useNotificationContext } from '@/context/notificationContext';
 
@@ -22,7 +22,7 @@ export interface IContactFormData {
 function ContactForm() {
     const { displayNotification } = useNotificationContext();
     const { register, handleSubmit, formState: { isDirty, isValid, errors } } = useForm<IContactFormData>({
-        resolver: yupResolver(contactSchema),
+        resolver: yupResolver(contactFormSchema),
         mode: 'onBlur',
         defaultValues: {
             firstName: '',
@@ -40,7 +40,7 @@ function ContactForm() {
         if (firstName && lastName && email && message) {
             await sendContactMessage(formData)
                 .then(res => {
-                    displayNotification('Successfully logged in!', 'info')
+                    displayNotification(res.message, 'info')
                 }).catch(error => {
                     displayNotification(error.message, 'error')
                 })
