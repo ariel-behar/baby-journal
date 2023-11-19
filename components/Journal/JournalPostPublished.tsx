@@ -6,7 +6,7 @@ interface Props {
     createdAt: IPost['createdAt']
 }
 
-function BlogPostPublished({
+function JournalPostPublished({
     createdAt
 }:Props) {
     return (
@@ -21,4 +21,4 @@ function BlogPostPublished({
     )
 }
 
-export default BlogPostPublished
+export default JournalPostPublished

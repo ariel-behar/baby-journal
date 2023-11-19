@@ -14,7 +14,7 @@ interface Props {
 	user: ICustomSession['user'] | undefined
 }
 
-function BlogPostCard({
+function JournalPostCard({
 	post,
 	user
 }: Props) {
@@ -63,4 +63,4 @@ function BlogPostCard({
 	)
 }
 
-export default BlogPostCard
+export default JournalPostCard

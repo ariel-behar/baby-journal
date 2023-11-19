@@ -6,7 +6,7 @@ interface Props {
     post: IPost
 }
 
-function BlogPostOwnerButtons({
+function JournalPostOwnerButtons({
     post
 }: Props) {
     return (
@@ -18,4 +18,4 @@ function BlogPostOwnerButtons({
     )
 }
 
-export default BlogPostOwnerButtons
+export default JournalPostOwnerButtons

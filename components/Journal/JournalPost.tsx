@@ -7,16 +7,16 @@ import { IPost } from "@/models/Post"
 import { auth } from "@/lib/auth"
 import { ICustomSession } from "@/types/types"
 
-import BlogPostOwnerButtons from "./BlogPostOwnerButtons"
+import JournalPostOwnerButtons from "./JournalPostOwnerButtons"
 import LikeButton from "../Buttons/LikeButton"
 import LikeCounter from "./LikeCounter"
-import BlogPostAuthorPublished from "@/components/Blog/BlogPostAuthorPublished"
+import JournalPostAuthorPublished from "@/components/Journal/JournalPostAuthorPublished"
 
 interface Props {
     post: IPost
 }
 
-async function BlogPost({
+async function JournalPost({
     post
 }: Props) {
     const session: Session | null = await auth()
@@ -54,22 +54,22 @@ async function BlogPost({
 
                         <div className="md:hidden">
                             {user?.id == postUserId
-                                ? <BlogPostOwnerButtons post={post} />
-                                : user?.isAdmin && <BlogPostOwnerButtons post={post} />
+                                ? <JournalPostOwnerButtons post={post} />
+                                : user?.isAdmin && <JournalPostOwnerButtons post={post} />
                             }
                         </div>
                     </div>
 
                     {post && (
                         <Suspense fallback={<div>Loading...</div>}>
-                            <BlogPostAuthorPublished post={post} />
+                            <JournalPostAuthorPublished post={post} />
                         </Suspense>
                     )}
 
                     <div className="hidden md:flex flex-row justify-end ">
                         {user?.id == postUserId
-                            ? <BlogPostOwnerButtons post={post} />
-                            : user?.isAdmin && <BlogPostOwnerButtons post={post} />
+                            ? <JournalPostOwnerButtons post={post} />
+                            : user?.isAdmin && <JournalPostOwnerButtons post={post} />
                         }
                     </div>
                 </div>
@@ -82,4 +82,4 @@ async function BlogPost({
     )
 }
 
-export default BlogPost
+export default JournalPost

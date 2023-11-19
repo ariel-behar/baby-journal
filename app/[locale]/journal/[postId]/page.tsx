@@ -4,7 +4,7 @@ import { getPost } from "@/lib/getPostData";
 
 import LinkButton from "@/components/Buttons/LinkButton";
 import IconChevronLeft from "@/components/Icons/IconChevronLeft";
-import BlogPost from "@/components/Blog/BlogPost";
+import JournalPost from "@/components/Journal/JournalPost";
 
 interface Props {
 	params: {
@@ -38,7 +38,7 @@ async function SingleJournalPostPage({ params }: Props) {
 			</div>
 
 			{post && (
-				<BlogPost post={post} />
+				<JournalPost post={post} />
 			)}
 		</div>
 	)

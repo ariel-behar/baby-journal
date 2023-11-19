@@ -5,11 +5,11 @@ import { Metadata } from "next";
 import { IPostPopulated } from "@/models/Post";
 import { getPosts } from "@/lib/getPostData";
 
-import BlogPostCard from "@/components/Blog/BlogPostCard"
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
 import { ICustomSession } from "@/types/types";
 import AddPostModalButton from "@/components/Buttons/AddPostModalButton";
+import JournalPostCard from "@/components/Journal/JournalPostCard";
 
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ async function JournalPage() {
 
 						{
 							posts.map((post) => (
-								<BlogPostCard user={user} post={post} key={uniqid()} />
+								<JournalPostCard user={user} post={post} key={uniqid()} />
 							))
 						}
 

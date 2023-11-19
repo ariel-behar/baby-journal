@@ -5,13 +5,13 @@ import { IUser } from "@/models/User";
 
 import { getUser } from "@/lib/getUserData";
 
-import BlogPostPublished from "./BlogPostPublished";
+import JournalPostPublished from "./JournalPostPublished";
 
 interface Props {
     post: IPost
 }
 
-async function BlogPostAuthorPublished({
+async function JournalPostAuthorPublished({
     post,
 }: Props) {
     const user: IUser | null = await getUser(post.user as string);
@@ -25,9 +25,9 @@ async function BlogPostAuthorPublished({
                 <span className="font-medium">{user?.firstName} {user?.lastName}</span>
             </div>
 
-            <BlogPostPublished createdAt={post.createdAt} />
+            <JournalPostPublished createdAt={post.createdAt} />
         </div>
     )
 }
 
-export default BlogPostAuthorPublished
+export default JournalPostAuthorPublished
