@@ -28,7 +28,7 @@ function TableDataPost({
                 <div className="flex items-center gap-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-[50px] h-[50px]">
-                            <Link href={`/blog/${post._id}`} className="group-hover:underline">
+                            <Link href={`/journal/${post._id}`} className="group-hover:underline">
                                 <Image src={post.img || "/img/noavatar.png"} alt="Avatar" width={50} height={50} />
                             </Link>
                         </div>
@@ -40,7 +40,7 @@ function TableDataPost({
             {/* Title */}
             <td>
                 <div>
-                    <Link href={`/blog/${post._id}`} className="flex items-center gap-5 group-hover:underline text-primary">
+                    <Link href={`/journal/${post._id}`} className="flex items-center gap-5 group-hover:underline text-primary">
                         <p className="hover:underline">{post.title}</p>
                     </Link>
                 </div>
