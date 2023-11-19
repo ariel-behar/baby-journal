@@ -1,7 +1,7 @@
 export const routesMain = [
     {
-        title: 'Blog',
-        path: '/blog'
+        title: 'Journal',
+        path: '/journal'
     }
 ]
 
