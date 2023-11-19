@@ -21,7 +21,7 @@ function BlogPostCard({
 
 	return (
 		<div className="card w-full bg-dark-soft text-primary-content shadow-xl">
-			<Link href={`/blog/${post._id}`}>
+			<Link href={`/journal/${post._id}`}>
 				<figure className="w-full h-[300px] relative rounded-t-xl">
 					<Image className="object-cover transform hover:scale-105 duration-700" src={post.img} alt='Post' fill />
 				</figure>
@@ -31,7 +31,7 @@ function BlogPostCard({
 				<div className="flex flex-row justify-between items-start">
 					<div>
 						<h4 className="card-title ">
-							<Link href={`/blog/${post._id}`}>
+							<Link href={`/journal/${post._id}`}>
 								{post.title}
 							</Link>
 						</h4>
@@ -52,7 +52,7 @@ function BlogPostCard({
 					</div>
 
 					<div className="flex flex-row justify-end w-full">
-						<Link href={`/blog/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
+						<Link href={`/journal/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
 							Read More
 							<IconChevronRight />
 						</Link>
