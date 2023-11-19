@@ -23,7 +23,7 @@ export const generateMetadata = async ({ params }: Props) => {
 	}
 }
 
-async function SingleBlogPostPage({ params }: Props) {
+async function SingleJournalPostPage({ params }: Props) {
 	const { postId } = params;
 
 	const post: IPost | null = await getPost(postId);
@@ -31,9 +31,9 @@ async function SingleBlogPostPage({ params }: Props) {
 	return (
 		<div className="flex-grow">
 			<div className="flex justify-end mb-2">
-				<LinkButton href="/blog">
+				<LinkButton href="/journal">
 					<IconChevronLeft />
-					Back to Blog
+					Back to Journal
 				</LinkButton>
 			</div>
 
@@ -44,4 +44,4 @@ async function SingleBlogPostPage({ params }: Props) {
 	)
 }
 
-export default SingleBlogPostPage
+export default SingleJournalPostPage

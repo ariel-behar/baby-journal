@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 	description: "Blog page description",
 };
 
-async function BlogPage() {
+async function JournalPage() {
 	const posts = await getPosts(true) as IPostPopulated[];
 	const session: Session | null = await auth();
 	const user: ICustomSession['user'] | undefined = (session as ICustomSession)?.user;
@@ -51,4 +51,4 @@ async function BlogPage() {
 	)
 }
 
-export default BlogPage
+export default JournalPage
