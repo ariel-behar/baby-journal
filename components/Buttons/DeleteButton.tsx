@@ -14,7 +14,7 @@ function DeleteButton() {
     const session = useSession()
     const currentUserId = session.data?.user?.id
     const pathName = usePathname()
-    const redirectToBlog = pathName === `/blog/${currentEntity?.entity?._id}`
+    const redirectToBlog = pathName === `/journal/${currentEntity?.entity?._id}`
 
     const onDeleteButtonClick = () => {
         const deleteResponse = deletePostHandler(true, currentUserId as string)
@@ -23,7 +23,7 @@ function DeleteButton() {
             deleteResponse.then(res => {
                 if (res.ok) {
                     if (redirectToBlog) {
-                        router.push('/blog')
+                        router.push('/journal')
                     }
 
                     displayNotification(res.message, 'info')
