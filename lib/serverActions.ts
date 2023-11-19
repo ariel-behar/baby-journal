@@ -32,7 +32,7 @@ export const addPost = async (formData: IPostFormData) => {
         await newPost.save();
 
         console.log('Post added successfully');
-        revalidatePath('/blog');
+        revalidatePath('/journal');
         revalidatePath('/dashboard');
         revalidatePath('/admin');
 
@@ -51,7 +51,7 @@ export const editPost = async (postId: IPost['_id'], formData: IPostFormData) =>
         await Post.findByIdAndUpdate(postId, { title, description, img, user });
         console.log('Post edited successfully');
 
-        revalidatePath('/blog');
+        revalidatePath('/journal');
         revalidatePath('/dashboard');
         revalidatePath('/admin');
 
@@ -76,7 +76,7 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
         if (!post) throw new NotFoundError("Post not found!");
 
         console.log('Post deleted successfully');
-        revalidatePath('/blog');
+        revalidatePath('/journal');
         revalidatePath('/admin');
 
         return { ok: true, message: 'Post has been deleted!' }
@@ -99,8 +99,8 @@ export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
         post.likes.push(userId);
         await post.save();
 
-        revalidatePath('/blog');
-        revalidatePath(`/blog/${postId}`);
+        revalidatePath('/journal');
+        revalidatePath(`/journal/${postId}`);
 
         return { ok: true, message: 'Post has been liked!' }
     } catch (error) {
@@ -122,8 +122,8 @@ export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id']) => 
         post.likes = post.likes.filter((like: IUser['_id']) => like != userId);
         await post.save();
 
-        revalidatePath('/blog');
-        revalidatePath(`/blog/${postId}`);
+        revalidatePath('/journal');
+        revalidatePath(`/journal/${postId}`);
 
         return { ok: true, message: 'Post has been unliked!' }
     } catch (error) {
