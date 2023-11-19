@@ -26,12 +26,12 @@ export const getPost = async (postId: IdType) => {
 
             return JSON.parse(JSON.stringify(post));
         } else {
-            redirect('/blog');
+            redirect('/journal');
         }
 
     } catch (error) {
         if(isRedirectError(error)){
-            redirect('/blog');
+            redirect('/journal');
         }
         throw error
     }
