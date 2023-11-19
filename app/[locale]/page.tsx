@@ -23,7 +23,7 @@ export default function HomePage() {
 					</div>
 
 					<div className="flex gap-x-3 lg:gap-x-10">
-						<LinkButton href="/blog" className="lg:btn-lg btn-primary">
+						<LinkButton href="/journal" className="lg:btn-lg btn-primary">
 							{t('Common.learn_more')}
 						</LinkButton>
 
