@@ -7,8 +7,8 @@ export const publicPages = [
 	"/",
 	"/about",
 	"/contact",
-	"/blog",
-	"/blog/:postId",
+	"/journal",
+	"/journal/:postId",
 ]
 
 export const authPages = [
