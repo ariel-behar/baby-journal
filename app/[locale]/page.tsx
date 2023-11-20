@@ -1,9 +1,14 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import LinkButton from "@/components/Buttons/LinkButton";
+import { auth } from "@/lib/auth";
+import { ICustomSession } from "@/types/types";
+import { Session } from "next-auth";
 
-export default function HomePage() {
-	const t = useTranslations()
+async function HomePage() {
+	const t = await getTranslations()
+	const session: Session | null = await auth()
+	const user = (session as ICustomSession)?.user;
 
 	return (
 		<div
@@ -27,9 +32,14 @@ export default function HomePage() {
 							{t('Common.learn_more')}
 						</LinkButton>
 
-						<LinkButton href="/login" className="lg:btn-lg btn-secondary">
-							{t('Common.login')}
-						</LinkButton>
+						{
+							!user && (
+								<LinkButton href="/login" className="lg:btn-lg btn-secondary">
+									{t('Common.login')}
+								</LinkButton>
+							)
+						}
+
 					</div>
 				</div>
 
@@ -40,3 +50,5 @@ export default function HomePage() {
 		</div>
 	);
 }
+
+export default HomePage;
