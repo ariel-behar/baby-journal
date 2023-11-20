@@ -9,7 +9,8 @@ function LikeCounter({
 }: Props) {
     function likesText() {
         if (likes.length === 0) {
-            return 'No one has liked this post yet!'
+            return ''
+            // return 'No one has liked this post yet!'
         } else if (likes.length === 1) {
             return 'person has liked this post!'
         } else if (likes.length > 1){
