@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 function ContactPage() {
 	return (
-		<div className="flex flex-col sm:flex-row gap-3 lg:gap-[100px] w-full justify-center items-center px-3 sm:px-5 pb-5 pb-sm-0">
+		<section className="flex flex-col sm:flex-row gap-3 lg:gap-[100px] w-full justify-center items-center px-3 sm:px-5 pb-5 pb-sm-0">
 
-			<div className="w-full sm:w-1/2">
+			<article className="w-full sm:w-1/2">
 				<div className="flex flex-col gap-7">
 					<h3 className="text-3xl lg:text-4xl xl:text-6xl text-center">Get in Touch with Us!</h3>
 
@@ -21,23 +21,22 @@ function ContactPage() {
 				<div className="flex flex-row items-center sm:flex-col sm:mt-7">
 					<p>Thank you for being a part of our baby journal community!</p>
 					
-					<div className="relative w-full h-[150px] sm:h-[300px] flex flex-row items-center">
+					<figure className="relative w-full h-[150px] sm:h-[300px] flex flex-row items-center">
 						<Image
 							src="/img/baby-open-arms.png"
 							alt="Contact"
 							fill
 							className="object-contain"
 						/>
-					</div>
+					</figure>
 				</div>
-
-			</div>
+			</article>
 
 			<div className="h-full w-full flex items-center flex-1">
 				<ContactForm />
 
 			</div>
-		</div>
+		</section>
 	)
 }
 
