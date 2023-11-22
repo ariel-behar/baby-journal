@@ -29,7 +29,7 @@ async function SingleJournalPostPage({ params }: Props) {
 	const post: IPost | null = await getPost(postId);
 
 	return (
-		<div className="flex-grow">
+		<section className="flex-grow px-2">
 			<div className="flex justify-end mb-2">
 				<LinkButton href="/journal">
 					<IconChevronLeft />
@@ -40,7 +40,7 @@ async function SingleJournalPostPage({ params }: Props) {
 			{post && (
 				<JournalPost post={post} />
 			)}
-		</div>
+		</section>
 	)
 }
 
