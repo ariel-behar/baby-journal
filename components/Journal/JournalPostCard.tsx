@@ -20,7 +20,7 @@ function JournalPostCard({
 }: Props) {
 
 	return (
-		<div className="card w-full bg-dark-soft text-primary-content shadow-xl">
+		<article className="card w-full bg-dark-soft text-primary-content shadow-xl">
 			<Link href={`/journal/${post._id}`}>
 				<figure className="w-full h-[300px] relative rounded-t-xl">
 					<Image className="object-cover transform hover:scale-105 duration-700" src={post.img} alt='Post' fill />
@@ -39,9 +39,10 @@ function JournalPostCard({
 							by {post.user.firstName} {post.user.lastName}
 						</span>
 					</div>
-					<span className="text-sm text-muted">
+					
+					<time className="text-sm text-muted">
 						{format(new Date(post.createdAt), "dd MMM yyyy")}
-					</span>
+					</time>
 				</div>
 
 				<div className="card-actions justify-between items-center mt-2">
@@ -59,7 +60,7 @@ function JournalPostCard({
 					</div>
 				</div>
 			</div>
-		</div>
+		</article>
 	)
 }
 

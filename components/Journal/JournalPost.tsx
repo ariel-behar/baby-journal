@@ -24,13 +24,13 @@ async function JournalPost({
     const postUserId = post.user;
 
     return (
-        <div className="flex gap-[100px]">
+        <article className="flex gap-[100px] px-2">
 
             {/* Post image from large screens onwards */}
             {post && (
-                <div className="hidden lg:block flex-1 relative h-[calc(90vh-200px)]">
+                <figure className="hidden lg:block flex-1 relative h-[calc(90vh-200px)]">
                     <Image src={post.img} alt='Post' fill className="object-cover" />
-                </div>
+                </figure>
             )}
 
             <div className="flex-[2] flex flex-col gap-y-7 md:gap-[50px]">
@@ -39,9 +39,9 @@ async function JournalPost({
 
                 {/* Post image from extra small to medium screens */}
                 {post && (
-                    <div className="block lg:hidden relative h-[300px] w-full">
+                    <figure className="block lg:hidden relative h-[300px] w-full">
                         <Image src={post.img} alt='Post' fill className="object-cover" />
-                    </div>
+                    </figure>
                 )}
 
                 <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-5">
@@ -78,7 +78,7 @@ async function JournalPost({
                     {post?.description}
                 </p>
             </div>
-        </div>
+        </article>
     )
 }
 

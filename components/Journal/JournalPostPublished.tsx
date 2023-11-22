@@ -14,9 +14,9 @@ function JournalPostPublished({
             <span className="text-gray-500 font-bold">
                 Published
             </span>
-            <span className="font-medium">
+            <time className="font-medium">
                 {format(new Date(createdAt as string), "dd MMM yyyy")}
-            </span>
+            </time>
         </div>
     )
 }
