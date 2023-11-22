@@ -27,11 +27,11 @@ function TableDataPost({
             <td>
                 <div className="flex items-center gap-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-[50px] h-[50px]">
-                            <Link href={`/journal/${post._id}`} className="group-hover:underline">
+                        <Link href={`/journal/${post._id}`} className="group-hover:underline">
+                            <figure className="mask mask-squircle w-[50px] h-[50px]">
                                 <Image src={post.img || "/img/noavatar.png"} alt="Avatar" width={50} height={50} />
-                            </Link>
-                        </div>
+                            </figure>
+                        </Link>
                     </div>
 
                 </div>
@@ -39,21 +39,19 @@ function TableDataPost({
 
             {/* Title */}
             <td>
-                <div>
-                    <Link href={`/journal/${post._id}`} className="flex items-center gap-5 group-hover:underline text-primary">
-                        <p className="hover:underline">{post.title}</p>
-                    </Link>
-                </div>
+                <Link href={`/journal/${post._id}`} className="flex items-center gap-5 group-hover:underline text-primary">
+                    <p className="hover:underline">{post.title}</p>
+                </Link>
             </td>
 
             {/* Description */}
             <td className='max-w-[200px] text-ellipsis whitespace-nowrap overflow-hidden'>
                 {post.description}
             </td>
-            
+
             {/* Created At */}
             <td>
-                <span className='text-muted text-sm'>{format(new Date(post.createdAt), "dd MMM yyyy (HH:mm:ss)")}</span>
+                <time className='text-muted text-sm'>{format(new Date(post.createdAt), "dd MMM yyyy (HH:mm:ss)")}</time>
             </td>
 
             {/* Author */}
@@ -62,7 +60,6 @@ function TableDataPost({
             </td>
 
             {children}
-
 
             {/* Actions */}
             <td>

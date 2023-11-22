@@ -17,9 +17,9 @@ function TableDataUser({
             <td>
                 <div className="flex items-center gap-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-[50px] h-[50px]">
+                        <figure className="mask mask-squircle w-[50px] h-[50px]">
                             <Image src={user.img || "/img/noavatar.png"} alt="" width={50} height={50} />
-                        </div>
+                        </figure>
                     </div>
 
                 </div>
