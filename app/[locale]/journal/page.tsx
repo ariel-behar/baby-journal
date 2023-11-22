@@ -1,13 +1,13 @@
+import { Session } from "next-auth";
 import uniqid from "uniqid";
-
 import { Metadata } from "next";
+
+import { auth } from "@/lib/auth";
 
 import { IPostPopulated } from "@/models/Post";
 import { getPosts } from "@/lib/getPostData";
-
-import { auth } from "@/lib/auth";
-import { Session } from "next-auth";
 import { ICustomSession } from "@/types/types";
+
 import AddPostModalButton from "@/components/Buttons/AddPostModalButton";
 import JournalPostCard from "@/components/Journal/JournalPostCard";
 
@@ -22,7 +22,7 @@ async function JournalPage() {
 	const user: ICustomSession['user'] | undefined = (session as ICustomSession)?.user;
 
 	return (
-		<div className="flex-grow flex flex-col lg:h-[calc(100vh-250px)] lg:overflow-y-scroll px-3 sm:px-5">
+		<section className="flex-grow flex flex-col lg:h-[calc(100vh-250px)] lg:overflow-y-scroll px-3 sm:px-5">
 			{
 				user && (
 					<div className="flex justify-end">
@@ -41,12 +41,12 @@ async function JournalPage() {
 							))
 						}
 
-					</div >
+					</div>
 					: <p className="text-2xl text-center">
 						No posts have been created yet...
 					</p>
 			}
-		</div>
+		</section>
 	)
 }
 
