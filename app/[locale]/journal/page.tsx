@@ -11,10 +11,9 @@ import { ICustomSession } from "@/types/types";
 import AddPostModalButton from "@/components/Buttons/AddPostModalButton";
 import JournalPostCard from "@/components/Journal/JournalPostCard";
 
-
 export const metadata: Metadata = {
 	title: "Blog",
-	description: "Blog page description",
+	description: "Explore the Baby Journal for insightful articles, tips, and stories from mothers around the world. Stay updated on parenting advice, baby milestones, and personal experiences to support and inspire your motherhood journey."
 };
 
 async function JournalPage() {
