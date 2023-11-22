@@ -6,7 +6,7 @@ import LoginForm from "@/components/Forms/LoginForm";
 async function LoginPage() {
 
 	return (
-		<div className="flex-grow flex items-center justify-center">
+		<section className="flex-grow flex items-center justify-center">
 			<FormStylesWrapper title="Login" className="p-3 md:p-12 flex flex-col w-full md:w-[500px]">
 				
 				<LoginForm />
@@ -18,7 +18,7 @@ async function LoginPage() {
 					</Link>
 				</span>
 			</FormStylesWrapper>
-		</div>
+		</section>
 	)
 }
 

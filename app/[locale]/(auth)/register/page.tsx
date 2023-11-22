@@ -5,7 +5,7 @@ import FormStylesWrapper from "@/components/Forms/FormComponents/FormStylesWrapp
 
 function RegisterPage() {
 	return (
-		<div className="flex-grow flex items-center justify-center">
+		<section className="flex-grow flex items-center justify-center">
 			<FormStylesWrapper title="Register" className="p-3 md:p-12 flex flex-col w-full md:w-[500px]">
 				<RegisterForm />
 				<span className="my-3">
@@ -15,7 +15,7 @@ function RegisterPage() {
 					</Link>
 				</span>
 			</FormStylesWrapper>
-		</div>
+		</section>
 	)
 }
 
