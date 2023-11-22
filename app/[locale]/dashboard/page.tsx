@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import AddPostModalButton from "@/components/Buttons/AddPostModalButton"
 
 import DashboardPosts from "@/components/Dashboard/DashboardPosts"
+
+export const metadata: Metadata = {
+	title: "Dashboard",
+	description: "Welcome to your Baby Journal Dashboard. Easily access and manage your baby's activities, milestones, and daily events. Enjoy a seamless overview of your motherhood journey all in one place."
+};
 
 async function DashboardPage() {
 	return (
