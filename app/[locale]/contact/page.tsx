@@ -4,8 +4,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Contact",
-	description: "Contact page description",
-};
+	description: "Baby Journal would love to hear from you. Whether you have questions, feedback, or just want to share your baby's milestones, we're here to help. Fill out the form below, and we'll get back to you as soon as possible.",
+}
 
 function ContactPage() {
 	return (
