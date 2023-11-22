@@ -1,8 +1,8 @@
 function FooterAllRightsReserved() {
     return (
-        <div className="text-center text-muted order-3">
-            {new Date().getFullYear()} &copy; All Rights Reserved
-        </div>
+        <span className="text-center text-muted order-3">
+            <time>{new Date().getFullYear()}</time> &copy; All Rights Reserved
+        </span>
     )
 }
 
