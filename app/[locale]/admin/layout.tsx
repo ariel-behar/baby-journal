@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import AdminTabs from "@/components/Admin/AdminTabs"
 
 import { ReactNode } from "react"
+
+export const metadata: Metadata = {
+	title: "Admin",
+	description: "Access the Baby Journal Admin Page to manage user accounts, oversee content, and ensure a smooth experience for all users. Administer settings, monitor activity, and maintain the integrity of the community."
+};
 
 type Props = Readonly<{
     children: ReactNode,
