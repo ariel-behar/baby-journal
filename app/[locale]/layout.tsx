@@ -18,11 +18,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: {
-		default: 'My Blog | Home',
-		template: "My Blog | %s",
+		default: 'Baby Journey | Home',
+		template: "Baby Journey | %s",
 
 	},
-	description: "Home page description",
+	description: "Document your baby's activities, milestones, and precious moments effortlessly. Share your baby's journey with your loved ones.",
 };
 
 interface Props {
