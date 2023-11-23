@@ -29,7 +29,7 @@ async function HomePage() {
 
 					<div className="flex gap-x-3 lg:gap-x-10">
 						<LinkButton href="/journal" className="lg:btn-lg btn-primary">
-							{t('Common.learn_more')}
+							{t('Common.learn-more')}
 						</LinkButton>
 
 						{
