@@ -5,8 +5,13 @@
     "description": "Document your baby's activities, milestones, and precious moments effortlessly. Share your baby's journey with your loved ones."
   },
   "Common": {
-    "learn_more": "Go to Journal",
-    "login": "Login"
+    "learn-more": "Go to Journal",
+    "login": "Login",
+    "add-post-modal-button": "Add New Post",
+    "add-user-modal-button": "Add New User",
+    "cancel-button": "Cancel",
+    "delete-button": "Delete",
+    "logout-button": "Logout"
   },
   "Footer": {
     "powered_by": "Powered by",

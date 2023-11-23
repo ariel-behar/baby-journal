@@ -1,7 +1,12 @@
 {
   "Common": {
-    "learn_more": "Отидете на Журнал",
-    "login": "Влизам"
+    "add-post-modal-button": "Добавяне на нова публикация",
+    "add-user-modal-button": "Добавяне на нов потребител",
+    "cancel-button": "Отказ",
+    "delete-button": "Изтрий",
+    "learn-more": "Отидете на Журнал",
+    "login": "Влизам",
+    "logout-button": "Излез от профила си"
   },
   "Footer": {
     "all-rights-reserved": "Всички права запазени",
@@ -13,10 +18,7 @@
     "title": "Бебешки дневник"
   },
   "ProfilePage": {
-    "email": "Електронна поща:",
-    "member-since": "Потребител от:",
-    "user-profile": "Потребителски профил",
     "admin": "Админ",
-    "user": "Потребител"
+    "email": "Електронна поща:"
   }
 }

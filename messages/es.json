@@ -1,7 +1,12 @@
 {
   "Common": {
-    "learn_more": "Ir al diario",
-    "login": "Acceso"
+    "add-post-modal-button": "Agregar nueva publicación",
+    "add-user-modal-button": "Añadir nuevo usuario",
+    "cancel-button": "Cancelar",
+    "delete-button": "Borrar",
+    "learn-more": "Ir al diario",
+    "login": "Acceso",
+    "logout-button": "Cerrar sesión"
   },
   "Footer": {
     "all-rights-reserved": "Reservados todos los derechos",
@@ -13,10 +18,7 @@
     "title": "Diario del bebé"
   },
   "ProfilePage": {
-    "email": "Correo electrónico:",
-    "member-since": "Miembro desde:",
-    "user-profile": "Perfil del usuario",
     "admin": "Administración",
-    "user": "Usuario"
+    "email": "Correo electrónico:"
   }
 }

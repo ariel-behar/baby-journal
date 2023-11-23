@@ -1,14 +1,16 @@
 "use client"
 import { useSession } from 'next-auth/react'
+import { useTranslations } from 'next-intl'
+import { usePathname, useRouter } from '@/lib/i18nNavigation'
 
 import { useNotificationContext } from '@/context/notificationContext'
 import { useModalContext } from '@/context/modalContext'
 
 import IconTrash from '../Icons/IconTrash'
-import { usePathname, useRouter } from '@/lib/i18nNavigation'
 
 function DeleteButton() {
     const router = useRouter();
+    const t = useTranslations("Common")
     const { deletePostHandler, currentEntity } = useModalContext()
     const { displayNotification } = useNotificationContext();
     const session = useSession()
@@ -36,7 +38,7 @@ function DeleteButton() {
 
     return (
         <button className="btn btn-sm btn-error btn-min-width" onClick={onDeleteButtonClick}>
-            Delete <IconTrash />
+            {t('delete-button')} <IconTrash />
         </button>
     )
 }

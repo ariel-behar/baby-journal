@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server"
+
 import IconClose from "../Icons/IconClose"
 
 interface Props {
@@ -5,13 +7,15 @@ interface Props {
 	onClick?: () => void
 }
 
-function CancelButton({
+async function CancelButton({
 	className = "btn-error",
 	onClick,
 }: Props) {
+	const t = await getTranslations("Common")
+
 	return (
 		<button type="button" className={`btn ${className} btn-sm btn-min-width`} onClick={onClick}>
-			Cancel <IconClose />
+			{t('cancel-button')} <IconClose />
 		</button>
 	)
 }
