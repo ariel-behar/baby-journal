@@ -1,9 +1,22 @@
 {
   "HomePage": {
-    "header": "Mommy's Baby's Diary"
+    "title": "Baby Journal",
+    "subtitle": "The ultimate digital diary for motherhood",
+    "description": "Document your baby's activities, milestones, and precious moments effortlessly. Share your baby's journey with your loved ones."
   },
   "Common": {
-    "learn_more": "Learn More",
-    "contact": "Contact"
+    "learn_more": "Go to Journal",
+    "login": "Login"
+  },
+  "Footer": {
+    "powered_by": "Powered by",
+    "all-rights-reserved": "All Rights Reserved"
+  },
+  "ProfilePage": {
+    "user-profile": "User Profile",
+    "member-since": "Member Since:",
+    "email": "Email:",
+    "admin": "Admin",
+    "user": "User"
   }
 }

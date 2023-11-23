@@ -1,9 +1,22 @@
 {
-  "HomePage": {
-    "header": "El diario del bebé de mamá"
-  },
   "Common": {
-    "learn_more": "Aprende más",
-    "contact": "Contacto"
+    "learn_more": "Ir al diario",
+    "login": "Acceso"
+  },
+  "Footer": {
+    "all-rights-reserved": "Reservados todos los derechos",
+    "powered_by": "Energizado por"
+  },
+  "HomePage": {
+    "description": "Documente las actividades, los hitos y los momentos preciosos de su bebé sin esfuerzo. \nComparte el viaje de tu bebé con tus seres queridos.",
+    "subtitle": "El diario digital definitivo para la maternidad",
+    "title": "Diario del bebé"
+  },
+  "ProfilePage": {
+    "email": "Correo electrónico:",
+    "member-since": "Miembro desde:",
+    "user-profile": "Perfil del usuario",
+    "admin": "Administración",
+    "user": "Usuario"
   }
 }

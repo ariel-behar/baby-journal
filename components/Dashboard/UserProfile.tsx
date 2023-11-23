@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { getTranslations } from "next-intl/server";
 
 import { IUser } from "@/models/User";
 import { format } from "date-fns/format";
@@ -7,9 +8,10 @@ interface Props {
     user: Partial<IUser>
 }
 
-function UserProfile({
+async function UserProfile({
     user
 }: Props) {
+    const t = await getTranslations("ProfilePage")
 
     return (
         <article className="flex flex-col items-center bg-dark-soft rounded-lg py-5 px-10">
@@ -20,15 +22,15 @@ function UserProfile({
             </div>
 
             <h3 className="text-2xl">{user?.firstName} {user?.lastName}</h3>
-            <p className="text-muted">{user?.isAdmin ? "Admin" : "User"}</p>
+            <p className="text-muted">{user?.isAdmin ? `${t('admin')}` : `${t('user')}`}</p>
 
             <div className="py-10 flex flex-col gap-y-1">
                 <p>
-                    Member Since:&nbsp;
+                    {t('member-since')}&nbsp;
                     <time className="font-bold">{format(new Date(user?.createdAt as string), "dd MMM yyyy")}</time>
                 </p>
                 <p>
-                    Email:&nbsp;
+                    {t('email')}&nbsp;
                     <span className="font-bold">{user?.email}</span>
                 </p>
 

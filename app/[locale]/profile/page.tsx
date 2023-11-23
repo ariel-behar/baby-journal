@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { auth } from "@/lib/auth"
 import { Session } from "next-auth"
+import { getTranslations } from "next-intl/server";
 
 import UserProfile from "@/components/Dashboard/UserProfile"
 
@@ -12,12 +13,13 @@ export const metadata: Metadata = {
 };
 
 async function ProfilePage() {
+    const t = await getTranslations("ProfilePage")
     const session: Session | null = await auth()
     const user = await getUser(session?.user?.id as string, ['firstName', 'lastName', 'email', 'isAdmin', 'img', 'createdAt'])
 
     return (
         <section className="flex-grow min-h-full">
-            <h3 className="text-xl uppercase text-center lg:text-left">User Profile</h3>
+            <h3 className="text-xl uppercase text-center lg:text-left">{t('user-profile')}</h3>
 
             <div className="h-full flex flex-row justify-center items-center ">
                 <UserProfile user={user} />
