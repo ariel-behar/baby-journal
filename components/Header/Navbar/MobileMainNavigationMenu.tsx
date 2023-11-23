@@ -30,7 +30,7 @@ function MobileMainNavigationMenu({
     }
 
     return (
-        <div className='block lg:hidden'>
+        <aside className='block lg:hidden'>
             {/* Hamburger Icon */}
             <span className='block lg:hidden' onClick={toggleMenu}>
                 <IconMenu sizeClassName='size-10' />
@@ -85,7 +85,7 @@ function MobileMainNavigationMenu({
                 </div>
 
             </div>
-        </div>
+        </aside>
     )
 }
 
