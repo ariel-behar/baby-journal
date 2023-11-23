@@ -1,10 +1,14 @@
+import { getTranslations } from "next-intl/server"
 import Image from "next/image"
 
-function FooterPoweredBy() {
+async function FooterPoweredBy() {
+    const t = await getTranslations('Footer')
+
     return (
         <div className="order-2 sm:order-1 mb-1 sm:mb-0 flex flex-row text-muted">
             <span >
-                Powered by&nbsp;
+                {t('powered_by')} 
+                &nbsp;
                 <a href="https://www.arielbehar.com" className="font-bold mr-2 underline" target="_blank">
                     Ariel Behar
                 </a>
