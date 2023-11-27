@@ -1,5 +1,6 @@
 "use client"
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useTranslations } from 'next-intl';
 import { BaseSyntheticEvent } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -18,6 +19,7 @@ export interface ILoginFormData {
 
 function LoginForm() {
     const { displayNotification } = useNotificationContext();
+    const t = useTranslations();
     const { register, handleSubmit, formState: { isDirty, isValid,isSubmitting, errors } } = useForm<ILoginFormData>({
         resolver: yupResolver(userLoginSchema),
         mode: 'onBlur',
@@ -44,11 +46,11 @@ function LoginForm() {
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-7">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label='Email' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('Forms.labels.email')} type='text' />
 
-            <FormInputFieldWithTooltip register={register} errors={errors} name="password" label='Password' type='password' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="password" label={t('Forms.labels.password')} type='password' />
 
-            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>Login</FormSubmitButton>
+            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>{t('Common.login')}</FormSubmitButton>
         </form>
     )
 }
