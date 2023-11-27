@@ -2,6 +2,7 @@
 import { useForm } from "react-hook-form";
 import { BaseSyntheticEvent } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslations } from "next-intl";
 
 import { useNotificationContext } from "@/context/notificationContext";
 
@@ -22,6 +23,7 @@ function AddNewUserForm({
     modalRef
 }: Props) {
     const { displayNotification } = useNotificationContext();
+    const t = useTranslations()
     const { register, handleSubmit, formState: { errors, isValid, isDirty, isSubmitting } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
@@ -56,23 +58,23 @@ function AddNewUserForm({
     return (
 
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label='First Name' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label='Last Name' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label='Email' type='email' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="password" label='Password' type='password' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label='Confirm Password' type='password' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="img" label='Image' type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label={t('Forms.labels.first-name')} type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label={t('Forms.labels.last-name')} type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('Forms.labels.email')} type='email' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="password" label={t('Forms.labels.password')} type='password' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label={t('Forms.labels.confirm-password')} type='password' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="img" label={t('Forms.labels.image')} type='text' />
 
             <select {...register('isAdmin')} className="form-input" name="isAdmin" id="">
-                <option value="false">User</option>
-                <option value="true">Admin</option>
+                <option value="false">{t('ProfilePage.user')}</option>
+                <option value="true">{t('ProfilePage.admin')}</option>
             </select>
 
             <div className="w-full flex justify-around mt-2">
                 <CancelButton onClick={() => modalRef?.current?.close()} />
 
                 <FormSubmitButton className="btn-sm" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>
-                    Add User
+                    {t('Forms.add-user')}
                     <IconPlus />
                 </FormSubmitButton>
             </div>
