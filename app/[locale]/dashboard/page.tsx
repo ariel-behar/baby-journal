@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import AddPostModalButton from "@/components/Buttons/AddPostModalButton"
+import { getTranslations } from "next-intl/server";
 
+import AddPostModalButton from "@/components/Buttons/AddPostModalButton"
 import DashboardPosts from "@/components/Dashboard/DashboardPosts"
 
 export const metadata: Metadata = {
@@ -9,10 +10,12 @@ export const metadata: Metadata = {
 };
 
 async function DashboardPage() {
+	const t = await getTranslations("DashboardPage");
+	
 	return (
 		<section className="flex-grow lg:h-[calc(100vh-250px)] px-3 w-screen">
 			<div className="flex justify-between">
-				<h3 className="text-xl uppercase text-center">Dashboard</h3>
+				<h3 className="text-xl uppercase text-center">{t('title')}</h3>
 				<AddPostModalButton />
 			</div>
 
