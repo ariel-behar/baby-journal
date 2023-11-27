@@ -9,10 +9,12 @@ import { IPostPopulated } from "@/models/Post";
 import TableWrapper from "../Table/TableWrapper";
 import TableRow from "../Table/TableRow";
 import TableDataAdminPost from "../Table/TableDataAdminPost";
+import { getTranslations } from "next-intl/server";
 
 async function AdminPosts() {
 	const posts = await getPosts(true) as IPostPopulated[];
 	const session: Session | null = await auth()
+	const t = await getTranslations("Common")
 
 	return (
 		<>
@@ -27,7 +29,7 @@ async function AdminPosts() {
 						<TableRow index={0}>
 							<td className="text-center h-full" colSpan={10}>
 								<p className="text-2xl">
-									No posts have been created yet...
+									{t('no-posts-have-been-created-yet')}
 								</p>
 							</td>
 						</TableRow>

@@ -1,4 +1,5 @@
 "use client"
+import { useTranslations } from "next-intl"
 import { ReactNode, useState } from "react"
 
 type Props = Readonly<{
@@ -11,19 +12,20 @@ function AdminTabs({
     users
 }: Props) {
     const [activeTab, setActiveTab] = useState(0)
+    const t = useTranslations('Common')
 
     return (<>
         <div className="flex justify-center items-center">
             <button
                 className={`flex-grow btn btn-primary btn-sm md:btn-lg rounded-none uppercase ${activeTab === 0 ? 'text-lg md:text-xl' : 'btn-ghost border-b-gray-800'}`}
                 onClick={() => setActiveTab(0)} >
-                Posts
+                {t('posts')}
             </button>
             <button
                 className={`flex-grow btn btn-primary btn-sm md:btn-lg rounded-none uppercase ${activeTab === 1 ? 'text-lg md:text-xl' : 'btn-ghost border-b-gray-800'}`}
                 onClick={() => setActiveTab(1)}
             >
-                Users
+                {t('users')}
             </button >
         </div >
 

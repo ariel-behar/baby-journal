@@ -11,7 +11,11 @@
     "add-user-modal-button": "Add New User",
     "cancel-button": "Cancel",
     "delete-button": "Delete",
-    "logout-button": "Logout"
+    "logout-button": "Logout",
+    "no-posts-have-been-created-yet": "No posts have been created yet...",
+    "posts": "Posts",
+    "users": "Users",
+    "loading": "Loading..."
   },
   "Footer": {
     "powered_by": "Powered by",
