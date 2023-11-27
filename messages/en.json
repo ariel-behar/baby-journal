@@ -44,5 +44,26 @@
   },
   "JournalPage": {
     "back-to-journal-button": "Back to Journal"
+  },
+  "Forms": {
+    "labels": {
+      "title": "Title",
+      "description": "Description",
+      "image": "Image",
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm-password": "Confirm Password",
+      "message": "Message"
+    },
+    "edit": "Edit",
+    "add": "Add",
+    "send": "Send",
+    "add-user": "Add User",
+    "register": "Register",
+    "notifications": {
+      "user-has-been-registered": "User has been registered!"
+    }
   }
 }
