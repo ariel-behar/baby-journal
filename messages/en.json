@@ -15,7 +15,8 @@
     "no-posts-have-been-created-yet": "No posts have been created yet...",
     "posts": "Posts",
     "users": "Users",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "you-have-not-created-any-posts-yet": "You have not created any posts yet..."
   },
   "Footer": {
     "powered_by": "Powered by",

@@ -1,6 +1,7 @@
 import uniqid from "uniqid"
 import { auth } from "@/lib/auth"
 import { Session } from "next-auth"
+import { getTranslations } from "next-intl/server"
 
 import { getPosts } from "@/lib/getPostData"
 
@@ -13,6 +14,7 @@ import TableRow from "../Table/TableRow"
 async function DashboardPosts() {
 	const session: Session | null = await auth()
 	const posts = await getPosts(true, session?.user?.id as string) as IPostPopulated[]
+	const t = await getTranslations("Common")
 
 	return (
 		<>
@@ -26,7 +28,7 @@ async function DashboardPosts() {
 						<TableRow index={0}>
 							<td className="text-center h-full" colSpan={10}>
 								<p className="text-2xl">
-									You have not created any posts yet...
+									{t('you-have-not-created-any-posts-yet')}
 								</p>
 							</td>
 						</TableRow>
