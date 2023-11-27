@@ -1,16 +1,17 @@
 "use client"
 import { BaseSyntheticEvent } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslations } from 'next-intl';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import contactFormSchema from '@/validation/contactFormSchema';
+import { sendContactMessage } from '@/lib/serverActions';
 
 import { useNotificationContext } from '@/context/notificationContext';
 
 import FormInputFieldWithTooltip from './FormComponents/FormInputFieldWithTooltip';
 import FormTextAreaWithTooltip from './FormComponents/FormTextAreaWithTooltip';
 import FormSubmitButton from './FormComponents/FormSubmitButton';
-import { sendContactMessage } from '@/lib/serverActions';
 
 export interface IContactFormData {
     firstName: string;
@@ -21,6 +22,7 @@ export interface IContactFormData {
 
 function ContactForm() {
     const { displayNotification } = useNotificationContext();
+    const t = useTranslations("Forms");
     const { register, handleSubmit, formState: { isDirty, isValid, isSubmitting, errors }, reset } = useForm<IContactFormData>({
         resolver: yupResolver(contactFormSchema),
         mode: 'onBlur',
@@ -50,14 +52,14 @@ function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-2 sm:gap-5 bg-dark-soft p-3 text-center rounded-md w-full">
-            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label='First Name' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label='Last Name' type='text' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label='Email' type='email' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label={t('labels.first-name')} type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label={t('labels.last-name')} type='text' />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('labels.email')} type='email' />
 
-            <FormTextAreaWithTooltip register={register} errors={errors} name="message" label='Message' />
+            <FormTextAreaWithTooltip register={register} errors={errors} name="message" label={t('labels.message')} />
 
             <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>
-                Send
+                {t('send')}
             </FormSubmitButton>
         </form>
     )
