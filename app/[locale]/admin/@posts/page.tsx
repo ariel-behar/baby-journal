@@ -2,6 +2,7 @@ import { Suspense } from "react"
 
 import AdminPosts from "@/components/Admin/AdminPosts"
 import AddPostModalButton from "@/components/Buttons/AddPostModalButton"
+import Loading from "@/components/Loading"
 
 function AdminPostsPage() {
     return (
@@ -10,7 +11,7 @@ function AdminPostsPage() {
                 <AddPostModalButton />
             </div>
 
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
                 <AdminPosts />
             </Suspense>
         </>
