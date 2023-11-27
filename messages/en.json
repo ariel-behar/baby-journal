@@ -40,5 +40,8 @@
   },
   "DashboardPage": {
     "title": "Dashboard"
+  },
+  "JournalPage": {
+    "back-to-journal-button": "Back to Journal"
   }
 }

@@ -1,5 +1,6 @@
 import { Session } from "next-auth";
 import uniqid from "uniqid";
+import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 
 import { auth } from "@/lib/auth";
@@ -20,6 +21,7 @@ async function JournalPage() {
 	const posts = await getPosts(true) as IPostPopulated[];
 	const session: Session | null = await auth();
 	const user: ICustomSession['user'] | undefined = (session as ICustomSession)?.user;
+	const t = await getTranslations('Common')
 
 	return (
 		<section className="flex-grow flex flex-col lg:h-[calc(100vh-250px)] lg:overflow-y-scroll px-3 sm:px-5">
@@ -43,7 +45,7 @@ async function JournalPage() {
 
 					</div>
 					: <p className="text-2xl text-center">
-						No posts have been created yet...
+						{t('no-posts-have-been-created-yet')}
 					</p>
 			}
 		</section>

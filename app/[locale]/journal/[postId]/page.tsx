@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 import { IPost } from "@/models/Post";
 
 import { getPost } from "@/lib/getPostData";
@@ -25,15 +27,16 @@ export const generateMetadata = async ({ params }: Props) => {
 
 async function SingleJournalPostPage({ params }: Props) {
 	const { postId } = params;
-
 	const post: IPost | null = await getPost(postId);
+	
+	const t = await getTranslations('JournalPage');
 
 	return (
 		<section className="flex-grow px-2">
 			<div className="flex justify-end mb-2">
 				<LinkButton href="/journal">
 					<IconChevronLeft />
-					Back to Journal
+					{t('back-to-journal-button')}
 				</LinkButton>
 			</div>
 
