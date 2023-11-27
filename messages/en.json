@@ -27,5 +27,10 @@
     "email": "Email:",
     "admin": "Admin",
     "user": "User"
+  },
+  "ContactPage": {
+    "title": "Get in Touch with Us!",
+    "paragraph-one": "We'd love to hear from you. Whether you have questions, feedback, or just want to share your baby's milestones, we're here to help. Fill out the form below, and we'll get back to you as soon as possible.",
+    "paragraph-two": "Thank you for being a part of our baby journal community!"
   }
 }
