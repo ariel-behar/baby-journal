@@ -2,6 +2,7 @@
 import { yupResolver } from "@hookform/resolvers/yup"
 import { BaseSyntheticEvent } from "react"
 import { useForm } from "react-hook-form"
+import { useTranslations } from "next-intl"
 
 import { addPost, editPost } from "@/lib/serverActions"
 import { IUser } from "@/models/User"
@@ -36,6 +37,7 @@ function AddEditPostForm({
     modalRef
 }: Props) {
     const { displayNotification } = useNotificationContext();
+    const t = useTranslations("Forms")
     const { register, handleSubmit, formState: { errors, isValid, isDirty, isSubmitting } } = useForm<IPostFormData>({
         resolver: yupResolver(postSchema),
         mode: 'onBlur',
@@ -85,9 +87,9 @@ function AddEditPostForm({
     return (
         <>
             <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
-                <FormInputFieldWithTooltip register={register} errors={errors} name="title" label='Title' type='text' />
-                <FormInputFieldWithTooltip register={register} errors={errors} name="description" label='Description' type='text' />
-                <FormInputFieldWithTooltip register={register} errors={errors} name="img" label='Image' type='text' />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="title" label={t('labels.title')} type='text' />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="description" label={t('labels.description')} type='text' />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="img" label={t('labels.image')} type='text' />
                 <input type="hidden" {...register('user')} value={user} name="user" />
 
                 <div className="w-full flex justify-around mt-2">
@@ -97,8 +99,8 @@ function AddEditPostForm({
 
                     <FormSubmitButton className="btn-sm" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>
                         {formType === 'edit'
-                            ? 'Edit'
-                            : 'Add'
+                            ? <>{t('edit')}</>
+                            : <>{t('add')}</>
                         }
                         &nbsp;
                         Post
