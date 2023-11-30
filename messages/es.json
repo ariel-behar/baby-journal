@@ -58,9 +58,6 @@
       "password": "Contraseña",
       "title": "Título"
     },
-    "notifications": {
-      "user-has-been-registered": "¡El usuario ha sido registrado!"
-    },
     "register": "Registro",
     "send": "Enviar",
     "post": "Correo"
@@ -86,5 +83,19 @@
     "member-since": "Miembro desde:",
     "user": "Usuario",
     "user-profile": "Perfil del usuario"
+  },
+  "LoginPage": {
+    "dont-have-an-account": "¿No tienes una cuenta?",
+    "login": "Acceso",
+    "register-here": "¡Registrar aquí!"
+  },
+  "Notifications": {
+    "successfully-logged-in": "¡Iniciado sesión exitosamente!",
+    "user-has-been-registered": "¡El usuario ha sido registrado!"
+  },
+  "RegisterPage": {
+    "already-an-existing-user": "¿Ya eres usuario existente?",
+    "login-here": "¡Entre aquí!",
+    "register": "Registro"
   }
 }

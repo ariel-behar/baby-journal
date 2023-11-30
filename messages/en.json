@@ -82,9 +82,6 @@
     "send": "Send",
     "add-user": "Add User",
     "register": "Register",
-    "notifications": {
-      "user-has-been-registered": "User has been registered!"
-    },
     "post": "Post"
   },
   "LoginPage": {
@@ -96,5 +93,9 @@
     "register": "Register",
     "already-an-existing-user": "Already an existing user?",
     "login-here": "Login here!"
+  },
+  "Notifications": {
+    "successfully-logged-in": "Successfully logged in!",
+    "user-has-been-registered": "User has been registered!"
   }
 }

@@ -22,7 +22,7 @@ export interface IRegisterFormData extends Omit<IUser, "_id" | 'createdAt' | "up
 
 function RegisterForm() {
     const { displayNotification } = useNotificationContext();
-    const t = useTranslations("Forms")
+    const t = useTranslations()
     const { register, handleSubmit, formState: { errors, isValid, isSubmitting, isDirty } } = useForm<IRegisterFormData>({
         resolver: yupResolver(userSchema),
         mode: 'onBlur',
@@ -43,7 +43,7 @@ function RegisterForm() {
         if (firstName && lastName && email && password && confirmPassword) {
             registerUser(formData)
                 .then(res => {
-                    displayNotification('User has been registered!', 'info')
+                    displayNotification(t('Notifications.user-has-been-registered'), 'info')
                 }).catch(error => {
                     displayNotification(error.message, 'error')
                 })
@@ -53,18 +53,18 @@ function RegisterForm() {
     return (
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-5">
             <div className="flex gap-x-2">
-                <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label={t('labels.first-name')} type="text" />
-                <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label={t('labels.last-name')} type="text" />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label={t('Forms.labels.first-name')} type="text" />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label={t('Forms.labels.last-name')} type="text" />
             </div>
 
-            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('labels.email')} type="email" />
+            <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('Forms.labels.email')} type="email" />
 
             <div className="flex gap-x-2">
-                <FormInputFieldWithTooltip register={register} errors={errors} name="password" label={t('labels.password')} type="password" />
-                <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label={t('labels.confirm-password')} type="password" />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="password" label={t('Forms.labels.password')} type="password" />
+                <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label={t('Forms.labels.confirm-password')} type="password" />
             </div>
 
-            <FormSubmitButton className="btn-lg" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>{t('register')}</FormSubmitButton>
+            <FormSubmitButton className="btn-lg" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>{t('Forms.register')}</FormSubmitButton>
         </form>
     )
 }

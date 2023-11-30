@@ -58,9 +58,6 @@
       "password": "Парола",
       "title": "Заглавие"
     },
-    "notifications": {
-      "user-has-been-registered": "Потребителят е регистриран!"
-    },
     "register": "Регистрирам",
     "send": "Изпратете",
     "post": "Публикувай"
@@ -96,5 +93,9 @@
     "already-an-existing-user": "Вече сте съществуващ потребител?",
     "login-here": "Влезте тук!",
     "register": "Регистрирам"
+  },
+  "Notifications": {
+    "successfully-logged-in": "Успешно влизане!",
+    "user-has-been-registered": "Потребителят е регистриран!"
   }
 }
