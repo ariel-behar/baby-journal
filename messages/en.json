@@ -102,7 +102,12 @@
       "description-must-be-at-least-50-characters-long": "Description must be at least 50 characters long",
       "description-must-be-at-most-1000-characters-long": "Description must be at most 1000 characters long",
       "user-id-is-required": "User ID is required",
-      "image-is-required": "Image is required"
+      "image-is-required": "Image is required",
+      "password-is-required": "Password is required",
+      "password-regex-requirements": "Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number and one special character",
+      "password-must-be-at-least-8-characters-long": "Password must be at least 8 characters long",
+      "confirm-password-is-required": "Confirm Password is required",
+      "password-and-confirm-password-must-match": "Password and Confirm Password must match"
     }
   },
   "LoginPage": {

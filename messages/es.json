@@ -80,7 +80,12 @@
       "title-is-required": "Se requiere título",
       "title-must-be-at-least-3-characters-long": "El título debe tener al menos 3 caracteres.",
       "title-must-be-at-most-50-characters-long": "El título debe tener como máximo 50 caracteres.",
-      "user-id-is-required": "Se requiere identificación de usuario"
+      "user-id-is-required": "Se requiere identificación de usuario",
+      "confirm-password-is-required": "Confirmar Se requiere contraseña",
+      "password-and-confirm-password-must-match": "Contraseña y Confirmar contraseña deben coincidir",
+      "password-is-required": "se requiere contraseña",
+      "password-must-be-at-least-8-characters-long": "La contraseña debe tener al menos 8 caracteres",
+      "password-regex-requirements": "La contraseña debe tener al menos 8 caracteres y contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial."
     }
   },
   "HomePage": {

@@ -80,7 +80,12 @@
       "title-is-required": "Заглавието е задължително",
       "title-must-be-at-least-3-characters-long": "Заглавието трябва да е дълго поне 3 знака",
       "title-must-be-at-most-50-characters-long": "Заглавието трябва да е с дължина най-много 50 знака",
-      "user-id-is-required": "Изисква се потребителско име"
+      "user-id-is-required": "Изисква се потребителско име",
+      "confirm-password-is-required": "Изисква се потвърждение на паролата",
+      "password-and-confirm-password-must-match": "Паролата и потвърждението на паролата трябва да съвпадат",
+      "password-is-required": "изисква се парола",
+      "password-must-be-at-least-8-characters-long": "Паролата трябва да е с дължина поне 8 знака",
+      "password-regex-requirements": "Паролата трябва да е от поне 8 знака и да съдържа поне една главна буква, една малка буква, една цифра и един специален знак"
     }
   },
   "HomePage": {
