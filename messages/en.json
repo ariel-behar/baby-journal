@@ -94,7 +94,15 @@
       "email-is-required": "Email is required",
       "message-is-required": "Message is required",
       "message-must-be-at-least-50-characters-long": "Message must be at least 50 characters long",
-      "message-must-be-at-most-500-characters-long": "Message must be at most 500 characters long"
+      "message-must-be-at-most-500-characters-long": "Message must be at most 500 characters long",
+      "title-is-required": "Title is required",
+      "title-must-be-at-least-3-characters-long": "Title must be at least 3 characters long",
+      "title-must-be-at-most-50-characters-long": "Title must be at most 50 characters long",
+      "description-is-required": "Description is required",
+      "description-must-be-at-least-50-characters-long": "Description must be at least 50 characters long",
+      "description-must-be-at-most-1000-characters-long": "Description must be at most 1000 characters long",
+      "user-id-is-required": "User ID is required",
+      "image-is-required": "Image is required"
     }
   },
   "LoginPage": {

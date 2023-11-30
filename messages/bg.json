@@ -72,7 +72,15 @@
       "last-name-must-be-at-most-20-characters-long": "Фамилията трябва да е с дължина най-много 20 знака",
       "message-is-required": "Изисква се съобщение",
       "message-must-be-at-least-50-characters-long": "Съобщението трябва да е дълго поне 50 знака",
-      "message-must-be-at-most-500-characters-long": "Съобщението трябва да е дълго най-много 500 знака"
+      "message-must-be-at-most-500-characters-long": "Съобщението трябва да е дълго най-много 500 знака",
+      "description-is-required": "Изисква се описание",
+      "description-must-be-at-least-50-characters-long": "Описанието трябва да е дълго поне 50 знака",
+      "description-must-be-at-most-1000-characters-long": "Описанието трябва да е с дължина най-много 1000 знака",
+      "image-is-required": "Изисква се изображение",
+      "title-is-required": "Заглавието е задължително",
+      "title-must-be-at-least-3-characters-long": "Заглавието трябва да е дълго поне 3 знака",
+      "title-must-be-at-most-50-characters-long": "Заглавието трябва да е с дължина най-много 50 знака",
+      "user-id-is-required": "Изисква се потребителско име"
     }
   },
   "HomePage": {

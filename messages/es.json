@@ -72,7 +72,15 @@
       "last-name-must-be-at-most-20-characters-long": "El apellido debe tener como máximo 20 caracteres.",
       "message-is-required": "Se requiere mensaje",
       "message-must-be-at-least-50-characters-long": "El mensaje debe tener al menos 50 caracteres.",
-      "message-must-be-at-most-500-characters-long": "El mensaje debe tener como máximo 500 caracteres."
+      "message-must-be-at-most-500-characters-long": "El mensaje debe tener como máximo 500 caracteres.",
+      "description-is-required": "Se requiere descripción",
+      "description-must-be-at-least-50-characters-long": "La descripción debe tener al menos 50 caracteres.",
+      "description-must-be-at-most-1000-characters-long": "La descripción debe tener como máximo 1000 caracteres.",
+      "image-is-required": "Se requiere imagen",
+      "title-is-required": "Se requiere título",
+      "title-must-be-at-least-3-characters-long": "El título debe tener al menos 3 caracteres.",
+      "title-must-be-at-most-50-characters-long": "El título debe tener como máximo 50 caracteres.",
+      "user-id-is-required": "Se requiere identificación de usuario"
     }
   },
   "HomePage": {
