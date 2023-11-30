@@ -96,6 +96,17 @@
   },
   "Notifications": {
     "successfully-logged-in": "Successfully logged in!",
-    "user-has-been-registered": "User has been registered!"
+    "user-has-been-registered": "User has been registered!",
+    "post-has-been-created": "Post has been created!",
+    "post-has-been-modified": "Post has been modified!",
+    "post-not-found": "Post not found!",
+    "post-has-been-deleted": "Post has been deleted!",
+    "post-has-been-liked": "Post has been liked!",
+    "post-has-been-unliked": "Post has been unliked!",
+    "passwords-do-not-match": "Passwords do not match!",
+    "user-already-exists": "User already exists!",
+    "user-has-successfully-logged-in": "User has successfully logged in!",
+    "user-has-been-deleted": "User has been deleted!",
+    "an-error-occurred-while-attempting-to-process-your-message": "An error occurred while attempting to process your message."
   }
 }

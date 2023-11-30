@@ -5,6 +5,7 @@ import { signIn, signOut } from "./auth";
 import { redirect } from "next/navigation";
 import { isRedirectError } from "next/dist/client/components/redirect";
 import { ObjectSchema } from "yup";
+import { getTranslations } from "next-intl/server";
 
 import dbConnect from "./dbConnect";
 
@@ -19,10 +20,10 @@ import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IContactFormData } from "@/components/Forms/ContactForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
 
-
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
     const { title, description, user, img } = formData;
+    const t = await getTranslations("Notifications");
 
     try {
         dbConnect();
@@ -31,12 +32,12 @@ export const addPost = async (formData: IPostFormData) => {
 
         await newPost.save();
 
-        console.log('Post added successfully');
+        console.log('Post has been created!');
         revalidatePath('/journal');
         revalidatePath('/dashboard');
         revalidatePath('/admin');
 
-        return { ok: true, message: 'Post has been created!' }
+        return { ok: true, message: t('post-has-been-created') }
     } catch (error) {
         throw error;
     }
@@ -44,18 +45,20 @@ export const addPost = async (formData: IPostFormData) => {
 
 export const editPost = async (postId: IPost['_id'], formData: IPostFormData) => {
     const { title, description, user, img } = formData;
+    const t = await getTranslations("Notifications");
 
     try {
         dbConnect();
 
         await Post.findByIdAndUpdate(postId, { title, description, img, user });
-        console.log('Post edited successfully');
+        
+        console.log(`Post (_id: ${postId}) has been modified!`);
 
         revalidatePath('/journal');
         revalidatePath('/dashboard');
         revalidatePath('/admin');
 
-        return { ok: true, message: 'Post has been modified!' }
+        return { ok: true, message: t('post-has-been-modified') }
     } catch (error) {
         throw error;
     }
@@ -63,6 +66,7 @@ export const editPost = async (postId: IPost['_id'], formData: IPostFormData) =>
 
 export const deletePost = async (formData: FormData | IPost['_id']) => {
     // "use server"
+    const t = await getTranslations("Notifications");
 
     const postId = typeof formData === 'string'
         ? formData
@@ -73,19 +77,21 @@ export const deletePost = async (formData: FormData | IPost['_id']) => {
 
         const post = await Post.findByIdAndDelete(postId);
 
-        if (!post) throw new NotFoundError("Post not found!");
+        if (!post) throw new NotFoundError(t('post-not-found'));
 
-        console.log('Post deleted successfully');
+        console.log(`Post (_id: ${postId}) has been deleted!`);
+
         revalidatePath('/journal');
         revalidatePath('/admin');
 
-        return { ok: true, message: 'Post has been deleted!' }
+        return { ok: true, message: t('post-has-been-deleted') }
     } catch (error) {
         throw error;
     }
 }
 
 export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
+    const t = await getTranslations("Notifications");
 
     try {
         dbConnect();
@@ -93,7 +99,7 @@ export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
         const post = await Post.findById(postId);
 
         if (!post) {
-            throw new NotFoundError("Post not found!")
+            throw new NotFoundError(t('post-not-found'))
         }
 
         post.likes.push(userId);
@@ -102,13 +108,14 @@ export const likePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
         revalidatePath('/journal');
         revalidatePath(`/journal/${postId}`);
 
-        return { ok: true, message: 'Post has been liked!' }
+        return { ok: true, message: t('post-has-been-liked') }
     } catch (error) {
         throw error;
     }
 }
 
 export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id']) => {
+    const t = await getTranslations("Notifications");
 
     try {
         dbConnect();
@@ -116,7 +123,7 @@ export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id']) => 
         const post = await Post.findById(postId);
 
         if (!post) {
-            throw new NotFoundError("Post not found!")
+            throw new NotFoundError(t('post-not-found'))
         }
 
         post.likes = post.likes.filter((like: IUser['_id']) => like != userId);
@@ -125,7 +132,7 @@ export const unlikePost = async (userId: IUser['_id'], postId: IPost['_id']) => 
         revalidatePath('/journal');
         revalidatePath(`/journal/${postId}`);
 
-        return { ok: true, message: 'Post has been unliked!' }
+        return { ok: true, message: t('post-has-been-unliked') }
     } catch (error) {
         throw error;
     }
@@ -138,10 +145,11 @@ export const handleLogout = async () => {
 
 export const registerUser = async (formData: IRegisterFormData) => {
     const { firstName, lastName, email, password, confirmPassword } = formData;
+    const t = await getTranslations("Notifications");
 
     if (password !== confirmPassword) {
 
-        throw new InvalidDataError("Passwords do not match!")
+        throw new InvalidDataError(t('passwords-do-not-match'))
     }
 
     try {
@@ -150,7 +158,7 @@ export const registerUser = async (formData: IRegisterFormData) => {
         const user = await User.findOne({ email })
 
         if (user) {
-            throw new Error("User already exists!")
+            throw new Error(t('user-already-exists'))
         }
 
         await new User({ firstName, lastName, email, password }).save();
@@ -158,7 +166,7 @@ export const registerUser = async (formData: IRegisterFormData) => {
         await signIn("credentials", { email, password, redirect: false });
 
         redirect('/')
-        // return { ok: true, message: 'User has been registered!' }
+        // return { ok: true, message: t('user-has-been-registered') }
 
     } catch (error) {
         if (isRedirectError(error)) {
@@ -170,13 +178,14 @@ export const registerUser = async (formData: IRegisterFormData) => {
 
 export const loginUser = async (formData: ILoginFormData) => {
     const { email, password } = formData;
+    const t = await getTranslations("Notifications");
 
     try {
         dbConnect();
 
         await signIn("credentials", { email, password });
 
-        return { ok: true, message: 'User has successfully logged in!' }
+        return { ok: true, message: t('user-has-successfully-logged-in') }
     } catch (error) {
         if (isRedirectError(error)) {
             redirect('/')
@@ -188,11 +197,12 @@ export const loginUser = async (formData: ILoginFormData) => {
 
 export const addUser = async (formData: IRegisterFormData) => {
     const { firstName, lastName, email, password, confirmPassword, img, isAdmin } = formData;
+    const t = await getTranslations("Notifications");
 
     try {
         dbConnect();
         if (password !== confirmPassword) {
-            throw new InvalidDataError("Passwords do not match!")
+            throw new InvalidDataError(t('passwords-do-not-match'))
         }
 
         const newUser = new User({ firstName, lastName, email, password, img, isAdmin });
@@ -200,13 +210,15 @@ export const addUser = async (formData: IRegisterFormData) => {
         await newUser.save();
         revalidatePath('/admin');
 
-        return { ok: true, message: 'User has been created!' }
+        return { ok: true, message: t('user-has-been-registered') }
     } catch (error) {
         throw error;
     }
 }
 
 export const deleteUser = async (formData: FormData | IUser['_id'], currentUserId: IUser['_id']) => {
+    const t = await getTranslations("Notifications");
+
     const userId = typeof formData === 'string'
         ? formData
         : Object.fromEntries(formData)._id;
@@ -223,7 +235,7 @@ export const deleteUser = async (formData: FormData | IUser['_id'], currentUserI
 
         revalidatePath('/admin');
 
-        return { ok: true, message: 'User has been deleted!' }
+        return { ok: true, message: t('user-has-been-deleted') }
     } catch (error) {
         throw error;
     }
@@ -231,6 +243,7 @@ export const deleteUser = async (formData: FormData | IUser['_id'], currentUserI
 
 // Contact actions
 export const sendContactMessage = async (formData: IContactFormData) => {
+    const t = await getTranslations("Notifications");
 
     const body: IContactFormData = formData;
 
@@ -289,7 +302,7 @@ export const sendContactMessage = async (formData: IContactFormData) => {
                 console.log(`Message sent successfully: %s ${info.messageId}`);
                 return { ok: true, message: `Message sent successfully!` };
             } else {
-                throw new Error('An error occurred while attempting to process your message.');
+                throw new Error(t('an-error-occurred-while-attempting-to-process-your-message'));
             }
         } catch (error) {
             console.log('error:', error)

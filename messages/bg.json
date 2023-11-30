@@ -96,6 +96,17 @@
   },
   "Notifications": {
     "successfully-logged-in": "Успешно влизане!",
-    "user-has-been-registered": "Потребителят е регистриран!"
+    "user-has-been-registered": "Потребителят е регистриран!",
+    "post-has-been-created": "Публикацията е създадена!",
+    "post-has-been-modified": "Публикацията е променена!",
+    "an-error-occurred-while-attempting-to-process-your-message": "Възникна грешка при опит за обработка на вашето съобщение.",
+    "passwords-do-not-match": "Паролите не съвпадат!",
+    "post-has-been-deleted": "Постът е изтрит!",
+    "post-has-been-liked": "Публикацията е харесана!",
+    "post-has-been-unliked": "Публикацията е нехаресана!",
+    "post-not-found": "Публикацията не е намерена!",
+    "user-already-exists": "Вече съществува потребител!",
+    "user-has-been-deleted": "Потребителят е изтрит!",
+    "user-has-successfully-logged-in": "Потребителят е влязъл успешно!"
   }
 }

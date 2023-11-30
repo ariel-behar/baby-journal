@@ -91,7 +91,18 @@
   },
   "Notifications": {
     "successfully-logged-in": "¡Iniciado sesión exitosamente!",
-    "user-has-been-registered": "¡El usuario ha sido registrado!"
+    "user-has-been-registered": "¡El usuario ha sido registrado!",
+    "post-has-been-created": "¡La publicación ha sido creada!",
+    "post-has-been-modified": "¡La publicación ha sido modificada!",
+    "an-error-occurred-while-attempting-to-process-your-message": "Se produjo un error al intentar procesar su mensaje.",
+    "passwords-do-not-match": "¡Las contraseñas no coinciden!",
+    "post-has-been-deleted": "¡La publicación ha sido eliminada!",
+    "post-has-been-liked": "¡La publicación ha recibido me gusta!",
+    "post-has-been-unliked": "¡La publicación no ha recibido me gusta!",
+    "post-not-found": "Publicación no encontrada!",
+    "user-already-exists": "¡El usuario ya existe!",
+    "user-has-been-deleted": "¡El usuario ha sido eliminado!",
+    "user-has-successfully-logged-in": "¡El usuario ha iniciado sesión correctamente!"
   },
   "RegisterPage": {
     "already-an-existing-user": "¿Ya eres usuario existente?",
