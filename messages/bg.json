@@ -86,5 +86,15 @@
     "member-since": "Потребител от:",
     "user": "Потребител",
     "user-profile": "Потребителски профил"
+  },
+  "LoginPage": {
+    "dont-have-an-account": "Нямате акаунт?",
+    "login": "Влизам",
+    "register-here": "Регистрирайте се тук!"
+  },
+  "RegisterPage": {
+    "already-an-existing-user": "Вече сте съществуващ потребител?",
+    "login-here": "Влезте тук!",
+    "register": "Регистрирам"
   }
 }
