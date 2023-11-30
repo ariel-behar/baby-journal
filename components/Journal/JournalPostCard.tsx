@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Link } from "@/lib/i18nNavigation";
+import { getTranslations } from "next-intl/server";
 import { format } from "date-fns";
 
 import { ICustomSession } from "@/types/types";
@@ -14,10 +15,11 @@ interface Props {
 	user: ICustomSession['user'] | undefined
 }
 
-function JournalPostCard({
+async function JournalPostCard({
 	post,
 	user
 }: Props) {
+	const t = await getTranslations('JournalPage')
 
 	return (
 		<article className="card w-full bg-dark-soft text-primary-content shadow-xl">
@@ -54,7 +56,7 @@ function JournalPostCard({
 
 					<div className="flex flex-row justify-end w-full">
 						<Link href={`/journal/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
-							Read More
+							{t('read-more')}
 							<IconChevronRight />
 						</Link>
 					</div>

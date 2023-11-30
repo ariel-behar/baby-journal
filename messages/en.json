@@ -43,7 +43,13 @@
     "title": "Dashboard"
   },
   "JournalPage": {
-    "back-to-journal-button": "Back to Journal"
+    "back-to-journal-button": "Back to Journal",
+    "author": "Author",
+    "read-more": "Read More",
+    "published": "Published",
+    "person-has-liked-this-post": "person has liked this post!",
+    "people-have-liked-this-post": "people have liked this post!",
+    "no-one-has-liked-this-post-yet": "No one has liked this post yet!"
   },
   "Forms": {
     "labels": {

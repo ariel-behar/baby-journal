@@ -1,20 +1,24 @@
+import { getTranslations } from "next-intl/server"
+
 import { IPost } from "@/models/Post"
 
 interface Props {
     likes: IPost['likes']
 }
 
-function LikeCounter({
+async function LikeCounter({
     likes
 }: Props) {
+    const t = await getTranslations('JournalPage')
+
     function likesText() {
         if (likes.length === 0) {
             return ''
-            // return 'No one has liked this post yet!'
+            // return t('no-one-has-liked-this-post-yet')
         } else if (likes.length === 1) {
-            return 'person has liked this post!'
+            return t('person-has-liked-this-post')
         } else if (likes.length > 1){
-            return 'people have liked this post!'
+            return t('people-have-liked-this-post')
         }
     }
 

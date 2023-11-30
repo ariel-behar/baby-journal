@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Suspense } from "react"
+import { getTranslations } from "next-intl/server"
 import { Session } from "next-auth"
 
 import { IPost } from "@/models/Post"
@@ -19,6 +20,7 @@ interface Props {
 async function JournalPost({
     post
 }: Props) {
+    const t = await getTranslations()
     const session: Session | null = await auth()
     const user: ICustomSession['user'] = (session as ICustomSession)?.user;
     const postUserId = post.user;
@@ -61,7 +63,7 @@ async function JournalPost({
                     </div>
 
                     {post && (
-                        <Suspense fallback={<div>Loading...</div>}>
+                        <Suspense fallback={<div>{t('Common.loading')}</div>}>
                             <JournalPostAuthorPublished post={post} />
                         </Suspense>
                     )}
