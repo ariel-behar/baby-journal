@@ -82,7 +82,20 @@
     "send": "Send",
     "add-user": "Add User",
     "register": "Register",
-    "post": "Post"
+    "post": "Post",
+    "validation": {
+      "first-name-is-required": "First name is required",
+      "first-name-must-be-at-least-2-characters-long": "First name must be at least 2 characters long",
+      "first-name-must-be-at-most-20-characters-long": "First name must be at most 20 characters long",
+      "last-name-is-required": "Last name is required",
+      "last-name-must-be-at-least-2-characters-long": "Last name must be at least 2 characters long",
+      "last-name-must-be-at-most-20-characters-long": "Last name must be at most 20 characters long",
+      "email-is-not-valid": "Email is not valid",
+      "email-is-required": "Email is required",
+      "message-is-required": "Message is required",
+      "message-must-be-at-least-50-characters-long": "Message must be at least 50 characters long",
+      "message-must-be-at-most-500-characters-long": "Message must be at most 500 characters long"
+    }
   },
   "LoginPage": {
     "login": "Login",

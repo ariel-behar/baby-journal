@@ -60,7 +60,20 @@
     },
     "register": "Регистрирам",
     "send": "Изпратете",
-    "post": "Публикувай"
+    "post": "Публикувай",
+    "validation": {
+      "first-name-is-required": "Първото име е задължително",
+      "first-name-must-be-at-least-2-characters-long": "Името трябва да е с дължина поне 2 знака",
+      "first-name-must-be-at-most-20-characters-long": "Първото име трябва да съдържа най-много 20 знака",
+      "email-is-not-valid": "Имейлът не е валиден",
+      "email-is-required": "Изисква се имейл",
+      "last-name-is-required": "Фамилията е задължителна",
+      "last-name-must-be-at-least-2-characters-long": "Фамилното име трябва да е дълго поне 2 знака",
+      "last-name-must-be-at-most-20-characters-long": "Фамилията трябва да е с дължина най-много 20 знака",
+      "message-is-required": "Изисква се съобщение",
+      "message-must-be-at-least-50-characters-long": "Съобщението трябва да е дълго поне 50 знака",
+      "message-must-be-at-most-500-characters-long": "Съобщението трябва да е дълго най-много 500 знака"
+    }
   },
   "HomePage": {
     "description": "Документирайте дейностите, етапите и ценните моменти на вашето бебе без усилие. \nСподелете пътуването на вашето бебе с близките си.",

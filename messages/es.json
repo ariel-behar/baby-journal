@@ -60,7 +60,20 @@
     },
     "register": "Registro",
     "send": "Enviar",
-    "post": "Correo"
+    "post": "Correo",
+    "validation": {
+      "first-name-is-required": "Se requiere el primer nombre",
+      "first-name-must-be-at-least-2-characters-long": "El nombre debe tener al menos 2 caracteres",
+      "first-name-must-be-at-most-20-characters-long": "El nombre debe tener como máximo 20 caracteres",
+      "email-is-not-valid": "El correo no es válido",
+      "email-is-required": "correo electronico es requerido",
+      "last-name-is-required": "Se requiere apellido",
+      "last-name-must-be-at-least-2-characters-long": "El apellido debe tener al menos 2 caracteres.",
+      "last-name-must-be-at-most-20-characters-long": "El apellido debe tener como máximo 20 caracteres.",
+      "message-is-required": "Se requiere mensaje",
+      "message-must-be-at-least-50-characters-long": "El mensaje debe tener al menos 50 caracteres.",
+      "message-must-be-at-most-500-characters-long": "El mensaje debe tener como máximo 500 caracteres."
+    }
   },
   "HomePage": {
     "description": "Documente las actividades, los hitos y los momentos preciosos de su bebé sin esfuerzo. \nComparte el viaje de tu bebé con tus seres queridos.",
