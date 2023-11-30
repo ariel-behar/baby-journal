@@ -1,24 +1,89 @@
 {
+  "AboutPage": {
+    "paragraph-one": "Baby Journal es la aplicación web definitiva diseñada para que las madres documenten las actividades, los hitos y los momentos preciosos de su bebé.",
+    "paragraph-two": "Registre sin problemas eventos diarios, comparta consejos y realice un seguimiento del crecimiento y desarrollo de su bebé. \nCon funciones intuitivas, puede agregar fotos, escribir descripciones y dar me gusta a los logros del bebé de otras madres. \nBaby Journal mantiene tus recuerdos seguros y organizados, lo que facilita reflexionar sobre tu viaje como madre y compartir ideas con otras mamás. \n¡Únase a nuestra comunidad y comience a crear un hermoso diario personalizado para su bebé hoy!",
+    "title": "Acerca de Baby Journal: Aprecie cada momento del viaje de su bebé"
+  },
   "Common": {
     "add-new-post": "Agregar nueva publicación",
     "add-new-user": "Añadir nuevo usuario",
-    "cancel-button": "Cancelar",
-    "delete-button": "Borrar",
+    "are-you-sure-you-want-to-delete-the": "¿Está seguro de que desea eliminar el",
+    "author": "Autor",
+    "cancel": "Cancelar",
+    "created-at": "Creado en",
+    "delete": "Borrar",
+    "description": "Descripción",
+    "email": "Correo electrónico",
     "learn-more": "Ir al diario",
+    "loading": "Cargando...",
     "login": "Acceso",
-    "logout-button": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "no-posts-have-been-created-yet": "Aún no se han creado publicaciones...",
+    "post": "correo",
+    "post-id": "ID del mensaje",
+    "posts": "Publicaciones",
+    "role": "Role",
+    "title": "Título",
+    "user": "usuario",
+    "user-email": "Correo electrónico del usuario",
+    "user-id": "ID de usuario",
+    "user-name": "Nombre de usuario",
+    "users": "Usuarios",
+    "you-have-not-created-any-posts-yet": "Aún no has creado ninguna publicación..."
+  },
+  "ContactPage": {
+    "paragraph-one": "Nos encantaría saber de usted. \nYa sea que tenga preguntas, comentarios o simplemente quiera compartir los hitos de su bebé, estamos aquí para ayudarlo. \nComplete el siguiente formulario y nos comunicaremos con usted lo antes posible.",
+    "paragraph-two": "¡Gracias por ser parte de nuestra comunidad de diarios para bebés!",
+    "title": "¡Póngase en contacto con nosotros!"
+  },
+  "DashboardPage": {
+    "title": "Panel"
   },
   "Footer": {
     "all-rights-reserved": "Reservados todos los derechos",
     "powered_by": "Energizado por"
+  },
+  "Forms": {
+    "add": "Agregar",
+    "add-user": "Agregar usuario",
+    "edit": "Editar",
+    "labels": {
+      "confirm-password": "confirmar Contraseña",
+      "description": "Descripción",
+      "email": "Correo electrónico",
+      "first-name": "Nombre de pila",
+      "image": "Imagen",
+      "last-name": "Apellido",
+      "message": "Mensaje",
+      "password": "Contraseña",
+      "title": "Título"
+    },
+    "notifications": {
+      "user-has-been-registered": "¡El usuario ha sido registrado!"
+    },
+    "register": "Registro",
+    "send": "Enviar"
   },
   "HomePage": {
     "description": "Documente las actividades, los hitos y los momentos preciosos de su bebé sin esfuerzo. \nComparte el viaje de tu bebé con tus seres queridos.",
     "subtitle": "El diario digital definitivo para la maternidad",
     "title": "Diario del bebé"
   },
+  "JournalPage": {
+    "author": "Autor",
+    "back-to-journal": "Volver al diario",
+    "no-one-has-liked-this-post-yet": "¡A nadie le ha gustado esta publicación todavía!",
+    "people-have-liked-this-post": "¡A la gente le ha gustado esta publicación!",
+    "person-has-liked-this-post": "¡A alguien le ha gustado esta publicación!",
+    "post": "Correo",
+    "published": "Publicado",
+    "read-more": "Leer más"
+  },
   "ProfilePage": {
     "admin": "Administración",
-    "email": "Correo electrónico:"
+    "email": "Correo electrónico:",
+    "member-since": "Miembro desde:",
+    "user": "Usuario",
+    "user-profile": "Perfil del usuario"
   }
 }
