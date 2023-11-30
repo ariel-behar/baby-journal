@@ -18,7 +18,7 @@ async function AdminPosts() {
 
 	return (
 		<>
-			<TableWrapper tableWrapperClasses="h-[calc(100vh-350px)]" tableHeadings={["", "Title", "Description", "Created At", "Author", "User Email", "Post ID", ""]}>
+			<TableWrapper tableWrapperClasses="h-[calc(100vh-350px)]" tableHeadings={["", t('title'), t('description'), t('created-at'), t('author'), t('user-email'), t('post-id'), ""]}>
 				{posts.length > 0
 					? posts.map((post, index) => (
 						<TableRow index={index} key={uniqid()}>

@@ -19,7 +19,17 @@
     "you-have-not-created-any-posts-yet": "You have not created any posts yet...",
     "are-you-sure-you-want-to-delete-the": "Are you sure you want to delete the",
     "post": "post",
-    "user": "user"
+    "user": "user",
+    "title": "Title",
+    "description": "Description",
+    "created-at": "Created At",
+    "author": "Author",
+    "user-email": "User Email",
+    "post-id": "Post ID",
+    "user-name": "User Name",
+    "email": "Email",
+    "user-id": "User ID",
+    "role": "Role"
   },
   "Footer": {
     "powered_by": "Powered by",
