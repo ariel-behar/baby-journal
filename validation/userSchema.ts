@@ -15,36 +15,36 @@ interface IUserLoginYupSchema {
 const userLoginSchemaShape = {
     email: yup
         .string()
-        .required('Email is required'),
+        .required('email-is-required'),
     password: yup
         .string()
-        .required('Password is required')
+        .required('password-is-required')
 }
 
 const userSchemaShape = {
     firstName: yup
         .string()
-        .required('First name is required')
-        .min(2, 'First name must be at least 2 characters long')
-        .max(20, 'First name must be at most 20 characters long'),
+        .required('first-name-is-required')
+        .min(2, 'first-name-must-be-at-least-2-characters-long')
+        .max(20, 'first-name-must-be-at-most-20-characters-long'),
     lastName: yup
         .string()
-        .required('Last name is required')
-        .min(2, 'Last name must be at least 2 characters long')
-        .max(20, 'Last name must be at most 20 characters long'),
+        .required('last-name-is-required')
+        .min(2, 'last-name-must-be-at-least-2-characters-long')
+        .max(20, 'last-name-must-be-at-most-20-characters-long'),
     email: yup
         .string()
-        .matches(emailRegex, 'Email is not valid')
-        .required("Email is required"),
+        .matches(emailRegex, 'email-is-not-valid')
+        .required('email-is-required'),
     password: yup
         .string()
-        .required("Password is required")
-        .matches(passwordRegex, 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number and one special character')
-        .min(8, 'Password must be at least 8 characters long'),
+        .required('password-is-required')
+        .matches(passwordRegex, 'password-regex-requirements')
+        .min(8, 'password-must-be-at-least-8-characters-long'),
     confirmPassword: yup
         .string()
-        .required("Confirm Password is required")
-        .oneOf([yup.ref("password")], "Password and Confirm Password must match"),
+        .required('confirm-password-is-required')
+        .oneOf([yup.ref("password")], 'password-and-confirm-password-must-match'),
     img: yup
         .string()
         .default('/img/noavatar.png'),
