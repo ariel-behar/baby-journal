@@ -62,7 +62,8 @@
       "user-has-been-registered": "¡El usuario ha sido registrado!"
     },
     "register": "Registro",
-    "send": "Enviar"
+    "send": "Enviar",
+    "post": "Correo"
   },
   "HomePage": {
     "description": "Documente las actividades, los hitos y los momentos preciosos de su bebé sin esfuerzo. \nComparte el viaje de tu bebé con tus seres queridos.",

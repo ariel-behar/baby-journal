@@ -84,6 +84,7 @@
     "register": "Register",
     "notifications": {
       "user-has-been-registered": "User has been registered!"
-    }
+    },
+    "post": "Post"
   }
 }

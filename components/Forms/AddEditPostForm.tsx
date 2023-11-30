@@ -103,8 +103,7 @@ function AddEditPostForm({
                             : <>{t('add')}</>
                         }
                         &nbsp;
-                        Post
-
+                        {t('post')}
                         {formType === 'edit'
                             ? <IconPencil />
                             : <IconPlus />

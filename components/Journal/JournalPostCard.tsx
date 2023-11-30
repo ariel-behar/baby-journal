@@ -47,14 +47,14 @@ async function JournalPostCard({
 					</time>
 				</div>
 
-				<div className="card-actions justify-between items-center mt-2">
+				<div className="card-actions justify-between items-center mt-2 flex-grow">
 					<div className="flex flex-row items-center gap-2">
 						{(user && user.id != post.user._id) && <LikeButton post={post} user={user} />}
 
 						<LikeCounter likes={post.likes} />
 					</div>
 
-					<div className="flex flex-row justify-end w-full">
+					<div className="flex flex-row justify-end items-end w-full">
 						<Link href={`/journal/${post._id}`} className="btn btn-primary btn-sm btn-min-width uppercase">
 							{t('read-more')}
 							<IconChevronRight />

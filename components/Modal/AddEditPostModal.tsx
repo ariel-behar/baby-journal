@@ -30,7 +30,7 @@ function AddEditPostModal({
     return (
         <ModalWrapper modalRef={modalRef}>
             <div className="modal-action mt-0">
-                <FormStylesWrapper title={`${modalType === 'add' ? t('Forms.add') : t('Forms.edit')} {t('JournalPage.post')}`} className="w-full">
+                <FormStylesWrapper title={`${modalType === 'add' ? t('Forms.add') : t('Forms.edit')} ${t('JournalPage.post')}`} className="w-full">
                     <AddEditPostForm
                         user={session?.user?.id as string}
                         formType={modalType as "edit" || 'add'}
