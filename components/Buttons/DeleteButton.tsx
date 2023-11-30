@@ -38,7 +38,7 @@ function DeleteButton() {
 
     return (
         <button className="btn btn-sm btn-error btn-min-width" onClick={onDeleteButtonClick}>
-            {t('delete-button')} <IconTrash />
+            {t('delete')} <IconTrash />
         </button>
     )
 }

@@ -15,7 +15,7 @@ async function CancelButton({
 
 	return (
 		<button type="button" className={`btn ${className} btn-sm btn-min-width`} onClick={onClick}>
-			{t('cancel-button')} <IconClose />
+			{t('cancel')} <IconClose />
 		</button>
 	)
 }

@@ -9,7 +9,7 @@ function LogOutButton() {
     return (
         <form className="mx-auto" action={handleLogout}>
             <button className="btn btn-sm rounded-2xl px-2 py-1 flex justify-between text-light hover:bg-light hover:text-dark">
-                {t('logout-button')} <IconLogOut />
+                {t('logout')} <IconLogOut />
             </button>
         </form>
     )

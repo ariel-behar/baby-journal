@@ -9,9 +9,9 @@
     "login": "Login",
     "add-new-post": "Add New Post",
     "add-new-user": "Add New User",
-    "cancel-button": "Cancel",
-    "delete-button": "Delete",
-    "logout-button": "Logout",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "logout": "Logout",
     "no-posts-have-been-created-yet": "No posts have been created yet...",
     "posts": "Posts",
     "users": "Users",
@@ -56,7 +56,7 @@
     "title": "Dashboard"
   },
   "JournalPage": {
-    "back-to-journal-button": "Back to Journal",
+    "back-to-journal": "Back to Journal",
     "author": "Author",
     "read-more": "Read More",
     "published": "Published",

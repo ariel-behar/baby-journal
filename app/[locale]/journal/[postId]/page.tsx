@@ -36,7 +36,7 @@ async function SingleJournalPostPage({ params }: Props) {
 			<div className="flex justify-end mb-2">
 				<LinkButton href="/journal">
 					<IconChevronLeft />
-					{t('back-to-journal-button')}
+					{t('back-to-journal')}
 				</LinkButton>
 			</div>
 
