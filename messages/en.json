@@ -7,8 +7,8 @@
   "Common": {
     "learn-more": "Go to Journal",
     "login": "Login",
-    "add-post-modal-button": "Add New Post",
-    "add-user-modal-button": "Add New User",
+    "add-new-post": "Add New Post",
+    "add-new-user": "Add New User",
     "cancel-button": "Cancel",
     "delete-button": "Delete",
     "logout-button": "Logout",
@@ -16,7 +16,10 @@
     "posts": "Posts",
     "users": "Users",
     "loading": "Loading...",
-    "you-have-not-created-any-posts-yet": "You have not created any posts yet..."
+    "you-have-not-created-any-posts-yet": "You have not created any posts yet...",
+    "are-you-sure-you-want-to-delete-the": "Are you sure you want to delete the",
+    "post": "post",
+    "user": "user"
   },
   "Footer": {
     "powered_by": "Powered by",
@@ -49,7 +52,8 @@
     "published": "Published",
     "person-has-liked-this-post": "person has liked this post!",
     "people-have-liked-this-post": "people have liked this post!",
-    "no-one-has-liked-this-post-yet": "No one has liked this post yet!"
+    "no-one-has-liked-this-post-yet": "No one has liked this post yet!",
+    "post": "Post"
   },
   "Forms": {
     "labels": {

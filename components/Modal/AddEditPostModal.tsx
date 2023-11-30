@@ -1,9 +1,12 @@
 "use client"
 import { useModalContext } from "@/context/modalContext"
 import { useEffect, useRef } from "react"
-import AddEditPostForm from "../Forms/AddEditPostForm"
+import { useTranslations } from "next-intl"
 import { Session } from "next-auth"
+
 import { IPost } from "@/models/Post"
+
+import AddEditPostForm from "../Forms/AddEditPostForm"
 import FormStylesWrapper from "../Forms/FormComponents/FormStylesWrapper"
 import ModalWrapper from "./ModalWrapper"
 
@@ -14,6 +17,7 @@ interface Props {
 function AddEditPostModal({
     session,
 }: Props) {
+    const t = useTranslations()
     const { modalSettings: { showModal, modalType }, currentEntity: { entity } } = useModalContext()
     const modalRef = useRef<HTMLDialogElement | null>(null)
 
@@ -26,7 +30,7 @@ function AddEditPostModal({
     return (
         <ModalWrapper modalRef={modalRef}>
             <div className="modal-action mt-0">
-                <FormStylesWrapper title={`${modalType === 'add' ? 'Add' : 'Edit'} Post`} className="w-full">
+                <FormStylesWrapper title={`${modalType === 'add' ? t('Forms.add') : t('Forms.edit')} {t('JournalPage.post')}`} className="w-full">
                     <AddEditPostForm
                         user={session?.user?.id as string}
                         formType={modalType as "edit" || 'add'}

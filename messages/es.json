@@ -1,7 +1,7 @@
 {
   "Common": {
-    "add-post-modal-button": "Agregar nueva publicación",
-    "add-user-modal-button": "Añadir nuevo usuario",
+    "add-new-post": "Agregar nueva publicación",
+    "add-new-user": "Añadir nuevo usuario",
     "cancel-button": "Cancelar",
     "delete-button": "Borrar",
     "learn-more": "Ir al diario",

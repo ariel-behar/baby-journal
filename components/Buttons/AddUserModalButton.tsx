@@ -14,7 +14,7 @@ function AddUserModalButton() {
             className="btn btn-sm btn-primary btn-min-width"
             onClick={() => showModalHandler(true, 'add', null, 'user')}
         >
-            {t('add-user-modal-button')} <IconPlus />
+            {t('add-new-user')} <IconPlus />
         </button>
     )
 }

@@ -1,7 +1,7 @@
 {
   "Common": {
-    "add-post-modal-button": "Добавяне на нова публикация",
-    "add-user-modal-button": "Добавяне на нов потребител",
+    "add-new-post": "Добавяне на нова публикация",
+    "add-new-user": "Добавяне на нов потребител",
     "cancel-button": "Отказ",
     "delete-button": "Изтрий",
     "learn-more": "Отидете на Журнал",

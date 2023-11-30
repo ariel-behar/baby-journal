@@ -1,14 +1,17 @@
 "use client"
 import { useEffect, useRef } from "react"
+import { useTranslations } from "next-intl"
 import { useModalContext } from "@/context/modalContext"
 
 import { IPost } from "@/models/Post"
 import { IUser } from "@/models/User"
+
 import DeleteButton from "../Buttons/DeleteButton"
 import ModalWrapper from "./ModalWrapper"
 import CancelButton from "../Buttons/CancelButton"
 
 function UserConfirmationModal() {
+    const t = useTranslations()
     const { modalSettings: { showModal }, currentEntity } = useModalContext()
     const modalRef = useRef<HTMLDialogElement | null>(null)
 
@@ -21,7 +24,7 @@ function UserConfirmationModal() {
     return (
         <ModalWrapper modalRef={modalRef}>
             <p className="py-4">
-                Are you sure you want to delete the {currentEntity.entityType === 'post' ? 'post ' : 'user '}
+                {t('Common.are-you-sure-you-want-to-delete-the')} {currentEntity.entityType === 'post' ? `${t('Common.post')} ` : `${t('Common.user')} `}
                 <span className="font-bold">
                     "
                     {
