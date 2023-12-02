@@ -2,9 +2,10 @@
 import uniqid from "uniqid"
 
 import { Link, usePathname } from "@/lib/i18nNavigation"
+import { MessageKeys, useTranslations } from "use-intl"
 
 interface Props {
-    title: string
+    title: MessageKeys<string, any>
     path: string
     toggleMenu?: () => void
 }
@@ -15,6 +16,7 @@ function NavLink({
     toggleMenu
 }: Props) {
     const pathname = usePathname()
+    const t = useTranslations("Navbar")
 
     return (
         <Link
@@ -27,7 +29,9 @@ function NavLink({
             href={path}
             onClick={toggleMenu}
         >
-            {title}
+            {
+                t(title)
+            }
         </Link>
     )
 }
