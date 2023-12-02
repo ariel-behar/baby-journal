@@ -30,7 +30,8 @@
     "email": "Email",
     "user-id": "User ID",
     "role": "Role",
-    "logo": "Logo"
+    "logo": "Logo",
+    "user-image": "User image"
   },
   "Footer": {
     "powered_by": "Powered by",
@@ -64,7 +65,8 @@
     "person-has-liked-this-post": "person has liked this post!",
     "people-have-liked-this-post": "people have liked this post!",
     "no-one-has-liked-this-post-yet": "No one has liked this post yet!",
-    "post": "Post"
+    "post": "Post",
+    "by": "by"
   },
   "Forms": {
     "labels": {

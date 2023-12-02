@@ -30,7 +30,8 @@
     "user-name": "Nombre de usuario",
     "users": "Usuarios",
     "you-have-not-created-any-posts-yet": "Aún no has creado ninguna publicación...",
-    "logo": "Logo"
+    "logo": "Logo",
+    "user-image": "Imagen de usuario"
   },
   "ContactPage": {
     "paragraph-one": "Nos encantaría saber de usted. \nYa sea que tenga preguntas, comentarios o simplemente quiera compartir los hitos de su bebé, estamos aquí para ayudarlo. \nComplete el siguiente formulario y nos comunicaremos con usted lo antes posible.",
@@ -102,7 +103,8 @@
     "person-has-liked-this-post": "¡A alguien le ha gustado esta publicación!",
     "post": "Correo",
     "published": "Publicado",
-    "read-more": "Leer más"
+    "read-more": "Leer más",
+    "by": "por"
   },
   "ProfilePage": {
     "admin": "Administración",
