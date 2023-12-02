@@ -17,7 +17,8 @@
     "learn-more": "Отидете на Журнал",
     "loading": "Зареждане...",
     "login": "Влизам",
-    "logout": "Излез от профила си",
+    "logo": "Лого",
+    "logout": "Изход",
     "no-posts-have-been-created-yet": "Все още няма създадени публикации...",
     "post": "пост",
     "post-id": "ID на публикацията",
@@ -27,11 +28,10 @@
     "user": "потребител",
     "user-email": "Имейл на потребителя",
     "user-id": "Потребителско име",
+    "user-image": "Потребителско изображение",
     "user-name": "Потребителско име",
     "users": "Потребители",
-    "you-have-not-created-any-posts-yet": "Все още не сте създали публикации...",
-    "logo": "Лого",
-    "user-image": "Потребителско изображение"
+    "you-have-not-created-any-posts-yet": "Все още не сте създали публикации..."
   },
   "ContactPage": {
     "paragraph-one": "Ще се радваме да чуем от вас. \nНезависимо дали имате въпроси, обратна връзка или просто искате да споделите постиженията на вашето бебе, ние сме тук, за да ви помогнем. \nПопълнете формуляра по-долу и ние ще се свържем с вас възможно най-скоро.",
@@ -60,34 +60,34 @@
       "password": "Парола",
       "title": "Заглавие"
     },
+    "post": "Публикувай",
     "register": "Регистрирам",
     "send": "Изпратете",
-    "post": "Публикувай",
     "validation": {
+      "confirm-password-is-required": "Изисква се потвърждение на паролата",
+      "description-is-required": "Изисква се описание",
+      "description-must-be-at-least-50-characters-long": "Описанието трябва да е дълго поне 50 знака",
+      "description-must-be-at-most-1000-characters-long": "Описанието трябва да е с дължина най-много 1000 знака",
+      "email-is-not-valid": "Имейлът не е валиден",
+      "email-is-required": "Изисква се имейл",
       "first-name-is-required": "Първото име е задължително",
       "first-name-must-be-at-least-2-characters-long": "Името трябва да е с дължина поне 2 знака",
       "first-name-must-be-at-most-20-characters-long": "Първото име трябва да съдържа най-много 20 знака",
-      "email-is-not-valid": "Имейлът не е валиден",
-      "email-is-required": "Изисква се имейл",
+      "image-is-required": "Изисква се изображение",
       "last-name-is-required": "Фамилията е задължителна",
       "last-name-must-be-at-least-2-characters-long": "Фамилното име трябва да е дълго поне 2 знака",
       "last-name-must-be-at-most-20-characters-long": "Фамилията трябва да е с дължина най-много 20 знака",
       "message-is-required": "Изисква се съобщение",
       "message-must-be-at-least-50-characters-long": "Съобщението трябва да е дълго поне 50 знака",
       "message-must-be-at-most-500-characters-long": "Съобщението трябва да е дълго най-много 500 знака",
-      "description-is-required": "Изисква се описание",
-      "description-must-be-at-least-50-characters-long": "Описанието трябва да е дълго поне 50 знака",
-      "description-must-be-at-most-1000-characters-long": "Описанието трябва да е с дължина най-много 1000 знака",
-      "image-is-required": "Изисква се изображение",
-      "title-is-required": "Заглавието е задължително",
-      "title-must-be-at-least-3-characters-long": "Заглавието трябва да е дълго поне 3 знака",
-      "title-must-be-at-most-50-characters-long": "Заглавието трябва да е с дължина най-много 50 знака",
-      "user-id-is-required": "Изисква се потребителско име",
-      "confirm-password-is-required": "Изисква се потвърждение на паролата",
       "password-and-confirm-password-must-match": "Паролата и потвърждението на паролата трябва да съвпадат",
       "password-is-required": "изисква се парола",
       "password-must-be-at-least-8-characters-long": "Паролата трябва да е с дължина поне 8 знака",
-      "password-regex-requirements": "Паролата трябва да е от поне 8 знака и да съдържа поне една главна буква, една малка буква, една цифра и един специален знак"
+      "password-regex-requirements": "Паролата трябва да е от поне 8 знака и да съдържа поне една главна буква, една малка буква, една цифра и един специален знак",
+      "title-is-required": "Заглавието е задължително",
+      "title-must-be-at-least-3-characters-long": "Заглавието трябва да е дълго поне 3 знака",
+      "title-must-be-at-most-50-characters-long": "Заглавието трябва да е с дължина най-много 50 знака",
+      "user-id-is-required": "Изисква се потребителско име"
     }
   },
   "HomePage": {
@@ -98,13 +98,43 @@
   "JournalPage": {
     "author": "Автор",
     "back-to-journal": "Обратно към дневника",
+    "by": "от",
     "no-one-has-liked-this-post-yet": "Все още никой не е харесал тази публикация!",
     "people-have-liked-this-post": "хората са харесали тази публикация!",
     "person-has-liked-this-post": "човек е харесал тази публикация!",
     "post": "Публикувай",
     "published": "Публикувано",
-    "read-more": "Прочетете още",
-    "by": "от"
+    "read-more": "Прочетете още"
+  },
+  "LoginPage": {
+    "dont-have-an-account": "Нямате акаунт?",
+    "login": "Влизам",
+    "register-here": "Регистрирайте се тук!"
+  },
+  "Navbar": {
+    "about": "относно",
+    "admin": "Админ",
+    "contact": "Контакт",
+    "dashboard": "Табло",
+    "journal": "Журнал",
+    "login": "Влизам",
+    "profile": "Профил",
+    "register": "Регистрирам"
+  },
+  "Notifications": {
+    "an-error-occurred-while-attempting-to-process-your-message": "Възникна грешка при опит за обработка на вашето съобщение.",
+    "passwords-do-not-match": "Паролите не съвпадат!",
+    "post-has-been-created": "Публикацията е създадена!",
+    "post-has-been-deleted": "Постът е изтрит!",
+    "post-has-been-liked": "Публикацията е харесана!",
+    "post-has-been-modified": "Публикацията е променена!",
+    "post-has-been-unliked": "Публикацията е нехаресана!",
+    "post-not-found": "Публикацията не е намерена!",
+    "successfully-logged-in": "Успешно влизане!",
+    "user-already-exists": "Вече съществува потребител!",
+    "user-has-been-deleted": "Потребителят е изтрит!",
+    "user-has-been-registered": "Потребителят е регистриран!",
+    "user-has-successfully-logged-in": "Потребителят е влязъл успешно!"
   },
   "ProfilePage": {
     "admin": "Админ",
@@ -113,39 +143,9 @@
     "user": "Потребител",
     "user-profile": "Потребителски профил"
   },
-  "LoginPage": {
-    "dont-have-an-account": "Нямате акаунт?",
-    "login": "Влизам",
-    "register-here": "Регистрирайте се тук!"
-  },
   "RegisterPage": {
     "already-an-existing-user": "Вече сте съществуващ потребител?",
     "login-here": "Влезте тук!",
-    "register": "Регистрирам"
-  },
-  "Notifications": {
-    "successfully-logged-in": "Успешно влизане!",
-    "user-has-been-registered": "Потребителят е регистриран!",
-    "post-has-been-created": "Публикацията е създадена!",
-    "post-has-been-modified": "Публикацията е променена!",
-    "an-error-occurred-while-attempting-to-process-your-message": "Възникна грешка при опит за обработка на вашето съобщение.",
-    "passwords-do-not-match": "Паролите не съвпадат!",
-    "post-has-been-deleted": "Постът е изтрит!",
-    "post-has-been-liked": "Публикацията е харесана!",
-    "post-has-been-unliked": "Публикацията е нехаресана!",
-    "post-not-found": "Публикацията не е намерена!",
-    "user-already-exists": "Вече съществува потребител!",
-    "user-has-been-deleted": "Потребителят е изтрит!",
-    "user-has-successfully-logged-in": "Потребителят е влязъл успешно!"
-  },
-  "Navbar": {
-    "journal": "Журнал",
-    "about": "относно",
-    "admin": "Админ",
-    "contact": "Контакт",
-    "dashboard": "Табло",
-    "login": "Влизам",
-    "profile": "Профил",
     "register": "Регистрирам"
   }
 }
