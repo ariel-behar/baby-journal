@@ -134,5 +134,15 @@
     "already-an-existing-user": "¿Ya eres usuario existente?",
     "login-here": "¡Entre aquí!",
     "register": "Registro"
+  },
+  "Navbar": {
+    "journal": "Diario",
+    "about": "Acerca de",
+    "admin": "Administración",
+    "contact": "Contacto",
+    "dashboard": "Panel",
+    "login": "Acceso",
+    "profile": "Perfil",
+    "register": "Registro"
   }
 }

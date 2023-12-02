@@ -1,43 +1,45 @@
+// all route titles are actually keys in the i18n messages files. The actual route titles are the values of these keys
+
 export const routesMain = [
     {
-        title: 'Journal',
+        title: 'journal',
         path: '/journal'
     }
 ]
 
 export const routesAuth = [
     {
-        title: 'Register',
+        title: 'register',
         path: '/register'
     },
     {
-        title: 'Login',
+        title: 'login',
         path: '/login'
     },
 ]
 
 export const routesLoggedInUser = [
     {
-        title: 'Profile',
+        title: 'profile',
         path: '/profile'
     },
     {
-        title: 'Dashboard',
+        title: 'dashboard',
         path: '/dashboard'
     },
     {
-        title: 'Admin',
+        title: 'admin',
         path: '/admin'
     }
 ]
 
 export const routesFooter = [
     {
-        title: 'About',
+        title: 'about',
         path: '/about'
     },
     {
-        title: 'Contact',
+        title: 'contact',
         path: '/contact'
     },
 ]

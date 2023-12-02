@@ -134,5 +134,15 @@
     "user-already-exists": "Вече съществува потребител!",
     "user-has-been-deleted": "Потребителят е изтрит!",
     "user-has-successfully-logged-in": "Потребителят е влязъл успешно!"
+  },
+  "Navbar": {
+    "journal": "Журнал",
+    "about": "относно",
+    "admin": "Админ",
+    "contact": "Контакт",
+    "dashboard": "Табло",
+    "login": "Влизам",
+    "profile": "Профил",
+    "register": "Регистрирам"
   }
 }

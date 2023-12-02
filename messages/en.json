@@ -29,7 +29,8 @@
     "user-name": "User Name",
     "email": "Email",
     "user-id": "User ID",
-    "role": "Role"
+    "role": "Role",
+    "logo": "Logo"
   },
   "Footer": {
     "powered_by": "Powered by",
@@ -134,5 +135,15 @@
     "user-has-successfully-logged-in": "User has successfully logged in!",
     "user-has-been-deleted": "User has been deleted!",
     "an-error-occurred-while-attempting-to-process-your-message": "An error occurred while attempting to process your message."
+  },
+  "Navbar": {
+    "journal": "Journal",
+    "register": "Register",
+    "login": "Login",
+    "profile": "Profile",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "about": "About",
+    "contact": "Contact"
   }
 }
