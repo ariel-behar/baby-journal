@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Session } from "next-auth";
 import { Inter } from "next/font/google";
 import { getMessages } from "next-intl/server";
+import NextTopLoader from 'nextjs-toploader';
 
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
@@ -47,6 +48,16 @@ export default async function RootLayout({
 					<Header />
 
 					<main className="flex-grow lg:container mx-auto py-5 lg:px-[50px] flex items-stretch">
+						<NextTopLoader
+							color="#3673fd"
+							height={5}
+							initialPosition={0.08}
+							crawlSpeed={200}
+							crawl={true}
+							showSpinner={false}
+							easing="ease"
+							speed={200}
+						/>
 						{children}
 					</main>
 
