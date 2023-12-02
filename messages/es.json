@@ -29,7 +29,8 @@
     "user-id": "ID de usuario",
     "user-name": "Nombre de usuario",
     "users": "Usuarios",
-    "you-have-not-created-any-posts-yet": "Aún no has creado ninguna publicación..."
+    "you-have-not-created-any-posts-yet": "Aún no has creado ninguna publicación...",
+    "logo": "Logo"
   },
   "ContactPage": {
     "paragraph-one": "Nos encantaría saber de usted. \nYa sea que tenga preguntas, comentarios o simplemente quiera compartir los hitos de su bebé, estamos aquí para ayudarlo. \nComplete el siguiente formulario y nos comunicaremos con usted lo antes posible.",
