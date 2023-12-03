@@ -19,7 +19,15 @@
     "user-image": "Imagen de usuario",
     "user-name": "Nombre de usuario",
     "users": "Usuarios",
-    "you-have-not-created-any-posts-yet": "Aún no has creado ninguna publicación..."
+    "you-have-not-created-any-posts-yet": "Aún no has creado ninguna publicación...",
+    "add-new-post": "Agregar nueva publicación",
+    "add-new-user": "Añadir nuevo usuario",
+    "are-you-sure-you-want-to-delete-the": "¿Está seguro de que desea eliminar el",
+    "author": "Autor",
+    "cancel": "Cancelar",
+    "created-at": "Creado en",
+    "delete": "Borrar",
+    "page": "Página"
   },
   "ContactPage": {
     "paragraph-one": "Nos encantaría saber de usted. \nYa sea que tenga preguntas, comentarios o simplemente quiera compartir los hitos de su bebé, estamos aquí para ayudarlo. \nComplete el siguiente formulario y nos comunicaremos con usted lo antes posible.",
@@ -76,7 +84,8 @@
       "title-must-be-at-least-3-characters-long": "El título debe tener al menos 3 caracteres.",
       "title-must-be-at-most-50-characters-long": "El título debe tener como máximo 50 caracteres.",
       "user-id-is-required": "Se requiere identificación de usuario"
-    }
+    },
+    "select-image": "Seleccionar imagen"
   },
   "HomePage": {
     "description": "Documente las actividades, los hitos y los momentos preciosos de su bebé sin esfuerzo. \nComparte el viaje de tu bebé con tus seres queridos.",
@@ -135,5 +144,10 @@
     "already-an-existing-user": "¿Ya eres usuario existente?",
     "login-here": "¡Entre aquí!",
     "register": "Registro"
+  },
+  "AboutPage": {
+    "paragraph-one": "Baby Journal es la aplicación web definitiva diseñada para que las madres documenten las actividades, los hitos y los momentos preciosos de su bebé.",
+    "paragraph-two": "Registre sin problemas eventos diarios, comparta consejos y realice un seguimiento del crecimiento y desarrollo de su bebé. \nCon funciones intuitivas, puede agregar fotos, escribir descripciones y dar me gusta a los logros del bebé de otras madres. \nBaby Journal mantiene tus recuerdos seguros y organizados, lo que facilita reflexionar sobre tu viaje como madre y compartir ideas con otras mamás. \n¡Únase a nuestra comunidad y comience a crear un hermoso diario personalizado para su bebé hoy!",
+    "title": "Acerca de Baby Journal: Aprecie cada momento del viaje de su bebé"
   }
 }

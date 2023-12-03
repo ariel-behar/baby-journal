@@ -31,7 +31,8 @@
     "user-id": "User ID",
     "role": "Role",
     "logo": "Logo",
-    "user-image": "User image"
+    "user-image": "User image",
+    "page": "Page"
   },
   "Footer": {
     "powered_by": "Powered by",
@@ -111,7 +112,8 @@
       "password-must-be-at-least-8-characters-long": "Password must be at least 8 characters long",
       "confirm-password-is-required": "Confirm Password is required",
       "password-and-confirm-password-must-match": "Password and Confirm Password must match"
-    }
+    },
+    "select-image": "Select Image"
   },
   "LoginPage": {
     "login": "Login",
