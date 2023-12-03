@@ -4,17 +4,19 @@ import { BaseSyntheticEvent } from "react"
 import { useForm } from "react-hook-form"
 import { useTranslations } from "next-intl"
 
+import { IPost } from "@/models/Post"
 import { addPost, editPost } from "@/lib/serverActions"
 import { IUser } from "@/models/User"
 import postSchema from "@/validation/postSchema"
 
+import { useNotificationContext } from "@/context/notificationContext"
+
 import FormInputFieldWithTooltip from "./FormComponents/FormInputFieldWithTooltip"
 import FormSubmitButton from "./FormComponents/FormSubmitButton"
-import { IPost } from "@/models/Post"
 import CancelButton from "../Buttons/CancelButton"
 import IconPencil from "../Icons/IconPencil"
 import IconPlus from "../Icons/IconPlus"
-import { useNotificationContext } from "@/context/notificationContext"
+import PexelsPhotoSearch from "./PexelsSearchComponents/PexelsPhotoSearch"
 
 export interface IPostFormData {
     title: string;
@@ -38,7 +40,7 @@ function AddEditPostForm({
 }: Props) {
     const { displayNotification } = useNotificationContext();
     const t = useTranslations("Forms")
-    const { register, handleSubmit, formState: { errors, isValid, isDirty, isSubmitting } } = useForm<IPostFormData>({
+    const { register, handleSubmit, setValue, formState: { errors, isValid, isDirty, isSubmitting } } = useForm<IPostFormData>({
         resolver: yupResolver(postSchema),
         mode: 'onBlur',
         defaultValues: {
@@ -80,7 +82,6 @@ function AddEditPostForm({
                         displayNotification(err.message, 'error')
                     })
             }
-
         }
     }
 
@@ -89,7 +90,7 @@ function AddEditPostForm({
             <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
                 <FormInputFieldWithTooltip register={register} errors={errors} name="title" label={t('labels.title')} type='text' />
                 <FormInputFieldWithTooltip register={register} errors={errors} name="description" label={t('labels.description')} type='text' />
-                <FormInputFieldWithTooltip register={register} errors={errors} name="img" label={t('labels.image')} type='text' />
+                <PexelsPhotoSearch register={register} errors={errors} name="img" setValue={setValue} post={post}/>
                 <input type="hidden" {...register('user')} value={user} name="user" />
 
                 <div className="w-full flex justify-around mt-2">
