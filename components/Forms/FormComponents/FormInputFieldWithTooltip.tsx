@@ -14,6 +14,7 @@ interface Props {
     type: HTMLFormElement['type'];
     label: string;
     name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData | keyof IContactFormData;
+    disabled?: boolean;
     className?: string;
     register: UseFormRegister<ILoginFormData> | UseFormRegister<IRegisterFormData> | UseFormRegister<IPostFormData> | UseFormRegister<IContactFormData>;
     errors: FieldErrors;
@@ -23,6 +24,7 @@ function FormInputFieldWithTooltip({
     type = 'text',
     label,
     name,
+    disabled = false,
     className,
     register,
     errors
@@ -30,7 +32,7 @@ function FormInputFieldWithTooltip({
     return (
         <FormInputLabel label={label} name={name}>
             <FormErrorTooltip errors={errors} name={name}>
-                <FormInputField className={`${className} w-full`} type={type} name={name} register={register} />
+                <FormInputField className={`${className} w-full`} type={type} name={name} register={register} disabled={disabled}/>
             </FormErrorTooltip>
         </FormInputLabel>
     )
