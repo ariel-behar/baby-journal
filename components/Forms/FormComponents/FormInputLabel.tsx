@@ -7,7 +7,7 @@ interface Props {
     name: keyof ILoginFormData | keyof IRegisterFormData | keyof IPostFormData | keyof IContactFormData;
     label: string;
     classes?: string;
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 function FormInputLabel({
