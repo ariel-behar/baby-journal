@@ -149,5 +149,10 @@
     "admin": "Admin",
     "about": "About",
     "contact": "Contact"
+  },
+  "NotFoundPage": {
+    "error-404": "Error 404",
+    "sorry-the-page-you-are-looking-for-does-not-exist": "Sorry, the page you are looking for does not exist...",
+    "go-home": "Go Home"
   }
 }

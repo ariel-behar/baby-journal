@@ -149,5 +149,10 @@
     "already-an-existing-user": "Вече сте съществуващ потребител?",
     "login-here": "Влезте тук!",
     "register": "Регистрирам"
+  },
+  "NotFoundPage": {
+    "error-404": "Грешка 404",
+    "go-home": "Прибирай се",
+    "sorry-the-page-you-are-looking-for-does-not-exist": "За съжаление страницата, която търсите, не съществува..."
   }
 }

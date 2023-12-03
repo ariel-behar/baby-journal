@@ -149,5 +149,10 @@
     "paragraph-one": "Baby Journal es la aplicación web definitiva diseñada para que las madres documenten las actividades, los hitos y los momentos preciosos de su bebé.",
     "paragraph-two": "Registre sin problemas eventos diarios, comparta consejos y realice un seguimiento del crecimiento y desarrollo de su bebé. \nCon funciones intuitivas, puede agregar fotos, escribir descripciones y dar me gusta a los logros del bebé de otras madres. \nBaby Journal mantiene tus recuerdos seguros y organizados, lo que facilita reflexionar sobre tu viaje como madre y compartir ideas con otras mamás. \n¡Únase a nuestra comunidad y comience a crear un hermoso diario personalizado para su bebé hoy!",
     "title": "Acerca de Baby Journal: Aprecie cada momento del viaje de su bebé"
+  },
+  "NotFoundPage": {
+    "error-404": "error 404",
+    "go-home": "Vete a casa",
+    "sorry-the-page-you-are-looking-for-does-not-exist": "Lo sentimos, la página que estás buscando no existe..."
   }
 }
