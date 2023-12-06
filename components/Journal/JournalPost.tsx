@@ -30,19 +30,19 @@ async function JournalPost({
 
             {/* Post image from large screens onwards */}
             {post && (
-                <figure className="hidden lg:block flex-1 relative h-[calc(90vh-200px)]">
-                    <Image src={post.img} alt='Post' fill className="object-cover" />
+                <figure className="hidden xl:block flex-1 relative h-[calc(90vh-200px)]">
+                    <Image src={post.img} alt='Post' fill className="object-scale-down" sizes="33vw" priority />
                 </figure>
             )}
 
-            <div className="flex-[2] flex flex-col gap-y-7 md:gap-[50px]">
+            <div className="flex flex-col gap-y-7 xl:gap-[50px]">
 
                 <h1 className="text-5xl md:text-7xl mt-2 md:mt-0 mb-0">{post.title}</h1>
 
                 {/* Post image from extra small to medium screens */}
                 {post && (
-                    <figure className="block lg:hidden relative h-[300px] w-full">
-                        <Image src={post.img} alt='Post' fill className="object-cover" />
+                    <figure className="block xl:hidden relative h-[400px] md:h-[500px] w-full">
+                        <Image src={post.img} alt='Post' fill className="object-scale-down" sizes="33vw" />
                     </figure>
                 )}
 
