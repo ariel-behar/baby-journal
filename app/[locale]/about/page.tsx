@@ -23,7 +23,7 @@ async function AboutPage() {
 				</div>
 			</article>
 
-			<figure className="order-1 lg:order-2 relative w-full xl:w-1/2 h-[200px] md:h-[300px] xl:h-[500px] ">
+			<figure className="order-1 lg:order-2 relative w-full xl:w-[40%] h-[200px] md:h-[300px] xl:h-[500px] ">
 				<Image
 					src="/img/baby-upside-down.png"
 					alt="About Image"
