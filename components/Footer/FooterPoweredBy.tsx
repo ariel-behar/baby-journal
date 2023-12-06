@@ -5,7 +5,7 @@ async function FooterPoweredBy() {
     const t = await getTranslations('Footer')
 
     return (
-        <div className="order-2 sm:order-1 mb-1 sm:mb-0 flex flex-row text-muted">
+        <div className="order-2 lg:order-1 mb-1 sm:mb-0 flex flex-row text-muted">
             <span >
                 {t('powered_by')} 
                 &nbsp;
