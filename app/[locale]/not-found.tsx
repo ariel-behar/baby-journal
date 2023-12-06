@@ -17,7 +17,7 @@ async function NotFound() {
                     <h4 className="text-6xl text-center hidden md:block">{t('error-404')}</h4>
 
                     <figure className="relative w-[200px] h-[150px] sm:h-[300px] flex flex-row items-center">
-                        <Image src="/img/baby-crying.png" alt="Not Found" priority fill className="object-contain" />
+                        <Image src="/img/baby-crying.png" alt="Not Found" priority fill className="object-contain" sizes="20vw" />
                     </figure>
 
                     <LinkButton href='/' className="mt-5 md:mt-0 btn-md md:btn-lg btn-primary">{t('go-home')} <IconHome /></LinkButton>
