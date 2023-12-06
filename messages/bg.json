@@ -1,158 +1,158 @@
 {
-  "AboutPage": {
-    "paragraph-one": "Baby Journal е най-доброто уеб приложение, създадено за майки, за да документират дейностите, етапите и ценните моменти на бебето.",
-    "paragraph-two": "Записвайте безпроблемно ежедневните събития, споделяйте съвети и проследявайте растежа и развитието на вашето бебе. \nС интуитивни функции можете да добавяте снимки, да пишете описания и да харесвате постиженията на бебета на други майки. \nBaby Journal пази спомените ви в безопасност и организира, което улеснява размисъла върху вашето майчинство и споделянето на прозрения с други майки. \nПрисъединете се към нашата общност и започнете да създавате красив, персонализиран дневник за вашето бебе още днес!",
-    "title": "Относно Baby Journal: Ценете всеки момент от пътуването на вашето бебе"
+  "HomePage": {
+    "title": "Baby Journal",
+    "subtitle": "Най-добрият дигитален дневник за майчинство",
+    "description": "Документирай дейностите на бебето си, важните етапи и ценните моменти. Споделяй пътят на твоето бебе с близките си."
   },
   "Common": {
+    "learn-more": "Напред към Дневника",
+    "login": "Вход",
     "add-new-post": "Добавяне на нова публикация",
     "add-new-user": "Добавяне на нов потребител",
-    "are-you-sure-you-want-to-delete-the": "Сигурни ли сте, че искате да изтриете",
-    "author": "Автор",
-    "cancel": "Отказ",
-    "created-at": "Създаден Ат",
-    "delete": "Изтрий",
-    "description": "Описание",
-    "email": "електронна поща",
-    "learn-more": "Отидете на Журнал",
-    "loading": "Зареждане...",
-    "login": "Влизам",
-    "logo": "Лого",
+    "cancel": "Отмяна",
+    "delete": "Изтриване",
     "logout": "Изход",
     "no-posts-have-been-created-yet": "Все още няма създадени публикации...",
-    "post": "пост",
-    "post-id": "ID на публикацията",
     "posts": "Публикации",
-    "role": "Роля",
-    "title": "Заглавие",
-    "user": "потребител",
-    "user-email": "Имейл на потребителя",
-    "user-id": "Потребителско име",
-    "user-image": "Потребителско изображение",
-    "user-name": "Потребителско име",
     "users": "Потребители",
-    "you-have-not-created-any-posts-yet": "Все още не сте създали публикации...",
+    "loading": "Зареждане...",
+    "you-have-not-created-any-posts-yet": "Все още не сте създали никакви публикации...",
+    "are-you-sure-you-want-to-delete-the": "Сигурни ли сте, че искате да изтриете",
+    "post": "пост",
+    "user": "потребител",
+    "title": "Заглавие",
+    "description": "Описание",
+    "created-at": "Създадено на",
+    "author": "Автор",
+    "user-email": "Потребителски имейл",
+    "post-id": "ID на публикацията",
+    "user-name": "Потребителско име",
+    "email": "Имейл",
+    "user-id": "Потребителско ID",
+    "role": "Роля",
+    "logo": "Лого",
+    "user-image": "Снимка на потребителя",
     "page": "Страница"
   },
+  "Footer": {
+    "powered_by": "Разработено от",
+    "all-rights-reserved": "Всички права запазени"
+  },
+  "ProfilePage": {
+    "user-profile": "Потребителски профил",
+    "member-since": "Член от:",
+    "email": "Имейл:",
+    "admin": "Администратор",
+    "user": "Потребител"
+  },
   "ContactPage": {
-    "paragraph-one": "Ще се радваме да чуем от вас. \nНезависимо дали имате въпроси, обратна връзка или просто искате да споделите постиженията на вашето бебе, ние сме тук, за да ви помогнем. \nПопълнете формуляра по-долу и ние ще се свържем с вас възможно най-скоро.",
-    "paragraph-two": "Благодарим ви, че сте част от нашата общност за бебешки дневници!",
-    "title": "Свържи се с нас!"
+    "title": "Свържи се с нас!",
+    "paragraph-one": "Ще се радваме да се свържеш с нас. Независимо дали имаш въпроси, мнения или просто искаш да споделиш важните етапи от развитието на бебето ти, ние сме тук, за да ти помогнем. Попълни формуляра и ние ще се свържем с теб възможно най-скоро.",
+    "paragraph-two": "Благодарим ти, че си част от общността на Baby Journal!"
+  },
+  "AboutPage": {
+    "title": "Съхрани всеки миг от пътят на твоето бебе",
+    "paragraph-one": "Baby Journal е най-доброто уеб приложение, предназначено за майки, които могат да документират дейностите, важните етапи и ценните моменти на своето бебе.",
+    "paragraph-two": "Записвай ежедневните събития, споделяй съвети и проследявай растежа и развитието на бебето ти. С помощта на интуитивни функции можете да добавяте снимки, да пишете описания и да харесвате постиженията на бебетата и на други майки. Baby Journal съхранява спомените ти на сигурно място и е организиран, като улеснява отразяването на твоето приключение в майчинството и споделянето на прозрения с други майки. Присъедини се към нашата общност и започни да създаваш красив, персонализиран дневник за твоето бебе още днес!"
   },
   "DashboardPage": {
     "title": "Табло"
   },
-  "Footer": {
-    "all-rights-reserved": "Всички права запазени",
-    "powered_by": "Задвижвани от"
+  "JournalPage": {
+    "back-to-journal": "Обратно към Дневника",
+    "author": "Автор",
+    "read-more": "Прочети повече",
+    "published": "Публикувано",
+    "person-has-liked-this-post": "човек е харесал тази публикация!",
+    "people-have-liked-this-post": "хора са харесали тази публикация!",
+    "no-one-has-liked-this-post-yet": "Все още никой не е харесал тази публикация!",
+    "post": "Публикация",
+    "by": "от"
   },
   "Forms": {
-    "add": "Добавете",
-    "add-user": "Добавяне на потребител",
-    "edit": "редактиране",
     "labels": {
-      "confirm-password": "потвърди парола",
+      "title": "Заглавие",
       "description": "Описание",
-      "email": "електронна поща",
-      "first-name": "Първо име",
-      "image": "Изображение",
+      "image": "Снимка",
+      "first-name": "Име",
       "last-name": "Фамилия",
-      "message": "Съобщение",
+      "email": "Имейл",
       "password": "Парола",
-      "title": "Заглавие"
+      "confirm-password": "Потвърди парола",
+      "message": "Съобщение"
     },
-    "post": "Публикувай",
-    "register": "Регистрирам",
-    "send": "Изпратете",
+    "edit": "Редактиране",
+    "add": "Добавяне",
+    "send": "Изпрати",
+    "add-user": "Добави потребител",
+    "register": "Регистрация",
+    "post": "Публикация",
     "validation": {
-      "confirm-password-is-required": "Изисква се потвърждение на паролата",
-      "description-is-required": "Изисква се описание",
-      "description-must-be-at-least-50-characters-long": "Описанието трябва да е дълго поне 50 знака",
-      "description-must-be-at-most-1000-characters-long": "Описанието трябва да е с дължина най-много 1000 знака",
-      "email-is-not-valid": "Имейлът не е валиден",
-      "email-is-required": "Изисква се имейл",
-      "first-name-is-required": "Първото име е задължително",
-      "first-name-must-be-at-least-2-characters-long": "Името трябва да е с дължина поне 2 знака",
-      "first-name-must-be-at-most-20-characters-long": "Първото име трябва да съдържа най-много 20 знака",
-      "image-is-required": "Изисква се изображение",
+      "first-name-is-required": "Името е задължително",
+      "first-name-must-be-at-least-2-characters-long": "Името трябва да е поне 2 символа",
+      "first-name-must-be-at-most-20-characters-long": "Името трябва да е най-много 20 символа",
       "last-name-is-required": "Фамилията е задължителна",
-      "last-name-must-be-at-least-2-characters-long": "Фамилното име трябва да е дълго поне 2 знака",
-      "last-name-must-be-at-most-20-characters-long": "Фамилията трябва да е с дължина най-много 20 знака",
-      "message-is-required": "Изисква се съобщение",
-      "message-must-be-at-least-50-characters-long": "Съобщението трябва да е дълго поне 50 знака",
-      "message-must-be-at-most-500-characters-long": "Съобщението трябва да е дълго най-много 500 знака",
-      "password-and-confirm-password-must-match": "Паролата и потвърждението на паролата трябва да съвпадат",
-      "password-is-required": "изисква се парола",
-      "password-must-be-at-least-8-characters-long": "Паролата трябва да е с дължина поне 8 знака",
-      "password-regex-requirements": "Паролата трябва да е от поне 8 знака и да съдържа поне една главна буква, една малка буква, една цифра и един специален знак",
+      "last-name-must-be-at-least-2-characters-long": "Фамилията трябва да е поне 2 символа",
+      "last-name-must-be-at-most-20-characters-long": "Фамилията трябва да е най-много 20 символа",
+      "email-is-not-valid": "Имейлът не е валиден",
+      "email-is-required": "Имейлът е задължителен",
+      "message-is-required": "Съобщението е задължително",
+      "message-must-be-at-least-50-characters-long": "Съобщението трябва да е поне 50 символа",
+      "message-must-be-at-most-500-characters-long": "Съобщението трябва да е най-много 500 символа",
       "title-is-required": "Заглавието е задължително",
-      "title-must-be-at-least-3-characters-long": "Заглавието трябва да е дълго поне 3 знака",
-      "title-must-be-at-most-50-characters-long": "Заглавието трябва да е с дължина най-много 50 знака",
-      "user-id-is-required": "Изисква се потребителско име"
+      "title-must-be-at-least-3-characters-long": "Заглавието трябва да е поне 3 символа",
+      "title-must-be-at-most-50-characters-long": "Заглавието трябва да е най-много 50 символа",
+      "description-is-required": "Описанието е задължително",
+      "description-must-be-at-least-50-characters-long": "Описанието трябва да е поне 50 символа",
+      "description-must-be-at-most-1000-characters-long": "Описанието трябва да е най-много 100 символа",
+      "user-id-is-required": "Потребителското ID е задължително",
+      "image-is-required": "Снимката е задължителна",
+      "password-is-required": "Паролата е задължителна",
+      "password-regex-requirements": "Паролата трябва да е поне 8 символа и да съдържа поне една главна буква, една малка буква, едно число и един специален символ",
+      "password-must-be-at-least-8-characters-long": "Паролата трябва да е поне 8 символа",
+      "confirm-password-is-required": "Потвърждаването на паролата е задължително",
+      "password-and-confirm-password-must-match": "Паролата и потвърждаването на паролата трябва да съвпадат"
     },
-    "select-image": "Изберете Изображение"
-  },
-  "HomePage": {
-    "description": "Документирайте дейностите, етапите и ценните моменти на вашето бебе без усилие. \nСподелете пътуването на вашето бебе с близките си.",
-    "subtitle": "Най-добрият дигитален дневник за майчинството",
-    "title": "Бебешки дневник"
-  },
-  "JournalPage": {
-    "author": "Автор",
-    "back-to-journal": "Обратно към дневника",
-    "by": "от",
-    "no-one-has-liked-this-post-yet": "Все още никой не е харесал тази публикация!",
-    "people-have-liked-this-post": "хората са харесали тази публикация!",
-    "person-has-liked-this-post": "човек е харесал тази публикация!",
-    "post": "Публикувай",
-    "published": "Публикувано",
-    "read-more": "Прочетете още"
+    "select-image": "Избери снимка"
   },
   "LoginPage": {
-    "dont-have-an-account": "Нямате акаунт?",
-    "login": "Влизам",
-    "register-here": "Регистрирайте се тук!"
-  },
-  "Navbar": {
-    "about": "относно",
-    "admin": "Админ",
-    "contact": "Контакт",
-    "dashboard": "Табло",
-    "journal": "Журнал",
-    "login": "Влизам",
-    "profile": "Профил",
-    "register": "Регистрирам"
-  },
-  "Notifications": {
-    "an-error-occurred-while-attempting-to-process-your-message": "Възникна грешка при опит за обработка на вашето съобщение.",
-    "passwords-do-not-match": "Паролите не съвпадат!",
-    "post-has-been-created": "Публикацията е създадена!",
-    "post-has-been-deleted": "Постът е изтрит!",
-    "post-has-been-liked": "Публикацията е харесана!",
-    "post-has-been-modified": "Публикацията е променена!",
-    "post-has-been-unliked": "Публикацията е нехаресана!",
-    "post-not-found": "Публикацията не е намерена!",
-    "successfully-logged-in": "Успешно влизане!",
-    "user-already-exists": "Вече съществува потребител!",
-    "user-has-been-deleted": "Потребителят е изтрит!",
-    "user-has-been-registered": "Потребителят е регистриран!",
-    "user-has-successfully-logged-in": "Потребителят е влязъл успешно!"
-  },
-  "ProfilePage": {
-    "admin": "Админ",
-    "email": "Електронна поща:",
-    "member-since": "Потребител от:",
-    "user": "Потребител",
-    "user-profile": "Потребителски профил"
+    "login": "Вход",
+    "dont-have-an-account": "Нямаш акаунт?",
+    "register-here": "Регистрирай се тук!"
   },
   "RegisterPage": {
-    "already-an-existing-user": "Вече сте съществуващ потребител?",
-    "login-here": "Влезте тук!",
-    "register": "Регистрирам"
+    "register": "Регистрация",
+    "already-an-existing-user": "Вече съществуващ потребител?",
+    "login-here": "Влез тук!"
+  },
+  "Notifications": {
+    "successfully-logged-in": "Успешно влизане в системата!",
+    "user-has-been-registered": "Потребителят е регистриран!",
+    "post-has-been-created": "Публикацията е създадена!",
+    "post-has-been-modified": "Публикацията е променена!",
+    "post-not-found": "Публикацията не е намерена!",
+    "post-has-been-deleted": "Публикацията е изтрита!",
+    "post-has-been-liked": "Публикацията е харесана!",
+    "post-has-been-unliked": "Публикацията е премахната от харесванията!",
+    "passwords-do-not-match": "Паролите не съвпадат!",
+    "user-already-exists": "Потребителят вече съществува!",
+    "user-has-successfully-logged-in": "Потребителят е влязъл успешно!",
+    "user-has-been-deleted": "Потребителят е изтрит!",
+    "an-error-occurred-while-attempting-to-process-your-message": "Възникна грешка при опита за обработка на вашето съобщение."
+  },
+  "Navbar": {
+    "journal": "Дневник",
+    "register": "Регистрация",
+    "login": "Вход",
+    "profile": "Профил",
+    "dashboard": "Табло",
+    "admin": "Администрация",
+    "about": "За нас",
+    "contact": "Контакт"
   },
   "NotFoundPage": {
     "error-404": "Грешка 404",
-    "go-home": "Прибирай се",
-    "sorry-the-page-you-are-looking-for-does-not-exist": "За съжаление страницата, която търсите, не съществува..."
+    "sorry-the-page-you-are-looking-for-does-not-exist": "Съжаляваме, страницата, която търсите, не съществува...",
+    "go-home": "Към началната страница"
   }
 }

@@ -1,158 +1,158 @@
 {
+  "HomePage": {
+    "title": "Diario del bebé",
+    "subtitle": "El diario digital definitivo para la maternidad",
+    "description": "Documenta las actividades, hitos y momentos preciosos de tu bebé sin esfuerzo. Comparte el viaje de tu bebé con tus seres queridos."
+  },
   "Common": {
-    "description": "Descripción",
-    "email": "Correo electrónico",
     "learn-more": "Ir al diario",
-    "loading": "Cargando...",
-    "login": "Acceso",
-    "logo": "Logo",
-    "logout": "Cerrar sesión",
-    "no-posts-have-been-created-yet": "Aún no se han creado publicaciones...",
-    "post": "correo",
-    "post-id": "ID del mensaje",
-    "posts": "Publicaciones",
-    "role": "Role",
-    "title": "Título",
-    "user": "usuario",
-    "user-email": "Correo electrónico del usuario",
-    "user-id": "ID de usuario",
-    "user-image": "Imagen de usuario",
-    "user-name": "Nombre de usuario",
-    "users": "Usuarios",
-    "you-have-not-created-any-posts-yet": "Aún no has creado ninguna publicación...",
-    "add-new-post": "Agregar nueva publicación",
+    "login": "Iniciar sesión",
+    "add-new-post": "Añadir nueva publicación",
     "add-new-user": "Añadir nuevo usuario",
-    "are-you-sure-you-want-to-delete-the": "¿Está seguro de que desea eliminar el",
-    "author": "Autor",
     "cancel": "Cancelar",
+    "delete": "Suprimir",
+    "logout": "Salida",
+    "no-posts-have-been-created-yet": "Todavía no se han creado publicaciónes...",
+    "posts": "Publicaciónes",
+    "users": "Users",
+    "loading": "Cargando...",
+    "you-have-not-created-any-posts-yet": "Todavía no has creado ningúna publicación...",
+    "are-you-sure-you-want-to-delete-the": "¿Estás seguro de que quieres borrar el",
+    "post": "Publicación",
+    "user": "user",
+    "title": "título",
+    "description": "Descripción",
     "created-at": "Creado en",
-    "delete": "Borrar",
+    "author": "Autor",
+    "user-email": "Correo electrónico del usuario",
+    "post-id": "Post ID",
+    "user-name": "Nombre de usuario",
+    "email": "Email",
+    "user-id": "ID de usuario",
+    "role": "Función",
+    "logo": "Logo",
+    "user-image": "Imagen de usuario",
     "page": "Página"
   },
-  "ContactPage": {
-    "paragraph-one": "Nos encantaría saber de usted. \nYa sea que tenga preguntas, comentarios o simplemente quiera compartir los hitos de su bebé, estamos aquí para ayudarlo. \nComplete el siguiente formulario y nos comunicaremos con usted lo antes posible.",
-    "paragraph-two": "¡Gracias por ser parte de nuestra comunidad de diarios para bebés!",
-    "title": "¡Póngase en contacto con nosotros!"
-  },
-  "DashboardPage": {
-    "title": "Panel"
-  },
   "Footer": {
-    "all-rights-reserved": "Reservados todos los derechos",
-    "powered_by": "Energizado por"
-  },
-  "Forms": {
-    "add": "Agregar",
-    "add-user": "Agregar usuario",
-    "edit": "Editar",
-    "labels": {
-      "confirm-password": "confirmar Contraseña",
-      "description": "Descripción",
-      "email": "Correo electrónico",
-      "first-name": "Nombre de pila",
-      "image": "Imagen",
-      "last-name": "Apellido",
-      "message": "Mensaje",
-      "password": "Contraseña",
-      "title": "Título"
-    },
-    "post": "Correo",
-    "register": "Registro",
-    "send": "Enviar",
-    "validation": {
-      "confirm-password-is-required": "Confirmar Se requiere contraseña",
-      "description-is-required": "Se requiere descripción",
-      "description-must-be-at-least-50-characters-long": "La descripción debe tener al menos 50 caracteres.",
-      "description-must-be-at-most-1000-characters-long": "La descripción debe tener como máximo 1000 caracteres.",
-      "email-is-not-valid": "El correo no es válido",
-      "email-is-required": "correo electronico es requerido",
-      "first-name-is-required": "Se requiere el primer nombre",
-      "first-name-must-be-at-least-2-characters-long": "El nombre debe tener al menos 2 caracteres",
-      "first-name-must-be-at-most-20-characters-long": "El nombre debe tener como máximo 20 caracteres",
-      "image-is-required": "Se requiere imagen",
-      "last-name-is-required": "Se requiere apellido",
-      "last-name-must-be-at-least-2-characters-long": "El apellido debe tener al menos 2 caracteres.",
-      "last-name-must-be-at-most-20-characters-long": "El apellido debe tener como máximo 20 caracteres.",
-      "message-is-required": "Se requiere mensaje",
-      "message-must-be-at-least-50-characters-long": "El mensaje debe tener al menos 50 caracteres.",
-      "message-must-be-at-most-500-characters-long": "El mensaje debe tener como máximo 500 caracteres.",
-      "password-and-confirm-password-must-match": "Contraseña y Confirmar contraseña deben coincidir",
-      "password-is-required": "se requiere contraseña",
-      "password-must-be-at-least-8-characters-long": "La contraseña debe tener al menos 8 caracteres",
-      "password-regex-requirements": "La contraseña debe tener al menos 8 caracteres y contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.",
-      "title-is-required": "Se requiere título",
-      "title-must-be-at-least-3-characters-long": "El título debe tener al menos 3 caracteres.",
-      "title-must-be-at-most-50-characters-long": "El título debe tener como máximo 50 caracteres.",
-      "user-id-is-required": "Se requiere identificación de usuario"
-    },
-    "select-image": "Seleccionar imagen"
-  },
-  "HomePage": {
-    "description": "Documente las actividades, los hitos y los momentos preciosos de su bebé sin esfuerzo. \nComparte el viaje de tu bebé con tus seres queridos.",
-    "subtitle": "El diario digital definitivo para la maternidad",
-    "title": "Diario del bebé"
-  },
-  "JournalPage": {
-    "author": "Autor",
-    "back-to-journal": "Volver al diario",
-    "by": "por",
-    "no-one-has-liked-this-post-yet": "¡A nadie le ha gustado esta publicación todavía!",
-    "people-have-liked-this-post": "¡A la gente le ha gustado esta publicación!",
-    "person-has-liked-this-post": "¡A alguien le ha gustado esta publicación!",
-    "post": "Correo",
-    "published": "Publicado",
-    "read-more": "Leer más"
-  },
-  "LoginPage": {
-    "dont-have-an-account": "¿No tienes una cuenta?",
-    "login": "Acceso",
-    "register-here": "¡Registrar aquí!"
-  },
-  "Navbar": {
-    "about": "Acerca de",
-    "admin": "Administración",
-    "contact": "Contacto",
-    "dashboard": "Panel",
-    "journal": "Diario",
-    "login": "Acceso",
-    "profile": "Perfil",
-    "register": "Registro"
-  },
-  "Notifications": {
-    "an-error-occurred-while-attempting-to-process-your-message": "Se produjo un error al intentar procesar su mensaje.",
-    "passwords-do-not-match": "¡Las contraseñas no coinciden!",
-    "post-has-been-created": "¡La publicación ha sido creada!",
-    "post-has-been-deleted": "¡La publicación ha sido eliminada!",
-    "post-has-been-liked": "¡La publicación ha recibido me gusta!",
-    "post-has-been-modified": "¡La publicación ha sido modificada!",
-    "post-has-been-unliked": "¡La publicación no ha recibido me gusta!",
-    "post-not-found": "Publicación no encontrada!",
-    "successfully-logged-in": "¡Iniciado sesión exitosamente!",
-    "user-already-exists": "¡El usuario ya existe!",
-    "user-has-been-deleted": "¡El usuario ha sido eliminado!",
-    "user-has-been-registered": "¡El usuario ha sido registrado!",
-    "user-has-successfully-logged-in": "¡El usuario ha iniciado sesión correctamente!"
+    "powered_by": "Producido por",
+    "all-rights-reserved": "Todos los derechos reservados"
   },
   "ProfilePage": {
-    "admin": "Administración",
-    "email": "Correo electrónico:",
+    "user-profile": "perfil de usuario",
     "member-since": "Miembro desde:",
-    "user": "Usuario",
-    "user-profile": "Perfil del usuario"
+    "email": "Email:",
+    "admin": "Admin",
+    "user": "Usuario"
   },
-  "RegisterPage": {
-    "already-an-existing-user": "¿Ya eres usuario existente?",
-    "login-here": "¡Entre aquí!",
-    "register": "Registro"
+  "ContactPage": {
+    "title": "¡Póngase en contacto con nosotros!",
+    "paragraph-one": "Nos encantaría saber de ti. Si tienes preguntas, comentarios o simplemente quieres compartir los hitos de tu bebé, estamos aquí para ayudarte. Rellena el formulario y nos pondremos en contacto contigo lo antes posible",
+    "paragraph-two": "¡Gracias por formar parte de nuestra comunidad de diarios del bebé!"
   },
   "AboutPage": {
-    "paragraph-one": "Baby Journal es la aplicación web definitiva diseñada para que las madres documenten las actividades, los hitos y los momentos preciosos de su bebé.",
-    "paragraph-two": "Registre sin problemas eventos diarios, comparta consejos y realice un seguimiento del crecimiento y desarrollo de su bebé. \nCon funciones intuitivas, puede agregar fotos, escribir descripciones y dar me gusta a los logros del bebé de otras madres. \nBaby Journal mantiene tus recuerdos seguros y organizados, lo que facilita reflexionar sobre tu viaje como madre y compartir ideas con otras mamás. \n¡Únase a nuestra comunidad y comience a crear un hermoso diario personalizado para su bebé hoy!",
-    "title": "Acerca de Baby Journal: Aprecie cada momento del viaje de su bebé"
+    "title": "Aprecie cada momento del viaje de su bebé",
+    "paragraph-one": "Baby Journal es la aplicación web definitiva diseñada para que las madres documenten las actividades, los hitos y los momentos más preciados de su bebé.",
+    "paragraph-two": "Registra a la perfección los acontecimientos diarios, comparte consejos y realiza un seguimiento del crecimiento y desarrollo de tu bebé. Con funciones intuitivas, puedes añadir fotos, escribir descripciones y hacer \"Me gusta\" de los logros de otras madres con su bebé. Baby Journal mantiene tus recuerdos seguros y organizados, lo que facilita la reflexión sobre tu viaje de maternidad y el intercambio de ideas con otras madres. Únete a nuestra comunidad y empieza hoy mismo a crear un bonito diario personalizado para tu bebé."
+  },
+  "DashboardPage": {
+    "title": "Dashboard"
+  },
+  "JournalPage": {
+    "back-to-journal": "Volver al diario",
+    "author": "Autor",
+    "read-more": "Lee más",
+    "published": "Publicado",
+    "person-has-liked-this-post": "persona le ha gustado esta publicación!",
+    "people-have-liked-this-post": "gente le ha gustado esta publicación!",
+    "no-one-has-liked-this-post-yet": "¡A nadie le ha gustado este post todavía!",
+    "post": "Publicación",
+    "by": "por"
+  },
+  "Forms": {
+    "labels": {
+      "title": "título",
+      "description": "Descripción",
+      "image": "Imagen",
+      "first-name": "Nombre",
+      "last-name": "Apellido",
+      "email": "Email",
+      "password": "Contraseña",
+      "confirm-password": "Confirmar contraseña",
+      "message": "Mensaje"
+    },
+    "edit": "editar",
+    "add": "Añadir",
+    "send": "Enviar",
+    "add-user": "Añadir usuario",
+    "register": "Registrarse",
+    "post": "Publicación",
+    "validation": {
+      "first-name-is-required": "El nombre de pila es obligatorio",
+      "first-name-must-be-at-least-2-characters-long": "El nombre debe tener al menos 2 caracteres",
+      "first-name-must-be-at-most-20-characters-long": "El nombre debe tener como máximo 20 caracteres",
+      "last-name-is-required": "El apellido es obligatorio",
+      "last-name-must-be-at-least-2-characters-long": "El apellido debe tener al menos 2 caracteres",
+      "last-name-must-be-at-most-20-characters-long": "El apellido debe tener como máximo 20 caracteres",
+      "email-is-not-valid": "El correo electrónico no es válido",
+      "email-is-required": "El correo electrónico es obligatorio",
+      "message-is-required": "Message is required",
+      "message-must-be-at-least-50-characters-long": "El mensaje debe tener al menos 50 caracteres",
+      "message-must-be-at-most-500-characters-long": "El mensaje debe tener como máximo 500 caracteres",
+      "title-is-required": "El título es obligatorio",
+      "title-must-be-at-least-3-characters-long": "El título debe tener al menos 3 caracteres",
+      "title-must-be-at-most-50-characters-long": "El título debe tener como máximo 50 caracteres",
+      "description-is-required": "La descripción es obligatoria",
+      "description-must-be-at-least-50-characters-long": "La descripción debe tener al menos 50 caracteres",
+      "description-must-be-at-most-1000-characters-long": "La descripción debe tener como máximo 1000 caracteres",
+      "user-id-is-required": "Se requiere ID de usuario",
+      "image-is-required": "Se requiere imagen",
+      "password-is-required": "Se requiere contraseña",
+      "password-regex-requirements": "La contraseña y la confirmación de contraseña deben coincidir",
+      "password-must-be-at-least-8-characters-long": "La contraseña debe tener al menos 8 caracteres",
+      "confirm-password-is-required": "Es necesario confirmar la contraseña",
+      "password-and-confirm-password-must-match": "La contraseña y la contraseña de confirmación deben coincidir"
+    },
+    "select-image": "Select Image"
+  },
+  "LoginPage": {
+    "login": "Login",
+    "dont-have-an-account": "¿No tienes una cuenta?",
+    "register-here": "¡Regístrese aquí!"
+  },
+  "RegisterPage": {
+    "register": "Registrarse",
+    "already-an-existing-user": "¿Ya eres un usuario existente?",
+    "login-here": "¡Inicie sesión aquí!"
+  },
+  "Notifications": {
+    "successfully-logged-in": "¡Ha iniciado sesión con éxito!",
+    "user-has-been-registered": "¡El usuario se ha registrado!",
+    "post-has-been-created": "¡Se ha creado un mensaje!",
+    "post-has-been-modified": "¡El mensaje ha sido modificado!",
+    "post-not-found": "Publicación no encontrada!",
+    "post-has-been-deleted": "¡El mensaje ha sido eliminado!",
+    "post-has-been-liked": "La publicación ha sido gustada",
+    "post-has-been-unliked": "El gusto ha sido retirado de la publicación",
+    "passwords-do-not-match": "¡Las contraseñas no coinciden!",
+    "user-already-exists": "¡El usuario ya existe!",
+    "user-has-successfully-logged-in": "¡El usuario se ha conectado con éxito!",
+    "user-has-been-deleted": "¡El usuario ha sido suprimido!",
+    "an-error-occurred-while-attempting-to-process-your-message": "Se ha producido un error al intentar procesar tu mensaje"
+  },
+  "Navbar": {
+    "journal": "Diario",
+    "register": "Registrarse",
+    "login": "Iniciar sesión",
+    "profile": "Perfil",
+    "dashboard": "Panel",
+    "admin": "Admin",
+    "about": "Acerca de",
+    "contact": "Contacto"
   },
   "NotFoundPage": {
-    "error-404": "error 404",
-    "go-home": "Vete a casa",
-    "sorry-the-page-you-are-looking-for-does-not-exist": "Lo sentimos, la página que estás buscando no existe..."
+    "error-404": "Error 404",
+    "sorry-the-page-you-are-looking-for-does-not-exist": "Lo sentimos, la página que estás buscando no existe...",
+    "go-home": "Ir a casa"
   }
 }
