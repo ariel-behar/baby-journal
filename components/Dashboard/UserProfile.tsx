@@ -16,8 +16,8 @@ async function UserProfile({
     return (
         <article className="flex flex-col items-center bg-dark-soft rounded-lg py-5 px-10">
             <div className="avatar my-5">
-                <figure className="mask mask-squircle w-[150px] lg:w-[300px] h-[150px] lg:h-[300px]">
-                    <Image src={user?.img || "/img/noavatar.png"} alt="avatar" fill />
+                <figure className="mask mask-squircle w-[150px] lg:w-[300px] h-[150px] lg:h-[300px] relative">
+                    <Image src={user?.img || "/img/noavatar.png"} alt="avatar" fill sizes="33vw" />
                 </figure>
             </div>
 
