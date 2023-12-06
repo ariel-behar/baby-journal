@@ -25,7 +25,7 @@ async function JournalPostCard({
 		<article className="card w-full bg-dark-soft text-primary-content shadow-xl">
 			<Link href={`/journal/${post._id}`}>
 				<figure className="w-full h-[300px] relative rounded-t-xl">
-					<Image className="object-cover transform hover:scale-105 duration-700" src={post.img} alt={t('post')} fill />
+					<Image className="object-cover transform hover:scale-105 duration-700" src={post.img} alt={t('post')} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority />
 				</figure>
 			</Link>
 
