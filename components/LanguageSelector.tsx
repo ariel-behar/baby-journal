@@ -3,21 +3,21 @@ import { ChangeEvent, useTransition } from "react"
 import { useLocale } from "next-intl";
 import uniqid from "uniqid";
 
-import { useRouter } from "@/lib/i18nNavigation";
+import { usePathname, useRouter } from "@/lib/i18nNavigation";
+
 import { localesWithLabels } from "@/i18n";
-
-
 
 function LanguageSelector() {
     const [isPending, startTransition] = useTransition()
     const currentLocale = useLocale()
     const router = useRouter();
+    const pathname = usePathname()
 
     function handleChange(e: ChangeEvent<HTMLSelectElement>) {
         const nextLocale = e.target.value;
 
         startTransition(() => {
-            router.replace(`/`, { locale: nextLocale })
+            router.replace(pathname, { locale: nextLocale })
         });
     }
 
