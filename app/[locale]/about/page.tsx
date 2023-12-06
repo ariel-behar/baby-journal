@@ -12,7 +12,8 @@ async function AboutPage() {
 
 	return (
 		<section className="flex flex-col xl:flex-row items-center gap-5 md:gap-10 xl:gap-[100px] px-3 sm:px-5">
-			<article className="w-full xl:w-1/2 flex flex-col gap-[50px] text-center md:text-left justify-center">
+
+			<article className="order-2 lg:order-1 w-full xl:w-1/2 flex flex-col gap-[50px] text-center md:text-left justify-center">
 				<h3 className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">{t('title')}</h3>
 
 				<div>
@@ -22,11 +23,13 @@ async function AboutPage() {
 				</div>
 			</article>
 
-			<figure className="relative w-full xl:w-1/2 h-[200px] md:h-[300px] xl:h-[500px] ">
+			<figure className="order-1 lg:order-2 relative w-full xl:w-1/2 h-[200px] md:h-[300px] xl:h-[500px] ">
 				<Image
 					src="/img/baby-upside-down.png"
 					alt="About Image"
 					fill
+					sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 50vw"
+					priority
 					className="object-contain"
 				/>
 			</figure>

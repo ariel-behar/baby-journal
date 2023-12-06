@@ -30,6 +30,7 @@ async function ContactPage() {
 							src="/img/baby-open-arms.png"
 							alt="Contact"
 							fill
+							sizes="33vw"
 							className="object-contain"
 						/>
 					</figure>
