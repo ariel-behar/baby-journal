@@ -14,6 +14,7 @@ import PexelsPhotoGrid from './PexelsPhotoGrid';
 import FormErrorTooltip from '../FormComponents/FormErrorTooltip';
 import PexelsSelectImageButton from './PexelsSelectImageButton';
 import PexelsSelectedPhotoHiddenURL from './PexelsSelectedPhotoHiddenURL';
+import IconCheck from '@/components/Icons/IconCheck';
 
 export interface IPhotosWithTotalResults extends PhotosWithTotalResults {
     prev_page: number | null;
@@ -80,7 +81,11 @@ function PexelsPhotoSearch({
     return (
         <div>
             <div className='flex flex-row justify-between items-center'>
-                <FormInputLabel label={t('labels.image')} name={name} />
+                <div className='flex flex-row justify-start flex-grow'>
+                    <FormInputLabel classes='!w-auto mr-1' label={t('labels.image')} name={name} />
+
+                    {selectedPhoto && <IconCheck stroke='#3673fd' strokeWidth={4} />}
+                </div>
 
                 {
                     isUserSelectingImage
@@ -101,7 +106,7 @@ function PexelsPhotoSearch({
                 {
                     (!isUserSelectingImage && selectedPhoto) && (
                         <div className='flex flex-col items-center gap-y-3 mt-3'>
-                            <PexelsSelectedImage selectedPhotoObject={selectedPhotoObject} selectedPhoto={selectedPhoto}/>
+                            <PexelsSelectedImage selectedPhotoObject={selectedPhotoObject} selectedPhoto={selectedPhoto} />
 
                             <PexelsSelectedPhotoHiddenURL selectedPhotoObject={selectedPhotoObject} register={register} name={name} post={post} />
                         </div>
