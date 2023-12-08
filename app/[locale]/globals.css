@@ -59,6 +59,10 @@ a {
       	@apply text-2xl uppercase text-center;
     }
 
+	.large-title {
+		@apply text-3xl lg:text-4xl xl:text-6xl text-center font-semibold;
+	}
+
 	p {
 		@apply md:text-lg;
 	}
