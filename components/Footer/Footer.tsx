@@ -5,7 +5,7 @@ import FooterPoweredBy from "./FooterPoweredBy"
 
 function Footer() {
 	return (
-		<footer className="px-3 gap-y-1 lg:gap-y-0 lg:px-[50px] lg:container mx-auto flex flex-col justify-center lg:flex-row lg:justify-between h-[100px] items-center text-sm border-t-[1px] border-gray-800 ">
+		<footer className="px-3 lg:px-[50px] lg:container mx-auto flex flex-col justify-center lg:flex-row lg:justify-between h-[100px] items-center text-sm border-t-[1px] border-gray-800 ">
 
 			<FooterPoweredBy />
 
