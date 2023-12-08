@@ -47,15 +47,19 @@ a {
 }
 
 @layer components {
-	.form-input {
-		@apply p-[10px] rounded-md text-secondary bg-dark border-none outline-none;
+    .form-input {
+        @apply p-[10px] rounded-md text-secondary bg-dark border-none outline-none;
+    }
+
+    .btn-min-width {
+      	min-width: 100px;
+    }
+
+    .small-title {
+      	@apply text-2xl uppercase text-center;
+    }
+
+	p {
+		@apply md:text-lg;
 	}
-
-  .btn-min-width {
-    min-width: 100px;
-  }
-
-  p {
-    @apply md:text-lg;
-  }
 }
