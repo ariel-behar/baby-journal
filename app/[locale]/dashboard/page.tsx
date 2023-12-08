@@ -15,7 +15,7 @@ async function DashboardPage() {
 	return (
 		<section className="flex-grow lg:h-[calc(100vh-250px)] px-3 w-screen">
 			<div className="flex justify-between">
-				<h3 className="text-xl uppercase text-center">{t('title')}</h3>
+				<h3 className="small-title">{t('title')}</h3>
 				<AddPostModalButton />
 			</div>
 

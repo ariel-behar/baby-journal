@@ -19,7 +19,7 @@ async function HomePage() {
 				<div className="flex flex-col gap-y-5">
 
 					<h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl">{t('HomePage.title')}</h1>
-					<h3 className="text-lg lg:text-2xl">{t('HomePage.subtitle')}</h3>
+					<h4 className="text-lg lg:text-2xl">{t('HomePage.subtitle')}</h4>
 				</div>
 
 				<div className="w-full flex flex-row justify-around sm:justify-center items-center gap-x-3 lg:gap-x-10">

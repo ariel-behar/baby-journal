@@ -21,7 +21,7 @@ async function UserProfile({
                 </figure>
             </div>
 
-            <h3 className="text-2xl">{user?.firstName} {user?.lastName}</h3>
+            <h4 className="text-2xl">{user?.firstName} {user?.lastName}</h4>
             <p className="text-muted">{user?.isAdmin ? `${t('admin')}` : `${t('user')}`}</p>
 
             <div className="py-10 flex flex-col gap-y-1">
