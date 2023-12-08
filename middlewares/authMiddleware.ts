@@ -1,11 +1,12 @@
-import { auth } from "@/lib/auth"
 import { NextResponse } from "next/server"
+import NextAuth from "next-auth"
 
 import { authPages } from "@/middleware"
 import { intlMiddleware } from "./i18nMiddleware"
 import { testPathNameRegex } from "@/utils/testPathNameRegex"
+import { authConfig } from "@/lib/auth.config"
 
-const authMiddleware = auth((req: any) => {
+const authMiddleware = NextAuth(authConfig).auth((req: any) => {
 	const isAuthPage = testPathNameRegex(authPages, req.nextUrl.pathname)
 	const session = req.auth
 
