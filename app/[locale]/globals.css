@@ -55,6 +55,10 @@ a {
       	min-width: 100px;
     }
 
+	p {
+		@apply md:text-lg;
+	}
+
     .small-title {
       	@apply text-2xl uppercase text-center;
     }
@@ -63,7 +67,8 @@ a {
 		@apply text-3xl lg:text-4xl xl:text-6xl text-center font-semibold;
 	}
 
-	p {
-		@apply md:text-lg;
+	.very-large-title {
+		@apply text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold;
 	}
+
 }

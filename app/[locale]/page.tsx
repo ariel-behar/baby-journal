@@ -18,30 +18,32 @@ async function HomePage() {
 			<article className="flex flex-col gap-y-8 md:gap-[50px] items-center w-full lg:w-3/5" >
 				<div className="flex flex-col gap-y-5">
 
-					<h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl">{t('HomePage.title')}</h1>
+					<h1 className="very-large-title">{t('HomePage.title')}</h1>
 					<h4 className="text-lg lg:text-2xl">{t('HomePage.subtitle')}</h4>
 				</div>
 
-				<div className="w-full flex flex-row justify-around sm:justify-center items-center gap-x-3 lg:gap-x-10">
-					<figure className="flex justify-center" >
-						<img src='/img/crawling-baby-transparent.gif' alt="Hero" className="max-h-[70px] md:max-h-[100px] lg:max-h-[150px] w-auto" />
-					</figure>
+				<div className="max-w-[610px]">
+					<div className="w-full flex flex-row justify-around sm:justify-center items-center gap-x-3 lg:gap-x-10 ">
+						<figure className="flex justify-center" >
+							<img src='/img/crawling-baby-transparent.gif' alt="Hero" className="max-h-[70px] md:max-h-[100px] lg:max-h-[150px] w-auto" />
+						</figure>
 
-					<div className="flex gap-x-3 lg:gap-x-10">
-						<LinkButton href="/journal" className="lg:btn-lg btn-primary">
-							{t('Common.learn-more')}
-						</LinkButton>
+						<div className="flex gap-x-3 lg:gap-x-10">
+							<LinkButton href="/journal" className="lg:btn-lg btn-primary">
+								{t('Common.learn-more')}
+							</LinkButton>
 
-						{
-							!user && (
-								<LinkButton href="/login" className="lg:btn-lg btn-secondary">
-									{t('Common.login')}
-								</LinkButton>
-							)
-						}
+							{
+								!user && (
+									<LinkButton href="/login" className="lg:btn-lg btn-secondary">
+										{t('Common.login')}
+									</LinkButton>
+								)
+							}
+						</div>
 					</div>
+					<p className="mt-10">{t("HomePage.description")}</p>
 				</div>
-				<p>{t("HomePage.description")}</p>
 			</article>
 		</section>
 	);
