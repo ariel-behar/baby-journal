@@ -17,6 +17,7 @@ import CancelButton from "../Buttons/CancelButton"
 import IconPencil from "../Icons/IconPencil"
 import IconPlus from "../Icons/IconPlus"
 import PexelsPhotoSearch from "./PexelsSearchComponents/PexelsPhotoSearch"
+import FormTextAreaWithTooltip from "./FormComponents/FormTextAreaWithTooltip"
 
 export interface IPostFormData {
     title: string;
@@ -89,7 +90,7 @@ function AddEditPostForm({
         <>
             <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
                 <FormInputFieldWithTooltip register={register} errors={errors} name="title" label={t('labels.title')} type='text' />
-                <FormInputFieldWithTooltip register={register} errors={errors} name="description" label={t('labels.description')} type='text' />
+                <FormTextAreaWithTooltip register={register} errors={errors} name="description" label={t('labels.description')} />
                 <PexelsPhotoSearch register={register} errors={errors} name="img" setValue={setValue} post={post}/>
                 <input type="hidden" {...register('user')} value={user} name="user" />
 
