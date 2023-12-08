@@ -28,9 +28,9 @@ async function AdminPosts() {
 					: (
 						<TableRow index={0}>
 							<td className="text-center h-full" colSpan={10}>
-								<p className="text-2xl">
+								<h4>
 									{t('no-posts-have-been-created-yet')}
-								</p>
+								</h4>
 							</td>
 						</TableRow>
 					)

@@ -41,7 +41,7 @@ async function HomePage() {
 						}
 					</div>
 				</div>
-				<p className="md:text-lg">{t("HomePage.description")}</p>
+				<p>{t("HomePage.description")}</p>
 			</article>
 		</section>
 	);

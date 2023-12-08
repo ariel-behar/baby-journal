@@ -17,9 +17,9 @@ async function AboutPage() {
 				<h3 className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">{t('title')}</h3>
 
 				<div>
-					<p className="text-xl text-justify">{t('paragraph-one')}</p>
+					<p className="text-justify">{t('paragraph-one')}</p>
 					<br />
-					<p className="text-xl text-justify">{t('paragraph-two')}</p>
+					<p className="text-justify">{t('paragraph-two')}</p>
 				</div>
 			</article>
 

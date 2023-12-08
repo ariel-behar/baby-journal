@@ -76,7 +76,7 @@ async function JournalPost({
                     </div>
                 </div>
 
-                <p className="text-xl mb-3">
+                <p className="mb-3">
                     {post?.description}
                 </p>
             </div>

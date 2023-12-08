@@ -27,9 +27,9 @@ async function DashboardPosts() {
 					)) : (
 						<TableRow index={0}>
 							<td className="text-center h-full" colSpan={10}>
-								<p className="text-2xl">
+								<h4>
 									{t('you-have-not-created-any-posts-yet')}
-								</p>
+								</h4>
 							</td>
 						</TableRow>
 					)

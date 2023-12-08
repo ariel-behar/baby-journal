@@ -44,9 +44,9 @@ async function JournalPage() {
 						}
 
 					</div>
-					: <p className="text-2xl text-center">
+					: <h4 className="text-center">
 						{t('no-posts-have-been-created-yet')}
-					</p>
+					</h4>
 			}
 		</section>
 	)
