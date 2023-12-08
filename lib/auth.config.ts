@@ -43,6 +43,8 @@ export const authConfig = {
                 .test(request.nextUrl?.pathname);
             const isOnProfilePage = new RegExp(`^/(${locales})/profile`)
                 .test(request.nextUrl?.pathname);
+            const isOnIndividualJournalPage = new RegExp(`^/(${locales})/journal/.+$`)
+                .test(request.nextUrl?.pathname);
 
 
             // ONLY ADMIN CAN ACCESS ADMIN PANEL
@@ -52,6 +54,11 @@ export const authConfig = {
 
             // ONLY AUTHENTICATED USERS CAN ACCESS THE DASHBOARD & PROFILE PAGES
             if (isOnDashboardPage && !user || isOnProfilePage && !user) {
+                return NextResponse.redirect(new URL("/login", request.nextUrl));
+            }
+
+            // ONLY AUTHENTICATED USERS CAN ACCESS INDIVIDUAL JOURNAL PAGES
+            if (isOnIndividualJournalPage && !user) {
                 return NextResponse.redirect(new URL("/login", request.nextUrl));
             }
 
