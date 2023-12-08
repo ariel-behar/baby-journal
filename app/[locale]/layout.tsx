@@ -33,7 +33,7 @@ interface Props {
 	};
 }
 
-export default async function LocaleRootLayout({
+export default async function RootLayout({
 	children,
 	params: { locale }
 }: Readonly<Props>) {
