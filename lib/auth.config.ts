@@ -1,3 +1,6 @@
+import { locales as i18locales } from "@/i18n";
+import { NextResponse } from "next/server";
+
 export const authConfig = {
     pages: {
         signIn: "/login"
@@ -26,26 +29,35 @@ export const authConfig = {
         },
 
         authorized({ auth, request }: any) {
+            const locales = i18locales.join('|');
+
             const user = auth?.user;
-            const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin");
-            const isOnDashboardPage = request.nextUrl?.pathname.startsWith("/dashboard");
-            const isOnProfilePage = request.nextUrl?.pathname.startsWith("/profile");
-            const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
-            const isOnRegisterPage = request.nextUrl?.pathname.startsWith("/register");
+
+            const isOnLoginPage = new RegExp(`^/(${locales})/login$`)
+                .test(request.nextUrl?.pathname);
+            const isOnRegisterPage = new RegExp(`^/(${locales})/register$`)
+                .test(request.nextUrl?.pathname);
+            const isOnAdminPanel = new RegExp(`^/(${locales})/admin`)
+                .test(request.nextUrl?.pathname);
+            const isOnDashboardPage = new RegExp(`^/(${locales})/dashboard`)
+                .test(request.nextUrl?.pathname);
+            const isOnProfilePage = new RegExp(`^/(${locales})/profile`)
+                .test(request.nextUrl?.pathname);
+
 
             // ONLY ADMIN CAN ACCESS ADMIN PANEL
-            if(isOnAdminPanel && !user?.isAdmin) {
-                return false;
+            if (isOnAdminPanel && !user?.isAdmin) {
+                return NextResponse.redirect(new URL("/login", request.nextUrl));
             }
 
             // ONLY AUTHENTICATED USERS CAN ACCESS THE DASHBOARD & PROFILE PAGES
-            if(isOnDashboardPage && !user || isOnProfilePage && !user) {
-                return false;
+            if (isOnDashboardPage && !user || isOnProfilePage && !user) {
+                return NextResponse.redirect(new URL("/login", request.nextUrl));
             }
 
             // ONLY UNAUTHENTICATED CAN ACCESS LOGIN & REGISTER PAGES
-            if((isOnLoginPage && user) || (isOnRegisterPage && user)) {
-                return Response.redirect(new URL("/", request.nextUrl));
+            if ((isOnLoginPage && user) || (isOnRegisterPage && user)) {
+                return NextResponse.redirect(new URL("/", request.nextUrl));
             }
 
             return true;
