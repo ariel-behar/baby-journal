@@ -54,4 +54,8 @@ a {
   .btn-min-width {
     min-width: 100px;
   }
+
+  p {
+    @apply md:text-lg;
+  }
 }
