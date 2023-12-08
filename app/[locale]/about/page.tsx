@@ -14,7 +14,7 @@ async function AboutPage() {
 		<section className="flex flex-col xl:flex-row items-center gap-5 md:gap-10 xl:gap-[100px] px-3 sm:px-5">
 
 			<article className="order-2 lg:order-1 w-full xl:w-1/2 flex flex-col gap-[50px] text-center md:text-left justify-center">
-				<h3 className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">{t('title')}</h3>
+				<h3 className="large-title">{t('title')}</h3>
 
 				<div>
 					<p className="text-justify">{t('paragraph-one')}</p>

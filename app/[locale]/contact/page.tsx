@@ -17,7 +17,7 @@ async function ContactPage() {
 
 			<article className="w-full sm:w-1/2">
 				<div className="flex flex-col gap-7">
-					<h3 className="text-3xl lg:text-4xl xl:text-6xl text-center">{t('title')}</h3>
+					<h3 className="large-title">{t('title')}</h3>
 
 					<p>{t('paragraph-one')}</p>
 				</div>
