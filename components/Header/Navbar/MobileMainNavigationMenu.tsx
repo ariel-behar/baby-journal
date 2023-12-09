@@ -103,10 +103,18 @@ function MobileMainNavigationMenu({
                         </div>
 
                         {/* Language Selector & Logout Button */}
-                        <div className='absolute bottom-5 w-screen flex flex-row justify-between items-center px-7'>
+                        <div className={`absolute bottom-5 w-screen flex flex-row ${user ? "justify-between" : "justify-center"} items-center px-7`}>
                             <LanguageSelector />
 
-                            <LogOutButton buttonClasses="!bg-transparent border-transparent" formClasses='mx-initial' />
+                            {/* Logout Button */}
+                            {
+                                user && (
+                                    <span onClick={toggleMenu}>
+                                        <LogOutButton buttonClasses="!bg-transparent border-transparent" formClasses='mx-initial' />
+                                    </span>
+                                )
+                            }
+
                         </div>
                     </div>
                 </div>
