@@ -11,14 +11,16 @@ import LanguageSelector from '@/components/LanguageSelector';
 
 interface Props {
     routesMain: IRoute[],
-    routesAuth?: IRoute[],
-    routesFooter?: IRoute[],
+    routesAuth: IRoute[],
+    routesLoggedInUser: IRoute[],
+    routesFooter: IRoute[],
     user: ICustomSession["user"]
 }
 
 function MobileMainNavigationMenu({
     routesMain,
     routesAuth,
+    routesLoggedInUser,
     routesFooter,
     user
 }: Props) {
@@ -27,6 +29,8 @@ function MobileMainNavigationMenu({
     function toggleMenu() {
         setIsMenuOpen((prev) => !prev)
     }
+
+    console.log(user);
 
     return (
         <aside className='block lg:hidden'>
@@ -44,7 +48,7 @@ function MobileMainNavigationMenu({
                 {/* Menu */}
                 <div className={`${isMenuOpen ? 'w-full delay-500' : 'w-0'} lg:hidden absolute top-0 right-0  h-screen gap-3 z-10 transition-all duration-700 overflow-hidden `}>
 
-                    <div className={`${isMenuOpen ? 'opacity-100 duration-1000' : 'opacity-0 duration-700'} relative h-screen transition-all  flex flex-col justify-between`}>
+                    <div className={`${isMenuOpen ? 'opacity-100 duration-1000' : 'opacity-0 duration-700'} relative h-screen transition-all  flex flex-col justify-center`}>
 
                         <div className='absolute w-screen top-3 left-1/2 -translate-x-1/2 flex flex-row justify-between px-2'>
                             {/* User Menu */}
@@ -57,9 +61,30 @@ function MobileMainNavigationMenu({
                         </div>
 
 
-                        <div className='h-full py-5'>
-                            {/* Links */}
-                            <div className=" flex flex-col items-center justify-center gap-y-3">
+                        {/* Links */}
+
+                        <div className='flex flex-col gap-y-16'>
+                            {/* User Navigation Links */}
+                            {user
+                                ? (
+                                    <div className="flex flex-col items-center justify-center gap-y-3">
+                                        {routesLoggedInUser.map((route) => (
+                                            <NavLink key={uniqid()} path={route.path} title={route.title} toggleMenu={toggleMenu} />)
+                                        )}
+                                    </div>
+                                )
+                                : (
+                                    <div className="flex flex-row items-center justify-center gap-y-3">
+                                        {routesAuth.map((route) => (
+                                            <NavLink key={uniqid()} path={route.path} title={route.title} toggleMenu={toggleMenu} />)
+                                        )}
+                                    </div>
+                                )
+                            }
+
+
+                            {/* Main Links */}
+                            <div className="flex flex-col items-center justify-center ">
 
                                 {
                                     routesMain.map((route) => {
@@ -69,6 +94,11 @@ function MobileMainNavigationMenu({
                                     })
                                 }
 
+
+                            </div>
+
+
+                            <div className='flex flex-col items-center justify-center gap-y-3'>
                                 {
                                     routesFooter && routesFooter.map((route) => {
                                         return (
@@ -76,22 +106,13 @@ function MobileMainNavigationMenu({
                                         )
                                     })
                                 }
+
                             </div>
 
                         </div>
 
 
 
-                        {/* User Navigation Menu */}
-                        {
-                            routesAuth && (
-                                <div className='flex flex-col items-center justify-center gap-y-3'>
-                                    {routesAuth.map((route) => (
-                                        <NavLink key={uniqid()} path={route.path} title={route.title} toggleMenu={toggleMenu} />)
-                                    )}
-                                </div>
-                            )
-                        }
 
                         {/* Language Selector */}
                         <div className='absolute bottom-3 w-screen flex flex-row justify-center'>
