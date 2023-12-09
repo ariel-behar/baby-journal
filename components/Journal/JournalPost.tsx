@@ -24,58 +24,59 @@ async function JournalPost({
     const session: Session | null = await auth()
     const user: ICustomSession['user'] = (session as ICustomSession)?.user;
     const postUserId = post.user;
+    console.log('postUserId:', postUserId)
 
     return (
-        <article className="flex gap-[100px] px-2">
+        <article className="flex flex-col items-center px-2 ">
 
-            {/* Post image from large screens onwards */}
-            {post && (
-                <figure className="hidden xl:block flex-1 relative h-[calc(100vh-250px)]">
-                    <Image src={post.img} alt='Post' fill className="object-scale-down" sizes="33vw" priority />
-                </figure>
-            )}
+            <div className="flex flex-col items-center gap-y-7 w-full max-w-[1100px]">
 
-            <div className="flex flex-col gap-y-7 xl:gap-[50px]">
-
+                {/* Post title */}
                 <h2 className="large-title mt-2 md:mt-0 mb-0">{post.title}</h2>
 
-                {/* Post image from extra small to medium screens */}
-                {post && (
-                    <figure className="block xl:hidden relative h-[400px] md:h-[500px] w-full">
-                        <Image src={post.img} alt='Post' fill className="object-scale-down" sizes="33vw" />
-                    </figure>
-                )}
-
-                <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-5">
-
-                    <div className="flex flex-row items-center justify-between md:justify-end ">
-                        <div className="flex flex-row items-center gap-2">
-                            {!(user?.id == postUserId) && <LikeButton post={post} user={user as ICustomSession['user']} />}
-                            <LikeCounter likes={post.likes} />
-                        </div>
-
-                        <div className="md:hidden">
-                            {user?.id == postUserId
-                                ? <JournalPostOwnerButtons post={post} />
-                                : user?.isAdmin && <JournalPostOwnerButtons post={post} />
-                            }
-                        </div>
-                    </div>
-
+                {/* Container image and all items except description */}
+                <div className="flex flex-col items-center lg:items-start gap-y-5 lg:flex-row lg:gap-x-7 lg:justify-between w-full">
+                    {/* Post image */}
                     {post && (
-                        <Suspense fallback={<div>{t('Common.loading')}</div>}>
-                            <JournalPostAuthorPublished post={post} />
-                        </Suspense>
+                        <figure className="relative h-[260px] sm:h-[340px] md:h-[400px] lg:h-[350px] xl:h-[400px] w-full">
+                            <Image src={post.img} alt='Post' fill className="object-scale-down object-center sm:object-left" sizes="100vw" />
+                        </figure>
                     )}
 
-                    <div className="hidden md:flex flex-row justify-end ">
-                        {user?.id == postUserId
-                            ? <JournalPostOwnerButtons post={post} />
-                            : user?.isAdmin && <JournalPostOwnerButtons post={post} />
-                        }
+                    <div className="flex flex-col justify-between gap-y-5 lg:min-w-[350px]">
+                        {/* Author/Post Details */}
+                        {post && (
+                            <Suspense fallback={<div>{t('Common.loading')}</div>}>
+                                <JournalPostAuthorPublished post={post} />
+                            </Suspense>
+                        )}
+
+                        <div className="flex flex-row items-center justify-between">
+                            {/* Like Button and Like Counter */}
+                            <div className="flex flex-row items-center gap-2">
+                                {!(user?.id == postUserId) && <LikeButton post={post} user={user as ICustomSession['user']} />}
+
+                                {
+                                    !(user?.id == postUserId)
+                                        ? <LikeCounter likes={post.likes} />
+                                        : <p className="text-muted text-sm ">{t('you-are-the-author-of-this-post')}</p>
+                                }
+                            </div>
+
+                            {/* Owner buttons */}
+                            <div className="">
+                                {user?.id == postUserId
+                                    ? <JournalPostOwnerButtons post={post} />
+                                    : user?.isAdmin && <JournalPostOwnerButtons post={post} />
+                                }
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
+                {/* Post Description */}
                 <p className="mb-3">
                     {post?.description}
                 </p>
