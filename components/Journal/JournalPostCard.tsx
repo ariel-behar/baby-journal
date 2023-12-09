@@ -9,7 +9,6 @@ import { IPostPopulated } from "@/models/Post";
 import IconChevronRight from "../Icons/IconChevronRight";
 import LikeButton from "../Buttons/LikeButton";
 import LikeCounter from "./LikeCounter";
-import NotLoggedInLikeButton from "../Buttons/NotLoggedInLikeButton";
 
 interface Props {
 	post: IPostPopulated,
@@ -31,7 +30,7 @@ async function JournalPostCard({
 				</figure>
 			</Link>
 
-			<div className="card-body p-4 sm:p-8 gap-y-0">
+			<div className="card-body p-4 md:p-8 gap-y-0">
 				<div className="flex flex-row justify-between items-start mb-2">
 					<span className="text-sm text-muted">
 						{t('author')} {post.user.firstName} {post.user.lastName}
@@ -47,11 +46,13 @@ async function JournalPostCard({
 					</Link>
 				</h4>
 
-				<div className={`card-actions justify-between items-center mt-2 flex-grow`}>
+				<div className="card-actions justify-between items-center mt-2 flex-grow">
 					<div className="flex flex-row items-center gap-2  min-h-[20px]">
-						{(user && user.id != post.user._id)
-							? <LikeButton post={post} user={user} />
-							: <NotLoggedInLikeButton />
+						{(user && user.id != post.user._id) && <LikeButton post={post} user={user} />}
+						{
+							(user && user.id != post.user._id)
+								? <LikeCounter likes={post.likes} />
+								: <p className="text-muted text-sm">{t('you-are-the-author-of-this-post')}</p>
 						}
 
 						<LikeCounter likes={post.likes} />
