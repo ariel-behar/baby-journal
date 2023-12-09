@@ -13,7 +13,7 @@ async function DashboardPage() {
 	const t = await getTranslations("DashboardPage");
 	
 	return (
-		<section className="flex-grow lg:h-[calc(100vh-250px)] px-3 w-screen">
+		<section className="flex-grow section-height px-3 w-screen">
 			<div className="flex justify-between">
 				<h3 className="small-title">{t('title')}</h3>
 				<AddPostModalButton />

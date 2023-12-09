@@ -30,7 +30,7 @@ async function JournalPost({
 
             {/* Post image from large screens onwards */}
             {post && (
-                <figure className="hidden xl:block flex-1 relative h-[calc(90vh-200px)]">
+                <figure className="hidden xl:block flex-1 relative h-[calc(100vh-250px)]">
                     <Image src={post.img} alt='Post' fill className="object-scale-down" sizes="33vw" priority />
                 </figure>
             )}

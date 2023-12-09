@@ -8,7 +8,7 @@ async function NotFound() {
     const t = await getTranslations('NotFoundPage')
 
     return (
-        <section className="flex-grow lg:h-[calc(100vh-250px)] flex flex-col justify-center items-center px-5">
+        <section className="flex-grow section-height flex flex-col justify-center items-center px-5">
             <div className='flex flex-col gap-7'>
                 <h4 className="text-6xl text-center block md:hidden">{t('error-404')}</h4>
                 <h3 className="text-2xl md:text-4xl text-center">{t('sorry-the-page-you-are-looking-for-does-not-exist')}</h3>

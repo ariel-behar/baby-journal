@@ -18,7 +18,7 @@ function Error({
 	const t = useTranslations('NotFoundPage')
 
 	return (
-		<section className="flex-grow lg:h-[calc(100vh-250px)] flex flex-col justify-center items-center px-5">
+		<section className="flex-grow section-height flex flex-col justify-center items-center px-5">
 			<div className='flex flex-col gap-7 min-w-full md:min-w-[800px]'>
 				<h3 className="text-2xl md:text-4xl text-center">ERROR: <i>{error.message}</i></h3>
 
