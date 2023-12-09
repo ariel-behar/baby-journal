@@ -9,6 +9,7 @@ import { IPostPopulated } from "@/models/Post";
 import IconChevronRight from "../Icons/IconChevronRight";
 import LikeButton from "../Buttons/LikeButton";
 import LikeCounter from "./LikeCounter";
+import NotLoggedInLikeButton from "../Buttons/NotLoggedInLikeButton";
 
 interface Props {
 	post: IPostPopulated,
@@ -21,6 +22,7 @@ async function JournalPostCard({
 }: Props) {
 	const t = await getTranslations('JournalPage')
 
+
 	return (
 		<article className="card w-full bg-dark-soft text-primary-content shadow-xl">
 			<Link href={`/journal/${post._id}`}>
@@ -29,27 +31,28 @@ async function JournalPostCard({
 				</figure>
 			</Link>
 
-			<div className="card-body p-4 sm:p-8">
-				<div className="flex flex-row justify-between items-start">
-					<div>
-						<h4 className="card-title ">
-							<Link href={`/journal/${post._id}`}>
-								{post.title}
-							</Link>
-						</h4>
-						<span className="text-sm text-muted">
-							{t('by')} {post.user.firstName} {post.user.lastName}
-						</span>
-					</div>
-					
-					<time className="text-sm text-muted">
+			<div className="card-body p-4 sm:p-8 gap-y-0">
+				<div className="flex flex-row justify-between items-start mb-2">
+					<span className="text-sm text-muted">
+						{t('author')} {post.user.firstName} {post.user.lastName}
+					</span>
+					<time className="text-sm text-muted text-end mb-0">
 						{format(new Date(post.createdAt), "dd-MM-yyyy")}
 					</time>
 				</div>
 
-				<div className="card-actions justify-between items-center mt-2 flex-grow">
-					<div className="flex flex-row items-center gap-2">
-						{(user && user.id != post.user._id) && <LikeButton post={post} user={user} />}
+				<h4 className="card-title ">
+					<Link href={`/journal/${post._id}`}>
+						{post.title}
+					</Link>
+				</h4>
+
+				<div className={`card-actions justify-between items-center mt-2 flex-grow`}>
+					<div className="flex flex-row items-center gap-2  min-h-[20px]">
+						{(user && user.id != post.user._id)
+							? <LikeButton post={post} user={user} />
+							: <NotLoggedInLikeButton />
+						}
 
 						<LikeCounter likes={post.likes} />
 					</div>
