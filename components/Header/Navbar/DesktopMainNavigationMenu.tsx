@@ -5,16 +5,16 @@ import { IRoute } from "@/types/types"
 import NavLink from "./NavLink"
 
 interface Props {
-    routes: IRoute[]
+    routesMain: IRoute[]
 }
 
 function DesktopMainNavigationMenu({
-    routes
+    routesMain
 }: Props) {
     return (
         <>
             <div className="hidden lg:block">
-                {routes.map((link) => {
+                {routesMain.map((link) => {
                     return (
                         <NavLink key={uniqid()} {...link} />
                     )

@@ -29,7 +29,7 @@ async function Navbar() {
 			<div className="flex gap-5 items-center">
 				{/* Main Menu */}
 				<div className='order-2 lg:order-1 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2'>
-					<DesktopMainNavigationMenu routes={routesMain} />
+					<DesktopMainNavigationMenu routesMain={routesMain} />
 
 					<MobileMainNavigationMenu
 						routesMain={routesMain}
