@@ -37,7 +37,7 @@ async function JournalPost({
 
             <div className="flex flex-col gap-y-7 xl:gap-[50px]">
 
-                <h1 className="text-5xl md:text-7xl mt-2 md:mt-0 mb-0">{post.title}</h1>
+                <h2 className="large-title mt-2 md:mt-0 mb-0">{post.title}</h2>
 
                 {/* Post image from extra small to medium screens */}
                 {post && (

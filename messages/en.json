@@ -67,7 +67,8 @@
     "people-have-liked-this-post": "people have liked this post!",
     "no-one-has-liked-this-post-yet": "No one has liked this post yet!",
     "post": "Post",
-    "by": "by"
+    "by": "by",
+    "please-log-in-to-like-this-post": "Please log in to like this post"
   },
   "Forms": {
     "labels": {
