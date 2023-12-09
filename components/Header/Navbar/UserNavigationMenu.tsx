@@ -24,9 +24,21 @@ function UserNavigationMenu({
                     ? <LoggedInButton user={user} dropdownClass={dropdownClass}>
                         <LoggedInButtonDropdownLinks user={user} toggleMenu={toggleMenu} />
                     </LoggedInButton>
-                    : routesAuth.map((route) => <NavLink key={uniqid()} path={route.path} title={route.title} toggleMenu={toggleMenu} />)
+                    : (
+                        <div className='hidden sm:block'>
+                            {
+                                routesAuth.map((route) => <NavLink
+                                    key={uniqid()}
+                                    path={route.path}
+                                    title={route.title}
+                                    toggleMenu={toggleMenu}
+                                />)
+                            }
+                        </div>
+                    )
+
                 }
-            </div>
+            </div >
         </>
     )
 }
