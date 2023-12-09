@@ -18,9 +18,9 @@ async function Navbar() {
 	const user: ICustomSession["user"] = (session as ICustomSession)?.user
 
 	return (
-		<nav className="md:h-[100px] flex flex-row justify-between items-center px-3 sm:px-5 lg:px-[50px] lg:container mx-auto border-b-[1px] border-gray-800">
+		<nav className="header-height flex flex-row justify-between items-center px-3 sm:px-5 lg:px-[50px] lg:container mx-auto border-b-[1px] border-gray-800">
 
-			<div className="h-[80px] md:h-full w-[90px] md:w-[110px] md:hover:w-[230px] transition-all duration-200 relative overflow-hidden py-1">
+			<div className="h-[70px] md:h-full w-[75px] md:w-[85px] md:hover:w-[180px] transition-all duration-200 relative overflow-hidden py-1">
 				<Link href="/" className="text-3xl font-bold h-full w-full">
 					<img src="/img/baby-crawling-home.png" alt={t('Common.logo')} className="w-full h-full object-cover" style={{ objectPosition: 0 }} />
 				</Link>

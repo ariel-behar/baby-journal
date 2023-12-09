@@ -5,11 +5,10 @@ import FooterPoweredBy from "./FooterPoweredBy"
 
 function Footer() {
 	return (
-		<footer className="px-3 lg:px-[50px] lg:container mx-auto flex flex-col justify-center lg:flex-row lg:justify-between h-[100px] items-center text-sm border-t-[1px] border-gray-800 ">
-
+		<footer className="footer-height px-3 lg:px-[50px] lg:container mx-auto flex flex-col justify-center lg:flex-row lg:justify-between items-center text-sm border-t-[1px] border-gray-800 ">
 			<FooterPoweredBy />
 
-			<div className="flex flex-row items-center gap-x-5 order-1 lg:order-2 mb-2 sm:mb-0">
+			<div className="flex flex-row items-center gap-x-5 order-1 lg:order-2 mb-3 lg:mb-0">
 				<FooterMenu />
 				<LanguageSelector />
 			</div>
