@@ -12,7 +12,7 @@ import TableDataAdminPost from "../Table/TableDataAdminPost";
 import { getTranslations } from "next-intl/server";
 
 async function AdminPosts() {
-	const posts = await getPosts(true) as IPostPopulated[];
+	const posts = await getPosts(true, true) as IPostPopulated[];
 	const session: Session | null = await auth()
 	const t = await getTranslations("Common")
 

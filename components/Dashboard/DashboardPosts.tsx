@@ -13,7 +13,7 @@ import TableRow from "../Table/TableRow"
 
 async function DashboardPosts() {
 	const session: Session | null = await auth()
-	const posts = await getPosts(true, session?.user?.id as string) as IPostPopulated[]
+	const posts = await getPosts(true, true, session?.user?.id as string) as IPostPopulated[]
 	const t = await getTranslations("Common")
 
 	return (
