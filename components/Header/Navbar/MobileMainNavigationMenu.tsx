@@ -60,7 +60,7 @@ function MobileMainNavigationMenu({
                         </div>
 
                         {/* Links */}
-                        <div className='flex flex-col gap-y-16'>
+                        <div className='flex flex-col gap-y-14'>
                             {/* User Navigation Links */}
                             {user
                                 ? (
@@ -71,7 +71,7 @@ function MobileMainNavigationMenu({
                                     </div>
                                 )
                                 : (
-                                    <div className="flex flex-row items-center justify-center gap-y-3">
+                                    <div className="flex flex-col items-center justify-center gap-y-3">
                                         {routesAuth.map((route) => (
                                             <NavLink key={uniqid()} path={route.path} title={route.title} toggleMenu={toggleMenu} />)
                                         )}
@@ -79,9 +79,10 @@ function MobileMainNavigationMenu({
                                 )
                             }
 
-                            {/* Main Links */}
-                            <div className="flex flex-col items-center justify-center ">
+                            <hr className='border-muted w-5/12 mx-auto' />
 
+                            {/* Main Links */}
+                            <div className="flex flex-col items-center justify-center">
                                 {
                                     routesMain.map((route) => {
                                         return (
@@ -90,6 +91,8 @@ function MobileMainNavigationMenu({
                                     })
                                 }
                             </div>
+
+                            <hr className='border-muted w-5/12 mx-auto' />
 
                             <div className='flex flex-col items-center justify-center gap-y-3'>
                                 {
