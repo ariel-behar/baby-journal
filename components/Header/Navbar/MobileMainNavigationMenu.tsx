@@ -8,6 +8,7 @@ import NavLink from "./NavLink"
 import IconMenu from '@/components/Icons/IconMenu';
 import IconClose from '@/components/Icons/IconClose';
 import LanguageSelector from '@/components/LanguageSelector';
+import LogOutButton from '@/components/Buttons/LogOutButton';
 
 interface Props {
     routesMain: IRoute[],
@@ -29,8 +30,6 @@ function MobileMainNavigationMenu({
     function toggleMenu() {
         setIsMenuOpen((prev) => !prev)
     }
-
-    console.log(user);
 
     return (
         <aside className='block lg:hidden'>
@@ -60,9 +59,7 @@ function MobileMainNavigationMenu({
                             </span>
                         </div>
 
-
                         {/* Links */}
-
                         <div className='flex flex-col gap-y-16'>
                             {/* User Navigation Links */}
                             {user
@@ -82,7 +79,6 @@ function MobileMainNavigationMenu({
                                 )
                             }
 
-
                             {/* Main Links */}
                             <div className="flex flex-col items-center justify-center ">
 
@@ -93,10 +89,7 @@ function MobileMainNavigationMenu({
                                         )
                                     })
                                 }
-
-
                             </div>
-
 
                             <div className='flex flex-col items-center justify-center gap-y-3'>
                                 {
@@ -106,17 +99,14 @@ function MobileMainNavigationMenu({
                                         )
                                     })
                                 }
-
                             </div>
-
                         </div>
 
-
-
-
-                        {/* Language Selector */}
-                        <div className='absolute bottom-3 w-screen flex flex-row justify-center'>
+                        {/* Language Selector & Logout Button */}
+                        <div className='absolute bottom-5 w-screen flex flex-row justify-between items-center px-7'>
                             <LanguageSelector />
+
+                            <LogOutButton buttonClasses="!bg-transparent border-transparent" formClasses='mx-initial' />
                         </div>
                     </div>
                 </div>
