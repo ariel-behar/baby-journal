@@ -9,13 +9,13 @@ export const routesMain = [
 
 export const routesAuth = [
     {
-        title: 'register',
-        path: '/register'
-    },
-    {
         title: 'login',
         path: '/login'
     },
+    {
+        title: 'register',
+        path: '/register'
+    }
 ]
 
 export const routesLoggedInUser = [
