@@ -8,7 +8,6 @@ import NavLink from "./NavLink"
 import IconMenu from '@/components/Icons/IconMenu';
 import IconClose from '@/components/Icons/IconClose';
 import LanguageSelector from '@/components/LanguageSelector';
-import UserNavigationMenu from './UserNavigationMenu';
 
 interface Props {
     routesMain: IRoute[],
@@ -47,9 +46,9 @@ function MobileMainNavigationMenu({
 
                     <div className={`${isMenuOpen ? 'opacity-100 duration-1000' : 'opacity-0 duration-700'} relative h-screen transition-all  flex flex-col justify-between`}>
 
-                        <div className='flex flex-row justify-between p-4'>
+                        <div className='absolute w-screen top-3 left-1/2 -translate-x-1/2 flex flex-row justify-between px-2'>
                             {/* User Menu */}
-                            <UserNavigationMenu user={user} dropdownClass='dropdown-start' toggleMenu={toggleMenu} />
+                            <p className='ml-2 mt-1'>{user?.firstName} {user?.lastName} <br />{user?.isAdmin == true ? "(admin)" : ""}</p>
 
                             {/* Close Menu */}
                             <span onClick={toggleMenu}>
@@ -57,28 +56,45 @@ function MobileMainNavigationMenu({
                             </span>
                         </div>
 
-                        {/* Links */}
-                        <div className="h-full flex flex-col items-center justify-center gap-y-3">
 
-                            {
-                                routesMain.map((route) => {
-                                    return (
-                                        <NavLink key={uniqid()} {...route} toggleMenu={toggleMenu} />
-                                    )
-                                })
-                            }
+                        <div className='h-full py-5'>
+                            {/* Links */}
+                            <div className=" flex flex-col items-center justify-center gap-y-3">
 
-                            {
-                                routesFooter && routesFooter.map((route) => {
-                                    return (
-                                        <NavLink key={uniqid()} {...route} toggleMenu={toggleMenu} />
-                                    )
-                                })
-                            }
+                                {
+                                    routesMain.map((route) => {
+                                        return (
+                                            <NavLink key={uniqid()} {...route} toggleMenu={toggleMenu} />
+                                        )
+                                    })
+                                }
+
+                                {
+                                    routesFooter && routesFooter.map((route) => {
+                                        return (
+                                            <NavLink key={uniqid()} {...route} toggleMenu={toggleMenu} />
+                                        )
+                                    })
+                                }
+                            </div>
+
                         </div>
 
+
+
+                        {/* User Navigation Menu */}
+                        {
+                            routesAuth && (
+                                <div className='flex flex-col items-center justify-center gap-y-3'>
+                                    {routesAuth.map((route) => (
+                                        <NavLink key={uniqid()} path={route.path} title={route.title} toggleMenu={toggleMenu} />)
+                                    )}
+                                </div>
+                            )
+                        }
+
                         {/* Language Selector */}
-                        <div className='flex flex-row justify-center p-4'>
+                        <div className='absolute bottom-3 w-screen flex flex-row justify-center'>
                             <LanguageSelector />
                         </div>
                     </div>
