@@ -7,8 +7,8 @@
   "Common": {
     "learn-more": "Go to Journal",
     "login": "Login",
-    "add-new-post": "Add New Post",
-    "add-new-user": "Add New User",
+    "add-new-post": "New Post",
+    "add-new-user": "New User",
     "cancel": "Cancel",
     "delete": "Delete",
     "logout": "Logout",

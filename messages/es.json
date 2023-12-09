@@ -7,8 +7,8 @@
   "Common": {
     "learn-more": "Ir al diario",
     "login": "Iniciar sesión",
-    "add-new-post": "Añadir nueva publicación",
-    "add-new-user": "Añadir nuevo usuario",
+    "add-new-post": "Nueva publicación",
+    "add-new-user": "Nuevo usuario",
     "cancel": "Cancelar",
     "delete": "Suprimir",
     "logout": "Salida",
@@ -84,7 +84,7 @@
     "edit": "editar",
     "add": "Añadir",
     "send": "Enviar",
-    "add-user": "Añadir usuario",
+    "add-user": "Añadir",
     "register": "Registrarse",
     "post": "Publicación",
     "validation": {
