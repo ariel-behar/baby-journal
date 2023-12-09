@@ -13,7 +13,7 @@ function ModalWrapper({
     const { showModalHandler } = useModalContext()
     return (
         <dialog ref={modalRef} className="modal backdrop-blur-sm" onClose={() => showModalHandler(false, null, null, null)}>
-            <div className="modal-box bg-dark-soft drop-shadow-glow border border-muted">
+            <div className="modal-box bg-dark-soft drop-shadow-glow border border-muted p-4 sm:p-6">
 
                 {children}
                 
