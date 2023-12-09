@@ -29,21 +29,21 @@ async function JournalPost({
     return (
         <article className="flex flex-col items-center px-2 ">
 
-            <div className="flex flex-col items-center gap-y-7 w-full max-w-[1100px]">
+            <div className="flex flex-col items-center gap-y-3 sm:gap-y-7 lg:gap-y-[50px] w-full max-w-[1100px]">
 
                 {/* Post title */}
                 <h2 className="large-title mt-2 md:mt-0 mb-0">{post.title}</h2>
 
                 {/* Container image and all items except description */}
-                <div className="flex flex-col items-center lg:items-start gap-y-5 lg:flex-row lg:gap-x-7 lg:justify-between w-full">
+                <div className="flex flex-col items-center lg:items-start gap-y-3 sm:gap-y-7 lg:flex-row lg:gap-x-7 lg:justify-between w-full">
                     {/* Post image */}
                     {post && (
-                        <figure className="relative h-[260px] sm:h-[340px] md:h-[400px] lg:h-[350px] xl:h-[400px] w-full">
-                            <Image src={post.img} alt='Post' fill className="object-scale-down object-center sm:object-left" sizes="100vw" />
+                        <figure className="relative h-[300px] md:h-[400px] lg:h-[350px] xl:h-[400px] w-full">
+                            <Image src={post.img} alt='Post' fill className="object-scale-down object-center lg:object-left" sizes="100vw" />
                         </figure>
                     )}
 
-                    <div className="flex flex-col justify-between gap-y-5 lg:min-w-[350px]">
+                    <div className="flex flex-col justify-between gap-y-2 sm:gap-y-5 lg:min-w-[350px]">
                         {/* Author/Post Details */}
                         {post && (
                             <Suspense fallback={<div>{t('Common.loading')}</div>}>
