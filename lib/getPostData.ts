@@ -20,7 +20,7 @@ export const getPost = async (postId: IdType) => {
         if (mongoose.Types.ObjectId.isValid(postId)) {
             const post: IPost | null = await Post.findById(postId);
 
-            if(!post) {
+            if (!post) {
                 throw new NotFoundError('Post not found!')
             }
 
@@ -30,14 +30,14 @@ export const getPost = async (postId: IdType) => {
         }
 
     } catch (error) {
-        if(isRedirectError(error)){
+        if (isRedirectError(error)) {
             redirect('/journal');
         }
         throw error
     }
 }
 
-export const getPosts = async (populateUser: boolean, userId?: IUser['_id']) => {
+export const getPosts = async (populateUser: boolean, sortByCreationDate?: boolean, userId?: IUser['_id']) => {
     noStore();
 
     try {
@@ -45,22 +45,24 @@ export const getPosts = async (populateUser: boolean, userId?: IUser['_id']) => 
 
         let posts: IPostPopulated[] | IPost[];
 
-        if (userId) {
-            if (populateUser) {
-                posts = await Post.find({ user: userId }).populate("user").lean();
-            } else {
-                posts = await Post.find({ user: userId }).lean();
-            }
+        const query = userId ? Post.find({ user: userId }) : Post.find();
 
-        } else {
-            if (populateUser) {
-                posts = await Post.find().populate("user").lean();
-            } else {
-                posts = await Post.find().lean();
-            }
+        switch (true) {
+            case populateUser && sortByCreationDate:
+                posts = await query.sort({ createdAt: -1 }).populate("user").lean();
+                break;
+            case populateUser:
+                posts = await query.populate("user").lean();
+                break;
+            case sortByCreationDate:
+                posts = await query.sort({ createdAt: -1 }).lean();
+                break;
+            default:
+                posts = await query.lean();
+                break;
         }
 
-        if(!posts){
+        if (!posts) {
             throw new NotFoundError('Failed to fetch posts!')
         }
 
