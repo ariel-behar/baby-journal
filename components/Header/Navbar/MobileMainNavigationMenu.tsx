@@ -32,14 +32,13 @@ function MobileMainNavigationMenu({
     }
 
     return (
-        <aside className='block lg:hidden'>
+        <aside className='block lg:hidden overflow-y-hidden overscroll-y-contain'>
             {/* Hamburger Icon */}
             <span className='block lg:hidden' onClick={toggleMenu}>
                 <IconMenu sizeClassName='size-10' />
             </span >
 
-
-            <div className={`${isMenuOpen ? 'visible' : 'invisible'} absolute top-0 right-0 h-screen w-screen`}>
+            <div className={`${isMenuOpen ? 'visible' : 'invisible'} fixed top-0 right-0 h-screen w-screen overflow-y-hidden z-[999] overscroll-contain inset-0`}>
                 {/* Backdrop */}
                 <div className={`${isMenuOpen ? 'bg-opacity-[95%] backdrop-blur-sm' : 'bg-opacity-10'} bg-dark  absolute z-10 top-0 left-0 h-screen w-screen transition-all duration-1000`} onClick={toggleMenu}>
                 </div>
