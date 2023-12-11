@@ -13,8 +13,8 @@ function PexelsSelectedImage({
     selectedPhoto,
 }: Props) {
     return (
-        <figure className='h-[170px] w-[170px] sm:h-[250px] sm:w-[250px] relative overflow-hidden'>
-            <Image className='object-cover rounded-md' src={selectedPhotoObject?.src.medium || selectedPhoto || ''} alt={selectedPhotoObject?.alt ? selectedPhotoObject.alt : "Pexels Photo"} fill />
+        <figure className='h-[170px] w-[300px] sm:h-[250px] sm:w-[400px] relative overflow-hidden'>
+            <Image className='object-cover rounded-md' src={selectedPhotoObject?.src.landscape || selectedPhoto || ''} alt={selectedPhotoObject?.alt ? selectedPhotoObject.alt : "Pexels Photo"} fill />
         </figure>
     )
 }
