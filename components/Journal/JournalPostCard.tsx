@@ -31,7 +31,7 @@ async function JournalPostCard({
 			</Link>
 
 			<div className="card-body p-4 md:p-8 gap-y-0">
-				<div className="flex flex-row justify-between items-start mb-1">
+				<div className="flex flex-row justify-between items-start mb-1 w-full">
 					<span className="text-sm text-muted">
 						{t('author')} {post.user.firstName} {post.user.lastName}
 					</span>
@@ -40,7 +40,7 @@ async function JournalPostCard({
 					</time>
 				</div>
 
-				<h4 className="card-title ">
+				<h4 className="card-title w-full break-words inline-block">
 					<Link href={`/journal/${post._id}`}>
 						{post.title}
 					</Link>
