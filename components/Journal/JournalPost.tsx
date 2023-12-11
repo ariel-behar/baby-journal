@@ -38,12 +38,12 @@ async function JournalPost({
                 <div className="flex flex-col items-center lg:items-start gap-y-3 sm:gap-y-7 lg:flex-row lg:gap-x-7 lg:justify-between w-full">
                     {/* Post image */}
                     {post && (
-                        <figure className="relative h-[300px] md:h-[400px] lg:h-[350px] xl:h-[400px] w-full">
-                            <Image src={post.img} alt='Post' fill className="object-scale-down object-center lg:object-left" sizes="100vw" />
+                        <figure className="relative h-[300px] md:h-[400px] lg:h-[300px] xl:h-[400px] w-full">
+                            <Image src={post.img} alt='Post' fill className="object-scale-down object-center" sizes="(max-width: 1023px) 100vw, 50vw" />
                         </figure>
                     )}
 
-                    <div className="flex flex-col justify-between gap-y-2 sm:gap-y-5 lg:min-w-[350px]">
+                    <div className="flex flex-col justify-between gap-y-2 sm:gap-y-5 lg:min-w-[350px] lg:pt-5">
                         {/* Author/Post Details */}
                         {post && (
                             <Suspense fallback={<div>{t('Common.loading')}</div>}>
