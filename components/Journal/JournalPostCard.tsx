@@ -33,7 +33,7 @@ async function JournalPostCard({
 			<div className="card-body p-4 md:p-8 gap-y-0">
 				<div className="flex flex-row justify-between items-start mb-1 w-full">
 					<span className="text-sm text-muted">
-						{t('author')} {post.user.firstName} {post.user.lastName}
+						{t('author').toLowerCase()} {post.user.firstName} {post.user.lastName}
 					</span>
 					<time className="text-sm text-muted text-end mb-0">
 						{format(new Date(post.createdAt), "dd-MM-yyyy")}
