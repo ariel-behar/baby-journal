@@ -40,7 +40,7 @@ function MobileMainNavigationMenu({
 
             <div className={`${isMenuOpen ? 'visible' : 'invisible'} fixed top-0 right-0 h-screen w-screen overflow-y-hidden z-[999] overscroll-contain inset-0`}>
                 {/* Backdrop */}
-                <div className={`${isMenuOpen ? 'bg-opacity-[95%] backdrop-blur-sm' : 'bg-opacity-10'} bg-dark  absolute z-10 top-0 left-0 h-screen w-screen transition-all duration-1000`} onClick={toggleMenu}>
+                <div className={`${isMenuOpen ? 'bg-opacity-[98%] backdrop-blur-sm' : 'bg-opacity-10'} bg-dark  absolute z-10 top-0 left-0 h-screen w-screen transition-all duration-1000`} onClick={toggleMenu}>
                 </div>
 
                 {/* Menu */}
@@ -59,7 +59,20 @@ function MobileMainNavigationMenu({
                         </div>
 
                         {/* Links */}
-                        <div className='flex flex-col gap-y-14'>
+                        <div className='flex flex-col gap-y-3'>
+
+                            {/* Main Links */}
+                            <div className="flex flex-col items-center justify-center">
+                                {
+                                    routesMain.map((route) => {
+                                        return (
+                                            <NavLink key={uniqid()} {...route} toggleMenu={toggleMenu} />
+                                        )
+                                    })
+                                }
+                            </div>
+                            <hr className='border-muted w-5/12 mx-auto' />
+
                             {/* User Navigation Links */}
                             {user
                                 ? (
@@ -78,18 +91,6 @@ function MobileMainNavigationMenu({
                                 )
                             }
 
-                            <hr className='border-muted w-5/12 mx-auto' />
-
-                            {/* Main Links */}
-                            <div className="flex flex-col items-center justify-center">
-                                {
-                                    routesMain.map((route) => {
-                                        return (
-                                            <NavLink key={uniqid()} {...route} toggleMenu={toggleMenu} />
-                                        )
-                                    })
-                                }
-                            </div>
 
                             <hr className='border-muted w-5/12 mx-auto' />
 
