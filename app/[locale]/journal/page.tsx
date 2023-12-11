@@ -19,7 +19,6 @@ export const metadata: Metadata = {
 
 async function JournalPage() {
 	const posts = await getPosts(true, true) as IPostPopulated[];
-	console.log('posts:', posts)
 	const session: Session | null = await auth();
 	const user: ICustomSession['user'] | undefined = (session as ICustomSession)?.user;
 	const t = await getTranslations('Common')

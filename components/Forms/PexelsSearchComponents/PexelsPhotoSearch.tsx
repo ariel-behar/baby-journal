@@ -58,7 +58,6 @@ function PexelsPhotoSearch({
             .then(data => {
                 setPhotosWithTotalResults(data as IPhotosWithTotalResults)
                 setPhotos((data as IPhotosWithTotalResults).photos)
-                console.log(data);
             })
             .catch((error: ErrorResponse) => console.error(error))
     }

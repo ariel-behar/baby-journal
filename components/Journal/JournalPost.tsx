@@ -24,7 +24,6 @@ async function JournalPost({
     const session: Session | null = await auth()
     const user: ICustomSession['user'] = (session as ICustomSession)?.user;
     const postUserId = post.user;
-    console.log('postUserId:', postUserId)
 
     return (
         <article className="flex flex-col items-center px-2 ">
@@ -58,7 +57,7 @@ async function JournalPost({
 
                                 {
                                     !(user?.id == postUserId)
-                                        ? <LikeCounter likes={post.likes} />
+                                        ? <LikeCounter isPostOwner={user?.id == postUserId} likes={post.likes} />
                                         : <p className="text-muted text-sm ">{t('you-are-the-author-of-this-post')}</p>
                                 }
                             </div>
