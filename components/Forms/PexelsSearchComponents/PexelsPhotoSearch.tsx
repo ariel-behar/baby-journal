@@ -65,9 +65,9 @@ function PexelsPhotoSearch({
 
     const handleSelectPhoto = (photo: Photo) => {
         setSelectedPhotoObject(photo)
-        setSelectedPhoto(photo.src.large)
+        setSelectedPhoto(photo.src.landscape)
         setIsUserSelectingImage(false)
-        setValue('img', photo.src.large, { shouldValidate: true, shouldDirty: true })
+        setValue('img', photo.src.landscape, { shouldValidate: true, shouldDirty: true })
     }
 
     const handlePageChange = (page: number) => {
