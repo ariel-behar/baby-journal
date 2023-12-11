@@ -12,8 +12,8 @@ function ModalWrapper({
 }: Props) {
     const { showModalHandler } = useModalContext()
     return (
-        <dialog ref={modalRef} className="modal backdrop-blur-sm" onClose={() => showModalHandler(false, null, null, null)}>
-            <div className="modal-box bg-dark-soft drop-shadow-glow border border-muted p-4 sm:p-6">
+        <dialog ref={modalRef} className="modal h-auto backdrop-blur-sm " onClose={() => showModalHandler(false, null, null, null)}>
+            <div className="modal-box bg-dark-soft border border-muted p-4 sm:p-6">
 
                 {children}
                 
