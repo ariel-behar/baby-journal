@@ -57,8 +57,22 @@ function MobileMainNavigationMenu({
                     <div className={`${isMenuOpen ? 'opacity-100 duration-1000' : 'opacity-0 duration-700'} relative h-screen transition-all  flex flex-col justify-center`}>
 
                         <div className='absolute w-screen top-3 left-1/2 -translate-x-1/2 flex flex-row justify-between px-2'>
-                            {/* User Menu */}
-                            <p className='ml-2 mt-1'>{user?.firstName} {user?.lastName} <br />{user?.isAdmin == true ? "(admin)" : ""}</p>
+                            <div>
+                                {/* User Menu */}
+                                <p className='ml-2 mt-1'>
+                                    {user?.firstName} {user?.lastName}
+                                    &nbsp;{user?.isAdmin == true ? "(admin)" : ""}
+                                </p>
+
+                                {/* Logout Button */}
+                                {
+                                    user && (
+                                        <span onClick={toggleMenu}>
+                                            <LogOutButton buttonClasses="!bg-transparent border-transparent" formClasses='mx-initial' />
+                                        </span>
+                                    )
+                                }
+                            </div>
 
                             {/* Close Menu */}
                             <span onClick={toggleMenu}>
@@ -99,7 +113,6 @@ function MobileMainNavigationMenu({
                                 )
                             }
 
-
                             <hr className='border-muted w-5/12 mx-auto' />
 
                             <div className='flex flex-col items-center justify-center gap-y-3'>
@@ -111,25 +124,17 @@ function MobileMainNavigationMenu({
                                     })
                                 }
                             </div>
-                        </div>
 
-                        {/* Language Selector & Logout Button */}
-                        <div className={`absolute bottom-5 w-screen flex flex-row ${user ? "justify-between" : "justify-center"} items-center px-7`}>
-                            <LanguageSelector />
+                            <hr className='border-muted w-5/12 mx-auto' />
 
-                            {/* Logout Button */}
-                            {
-                                user && (
-                                    <span onClick={toggleMenu}>
-                                        <LogOutButton buttonClasses="!bg-transparent border-transparent" formClasses='mx-initial' />
-                                    </span>
-                                )
-                            }
+                            {/* Language Selector & Logout Button */}
+                            <div className="flex flex-row items-center justify-center">
+                                <LanguageSelector />
 
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </aside>
     )
