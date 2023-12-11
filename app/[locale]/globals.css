@@ -83,4 +83,15 @@ a {
 		@apply lg:h-[calc(100vh-200px)];
 	}
 
+	.form-styles-wrapper {
+		@apply bg-dark-soft text-center rounded-md;
+	}
+
+	.login-register-form-styles-wrapper {
+		@apply p-3 md:px-8 flex flex-col w-full md:w-[500px];
+	}
+
+	.custom-form {
+		@apply flex flex-col gap-2 md:gap-3;
+	}
 }
