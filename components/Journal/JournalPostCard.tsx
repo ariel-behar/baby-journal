@@ -31,7 +31,7 @@ async function JournalPostCard({
 			</Link>
 
 			<div className="card-body p-4 md:p-8 gap-y-0">
-				<div className="flex flex-row justify-between items-start mb-2">
+				<div className="flex flex-row justify-between items-start mb-1">
 					<span className="text-sm text-muted">
 						{t('author')} {post.user.firstName} {post.user.lastName}
 					</span>
@@ -47,13 +47,8 @@ async function JournalPostCard({
 				</h4>
 
 				<div className="card-actions justify-between items-center mt-2 flex-grow">
-					<div className="flex flex-row items-center gap-2  min-h-[20px]">
-						{(user && user.id != post.user._id) && <LikeButton post={post} user={user} />}
-						{
-							(user && user.id != post.user._id)
-								? <LikeCounter likes={post.likes} />
-								: <p className="text-muted text-sm">{t('you-are-the-author-of-this-post')}</p>
-						}
+					<div className="flex flex-row items-center gap-2 min-h-[20px]">
+						{ !(user?.id == post.user._id) && <LikeButton post={post} user={user} /> }
 
 						<LikeCounter likes={post.likes} />
 					</div>
