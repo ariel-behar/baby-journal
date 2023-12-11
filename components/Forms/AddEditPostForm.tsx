@@ -48,9 +48,10 @@ function AddEditPostForm({
             title: (formType === 'edit' && post?.title) || '',
             description: (formType === 'edit' && post?.description) || '',
             img: (formType === 'edit' && post?.img) || '',
-            user: user
+            user: (formType === 'edit' && post?.user) || user
         }
     });
+    
 
     const onFormSubmit = (formData: IPostFormData, e: BaseSyntheticEvent<object, any, any> | undefined) => {
         e?.preventDefault();
