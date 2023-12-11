@@ -50,7 +50,7 @@ async function JournalPostCard({
 					<div className="flex flex-row items-center gap-2 min-h-[20px]">
 						{ !(user?.id == post.user._id) && <LikeButton post={post} user={user} /> }
 
-						<LikeCounter likes={post.likes} />
+						<LikeCounter isPostOwner={user?.id == post.user._id} likes={post.likes} />
 					</div>
 
 					<div className="flex flex-row justify-end items-end w-full">
