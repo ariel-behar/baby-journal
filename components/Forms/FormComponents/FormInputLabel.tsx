@@ -18,7 +18,7 @@ function FormInputLabel({
 }: Props ) {
     return (
         <label className={`form-control w-full ${classes}`} htmlFor={name}>
-            <div className="label pt-0">
+            <div className="label pt-0 pb-[2px] md:pb-1">
                 <span className="label-text">{label}</span>
             </div>
 

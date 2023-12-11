@@ -26,7 +26,7 @@ function FormInputField({
         <>
             <input 
             {...(register as UseFormRegister<ILoginFormData | IRegisterFormData | IPostFormData | IContactFormData>)(name)} 
-            className={`${className} form-input input input-bordered w-full ${disabled ? '!bg-opacity-50' : ''}`} 
+            className={`${className} form-input input input-bordered w-full h-[2.3rem] ${disabled ? '!bg-opacity-50' : ''}`} 
             type={type} 
             name={name} 
             id={name} 
