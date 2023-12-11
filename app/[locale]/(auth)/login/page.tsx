@@ -9,7 +9,7 @@ async function LoginPage() {
 
 	return (
 		<section className="flex-grow flex items-center justify-center">
-			<FormStylesWrapper title={t('login')} className="p-3 md:p-12 flex flex-col w-full md:w-[500px]">
+			<FormStylesWrapper title={t('login')} className="login-register-form-styles-wrapper">
 				
 				<LoginForm />
 

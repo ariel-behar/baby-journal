@@ -8,8 +8,8 @@ async function RegisterPage() {
 	const t = await getTranslations('RegisterPage')
 
 	return (
-		<section className="flex-grow flex items-center justify-center">
-			<FormStylesWrapper title={t('register')} className="p-3 md:p-12 flex flex-col w-full md:w-[500px]">
+		<section className="flex-grow flex items-center justify-center px-2">
+			<FormStylesWrapper title={t('register')} className="login-register-form-styles-wrapper ">
 				<RegisterForm />
 				<span className="my-3">
 					{t('already-an-existing-user')}&nbsp;
