@@ -5,6 +5,7 @@ import { useModalContext } from "@/context/modalContext"
 import UserConfirmationModal from "./UserConfirmationModal"
 import AddEditPostModal from "./AddEditPostModal"
 import AddUserModal from "./AddUserModal"
+import { useEffect } from "react"
 
 interface Props {
     session: Session | null
@@ -15,6 +16,13 @@ function Modals({
 }: Props) {
     const { modalSettings: { showModal, modalType }, currentEntity: { entityType } } = useModalContext()
 
+    useEffect(() => {
+        if (showModal) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
+        }
+    }, [showModal])
 
     return (
         <>
