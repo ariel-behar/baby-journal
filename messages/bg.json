@@ -67,7 +67,10 @@
     "people-have-liked-this-post": "хора са харесали тази публикация!",
     "no-one-has-liked-this-post-yet": "Все още никой не е харесал тази публикация!",
     "post": "Публикация",
-    "by": "от"
+    "by": "от",
+    "be-the-first-to-like-this-post": "Бъди първият харесал тази публикация!",
+    "please-log-in-to-like-this-post": "Моля, влезте в системата, за да харесате тази публикация",
+    "you-are-the-author-of-this-post": "Ти си авторът на тази публикация"
   },
   "Forms": {
     "labels": {
@@ -154,5 +157,6 @@
     "error-404": "Грешка 404",
     "sorry-the-page-you-are-looking-for-does-not-exist": "Съжаляваме, страницата, която търсите, не съществува...",
     "go-home": "Към началната страница"
-  }
+  },
+  "you-are-the-author-of-this-post": "Ти си автор на тази публикация!"
 }

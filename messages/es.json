@@ -67,7 +67,10 @@
     "people-have-liked-this-post": "gente le ha gustado esta publicación!",
     "no-one-has-liked-this-post-yet": "¡A nadie le ha gustado este post todavía!",
     "post": "Publicación",
-    "by": "por"
+    "by": "por",
+    "be-the-first-to-like-this-post": "¡Sé el primero en darle me gusta a esta publicación!",
+    "please-log-in-to-like-this-post": "Por favor inicia sesión para darle me gusta a esta publicación.",
+    "you-are-the-author-of-this-post": "Eres el autor de esta publicación."
   },
   "Forms": {
     "labels": {
@@ -154,5 +157,6 @@
     "error-404": "Error 404",
     "sorry-the-page-you-are-looking-for-does-not-exist": "Lo sentimos, la página que estás buscando no existe...",
     "go-home": "Ir a casa"
-  }
+  },
+  "you-are-the-author-of-this-post": "¡Eres el autor de esta publicación!"
 }

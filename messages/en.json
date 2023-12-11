@@ -68,7 +68,9 @@
     "no-one-has-liked-this-post-yet": "No one has liked this post yet!",
     "post": "Post",
     "by": "by",
-    "please-log-in-to-like-this-post": "Please log in to like this post"
+    "please-log-in-to-like-this-post": "Please log in to like this post",
+    "be-the-first-to-like-this-post": "Be the first to like this post!",
+    "you-are-the-author-of-this-post": "You are the author of this post"
   },
   "Forms": {
     "labels": {
@@ -155,5 +157,6 @@
     "error-404": "Error 404",
     "sorry-the-page-you-are-looking-for-does-not-exist": "Sorry, the page you are looking for does not exist...",
     "go-home": "Go Home"
-  }
+  },
+  "you-are-the-author-of-this-post": "You are the author of this post!"
 }
