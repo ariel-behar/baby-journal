@@ -63,7 +63,7 @@ function AddNewUserForm({
             <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('Forms.labels.email')} type='email' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="password" label={t('Forms.labels.password')} type='password' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label={t('Forms.labels.confirm-password')} type='password' />
-            <FormInputFieldWithTooltip register={register} errors={errors} name="img" label={t('Forms.labels.image')} type='text' />
+            {/* <FormInputFieldWithTooltip register={register} errors={errors} name="img" label={t('Forms.labels.image')} type='text' /> */}
 
             <select {...register('isAdmin')} className="form-input p-[8px]" name="isAdmin" id="">
                 <option value="false">{t('ProfilePage.user')}</option>
