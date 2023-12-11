@@ -45,12 +45,12 @@ function LoginForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-7">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="custom-form">
             <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('Forms.labels.email')} type='text' />
 
             <FormInputFieldWithTooltip register={register} errors={errors} name="password" label={t('Forms.labels.password')} type='password' />
 
-            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>{t('Common.login')}</FormSubmitButton>
+            <FormSubmitButton className='my-5' isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>{t('Common.login')}</FormSubmitButton>
         </form>
     )
 }

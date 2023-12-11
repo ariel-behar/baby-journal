@@ -89,7 +89,7 @@ function AddEditPostForm({
 
     return (
         <>
-            <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
+            <form onSubmit={handleSubmit(onFormSubmit)} className="custom-form">
                 <FormInputFieldWithTooltip register={register} errors={errors} name="title" label={t('labels.title')} type='text' />
                 <FormTextAreaWithTooltip register={register} errors={errors} name="description" label={t('labels.description')} />
                 <PexelsPhotoSearch register={register} errors={errors} name="img" setValue={setValue} post={post}/>

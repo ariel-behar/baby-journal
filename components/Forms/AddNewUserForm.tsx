@@ -57,7 +57,7 @@ function AddNewUserForm({
 
     return (
 
-        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-3">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="custom-form">
             <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label={t('Forms.labels.first-name')} type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label={t('Forms.labels.last-name')} type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('Forms.labels.email')} type='email' />
@@ -65,7 +65,7 @@ function AddNewUserForm({
             <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label={t('Forms.labels.confirm-password')} type='password' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="img" label={t('Forms.labels.image')} type='text' />
 
-            <select {...register('isAdmin')} className="form-input" name="isAdmin" id="">
+            <select {...register('isAdmin')} className="form-input p-[8px]" name="isAdmin" id="">
                 <option value="false">{t('ProfilePage.user')}</option>
                 <option value="true">{t('ProfilePage.admin')}</option>
             </select>

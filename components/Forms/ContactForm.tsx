@@ -51,14 +51,14 @@ function ContactForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-2 sm:gap-5 bg-dark-soft p-3 text-center rounded-md w-full">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="custom-form bg-dark-soft p-3 text-center rounded-md w-full">
             <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label={t('labels.first-name')} type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label={t('labels.last-name')} type='text' />
             <FormInputFieldWithTooltip register={register} errors={errors} name="email" label={t('labels.email')} type='email' />
 
             <FormTextAreaWithTooltip register={register} errors={errors} name="message" label={t('labels.message')} />
 
-            <FormSubmitButton className='btn-lg' isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>
+            <FormSubmitButton isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>
                 {t('send')}
             </FormSubmitButton>
         </form>

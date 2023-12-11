@@ -51,7 +51,7 @@ function RegisterForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col text-center gap-5">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="custom-form">
             <div className="flex gap-x-2">
                 <FormInputFieldWithTooltip register={register} errors={errors} name="firstName" label={t('Forms.labels.first-name')} type="text" />
                 <FormInputFieldWithTooltip register={register} errors={errors} name="lastName" label={t('Forms.labels.last-name')} type="text" />
@@ -64,7 +64,7 @@ function RegisterForm() {
                 <FormInputFieldWithTooltip register={register} errors={errors} name="confirmPassword" label={t('Forms.labels.confirm-password')} type="password" />
             </div>
 
-            <FormSubmitButton className="btn-lg" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>{t('Forms.register')}</FormSubmitButton>
+            <FormSubmitButton className="my-5" isDirty={isDirty} isValid={isValid} isSubmitting={isSubmitting}>{t('Forms.register')}</FormSubmitButton>
         </form>
     )
 }
