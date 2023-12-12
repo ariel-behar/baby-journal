@@ -69,7 +69,7 @@ async function JournalPostCard({
 					</div>
 
 					<div className="flex flex-row justify-end items-end w-full">
-						<LinkButton href={`/journal/${post._id}`} >
+						<LinkButton href={`/journal/${post._id}`} className="px-1 sm:px-2" >
 							{t('read-more')}
 							<IconChevronRight />
 						</LinkButton>

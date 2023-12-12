@@ -8,13 +8,13 @@ interface Props {
 
 function LinkButton({
     href,
-    className = 'btn-sm btn-primary',
+    className,
     children
 }: Props) {
     return (
         <Link href={href}>
             <button
-                className={`btn ${className} btn-min-width`}
+                className={`btn btn-sm btn-primary ${className} btn-min-width`}
             >
                 {children}
             </button>
