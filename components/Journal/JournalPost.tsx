@@ -12,6 +12,7 @@ import JournalPostOwnerButtons from "./JournalPostOwnerButtons"
 import LikeButton from "../Buttons/LikeButton"
 import LikeCounter from "./LikeCounter"
 import JournalPostAuthorPublished from "@/components/Journal/JournalPostAuthorPublished"
+import NotLoggedInLikeButton from "../Buttons/NotLoggedInLikeButton"
 
 interface Props {
     post: IPost
@@ -53,7 +54,11 @@ async function JournalPost({
                         <div className="flex flex-row items-center justify-between">
                             {/* Like Button and Like Counter */}
                             <div className="flex flex-row items-center gap-2">
-                                {!(user?.id == postUserId) && <LikeButton post={post} user={user as ICustomSession['user']} />}
+                                {
+                                    user
+                                        ? !(user?.id == postUserId) && <LikeButton post={post} user={user as ICustomSession['user']} />
+                                        : <NotLoggedInLikeButton />
+                                }
 
                                 {
                                     !(user?.id == postUserId)

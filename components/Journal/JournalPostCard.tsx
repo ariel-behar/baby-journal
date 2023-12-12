@@ -10,6 +10,7 @@ import IconChevronRight from "../Icons/IconChevronRight";
 import LikeButton from "../Buttons/LikeButton";
 import LikeCounter from "./LikeCounter";
 import LinkButton from "../Buttons/LinkButton";
+import NotLoggedInLikeButton from "../Buttons/NotLoggedInLikeButton";
 
 interface Props {
 	post: IPostPopulated,
@@ -58,7 +59,11 @@ async function JournalPostCard({
 
 				<div className="card-actions justify-between items-center mt-0 sm:mt-2 flex-grow">
 					<div className="flex flex-row items-center gap-2 min-h-[20px]">
-						{!(user?.id == post.user._id) && <LikeButton post={post} user={user} />}
+						{
+							user 
+							? !(user?.id == post.user._id) && <LikeButton post={post} user={user} />
+							: <NotLoggedInLikeButton />
+						}
 
 						<LikeCounter isPostOwner={user?.id == post.user._id} likes={post.likes} />
 					</div>

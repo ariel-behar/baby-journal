@@ -11,8 +11,8 @@ function NotLoggedInLikeButton() {
     const router = useRouter();
 
     const onHeartIconClickHandler = () => {
-        displayNotification(t('please-log-in-to-like-this-post'), 'info')
         router.push('/login')
+        displayNotification(t('please-log-in-to-like-this-post'), 'info')
     }
     
     return (
