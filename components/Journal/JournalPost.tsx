@@ -62,7 +62,7 @@ async function JournalPost({
                             )}
                         </div>
 
-                        <div className="flex flex-row items-center justify-between min-w-full">
+                        <div className="flex flex-row items-center justify-between min-w-full px-5">
                             {/* Like Button and Like Counter */}
                             <div className="flex flex-row items-center gap-2">
                                 {
