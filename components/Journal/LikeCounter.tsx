@@ -18,18 +18,18 @@ async function LikeCounter({
             if(isPostOwner) {
                 return ""
             } else {
-                return t("be-the-first-to-like-this-post")
+                return t('like-this-post')
                 // return t('no-one-has-liked-this-post-yet')
             }
         } else if (likes.length === 1) {
-            return t('person-has-liked-this-post')
+            return t('like')
         } else if (likes.length > 1){
-            return t('people-have-liked-this-post')
+            return t('likes')
         }
     }
 
     return (
-        <span className="text-sm">
+        <span className="text-xs sm:text-sm">
             {likes.length !== 0 && likes.length} {likesText()}
         </span>
     )
