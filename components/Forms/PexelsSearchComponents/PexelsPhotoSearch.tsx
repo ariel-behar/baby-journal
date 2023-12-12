@@ -2,10 +2,11 @@
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { FieldErrors, UseFormRegister, UseFormSetValue } from 'react-hook-form';
-import { createClient, ErrorResponse, Photo, PhotosWithTotalResults } from 'pexels';
+import { ErrorResponse, Photo, PhotosWithTotalResults } from 'pexels';
 
 import { IPost } from '@/models/Post';
 import { IPostFormData } from '../AddEditPostForm';
+import { searchPhotos } from '@/lib/serverActions';
 
 import FormInputLabel from '../FormComponents/FormInputLabel';
 import PexelsPagination from './PexelsPagination';
@@ -36,9 +37,6 @@ function PexelsPhotoSearch({
     setValue
 }: Props) {
     const t = useTranslations('Forms')
-    const client = createClient(process.env.NEXT_PUBLIC_PEXELS_API_KEY as string);
-    const query = 'babies'
-    const perPage = 6;
     const [page, setPage] = useState<number>(1);
     const [photosWithTotalResults, setPhotosWithTotalResults] = useState<IPhotosWithTotalResults | null>(null)
     const [photos, setPhotos] = useState<Photo[] | null>(null)
@@ -47,20 +45,18 @@ function PexelsPhotoSearch({
     const [isUserSelectingImage, setIsUserSelectingImage] = useState<boolean>(false)
 
     useEffect(() => {
-        searchPhotos(query)
-        if (post) {
-            setValue('img', post.img, { shouldValidate: true, shouldDirty: true })
-        }
-    }, [query, page])
-
-    const searchPhotos = (query: string) => {
-        client.photos.search({ query, per_page: perPage, page })
+        searchPhotos(page)
             .then(data => {
                 setPhotosWithTotalResults(data as IPhotosWithTotalResults)
                 setPhotos((data as IPhotosWithTotalResults).photos)
             })
             .catch((error: ErrorResponse) => console.error(error))
-    }
+
+
+        if (post) {
+            setValue('img', post.img, { shouldValidate: true, shouldDirty: true })
+        }
+    }, [page])
 
     const handleSelectPhoto = (photo: Photo) => {
         setSelectedPhotoObject(photo)
