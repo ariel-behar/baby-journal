@@ -25,7 +25,7 @@ async function ContactPage() {
 				<div className="flex flex-row items-center sm:flex-col sm:mt-7">
 					<p>{t('paragraph-two')}</p>
 					
-					<figure className="relative w-full h-[150px] sm:h-[300px] flex flex-row items-center">
+					<figure className="relative w-full h-[150px] sm:h-[250px] flex flex-row items-center">
 						<Image
 							src="/img/baby-open-arms.png"
 							alt="Contact"
