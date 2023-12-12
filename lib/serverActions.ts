@@ -19,6 +19,7 @@ import { ILoginFormData } from "@/components/Forms/LoginForm";
 import { IRegisterFormData } from "@/components/Forms/RegisterForm";
 import { IContactFormData } from "@/components/Forms/ContactForm";
 import { IPostFormData } from "@/components/Forms/AddEditPostForm";
+import { createClient } from "pexels";
 
 // Post actions
 export const addPost = async (formData: IPostFormData) => {
@@ -309,3 +310,19 @@ export const sendContactMessage = async (formData: IContactFormData) => {
             throw error;
         }
     }
+
+// Pexels API actions
+export const searchPhotos = async (page: number) => {
+    try {
+        const client = createClient(process.env.PEXELS_API_KEY as string);
+        const query = 'babies'
+        const perPage = 6;
+
+        const data = await client.photos.search({ query, per_page: perPage, page });
+
+        return data;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
