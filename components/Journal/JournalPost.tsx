@@ -34,24 +34,35 @@ async function JournalPost({
                 {/* Post title */}
                 <h2 className="large-title mt-2 md:mt-0 mb-0">{post.title}</h2>
 
+                {/* Author/Post Details small screens*/}
+                <div className="block lg:hidden">
+                    {post && (
+                        <Suspense fallback={<div>{t('Common.loading')}</div>}>
+                            <JournalPostAuthorPublished post={post} />
+                        </Suspense>
+                    )}
+                </div>
+
                 {/* Container image and all items except description */}
-                <div className="flex flex-col items-center lg:items-start gap-y-3 sm:gap-y-7 lg:flex-row lg:gap-x-7 lg:justify-between w-full">
+                <div className="flex flex-col items-center lg:items-start gap-y-3  lg:flex-row lg:gap-x-7 lg:justify-between w-full">
                     {/* Post image */}
                     {post && (
-                        <figure className="relative h-[300px] md:h-[400px] lg:h-[300px] xl:h-[400px] w-full">
+                        <figure className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[300px] xl:h-[400px] w-full">
                             <Image src={post.img} alt='Post' fill className="object-scale-down object-center" sizes="(max-width: 1023px) 100vw, 50vw" />
                         </figure>
                     )}
 
-                    <div className="flex flex-col justify-between gap-y-2 sm:gap-y-5 lg:min-w-[350px] lg:pt-5">
-                        {/* Author/Post Details */}
-                        {post && (
-                            <Suspense fallback={<div>{t('Common.loading')}</div>}>
-                                <JournalPostAuthorPublished post={post} />
-                            </Suspense>
-                        )}
+                    <div className="flex lg:flex-col lg:gap-y-5 min-w-[350px] lg:pt-5">
+                        {/* Author/Post Details large screens onward*/}
+                        <div className="hidden lg:block">
+                            {post && (
+                                <Suspense fallback={<div>{t('Common.loading')}</div>}>
+                                    <JournalPostAuthorPublished post={post} />
+                                </Suspense>
+                            )}
+                        </div>
 
-                        <div className="flex flex-row items-center justify-between">
+                        <div className="flex flex-row items-center justify-between min-w-full">
                             {/* Like Button and Like Counter */}
                             <div className="flex flex-row items-center gap-2">
                                 {
@@ -68,7 +79,7 @@ async function JournalPost({
                             </div>
 
                             {/* Owner buttons */}
-                            <div className="">
+                            <div>
                                 {user?.id == postUserId
                                     ? <JournalPostOwnerButtons post={post} />
                                     : user?.isAdmin && <JournalPostOwnerButtons post={post} />
