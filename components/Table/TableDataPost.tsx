@@ -39,14 +39,16 @@ function TableDataPost({
 
             {/* Title */}
             <td>
-                <Link href={`/journal/${post._id}`} className="flex items-center gap-5 group-hover:underline text-primary">
-                    <p className="hover:underline">{post.title}</p>
+                <Link href={`/journal/${post._id}`} className="hover:underline text-primary">
+                    {post.title}
                 </Link>
             </td>
 
             {/* Description */}
             <td className='max-w-[200px] text-ellipsis whitespace-nowrap overflow-hidden'>
-                {post.description}
+                <Link href={`/journal/${post._id}`} className="hover:underline">
+                    {post.description}
+                </Link>
             </td>
 
             {/* Created At */}
