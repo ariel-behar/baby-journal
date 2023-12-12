@@ -70,7 +70,10 @@
     "by": "от",
     "be-the-first-to-like-this-post": "Бъди първият харесал тази публикация!",
     "please-log-in-to-like-this-post": "Моля, влезте в системата, за да харесате тази публикация",
-    "you-are-the-author-of-this-post": "Ти си авторът на тази публикация"
+    "you-are-the-author-of-this-post": "Ти си авторът на тази публикация",
+    "like": "Xаресване",
+    "likes": "Харесвания",
+    "like-this-post": "Харесай публикацията!"
   },
   "Forms": {
     "labels": {

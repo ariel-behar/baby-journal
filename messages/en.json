@@ -70,7 +70,10 @@
     "by": "by",
     "please-log-in-to-like-this-post": "Please log in to like this post",
     "be-the-first-to-like-this-post": "Be the first to like this post!",
-    "you-are-the-author-of-this-post": "You are the author of this post"
+    "you-are-the-author-of-this-post": "You are the author of this post",
+    "like": "Like",
+    "likes": "Likes",
+    "like-this-post": "like this post!"
   },
   "Forms": {
     "labels": {

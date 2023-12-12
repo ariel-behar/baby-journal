@@ -70,7 +70,10 @@
     "by": "por",
     "be-the-first-to-like-this-post": "¡Sé el primero en darle me gusta a esta publicación!",
     "please-log-in-to-like-this-post": "Por favor inicia sesión para darle me gusta a esta publicación.",
-    "you-are-the-author-of-this-post": "Eres el autor de esta publicación."
+    "you-are-the-author-of-this-post": "Eres el autor de esta publicación.",
+    "like": "Me Gusta",
+    "likes": "Me Gusta",
+    "like-this-post": "haz clic en \"Me gusta\"!"
   },
   "Forms": {
     "labels": {
