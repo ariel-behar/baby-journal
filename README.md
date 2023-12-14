@@ -40,13 +40,13 @@
 
 <h2>Project Description</h2>
 
->Baby Journal is the ultimate web app designed for mothers to document their baby's activities, milestones, and precious moments.
+<blockquote>Baby Journal is the ultimate web app designed for mothers to document their baby's activities, milestones, and precious moments.</blockquote>
 
 <br />
 
 <h2>Release Date</h2>
 
->July 2024
+<blockquote>July 2024</blockquote>
 
 <br />
 
@@ -81,7 +81,7 @@ npm start
 
 <h2>Technological Overview</h2>
 
-<blockquote style="border-left: .25em solid #3F51B5">This Next.js app combines Next-Auth for authentication, Next-Intl for internationalization, and MongoDB as its database. This setup means users can log in securely, see the app in their own language, and enjoy a smooth experience thanks to efficient data handling. It supports multiple login options and easy locale management, while MongoDB keeps data storage fast and flexible.</blockquote>
+<blockquote>This Next.js app combines Next-Auth for authentication, Next-Intl for internationalization, and MongoDB as its database. This setup means users can log in securely, see the app in their own language, and enjoy a smooth experience thanks to efficient data handling. It supports multiple login options and easy locale management, while MongoDB keeps data storage fast and flexible.</blockquote>
 
 <br />
 
@@ -119,29 +119,23 @@ npm start
   </tr>
   <tr>
     <td align="center">
-        <blockquote>Next.JS</blockquote>
+        Next.JS
     </td>
     <td align="center">
-        <blockquote>Typescript</blockquote>
+        Typescript
     </td>
     <td align="center">
-        <blockquote>
-            Tailwind CSS
-            <br />
-            DaisyUI
-        </blockquote>
+        Tailwind CSS
+        <br />
+        DaisyUI
     </td>
      <td align="center">
-        <blockquote>
-            Mongo DB 
-            <br />
-            (+ mongoose)
-        </blockquote>
+        Mongo DB 
+        <br />
+        (+ mongoose)
     </td>
      <td align="center">
-        <blockquote>
-            Next Intl
-        </blockquote>
+        Next Intl
     </td>
   </tr>
 </table>
@@ -177,7 +171,7 @@ npm start
 
 <h2>External integrations</h2>
 
->Pexels API
+<blockquote>Pexels API</blockquote>
 
 <!-- <br /> -->
 <!-- <h2>Specs</h2> -->
