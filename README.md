@@ -7,9 +7,28 @@
     <img style="height: 350px; width: auto" alt="Baby Journal" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/baby-journal.png">
 </p>
 
-| <h3 style="margin-bottom: 10px; text-align: center;">Project URL</h3> | <h3 style="margin-bottom: 10px; text-align: center;">Github Repository</h3> |
+<!-- | <h3 style="margin-bottom: 10px; text-align: center;">Project URL</h3> | <h3 style="margin-bottom: 10px; text-align: center;">Github Repository</h3> |
 | :-----------: | :-----------: |
-| <a href="https://baby-journal.arielbehar.com/" target="_blank">baby-journal.arielbehar.com</a>  | <a href="https://github.com/ariel-behar/baby-journal" target="_blank">github.com/ariel-behar/baby-journal</a> |
+| <a href="https://baby-journal.arielbehar.com/" target="_blank">baby-journal.arielbehar.com</a>  | <a href="https://github.com/ariel-behar/baby-journal" target="_blank">github.com/ariel-behar/baby-journal</a> | -->
+
+<table style="width:100%;">
+  <tr>
+    <th align="center">
+        <h3 align="center" style="margin-bottom: 10px;">Project URL</h3>
+    </th>
+    <th align="center">
+        <h3 align="center" style="margin-bottom: 10px;">Github Repository</h3>
+    </th>
+  </tr>
+  <tr>
+    <td align="center">
+        <a align="center" href="https://baby-journal.arielbehar.com/" target="_blank">baby-journal.arielbehar.com</a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/ariel-behar/baby-journal" target="_blank">github.com/ariel-behar/baby-journal</a>
+    </td>
+  </tr>
+</table>
 
 <br />
 
