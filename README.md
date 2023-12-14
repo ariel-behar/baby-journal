@@ -1,4 +1,9 @@
-<h1 align="center" style="text-align: center; text-transform: uppercase">BABY JOURNAL</h1>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<div style='font-family: "Montserrat", sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: normal;'>
+<h1 align="center" style="text-transform: uppercase">BABY JOURNAL</h1>
 <h3 align="center" style="margin-top: 1px; text-align: center;" >The ultimate digital diary for motherhood</h3>
 
 <br />
@@ -7,9 +12,7 @@
     <img style="height: 350px; width: auto" alt="Baby Journal" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/baby-journal.png">
 </p>
 
-<!-- | <h3 style="margin-bottom: 10px; text-align: center;">Project URL</h3> | <h3 style="margin-bottom: 10px; text-align: center;">Github Repository</h3> |
-| :-----------: | :-----------: |
-| <a href="https://baby-journal.arielbehar.com/" target="_blank">baby-journal.arielbehar.com</a>  | <a href="https://github.com/ariel-behar/baby-journal" target="_blank">github.com/ariel-behar/baby-journal</a> | -->
+<br />
 
 <table align="center" style="width:100%;">
   <tr>
@@ -75,11 +78,72 @@ npm start
 
 <h2>Technological Overview</h2>
 
->This Next.js app combines Next-Auth for authentication, next-intl for internationalization, and MongoDB as its database. This setup means users can log in securely, see the app in their own language, and enjoy a smooth experience thanks to efficient data handling. It supports multiple login options and easy locale management, while MongoDB keeps data storage fast and flexible. 
+>This Next.js app combines Next-Auth for authentication, Next-Intl for internationalization, and MongoDB as its database. This setup means users can log in securely, see the app in their own language, and enjoy a smooth experience thanks to efficient data handling. It supports multiple login options and easy locale management, while MongoDB keeps data storage fast and flexible. 
 
 <br />
 
 <h2>Technologies' Stack</h2>
+
+<table align="center" style="width:100%;">
+  <tr>
+    <th align="center">
+        <h4 align="center" style="margin-bottom: 10px;">
+            Javascript Framework
+        </h4>
+    </th>
+    <th align="center">
+        <h4 align="center" style="margin-bottom: 10px;">
+            Javascript Superscript
+        </h4>
+    </th>
+        <th align="center">
+        <h4 align="center" style="margin-bottom: 10px;">
+            CSS Frameworks/Libraries
+        </h4>
+    </th>
+    </th>
+        <th align="center">
+        <h4 align="center" style="margin-bottom: 10px;">
+            Database
+        </h4>
+    </th>
+            <th align="center">
+        <h4 align="center" style="margin-bottom: 10px;">
+            Internationalization
+        </h4>
+    </th>
+   
+  </tr>
+  <tr>
+    <td align="center">
+        <blockquote>Next.JS</blockquote>
+    </td>
+    <td align="center">
+        <blockquote>Typescript</blockquote>
+    </td>
+    <td align="center">
+        <blockquote>
+            Tailwind CSS
+            <br />
+            DaisyUI
+        </blockquote>
+    </td>
+     <td align="center">
+        <blockquote>
+            Mongo DB 
+            <br />
+            (+ mongoose)
+        </blockquote>
+    </td>
+     <td align="center">
+        <blockquote>
+            Next Intl
+        </blockquote>
+    </td>
+  </tr>
+</table>
+
+<!-- 
 
 <h3>Javascript Framework</h3> 
 
@@ -103,6 +167,9 @@ npm start
 
 >Next Intl
 
+
+ -->
+
 <br />
 
 <h2>External integrations</h2>
@@ -111,3 +178,5 @@ npm start
 
 <!-- <br /> -->
 <!-- <h2>Specs</h2> -->
+
+</div>
