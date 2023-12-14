@@ -2,31 +2,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<style>
-    * {
-
-    }
-
-    .icon-title-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .icon {
-        height: 20px; 
-        width: auto; 
-        margin-right: 10px;
-    }
-
-    .title-next-to-icon {
-        margin-bottom: 10px; 
-        display: inline-block;
-    }
-
-</style>
-
 <div style='font-family: "Montserrat", sans-serif; font-optical-sizing: autoм font-weight: 400; font-style: normal;'>
 
 <h1 align="center" style="text-transform: uppercase">BABY JOURNAL</h1>
@@ -43,16 +18,12 @@
 <table align="center" style="width:100%;">
   <tr>
     <th align="center">
-        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-            <img align="center" alt="Link" style="height: 20px; width: auto; margin-right: 10px;" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/link.png">
-            <h3 align="center" style="margin-bottom: 10px; display: inline-block;">Project URL</h3>
-        </div>
+        <img align="center" alt="Link" style="height: 20px; width: auto; margin-right: 10px;" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/link.png">
+        <h3 align="center" style="margin-bottom: 10px; display: inline-block;">Project URL</h3>
     </th>
     <th align="center">
-        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-            <img align="center" alt="Github" style="height: 20px; width: auto; margin-right: 10px;" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/github.png">
-            <h3 align="center" style="margin-bottom: 10px; display: inline-block;">Github Repository</h3>
-        </div>
+        <img align="center" alt="Github" style="height: 20px; width: auto; margin-right: 10px;" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/github.png">
+        <h3 align="center" style="margin-bottom: 10px; display: inline-block;">Github Repository</h3>
     </th>
   </tr>
   <tr>
