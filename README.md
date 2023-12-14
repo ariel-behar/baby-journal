@@ -4,19 +4,12 @@
 <br />
 
 <p align="center">
-    <img style="height: 250px; width: auto" alt="Baby Journal" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/baby-journal.png">
+    <img style="height: 350px; width: auto" alt="Baby Journal" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/baby-journal.png">
 </p>
 
-<div style="display:flex; flex-direction:row; justify-content: space-around;">
-    <div>
-        <h3 style="margin-bottom: 10px; text-align: center;">Project URL</h3>
-        <a href="https://baby-journal.arielbehar.com/" target="_blank">baby-journal.arielbehar.com</a>
-    </div>
-    <div>
-        <h3 style="margin-bottom: 10px; text-align: center;">Github Repository</h3>
-        <a href="https://github.com/ariel-behar/baby-journal" target="_blank">github.com/ariel-behar/baby-journal</a>
-    </div>
-</div>
+| <h3 style="margin-bottom: 10px; text-align: center;">Project URL</h3> | <h3 style="margin-bottom: 10px; text-align: center;">Github Repository</h3> |
+| :-----------: | :-----------: |
+| <a href="https://baby-journal.arielbehar.com/" target="_blank">baby-journal.arielbehar.com</a>  | <a href="https://github.com/ariel-behar/baby-journal" target="_blank">github.com/ariel-behar/baby-journal</a> |
 
 <br />
 
