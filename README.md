@@ -5,7 +5,7 @@
 <div style='font-family: "Montserrat", sans-serif; font-optical-sizing: autoм font-weight: 400; font-style: normal;'>
 
 <h1 align="center" style="text-transform: uppercase">BABY JOURNAL</h1>
-<h3 align="center" style="margin-top: 1px; text-align: center;" >The ultimate digital diary for motherhood</h3>
+<h3 align="center" style="margin-top: 1px; text-align: center;" ><em>The ultimate digital diary for motherhood</em></h3>
 
 <br />
 
@@ -52,8 +52,9 @@
 
 <h2>Quick Start</h2>
 
-<blockquote style="padding-top:5px; padding-bottom: 5px">
 <h3>Development mode</h3>
+
+<blockquote style="padding-top:5px; padding-bottom: 5px">
 
 1. In the terminal, navigate to the project's folder
 
@@ -68,8 +69,9 @@ npm run dev
 
 <br />
 
-<blockquote style="padding-top:5px; padding-bottom: 5px">
 <h3>Production mode</h3>
+
+<blockquote style="padding-top:5px; padding-bottom: 5px">
 
 1. Execute the following command to create a production build for the project:
 ```bash
