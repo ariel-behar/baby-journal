@@ -2,7 +2,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<div style='font-family: "Montserrat", sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: normal;'>
+<style>
+    * {
+        font-family: "Montserrat", sans-serif; 
+        font-optical-sizing: auto;
+        font-weight: 400; 
+        font-style: normal;
+    }
+
+    .icon-title-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon {
+        height: 20px; 
+        width: auto; 
+        margin-right: 10px;
+    }
+
+    .title-next-to-icon {
+        margin-bottom: 10px; 
+        display: inline-block;
+    }
+
+</style>
+
 <h1 align="center" style="text-transform: uppercase">BABY JOURNAL</h1>
 <h3 align="center" style="margin-top: 1px; text-align: center;" >The ultimate digital diary for motherhood</h3>
 
@@ -17,12 +44,16 @@
 <table align="center" style="width:100%;">
   <tr>
     <th align="center">
-        <img align="center" alt="Link" style="display: inline-block; height: 30px, width: auto" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/link.png">
-        <h3 align="center" style="margin-bottom: 10px; display: inline-block;">Project URL</h3>
+        <div class="icon-title-container">
+            <img align="center" alt="Link" class="icon" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/link.png">
+            <h3 align="center" class="title-next-to-icon">Project URL</h3>
+        </div>
     </th>
     <th align="center">
-        <img align="center" alt="Github" style="display: inline-block; height: 30px, width: auto" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/github.png">
-        <h3 align="center" style="margin-bottom: 10px;">Github Repository</h3>
+        <div class="icon-title-container">
+            <img align="center" alt="Github" class="icon" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/github.png">
+            <h3 align="center" class="title-next-to-icon">Github Repository</h3>
+        </div>
     </th>
   </tr>
   <tr>
@@ -180,5 +211,3 @@ npm start
 
 <!-- <br /> -->
 <!-- <h2>Specs</h2> -->
-
-</div>
