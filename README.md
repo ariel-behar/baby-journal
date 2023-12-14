@@ -11,7 +11,7 @@
 | :-----------: | :-----------: |
 | <a href="https://baby-journal.arielbehar.com/" target="_blank">baby-journal.arielbehar.com</a>  | <a href="https://github.com/ariel-behar/baby-journal" target="_blank">github.com/ariel-behar/baby-journal</a> | -->
 
-<table style="width:100%;">
+<table align="center" style="width:100%;">
   <tr>
     <th align="center">
         <h3 align="center" style="margin-bottom: 10px;">Project URL</h3>
