@@ -123,6 +123,8 @@ DaisyUI</blockquote>
 
 <blockquote>Pexels API</blockquote>
 
+<br />
+
 <h2>Deployment</h2>
 
 <blockquote>Vercel</blockquote>
