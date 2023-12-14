@@ -123,5 +123,9 @@ DaisyUI</blockquote>
 
 <blockquote>Pexels API</blockquote>
 
+<h2>Deployment</h2>
+
+<blockquote>Vercel</blockquote>
+
 <!-- <br /> -->
 <!-- <h2>Specs</h2> -->
