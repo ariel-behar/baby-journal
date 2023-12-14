@@ -17,9 +17,11 @@
 <table align="center" style="width:100%;">
   <tr>
     <th align="center">
-        <h3 align="center" style="margin-bottom: 10px;">Project URL</h3>
+        <img align="center" alt="Link" style="display: inline-block; height: 30px, width: auto" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/link.png">
+        <h3 align="center" style="margin-bottom: 10px; display: inline-block;">Project URL</h3>
     </th>
     <th align="center">
+        <img align="center" alt="Link" style="display: inline-block; height: 30px, width: auto" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/github.png">
         <h3 align="center" style="margin-bottom: 10px;">Github Repository</h3>
     </th>
   </tr>
