@@ -81,7 +81,7 @@ npm start
 
 <h2>Technological Overview</h2>
 
->This Next.js app combines Next-Auth for authentication, Next-Intl for internationalization, and MongoDB as its database. This setup means users can log in securely, see the app in their own language, and enjoy a smooth experience thanks to efficient data handling. It supports multiple login options and easy locale management, while MongoDB keeps data storage fast and flexible. 
+<blockquote style="border-left: .25em solid #3F51B5">This Next.js app combines Next-Auth for authentication, Next-Intl for internationalization, and MongoDB as its database. This setup means users can log in securely, see the app in their own language, and enjoy a smooth experience thanks to efficient data handling. It supports multiple login options and easy locale management, while MongoDB keeps data storage fast and flexible.</blockquote>
 
 <br />
 
