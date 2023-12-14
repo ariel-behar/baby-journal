@@ -52,9 +52,10 @@
 
 <h2>Quick Start</h2>
 
-<h3>- Development mode</h3>
+<blockquote style="padding-top:5px; padding-bottom: 5px">
+<h3>Development mode</h3>
 
-1. Navigate to your CLI of choice
+1. In the terminal, navigate to the project's folder
 
 2. Execute the following command:
 
@@ -63,8 +64,12 @@ npm run dev
 ```
 
 3. The development server will run on [http://localhost:3000](http://localhost:3000)
+</blockquote>
 
-<h3>- Production mode</h3>
+<br />
+
+<blockquote style="padding-top:5px; padding-bottom: 5px">
+<h3>Production mode</h3>
 
 1. Execute the following command to create a production build for the project:
 ```bash
@@ -76,6 +81,7 @@ npm run build
 npm start
 ```
 3. If the port 3000 is available, the production build will be served on [http://localhost:3000](http://localhost:3000)
+</blockquote>
 
 <br />
 
@@ -87,85 +93,29 @@ npm start
 
 <h2>Technologies' Stack</h2>
 
-<table align="center" style="width:100%;">
-  <tr>
-    <th align="center">
-        <h4 align="center" style="margin-bottom: 10px;">
-            Javascript Framework
-        </h4>
-    </th>
-    <th align="center">
-        <h4 align="center" style="margin-bottom: 10px;">
-            Javascript Superscript
-        </h4>
-    </th>
-        <th align="center">
-        <h4 align="center" style="margin-bottom: 10px;">
-            CSS Frameworks/Libraries
-        </h4>
-    </th>
-    </th>
-        <th align="center">
-        <h4 align="center" style="margin-bottom: 10px;">
-            Database
-        </h4>
-    </th>
-            <th align="center">
-        <h4 align="center" style="margin-bottom: 10px;">
-            Internationalization
-        </h4>
-    </th>
-   
-  </tr>
-  <tr>
-    <td align="center">
-        Next.JS
-    </td>
-    <td align="center">
-        Typescript
-    </td>
-    <td align="center">
-        Tailwind CSS
-        <br />
-        DaisyUI
-    </td>
-     <td align="center">
-        Mongo DB 
-        <br />
-        (+ mongoose)
-    </td>
-     <td align="center">
-        Next Intl
-    </td>
-  </tr>
-</table>
-
-<!-- 
-
 <h3>Javascript Framework</h3> 
 
->Next.JS
+<blockquote>Next.JS</blockquote>
 
 <h3>Javascript Superscript</h3> 
 
->Typescript
+<blockquote>Typescript</blockquote>
 
 <h3>CSS Frameworks/Libraries</h3>
 
->Tailwind CSS
->
->DaisyUI
+<blockquote>Tailwind CSS
+<br/>
+DaisyUI</blockquote>
 
 <h3>Database</h3>
 
->Mongo DB (+ mongoose)
+<blockquote>Mongo DB 
+<br />
++ Mongoose</blockquote>
 
 <h3>Internationalization</h3>
 
->Next Intl
-
-
- -->
+<blockquote>Next Intl</blockquote>
 
 <br />
 
