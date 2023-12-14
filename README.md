@@ -3,7 +3,9 @@
 
 <br />
 
-<img align="center" style="height: 250px; width: auto; margin: 0 auto;" alt="Baby Journal" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/baby-journal.png">
+<p align="center">
+    <img style="height: 250px; width: auto" alt="Baby Journal" src="https://github-repositories-images.s3.eu-central-1.amazonaws.com/baby-journal.png">
+</p>
 
 <div style="display:flex; flex-direction:row; justify-content: space-around;">
     <div>
